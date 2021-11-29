@@ -1,0 +1,41 @@
+\documentclass[lettersize,journal]{IEEEtran}
+\usepackage{amsmath,amsfonts}
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\usepackage{textcomp}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\hyphenation{op-tical net-works semi-conduc-tor IEEE-Xplore}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\usepackage{balance}
+\usepackage[backend=bibtex, style=numeric]{biblatex}
+\bibliography{busCharge}
+%\bibliographystyle{ieeetr}
+\begin{document}
+\title{Daniel's Super Cool and overly long title}
+\author{Daniel Mortensen, Jacob Gunther\thanks{}}
+
+\markboth{Journal of \LaTeX\ Class Files,~Vol.~18, No.~9, September~2020}%
+{How to Use the IEEEtran \LaTeX \ Templates}
+
+\maketitle
+\input{abstract.tex}
+\input{introduction.tex}
+\input{literatureReview.tex}
+\input{graph.tex}
+\input{batterySoc.tex}
+\input{rateSchedule.tex}
+\input{fleetOperations.tex}
+\input{objective.tex}
+\input{gurobi.tex}
+\input{results.tex}
+\input{futureWork.tex}
+\newpage
+\printbibliography
+\end{document}
+
+
