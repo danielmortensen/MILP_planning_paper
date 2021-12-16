@@ -1,0 +1,28 @@
+function makeComparisonBusSoc(minVal, maxVal, busIdx)
+addpath('../');
+if nargin == 2
+    busIdx = [1,2];
+end
+nBus = numel(busIdx);
+for iBus = 1:nBus
+    [socMax, timeMax] = getSocVal(maxVal,busIdx);
+    [socMin, timeMin] = getSocVal(minVal,busIdx);
+    figure; hold on;
+    plot(timeMax, socMax);
+    plot(timeMin, socMin);
+end
+yline(maxVal.G.param.base.minSoc,'--');
+xlabel('Time'); ylabel('Bus STate of Charge');
+addTimeAxis(gca,max([timeMax(:);timeMin(:)]),24*60);
+legend('Unoptimized Bus SOC','Optimized Bus SOC');
+end
+
+function [soc, timeIdx] = getSocVal(vals, busIdx)
+G = vals.G;
+result = vals.result.x;
+Const = vals.Const;
+nodeIdx = G.nodes(:,Const.node.idx.BUS) == busIdx;
+timeIdx = G.nodes(nodeIdx,Const.node.idx.TIME);
+yIdx = G.nodes(nodeIdx, Const.node.idx.YSOC);
+soc = result(yIdx);
+end

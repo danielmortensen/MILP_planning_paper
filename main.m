@@ -6,15 +6,17 @@ addpath('visualization/');
 addpath('/opt/gurobi912/linux64/matlab/');
 close all;
 
-% % find best case scenario for stress test scenario
-% scenario = getScenario('fExternalLoad','originalTpss1Day.csv','nBus',36,...
-%     'nOverheadCharger',6);
-% runSimulation(scenario, 'Optimal Solution');
+% find best case scenario for stress test scenario
+scenario = getScenario('fExternalLoad','originalTpss1Day.csv','nBus',36,...
+    'fData','/home/daniel/solveSchedule/data/', 'nOverheadCharger',6);
+[result, Const, G] = runSimulation(scenario, 'Optimal Solution');
+fprintf("temp\n");
 
 % find worst case scenario
-scenario = getScenario('fExternalLoad','originalTpss1Day.csv','nBus',36,...
-    'nOverheadCharger',6,'minObjective','MaxSchedule8','disoptimality',500000);
-[result, Const, G] = runSimulation(scenario, 'Disoptimal: 500,000');
+% scenario = getScenario('fExternalLoad','originalTpss1Day.csv','nBus',36,...
+%     'fData','/home/daniel/solveSchedule/data/', 'nOverheadCharger',6,...
+%     'minObjective','MaxSchedule8','disoptimality',500000);
+% [result, Const, G] = runSimulation(scenario, 'Disoptimal: 500,000');
 
 % find worst case scenario
 % scenario = getScenario('fExternalLoad','originalTpss1Day.csv',...
@@ -24,10 +26,13 @@ scenario = getScenario('fExternalLoad','originalTpss1Day.csv','nBus',36,...
 
 function [result, Const, G] = runSimulation(scenario, simId)
 [result, Const, G] = solveScenario(scenario);
-if ~contains(scenario.minObjective,'Schedule8')
-    [result.x, G] = convertToSchedule8(result.x, G, Const);
+if ~strcmp(result.status,'INFEASIBLE')
+    if ~contains(scenario.minObjective,'Schedule8')
+        [result.x, G] = convertToSchedule8(result.x, G, Const);
+    end
+    save('MinSchedule8Results.mat','G','result','Const');
+    makePlots(G, result, Const, simId);
 end
-makePlots(G, result, Const, simId);
 end
 function makePlots(G, result, Const, titleId)
 makePieChart(G, result.x, titleId);

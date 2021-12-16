@@ -2,8 +2,15 @@
 \usepackage{amsmath,amsfonts}
 \usepackage{algorithmic}
 \usepackage{array}
-\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\usepackage[center]{caption}
 \usepackage{textcomp}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{math}
+\usetikzlibrary{shapes}
+\setcounter{MaxMatrixCols}{20}
+\usepackage{subcaption}
 \usepackage{stfloats}
 \usepackage{url}
 \usepackage{verbatim}
@@ -22,7 +29,7 @@
 \markboth{Journal of \LaTeX\ Class Files,~Vol.~18, No.~9, September~2020}%
 {How to Use the IEEEtran \LaTeX \ Templates}
 
-\maketitle
+\maketitle 
 \input{abstract.tex}
 \input{introduction.tex}
 \input{literatureReview.tex}

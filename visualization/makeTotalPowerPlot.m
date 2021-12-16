@@ -12,7 +12,6 @@ maxFacilities = result(G.param.yFacilitiesIdx);
 % compute values for on-peak demand charge over time
 busDemandSelect = toSparse(G.Constraint.demandOnPeak.A, G.param.nSolution);
 busDemandSelect(:,G.param.yOnPeakDemandIdx) = 0;
-
 busDemandSelect = busDemandSelect(1:sum(G.param.isOnPeak),:);
 demandB = G.Constraint.demandOnPeak.b(1:sum(G.param.isOnPeak));
 demandOnPeak = zeros([G.param.nTime,1]);
