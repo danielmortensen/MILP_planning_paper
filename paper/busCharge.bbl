@@ -1,0 +1,1672 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{bagherinezhad_spatio-temporal_2020}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BA}{%
+         family={Bagherinezhad},
+         familyi={B\bibinitperiod},
+         given={Avishan},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PAD}{%
+         family={Palomino},
+         familyi={P\bibinitperiod},
+         given={Alejandro\bibnamedelima D.},
+         giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=LB}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Bosong},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Parvania},
+         familyi={P\bibinitperiod},
+         given={Masood},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BA+1}
+    \strng{fullhash}{BAPADLBPM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{abstract}{%
+    The paradigm shift in adopting electriﬁed public transportation, enabled
+  by long-range battery electric buses ({BEBs}) and associated charging
+  infrastructure, inﬂict operational challenges to both power distribution
+  and transit systems. This article takes an opportunistic look at the paradigm
+  shift and develops a model for optimally scheduling the spatio-temporal
+  charging ﬂexibility of {BEBs} as a source of operational ﬂexibility for
+  power distribution systems. The proposed model co-optimizes the timing and
+  location of {BEBs}’ charging in the transit system with the operation of
+  the power distribution system, while respecting the operational constraints
+  and requirements of both power distribution and public transit systems. In
+  the proposed model, the {BEBs} transit system is mathematically modeled by a
+  graph and the associated {BEB} charging stations are mapped into the power
+  distribution nodes. The {BEBs}’ transit schedule constrains the
+  spatio-temporal charging opportunities to all {BEBs} over the scheduling
+  horizon. The proposed model is implemented on the {IEEE} 33-bus power
+  distribution system coupled with the transit system of Park City, {UT},
+  {USA}, with {BEB} routes. The numerical results showcase the economic and
+  operational beneﬁts of the proposed model for the power distribution system
+  operator and transit system operator.%
+    }
+    \verb{doi}
+    \verb 10.1109/TIA.2020.2979132
+    \endverb
+    \field{issn}{0093-9994, 1939-9367}
+    \field{number}{5}
+    \field{pages}{5741\bibrangedash 5749}
+    \field{shortjournal}{{IEEE} Trans. on Ind. Applicat.}
+    \field{title}{Spatio-Temporal Electric Bus Charging Optimization With
+  Transit Network Constraints}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/9028116/
+    \endverb
+    \field{volume}{56}
+    \field{langid}{english}
+    \verb{file}
+    \verb Bagherinezhad et al. - 2020 - Spatio-Temporal Electric Bus Charging O
+    \verb ptimization.pdf:/home/daniel/Zotero/storage/85ZTFJ9A/Bagherinezhad et
+    \verb  al. - 2020 - Spatio-Temporal Electric Bus Charging Optimization.pdf:
+    \verb application/pdf
+    \endverb
+    \field{journaltitle}{{IEEE} Transactions on Industry Applications}
+    \field{month}{09}
+    \field{year}{2020}
+    \field{urlday}{13}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{balde_electric_2019}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=BBJ}{%
+         family={Balde},
+         familyi={B\bibinitperiod},
+         given={Bhagyashree\bibnamedelima J},
+         giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Sardar},
+         familyi={S\bibinitperiod},
+         given={Arghya},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{BBJSA1}
+    \strng{fullhash}{BBJSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{abstract}{%
+    In recent years Electric vehicle has emerged as the most promising solution
+  to the concerns over the environment and energy security. However one major
+  constraint for electric vehicles have been on-board energy storage with high
+  speciﬁc energy and quick charging capability so as to provide the vehicle
+  with sufﬁcient range, and convenience to the user. One approach to address
+  this issue is the concept of electric roads, this paper, proposes discussing
+  dynamic wireless charging system and necessary system
+  conﬁguration.Potential impact of the enhanced efﬁciency of the system due
+  to possible technology improvements in future is studied.%
+    }
+    \field{booktitle}{2019 {IEEE} Transportation Electrification Conference
+  ({ITEC}-India)}
+    \verb{doi}
+    \verb 10.1109/ITEC-India48457.2019.ITECINDIA2019-251
+    \endverb
+    \field{eventtitle}{2019 {IEEE} Transportation Electrification Conference
+  ({ITEC}-India)}
+    \field{isbn}{978-1-72813-169-6}
+    \field{pages}{1\bibrangedash 4}
+    \field{title}{Electric Road system With Dynamic Wireless charging of
+  Electric buses}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/9080859/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Bengaluru, India}%
+    }
+    \verb{file}
+    \verb Balde and Sardar - 2019 - Electric Road system With Dynamic Wireless
+    \verb chargin.pdf:/home/daniel/Zotero/storage/RNZHKJIG/Balde and Sardar - 2
+    \verb 019 - Electric Road system With Dynamic Wireless chargin.pdf:applicat
+    \verb ion/pdf
+    \endverb
+    \field{month}{12}
+    \field{year}{2019}
+    \field{urlday}{18}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{boonraksa_impact_2019}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=BT}{%
+         family={Boonraksa},
+         familyi={B\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Paudel},
+         familyi={P\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DP}{%
+         family={Dawan},
+         familyi={D\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Marungsri},
+         familyi={M\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{BT+1}
+    \strng{fullhash}{BTPADPMB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{abstract}{%
+    Electric buses (Ebus) have become increasingly used, especially in the
+  metropolitan area, to reduce pollution from carbon monoxide and dust.
+  However, the use of an Ebus requires charging from the power distribution
+  system, which may affect the stability of the system. This paper is a study
+  of the impact of electric bus charging on the power distribution system a
+  case study {IEEE} 33 bus test system. The study also included Ebus charging
+  integrated with distributed generation ({DG}) system to improve voltage
+  level. The power flow was calculated using the Newton-Raphson method and the
+  size and location of {DG} calculated by the voltage deviation index ({VDI}).
+  The simulation results show the impact of Ebus charging on the system. The
+  fast charging of 6 minutes at 300 {kW} power, system voltage dropped 0.8139
+  p.u., mean voltage 0.9014 p.u. The voltage improvement by installing {DG} on
+  buses 18 and 33 at 1.0 {MW} and 1.4 {MW} respectively. The results show that
+  the system voltage increased to 0.9533 p.u., the voltage means 0.9735 p.u.
+  The Ebus charging causes the voltage drop on the power system, which affects
+  the reliability of the system. It is a larger load than the charging of
+  electric vehicles. The installation of {DG} into the system makes it possible
+  to adjust the voltage level to the standard value.%
+    }
+    \field{booktitle}{2019 {IEEE} {PES} {GTD} Grand International Conference
+  and Exposition Asia ({GTD} Asia)}
+    \verb{doi}
+    \verb 10.1109/GTDAsia.2019.8716023
+    \endverb
+    \field{eventtitle}{2019 {IEEE} {PES} {GTD} Grand International Conference
+  and Exposition Asia ({GTD} Asia)}
+    \field{isbn}{978-1-5386-7434-5}
+    \field{pages}{819\bibrangedash 823}
+    \field{title}{Impact of Electric Bus Charging on the Power Distribution
+  System a Case Study {IEEE} 33 Bus Test System}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/8716023/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Bangkok, Thailand}%
+    }
+    \verb{file}
+    \verb Boonraksa et al. - 2019 - Impact of Electric Bus Charging on the Powe
+    \verb r Distr.pdf:/home/daniel/Zotero/storage/9FE4XYPZ/Boonraksa et al. - 2
+    \verb 019 - Impact of Electric Bus Charging on the Power Distr.pdf:applicat
+    \verb ion/pdf
+    \endverb
+    \field{annotation}{%
+    cited in introduction%
+    }
+    \field{month}{03}
+    \field{year}{2019}
+    \field{urlday}{13}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{cheng_smart_2020}{article}{}
+    \name{author}{5}{}{%
+      {{hash=CQ}{%
+         family={Cheng},
+         familyi={C\bibinitperiod},
+         given={Qifu},
+         giveni={Q\bibinitperiod},
+      }}%
+      {{hash=CL}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Lei},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=WR}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Rui},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Ma},
+         familyi={M\bibinitperiod},
+         given={Dazhong},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=QD}{%
+         family={Qin},
+         familyi={Q\bibinitperiod},
+         given={Dehao},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CQ+1}
+    \strng{fullhash}{CQCLWRMDQD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    With the growing popularity of electric vehicles ({EV}), there is an urgent
+  demand to solve the stress placed on grids caused by the irregular and
+  frequent access of {EVs}. The traditional direct current ({DC}) fast charging
+  station ({FCS}) based on a photovoltaic ({PV}) system can effectively
+  alleviate the stress of the grid and carbon emission, but the high cost of
+  the energy storage system ({ESS}) and the under utilization of the
+  grid-connected interlinking converters ({GIC}) are not very well addressed.
+  In this paper, the {DC} {FCS} architecture based on a {PV} system and
+  {ESS}-free is ﬁrst proposed and employed to reduce the cost. Moreover, the
+  proposed smart charging algorithm ({SCA}) can fully coordinate the
+  source/load properties of the grid and {EVs} to achieve the maximum power
+  output of the {PV} system and high utilization rate of {GICs} in the absence
+  of {ESS} support for {FCS}. {SCA} contains a self-regulated algorithm ({SRA})
+  for {EVs} and a grid-regulated algorithm ({GRA}) for {GICs}. While the {DC}
+  bus voltage change caused by power ﬂuctuations does not exceed the set
+  threshold, {SRA} readjusts the charging power of each {EV} through the status
+  of the charging ({SOC}) feedback of the {EV}, which can ensure the power
+  rebalancing of the {FCS}. The {GRA} would participate in the adjustment
+  process once the {DC} bus voltage is beyond the set threshold range. Under
+  the condition of ensuring the charging power of all {EVs}, a {GRA} based on
+  adaptive droop control can improve the utilization rate of {GICs}. At last,
+  the simulation and experimental results are provided to verify the
+  effectiveness of the proposed {SCA}.%
+    }
+    \verb{doi}
+    \verb 10.17775/CSEEJPES.2020.00350
+    \endverb
+    \field{issn}{20960042, 20960042}
+    \field{shortjournal}{{CSEE} {JPES}}
+    \field{title}{A smart charging algorithm-based fast charging station with
+  energy storage system-free}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9171658
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb 2020 - A smart charging algorithm-based fast charging sta.pdf:/home/d
+    \verb aniel/Zotero/storage/6D2Y52BC/2020 - A smart charging algorithm-based
+    \verb  fast charging sta.pdf:application/pdf
+    \endverb
+    \field{journaltitle}{{CSEE} Journal of Power and Energy Systems}
+    \field{year}{2020}
+    \field{urlday}{19}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{csonka_optimization_2021}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CB}{%
+         family={Csonka},
+         familyi={C\bibinitperiod},
+         given={Bálint},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CB1}
+    \strng{fullhash}{CB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    The adoption of electric buses in public transport requires careful
+  planning for the bus ﬂeet and charging infrastructure. A mathematical model
+  of an urban bus service was developed to support the deployment of charging
+  infrastructure. The novelty of the model is that it incorporates
+  infrastructure elements for both static and dynamic charging technologies at
+  the same time. The model supports the electriﬁcation of the bus lines
+  without route and schedule adjustments. The volume of charged energy at
+  charging units is considered as a variable in the objective function to
+  determine the location of charging units at minimum cost. The model was
+  veriﬁed by a case study based on actual bus service data. It was found that
+  the use of static chargers is more favorable if the cost of a static charging
+  unit is less than the cost of a dynamic charger with a length of 1600 m and
+  the charging power of static chargers is three times greater than the
+  charging power of dynamic chargers. The relationship between charging power
+  and the length of the dynamic charging unit was analyzed. It was noted that
+  the use of charging power higher than 162.5 {kW} at dynamic charging units is
+  not necessary.%
+    }
+    \verb{doi}
+    \verb 10.3390/en14123516
+    \endverb
+    \field{issn}{1996-1073}
+    \field{number}{12}
+    \field{pages}{3516}
+    \field{shortjournal}{Energies}
+    \field{title}{Optimization of Static and Dynamic Charging Infrastructure
+  for Electric Buses}
+    \verb{url}
+    \verb https://www.mdpi.com/1996-1073/14/12/3516
+    \endverb
+    \field{volume}{14}
+    \field{langid}{english}
+    \verb{file}
+    \verb Csonka - 2021 - Optimization of Static and Dynamic Charging Infras.pd
+    \verb f:/home/daniel/Zotero/storage/9EMXNDWF/Csonka - 2021 - Optimization o
+    \verb f Static and Dynamic Charging Infras.pdf:application/pdf
+    \endverb
+    \field{journaltitle}{Energies}
+    \field{annotation}{%
+    This article describes a method for optimizing bus charging with respect to
+  1. minimum power infrastructure 2. meeting logistical constraints   It does
+  not take into account costs for power consumption/demand.   It does however
+  take into account night (depot) vs day (overhead) charging, although their
+  overhead chargers work while the bus is mobile. where ours assume it is
+  parked for the moment.%
+    }
+    \field{day}{13}
+    \field{month}{06}
+    \field{year}{2021}
+    \field{urlday}{13}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{deb_impact_2017}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=DS}{%
+         family={Deb},
+         familyi={D\bibinitperiod},
+         given={Sanchari},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KK}{%
+         family={Kalita},
+         familyi={K\bibinitperiod},
+         given={Karuna},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=MP}{%
+         family={Mahanta},
+         familyi={M\bibinitperiod},
+         given={Pinakeshwar},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{DSKKMP1}
+    \strng{fullhash}{DSKKMP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    The progress in battery technology and the growing concerns regarding
+  environmental pollution has initiated transportation electrification. With
+  the replacement of Internal Combustion Engine ({ICE}) driven vehicles with
+  Electric Vehicles ({EV}) an adverse impact of {EV} charging load on operating
+  parameters of the power system has been noticed. Large charging load of fast
+  charging stations degrade the operating parameters of the power system.
+  Reliability is one of the pivotal operating parameters of the distribution
+  network whose degradation will result in customer dissatisfaction. This work
+  aims to investigate and quantify the impact of {EV} charging station load on
+  reliability of {IEEE} 33 bus test system which is a standard radial network.%
+    }
+    \field{booktitle}{2017 International Conference on Technological
+  Advancements in Power and Energy ( {TAP} Energy)}
+    \verb{doi}
+    \verb 10.1109/TAPENERGY.2017.8397272
+    \endverb
+    \field{eventtitle}{2017 International Conference on Technological
+  Advancements in Power and Energy ({TAP} Energy)}
+    \field{isbn}{978-1-5386-4021-0}
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{Impact of electric vehicle charging stations on reliability
+  of distribution network}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/8397272/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Kollam}%
+    }
+    \verb{file}
+    \verb Deb et al. - 2017 - Impact of electric vehicle charging stations on r
+    \verb e.pdf:/home/daniel/Zotero/storage/W6ZAFUIQ/Deb et al. - 2017 - Impact
+    \verb  of electric vehicle charging stations on re.pdf:application/pdf
+    \endverb
+    \field{annotation}{%
+    cited in introduction%
+    }
+    \field{month}{12}
+    \field{year}{2017}
+    \field{urlday}{16}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{el-taweel_incorporation_2019}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=ETNA}{%
+         family={El-Taweel},
+         familyi={E\bibinitperiod-T\bibinitperiod},
+         given={Nader\bibnamedelima A.},
+         giveni={N\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=FHEZ}{%
+         family={Farag},
+         familyi={F\bibinitperiod},
+         given={Hany E.\bibnamedelima Z.},
+         giveni={H\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim
+  Z\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{ETNAFHEZ1}
+    \strng{fullhash}{ETNAFHEZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{abstract}{%
+    The transition from diesel–based transit bus systems toward a
+  zero-emission transportation system is a timely-topic that is currently
+  supported by governmental and municipal investments across the globe. Prior
+  research works as well as ongoing demonstration projects in the
+  electriﬁcation of public bus networks prioritize the electriﬁcation of
+  transit buses. In which, there is a gap in the literature in investigating
+  the electriﬁcation of intercity bus systems. Unlike a transit bus service,
+  which has frequent stops throughout a city or town, an intercity i.e., coach
+  bus service generally has a single stop at one location in or near a city,
+  and travels long distances via highway routes. To that end, this paper
+  studies the energy consumption and design of charging stations to power
+  electric intercity buses. The study is conducted for a real-world
+  demonstration project that is planned by Metrolinx, a regional transit system
+  serving the Greater Toronto and Hamilton Area ({GTHA}) in Canada, to be
+  deployed by 2019 in the {GO} Bus transit system. The study aims to
+  investigate the double decker ({DD}) battery electric bus ({BEB}) energy
+  consumption; plan for the {BEBs} operation service and charging scheduling;
+  and conduct a cost analysis for the {BEBs} charging based on the wholesale
+  and time of use electricity prices mechanism.%
+    }
+    \field{booktitle}{2019 {IEEE} Transportation Electrification Conference and
+  Expo ({ITEC})}
+    \verb{doi}
+    \verb 10.1109/ITEC.2019.8790598
+    \endverb
+    \field{eventtitle}{2019 {IEEE} Transportation Electrification Conference
+  and Expo ({ITEC})}
+    \field{isbn}{978-1-5386-9310-0}
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{Incorporation of Battery Electric Buses in the Operation of
+  Intercity Bus Services}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/8790598/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Detroit, {MI}, {USA}}%
+    }
+    \verb{file}
+    \verb El-Taweel and Farag - 2019 - Incorporation of Battery Electric Buses
+    \verb in the Ope.pdf:/home/daniel/Zotero/storage/AI2YGTX8/El-Taweel and Far
+    \verb ag - 2019 - Incorporation of Battery Electric Buses in the Ope.pdf:ap
+    \verb plication/pdf
+    \endverb
+    \field{month}{06}
+    \field{year}{2019}
+    \field{urlday}{19}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{gao_charging_2019}{inproceedings}{}
+    \name{author}{10}{}{%
+      {{hash=GQ}{%
+         family={Gao},
+         familyi={G\bibinitperiod},
+         given={Qiang},
+         giveni={Q\bibinitperiod},
+      }}%
+      {{hash=LZ}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Zhenzhi},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=ZT}{%
+         family={Zhu},
+         familyi={Z\bibinitperiod},
+         given={Tao},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=ZW}{%
+         family={Zhou},
+         familyi={Z\bibinitperiod},
+         given={Weijiang},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=WG}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Guanhua},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=ZT}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Tianhan},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=ZZ}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Zhi},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Waseem},
+         familyi={W\bibinitperiod},
+         given={Muhammad},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Shengyuan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=HC}{%
+         family={Han},
+         familyi={H\bibinitperiod},
+         given={Chang},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{GQ+1}
+    \strng{fullhash}{GQLZZTZWWGZTZZWMLSHC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{abstract}{%
+    An intelligent charging load forecasting method of the electric vehicle
+  plays a vital role in power generation and power market optimization. In this
+  paper, electric vehicles have been categorized as electric buses, electric
+  taxis, electric private cars and electric buses. The probabilistic models of
+  load influencing factors are investigated, and then the calculation models of
+  charging power for different types of electric vehicles have been attained.
+  According to the predicted results of electric vehicle ownership, the
+  charging load of the electric vehicle is calculated by use of Monte Carlo
+  Simulation method for extraction of both electric vehicle initial charging
+  state and charging time. Finally, a deep learning algorithm {LSTM} (Long
+  Short Term Memory) has been utilized to predict the charging load of electric
+  vehicles. The effectiveness of the proposed method is illustrated by the
+  simulation results.%
+    }
+    \field{booktitle}{2019 {IEEE} Sustainable Power and Energy Conference
+  ({iSPEC})}
+    \verb{doi}
+    \verb 10.1109/iSPEC48194.2019.8975364
+    \endverb
+    \field{eventtitle}{2019 {IEEE} Sustainable Power and Energy Conference
+  ({iSPEC})}
+    \field{isbn}{978-1-72814-930-1}
+    \field{pages}{1309\bibrangedash 1314}
+    \field{title}{Charging Load Forecasting of Electric Vehicle Based on Monte
+  Carlo and Deep Learning}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/8975364/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Beijing, China}%
+    }
+    \verb{file}
+    \verb Gao et al. - 2019 - Charging Load Forecasting of Electric Vehicle Bas
+    \verb e.pdf:/home/daniel/Zotero/storage/NZXCGI2L/Gao et al. - 2019 - Chargi
+    \verb ng Load Forecasting of Electric Vehicle Base.pdf:application/pdf
+    \endverb
+    \field{month}{11}
+    \field{year}{2019}
+    \field{urlday}{19}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{houbbadi_optimal_2019}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=HA}{%
+         family={Houbbadi},
+         familyi={H\bibinitperiod},
+         given={Adnane},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RIE}{%
+         family={Redondo-Iglesias},
+         familyi={R\bibinitperiod-I\bibinitperiod},
+         given={Eduardo},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=TR}{%
+         family={Trigui},
+         familyi={T\bibinitperiod},
+         given={Rochdi},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=PS}{%
+         family={Pelissier},
+         familyi={P\bibinitperiod},
+         given={Serge},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=BT}{%
+         family={Bouton},
+         familyi={B\bibinitperiod},
+         given={Tanguy},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{HA+1}
+    \strng{fullhash}{HARIETRPSBT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    Smart charging is becoming an important and indispensable asset for
+  electric bus fleet to become economically competitive. This paper proposes an
+  innovative approach for setting overnight charging schedules of electric bus
+  fleet. This approach uses nonlinear programming in order to minimize both the
+  electricity cost and the battery aging. The optimization is constrained by
+  the operating buses conditions, the electric vehicle supply equipment, and
+  the power grid. A comparison between the nonlinear programming results and
+  non-dominated sorted genetic algorithm ({NSGA}-{II}) will show the difference
+  and complementarities of both approaches and proposes a number of trade-off
+  optimal solutions.%
+    }
+    \field{booktitle}{2019 {IEEE} Vehicle Power and Propulsion Conference
+  ({VPPC})}
+    \verb{doi}
+    \verb 10.1109/VPPC46532.2019.8952493
+    \endverb
+    \field{eventtitle}{2019 {IEEE} Vehicle Power and Propulsion Conference
+  ({VPPC})}
+    \field{isbn}{978-1-72811-249-7}
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{Optimal Charging Strategy to Minimize Electricity Cost and
+  Prolong Battery Life of Electric Bus Fleet}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/8952493/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Hanoi, Vietnam}%
+    }
+    \verb{file}
+    \verb Houbbadi et al. - 2019 - Optimal Charging Strategy to Minimize Electr
+    \verb icity .pdf:/home/daniel/Zotero/storage/3E6LE9LM/Houbbadi et al. - 201
+    \verb 9 - Optimal Charging Strategy to Minimize Electricity .pdf:applicatio
+    \verb n/pdf
+    \endverb
+    \field{annotation}{%
+    This paper includes methods for minimizing cost for overnight charging and
+  minimizing battery harm. Using Linear Programming.   It does not include
+  minimization for cost associated with demand charge in conjunction with
+  external loads or on vs off peak hours (although it may not be important as
+  they are concerned only for charging at night.)   does not include night vs
+  day charging does not include variable charge rates.  %
+    }
+    \field{month}{10}
+    \field{year}{2019}
+    \field{urlday}{13}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{jahic_preemptive_2019}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=JA}{%
+         family={Jahic},
+         familyi={J\bibinitperiod},
+         given={Amra},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=EM}{%
+         family={Eskander},
+         familyi={E\bibinitperiod},
+         given={Mina},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Schulz},
+         familyi={S\bibinitperiod},
+         given={Detlef},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{JAEMSD1}
+    \strng{fullhash}{JAEMSD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{abstract}{%
+    The recent studies concerning climate protection have shown the great
+  negative effect of diesel buses on the environment. From this point of view,
+  the city of Hamburg is planning the conversion to emission free buses. Both
+  bus companies in Hamburg; the Hamburger {HOCHBAHN} {AG} and Verkehrsbetriebe
+  Hamburg-Holstein {GmbH} ({VHH}) estimated to buy 1500 electric buses by 2030.
+  This conversion represents a challenge for the electrical grid due to the
+  increase of the electrical demand. The typical daily timeline for bus routes
+  of the bus depot in Alsterdorf in the city of Hamburg is considered in this
+  paper. This enabled the authors to calculate the daily load profile of this
+  bus depot. Moreover, the authors could identify different potentials to
+  optimize the whole load profile. In order to decrease the peak load, this
+  paper is introducing two new possibilities for the load distribution over the
+  available charging slots; preemptive and quasi-preemptive greedy algorithms.
+  Furthermore, the results of implementing those two possibilities will be
+  compared with the results of implementing a nonpreemptive method.%
+    }
+    \field{booktitle}{2019 {IEEE} {PES} Innovative Smart Grid Technologies
+  Europe ({ISGT}-Europe)}
+    \verb{doi}
+    \verb 10.1109/ISGTEurope.2019.8905633
+    \endverb
+    \field{eventtitle}{2019 {IEEE} {PES} Innovative Smart Grid Technologies
+  Europe ({ISGT}-Europe)}
+    \field{isbn}{978-1-5386-8218-0}
+    \field{pages}{1\bibrangedash 5}
+    \field{title}{Preemptive vs. non-preemptive charging schedule for
+  large-scale electric bus depots}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/8905633/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Bucharest, Romania}%
+    }
+    \verb{file}
+    \verb Jahic et al. - 2019 - Preemptive vs. non-preemptive charging schedule
+    \verb  fo.pdf:/home/daniel/Zotero/storage/7FZC7HNR/Jahic et al. - 2019 - Pr
+    \verb eemptive vs. non-preemptive charging schedule fo.pdf:application/pdf
+    \endverb
+    \field{month}{09}
+    \field{year}{2019}
+    \field{urlday}{16}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{jain_battery_2020}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=JS}{%
+         family={Jain},
+         familyi={J\bibinitperiod},
+         given={Shubham},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=AZ}{%
+         family={Ahmad},
+         familyi={A\bibinitperiod},
+         given={Zaurez},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=AMS}{%
+         family={Alam},
+         familyi={A\bibinitperiod},
+         given={Mohammad\bibnamedelima Saad},
+         giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=RY}{%
+         family={Rafat},
+         familyi={R\bibinitperiod},
+         given={Yasser},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{JS+1}
+    \strng{fullhash}{JSAZAMSRY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{abstract}{%
+    The transportation business contributes a lot of carbon discharges and
+  poisons the environment around the world. The adoption of electric vehicles
+  ({EVs}) has a huge potential to lessen carbon outflows. A Battery Swapping
+  Station ({BSS}) is a compelling methodology in providing power to the {EVs},
+  while alleviating long holding up times in charging at Battery Charging
+  Station ({BCS}). Swapping Technology provides an ideal solution for
+  accomplishing a significant distance interstate outing. This paper researches
+  the benefits of building the {BSS} from different points of view and
+  accordingly a methodology has been proposed to swap out batteries in
+  comparatively less time considering the location of the battery to be fixed.
+  This novel approach can be utilized as a source of perspective for a future
+  framework that gives sensible and reliable charging to {EVs}.%
+    }
+    \field{booktitle}{2020 5th {IEEE} International Conference on Recent
+  Advances and Innovations in Engineering ({ICRAIE})}
+    \verb{doi}
+    \verb 10.1109/ICRAIE51050.2020.9358366
+    \endverb
+    \field{eventtitle}{2020 5th {IEEE} International Conference on Recent
+  Advances and Innovations in Engineering ({ICRAIE})}
+    \field{isbn}{978-1-72818-867-6}
+    \field{pages}{1\bibrangedash 4}
+    \field{title}{Battery Swapping Technology}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/9358366/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Jaipur, India}%
+    }
+    \verb{file}
+    \verb Jain et al. - 2020 - Battery Swapping Technology.pdf:/home/daniel/Zot
+    \verb ero/storage/LSFAWIEB/Jain et al. - 2020 - Battery Swapping Technology
+    \verb .pdf:application/pdf
+    \endverb
+    \field{day}{01}
+    \field{month}{12}
+    \field{year}{2020}
+    \field{urlday}{18}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{jeong_automatic_2018}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=JSY}{%
+         family={Jeong},
+         familyi={J\bibinitperiod},
+         given={Seog\bibnamedelima Y.},
+         giveni={S\bibinitperiod\bibinitdelim Y\bibinitperiod},
+      }}%
+      {{hash=PJH}{%
+         family={Park},
+         familyi={P\bibinitperiod},
+         given={Jun\bibnamedelima H.},
+         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=HGP}{%
+         family={Hong},
+         familyi={H\bibinitperiod},
+         given={Gwang\bibnamedelima P.},
+         giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=RCT}{%
+         family={Rim},
+         familyi={R\bibinitperiod},
+         given={Chun\bibnamedelima T.},
+         giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{JSY+1}
+    \strng{fullhash}{JSYPJHHGPRCT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{abstract}{%
+    In this paper, an auto-tuning control system ({ACS}), which utilizes
+  variation of self-inductance of a transmitter (Tx) coil caused by ferrite
+  core of a receiver (Rx), is newly proposed for the dynamic wireless electric
+  vehicle ({EV}) charging. A Tx module consists of only passive elements that
+  include a Tx coil, a partially compensated capacitor in series with the Tx
+  coil, and a parallel compensation capacitor. All Tx modules share an {AC} bus
+  line that pass the output filter of an inverter in parallel without any
+  active switches. The current of the coupled Tx coil increases automatically
+  without any manipulations such as controlling the power switches, sensing, or
+  communication when the Rx module is approaching. Not only the system
+  efficiency is increased by reduction of the conduction losses from uncoupled
+  Tx modules, but control also becomes simpler because sensors are not required
+  for detecting {EVs} and constant output voltage characteristics can be
+  obtained. Through simulations and experiments, it was found that the proposed
+  {ACS} is suitable for applications in which a transportation runs along a
+  track with a small air gap, such as a train or tram. The results showed that
+  the current of a coupled Tx coil increased 11.6 times larger than that of an
+  uncoupled Tx coil, at which time the {DC}-{DC} efficiency achieved was 88.4
+  \% for an output power of 766 W (10 ohm of load resistance) at the laboratory
+  scale. The measured maximum efficiency was 96.7 \% for 100 ohm of load
+  resistance.%
+    }
+    \field{booktitle}{2018 {IEEE} {PELS} Workshop on Emerging Technologies:
+  Wireless Power Transfer (Wow)}
+    \verb{doi}
+    \verb 10.1109/WoW.2018.8450926
+    \endverb
+    \field{eventtitle}{2018 {IEEE} {PELS} Workshop on Emerging Technologies:
+  Wireless Power Transfer ({WoW})}
+    \field{isbn}{978-1-5386-2465-4}
+    \field{pages}{1\bibrangedash 5}
+    \field{title}{Automatic Current Control by Self-Inductance Variation for
+  Dynamic Wireless {EV} Charging}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/8450926/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Montréal, {QC}, Canada}%
+    }
+    \verb{file}
+    \verb Jeong et al. - 2018 - Automatic Current Control by Self-Inductance Va
+    \verb ria.pdf:/home/daniel/Zotero/storage/YXK97A36/Jeong et al. - 2018 - Au
+    \verb tomatic Current Control by Self-Inductance Varia.pdf:application/pdf
+    \endverb
+    \field{month}{06}
+    \field{year}{2018}
+    \field{urlday}{18}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{ojer_development_2020}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=OI}{%
+         family={Ojer},
+         familyi={O\bibinitperiod},
+         given={Inaki},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Berrueta},
+         familyi={B\bibinitperiod},
+         given={Alberto},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Pascual},
+         familyi={P\bibinitperiod},
+         given={Julio},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Sanchis},
+         familyi={S\bibinitperiod},
+         given={Pablo},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=UA}{%
+         family={Ursua},
+         familyi={U\bibinitperiod},
+         given={Alfredo},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{OI+1}
+    \strng{fullhash}{OIBAPJSPUA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{abstract}{%
+    The electric vehicle contributes to reduce greenhouse gases emissions and
+  get a greater integration of renewable energy. In this context, the
+  implementation of urban buses implies the development of new grid
+  infrastructures in order to carry out the electricity supply required by the
+  charging stations. In order to optimize the size of these infrastructures and
+  to have more power capacity, this contribution proposes the design and the
+  sizing of a fast charging station with a stationary energy storage system
+  ({ESS}) installed, to supply the energy of the buses that run on one of the
+  lines of Pamplona (Spain). In this contribution, first, the power demanded by
+  the charging point is measured at the fast charging station located at the
+  Public University of Navarre. Second, three energy management strategies are
+  developed with which to use {ESS}. Finally, the proposed energy management
+  strategies are simulated with the measured data obtained. The results
+  achieved in this contribution show that with a 40 {kWh} {ESS}, the power
+  demanded from the grid can be reduced by a whole 70\%, that is, from 250 {kW}
+  to 74 {kW}. In addition, the power contracted in the electricity rate is
+  reduced too.%
+    }
+    \field{booktitle}{2020 {IEEE} International Conference on Environment and
+  Electrical Engineering and 2020 {IEEE} Industrial and Commercial Power
+  Systems Europe ({EEEIC} / I\&{CPS} Europe)}
+    \verb{doi}
+    \verb 10.1109/EEEIC/ICPSEurope49358.2020.9160716
+    \endverb
+    \field{eventtitle}{2020 {IEEE} International Conference on Environment and
+  Electrical Engineering and 2020 {IEEE} Industrial and Commercial Power
+  Systems Europe ({EEEIC} / I\&{CPS} Europe)}
+    \field{isbn}{978-1-72817-455-6}
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{Development of energy management strategies for the sizing of
+  a fast charging station for electric buses}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/9160716/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Madrid, Spain}%
+    }
+    \verb{file}
+    \verb Ojer et al. - 2020 - Development of energy management strategies for
+    \verb th.pdf:/home/daniel/Zotero/storage/BI5SNA2N/Ojer et al. - 2020 - Deve
+    \verb lopment of energy management strategies for th.pdf:application/pdf
+    \endverb
+    \field{month}{06}
+    \field{year}{2020}
+    \field{urlday}{16}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{poornesh_comparative_2020}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=PK}{%
+         family={Poornesh},
+         familyi={P\bibinitperiod},
+         given={Kavuri},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=NKP}{%
+         family={Nivya},
+         familyi={N\bibinitperiod},
+         given={Kuzhivila\bibnamedelima Pannickottu},
+         giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=SK}{%
+         family={Sireesha},
+         familyi={S\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{PKNKPSK1}
+    \strng{fullhash}{PKNKPSK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{abstract}{%
+    Electrification of the vehicles gains a significant research importance due
+  to the increasing amount of greenhouse gas ({GHG}) emission by using
+  conventional internal combustion engine vehicles ({ICEV}). The major benefits
+  of electric vehicles ({EVs}) are a reduced amount of carbon monoxide ({CO})
+  emissions, higher efficiency, performance, and lower maintenance costs. It
+  also allows energy diversification by switching to renewable resources. This
+  paper analyzes the efficiency of an {EV} with {ICEV} by considering various
+  parameters like required torque, speed and distance traveled. The simulation
+  is developed in {MATLAB}/Simulink and analysis is presented for various
+  performance metrics as a measure.%
+    }
+    \field{booktitle}{2020 International Conference on Smart Electronics and
+  Communication ({ICOSEC})}
+    \verb{doi}
+    \verb 10.1109/ICOSEC49089.2020.9215386
+    \endverb
+    \field{eventtitle}{2020 International Conference on Smart Electronics and
+  Communication ({ICOSEC})}
+    \field{isbn}{978-1-72815-461-9}
+    \field{pages}{1179\bibrangedash 1183}
+    \field{title}{A Comparative study on Electric Vehicle and Internal
+  Combustion Engine Vehicles}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/9215386/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Trichy, India}%
+    }
+    \verb{file}
+    \verb Poornesh et al. - 2020 - A Comparative study on Electric Vehicle and
+    \verb Intern.pdf:/home/daniel/Zotero/storage/HLPPQZC6/Poornesh et al. - 202
+    \verb 0 - A Comparative study on Electric Vehicle and Intern.pdf:applicatio
+    \verb n/pdf
+    \endverb
+    \field{annotation}{%
+    cited in introduction%
+    }
+    \field{month}{09}
+    \field{year}{2020}
+    \field{urlday}{13}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{qin_numerical_2016}{article}{}
+    \name{author}{4}{}{%
+      {{hash=QN}{%
+         family={Qin},
+         familyi={Q\bibinitperiod},
+         given={Nan},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Gusrialdi},
+         familyi={G\bibinitperiod},
+         given={Azwirman},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PBR}{%
+         family={Paul\bibnamedelima Brooker},
+         familyi={P\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=TRA}{%
+         family={T-Raissi},
+         familyi={T\bibinitperiod-R\bibinitperiod},
+         given={Ali},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{QN+1}
+    \strng{fullhash}{QNGAPBRTRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Q}
+    \field{sortinithash}{Q}
+    \field{abstract}{%
+    Electric transit buses have been recognized as an important alternative to
+  diesel buses with many environmental beneﬁts. Electric buses employing
+  lithium titanate batteries can provide uninterrupted transit service thanks
+  to their ability of fast charging. However, fast charging may result in high
+  demand charges which will increase the fuel costs thereby limiting the
+  electric bus market penetration. In this paper, we simulated daily charging
+  patterns and demand charges of a ﬂeet of electric buses in Tallahassee,
+  Florida and identiﬁed an optimal charging strategy to minimize demand
+  charges. It was found that by using a charging threshold of 60–64\%, a
+  \$160,848 total saving in electricity cost can be achieved for a ﬁve
+  electric bus ﬂeet, comparing to a charging threshold of 0–28\%. In
+  addition, the impact of ﬂeet sizes on the fuel cost was investigated.
+  Fleets of 4 and 12 buses will achieve the lowest cost per mile driven when
+  one fast charger is installed.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.tra.2016.09.014
+    \endverb
+    \field{issn}{09658564}
+    \field{pages}{386\bibrangedash 396}
+    \field{shortjournal}{Transportation Research Part A: Policy and Practice}
+    \field{title}{Numerical analysis of electric bus fast charging strategies
+  for demand charge reduction}
+    \verb{url}
+    \verb https://linkinghub.elsevier.com/retrieve/pii/S096585641630444X
+    \endverb
+    \field{volume}{94}
+    \field{langid}{english}
+    \verb{file}
+    \verb Qin et al. - 2016 - Numerical analysis of electric bus fast charging
+    \verb s.pdf:/home/daniel/Zotero/storage/L4E6ENWW/Qin et al. - 2016 - Numeri
+    \verb cal analysis of electric bus fast charging s.pdf:application/pdf
+    \endverb
+    \field{journaltitle}{Transportation Research Part A: Policy and Practice}
+    \field{month}{12}
+    \field{year}{2016}
+    \field{urlday}{13}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{stahleder_impact_2019}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=SD}{%
+         family={Stahleder},
+         familyi={S\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RD}{%
+         family={Reihs},
+         familyi={R\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Ledinger},
+         familyi={L\bibinitperiod},
+         given={Stephan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LF}{%
+         family={Lehfuss},
+         familyi={L\bibinitperiod},
+         given={Felix},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{SD+1}
+    \strng{fullhash}{SDRDLSLF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    The ongoing electriﬁcation of public bus trafﬁc in cities improves the
+  local air quality and can help to reduce {CO}2 emissions. Besides several
+  operational challenges, an appropriate grid integration of battery electric
+  buses ({BEBs}) is crucial to maintain a safe and stable operation of the
+  distribution grid. Increasing charging powers of up to 600 {kW} may
+  complicate the situation further. The objective of this study is to evaluate
+  the grid impacts of three different bus charging methods – Every Station
+  Charging, End Station Charging and Overnight Charging – on a typical urban
+  European distribution grid. Therefore, the charging behavior of an electric
+  bus line was modeled with a time resolution of one second and then connected
+  to a large grid simulation. Multiple scenario modiﬁcations have been
+  discussed, such as increasing the number of electriﬁed bus lines, taking
+  into account photovoltaics, and charging in the {LV} grid instead. Results
+  show that the tested grid is capable of integrating {BEBs} in most
+  situations, while Every Station Charging causes higher simultaneity of
+  charging and larger voltage drops than the other scenarios. Moreover, {LV}
+  charging shows to be unsuitable for high power charging. To conclude, the
+  results of the simulations offer a solid basis for considerations regarding
+  the electriﬁcation of public bus routes.%
+    }
+    \field{booktitle}{{IECON} 2019 - 45th Annual Conference of the {IEEE}
+  Industrial Electronics Society}
+    \verb{doi}
+    \verb 10.1109/IECON.2019.8927526
+    \endverb
+    \field{eventtitle}{{IECON} 2019 - 45th Annual Conference of the {IEEE}
+  Industrial Electronics Society}
+    \field{isbn}{978-1-72814-878-6}
+    \field{pages}{4304\bibrangedash 4309}
+    \field{title}{Impact Assessment of High Power Electric Bus Charging on
+  Urban Distribution Grids}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/8927526/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Lisbon, Portugal}%
+    }
+    \verb{file}
+    \verb Stahleder et al. - 2019 - Impact Assessment of High Power Electric Bu
+    \verb s Charg.pdf:/home/daniel/Zotero/storage/LUJVWANC/Stahleder et al. - 2
+    \verb 019 - Impact Assessment of High Power Electric Bus Charg.pdf:applicat
+    \verb ion/pdf
+    \endverb
+    \field{annotation}{%
+    cited in introduction%
+    }
+    \field{month}{10}
+    \field{year}{2019}
+    \field{urlday}{16}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{wei_optimizing_2018}{article}{}
+    \name{author}{4}{}{%
+      {{hash=WR}{%
+         family={Wei},
+         familyi={W\bibinitperiod},
+         given={Ran},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LX}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Xiaoyue},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=OY}{%
+         family={Ou},
+         familyi={O\bibinitperiod},
+         given={Yi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=KFS}{%
+         family={Kiavash\bibnamedelima Fayyaz},
+         familyi={K\bibinitperiod\bibinitdelim F\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WR+1}
+    \strng{fullhash}{WRLXOYKFS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{abstract}{%
+    Environmental concerns due to fossil fuel consumption and emissions drive
+  transportation industry to shift towards low-impact and sustainable energy
+  sources. Public transit system, as an integral part of multimodal
+  transportation ecosystem, has been supporting such shift by exploring the
+  adoption of electric vehicles. In recent years, the advancement in Battery
+  Electric Buses ({BEBs}) and their supporting infrastructure technology made
+  them a viable replacement for diesel and Compressed Natural Gas ({CNG})
+  buses. Yet, it remains a challenge on how to optimally deploy the {BEB}
+  system due to its unique spatio-temporal characteristics. To ﬁll this gap,
+  this research introduces a spatio-temporal optimization model to identify the
+  optimal deployment strategies for {BEB} system. The identiﬁed
+  spatio-temporal deployment of {BEB} system can minimize the cost associated
+  with vehicle procurement and charging station allocation, while satisfying
+  transit operation constraints such as maintaining existing bus operation
+  routes and schedules. The proposed method is implemented onto the transit
+  network operated by the Utah Transit Authority ({UTA}) to showcase its
+  eﬀectiveness. As many transit agencies are testing electric buses and
+  considering the integration of electric buses into future ﬂeet, this
+  research will help transit agencies make informed decisions regarding
+  strategic planning and design of {BEB} systems.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.jtrangeo.2018.03.013
+    \endverb
+    \field{issn}{09666923}
+    \field{pages}{160\bibrangedash 168}
+    \field{shortjournal}{Journal of Transport Geography}
+    \field{title}{Optimizing the spatio-temporal deployment of battery electric
+  bus system}
+    \verb{url}
+    \verb https://linkinghub.elsevier.com/retrieve/pii/S0966692317306294
+    \endverb
+    \field{volume}{68}
+    \field{langid}{english}
+    \verb{file}
+    \verb Wei et al. - 2018 - Optimizing the spatio-temporal deployment of batt
+    \verb e.pdf:/home/daniel/Zotero/storage/8JXQIS34/Wei et al. - 2018 - Optimi
+    \verb zing the spatio-temporal deployment of batte.pdf:application/pdf
+    \endverb
+    \field{journaltitle}{Journal of Transport Geography}
+    \field{month}{04}
+    \field{year}{2018}
+    \field{urlday}{13}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{whitaker_network_2021}{article}{}
+    \name{author}{5}{}{%
+      {{hash=WJ}{%
+         family={Whitaker},
+         familyi={W\bibinitperiod},
+         given={Justin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=DG}{%
+         family={Droge},
+         familyi={D\bibinitperiod},
+         given={Greg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Hansen},
+         familyi={H\bibinitperiod},
+         given={Matthew},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Mortensen},
+         familyi={M\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Gunther},
+         familyi={G\bibinitperiod},
+         given={Jacob},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WJ+1}
+    \strng{fullhash}{WJDGHMMDGJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{abstract}{%
+    A major challenge to adopting battery electric buses into bus ﬂeets is
+  the scheduling of the battery charging while considering route timing
+  constraints and battery charge. This work develops a scheduling framework to
+  balance the use of slow and fast chargers assuming the bus routes and charger
+  locations are ﬁxed. Slow chargers are utilized when possible to lower the
+  cost of charging and fast chargers are used when needed to meet timing
+  constraints and to ensure a sufﬁcient charge for route execution. A
+  directed, acyclic graph is used to model the available charge times for buses
+  that periodically return to the station to pick up passengers and to recharge
+  its battery. A constrained network ﬂow Mixed-Integer Linear Program
+  ({MILP}) problem is formulated to optimize the scheduling of chargers as well
+  as to determine the number of chargers required to meet battery state of
+  charge thresholds. Using a randomly generated route schedule for thirty
+  buses, results are presented that demonstrate the ability of the proposed
+  method to ﬁnd optimal charging plans while considering peak time charging
+  costs and allowing for ﬁxed and variable numbers of chargers.%
+    }
+    \field{pages}{10}
+    \field{title}{A Network Flow Approach to Battery Electric Bus Scheduling}
+    \field{langid}{english}
+    \verb{file}
+    \verb Whitaker et al. - A Network Flow Approach to Battery Electric Bus Sc.
+    \verb pdf:/home/daniel/Zotero/storage/IT3ETL66/Whitaker et al. - A Network
+    \verb Flow Approach to Battery Electric Bus Sc.pdf:application/pdf
+    \endverb
+    \field{year}{2021}
+  \endentry
+
+  \entry{xian_zhang_optimal_2016}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=X}{%
+         family={{Xian Zhang}},
+         familyi={X\bibinitperiod},
+      }}%
+      {{hash=WG}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Guibin},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{XWG1}
+    \strng{fullhash}{XWG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{X}
+    \field{sortinithash}{X}
+    \field{abstract}{%
+    Along with the fast development of battery technologies and growing
+  criticism on heavy air pollution caused by traditional automobiles, electric
+  vehicles ({EV}) draw more attention in these years. The inconvenience of
+  battery charging is the main barrier to the widespread use of {EVs}, and the
+  {EV} battery-swapping technology is a promising method to assist overcoming
+  this difficulty eventually because of its flexibility. In this paper, a
+  battery schedule framework is studied to dispatch batteries between battery
+  charging stations ({BCS}) and battery swapping stations ({BSS}) efficiently.
+  A two-direction battery dispatch model to reduce the transportation cost is
+  established and solved by {PSO} method. Moreover, considering the serving
+  ability limitations, the K-means clustering algorithm is utilized to
+  pre-partition the {BCS} and {BSS} to make the battery dispatch more efficient
+  and effective. The proposed methods is finally verified by an urban battery
+  logistics case.%
+    }
+    \field{booktitle}{2016 {IEEE} Power and Energy Society General Meeting
+  ({PESGM})}
+    \verb{doi}
+    \verb 10.1109/PESGM.2016.7741893
+    \endverb
+    \field{eventtitle}{2016 {IEEE} Power and Energy Society General Meeting
+  ({PESGM})}
+    \field{isbn}{978-1-5090-4168-8}
+    \field{pages}{1\bibrangedash 5}
+    \field{title}{Optimal dispatch of electric vehicle batteries between
+  battery swapping stations and charging stations}
+    \verb{url}
+    \verb http://ieeexplore.ieee.org/document/7741893/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Boston, {MA}, {USA}}%
+    }
+    \verb{file}
+    \verb Xian Zhang and Wang - 2016 - Optimal dispatch of electric vehicle bat
+    \verb teries bet.pdf:/home/daniel/Zotero/storage/6DHJE95C/Xian Zhang and Wa
+    \verb ng - 2016 - Optimal dispatch of electric vehicle batteries bet.pdf:ap
+    \verb plication/pdf
+    \endverb
+    \field{month}{07}
+    \field{year}{2016}
+    \field{urlday}{18}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{zhou_optimization_2018}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=ZD}{%
+         family={Zhou},
+         familyi={Z\bibinitperiod},
+         given={Dan},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RZ}{%
+         family={Ren},
+         familyi={R\bibinitperiod},
+         given={Zhiwei},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=SK}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Ke},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=DH}{%
+         family={Dai},
+         familyi={D\bibinitperiod},
+         given={Huiwen},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IEEE}}%
+    }
+    \strng{namehash}{ZD+1}
+    \strng{fullhash}{ZDRZSKDH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{abstract}{%
+    The electric bus has gradually become the main tool of public transport in
+  the city. It has become an indispensable link in the electric bus for fast
+  electric energy supply. The ordered charge control strategy proposed in this
+  paper solves the problem of electric bus charging optimization. This strategy
+  enables security and economy to be better guaranteed in the operation of the
+  power system. The orderly control strategy adopts the method of hierarchical
+  control, including the prediction layer, scheduling layer and control layer.
+  In this paper, an optimization model for the rapid charging of electric buses
+  based on the cost of charging and battery loss is first set up. Considering
+  charging power constraint and restraint and power supply limit of departure,
+  according to the data of forecasted layer's expected full load rate, traffic
+  index and timesharing price, the rolling layer is optimized continuously in
+  the dispatching layer, and finally the reliable charging plan is arranged by
+  the dispatching layer. In order to verify the effectiveness of hierarchical
+  charge control strategy, a fast charging station is optimized for charging.
+  The numerical analysis shows that the proposed method has the function of
+  clipping peaks and filling valleys and improves the rapid charging of
+  electric buses of the economy, weakened a large number of electric vehicles
+  focused on the impact of grid power.%
+    }
+    \field{booktitle}{2018 2nd {IEEE} Conference on Energy Internet and Energy
+  System Integration ({EI}2)}
+    \verb{doi}
+    \verb 10.1109/EI2.2018.8582378
+    \endverb
+    \field{eventtitle}{2018 2nd {IEEE} Conference on Energy Internet and Energy
+  System Integration ({EI}2)}
+    \field{isbn}{978-1-5386-8549-5}
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{Optimization Method of Fast Charging Buses Charging Strategy
+  for Complex Operating Environment}
+    \verb{url}
+    \verb https://ieeexplore.ieee.org/document/8582378/
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Beijing}%
+    }
+    \verb{file}
+    \verb Zhou et al. - 2018 - Optimization Method of Fast Charging Buses Charg
+    \verb in.pdf:/home/daniel/Zotero/storage/9GF99GBX/Zhou et al. - 2018 - Opti
+    \verb mization Method of Fast Charging Buses Chargin.pdf:application/pdf
+    \endverb
+    \field{annotation}{%
+    Gives a framework for optimizing bus charging without exceeding the limits
+  of the grid.  It also minimizes consumption cost given a rate schedule.
+  estimates conditions for the future while optimizing according to historical
+  data and the current state.   does not: 1. Minimize demand charge 2. assume
+  set schedules rather reacts to buses in a stochastic manner.  This works
+  well for it's intended use case, but a global optimal will offer better
+  performance overall.%
+    }
+    \field{month}{10}
+    \field{year}{2018}
+    \field{urlday}{13}
+    \field{urlmonth}{11}
+    \field{urlyear}{2021}
+  \endentry
+\enddatalist
+\endinput

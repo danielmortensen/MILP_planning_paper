@@ -280,8 +280,6 @@ INPUT introduction.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmrc7t.tfm
 INPUT literatureReview.tex
 INPUT literatureReview.tex
-INPUT graph.tex
-INPUT graph.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -293,6 +291,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 OUTPUT busCharge.dvi
+INPUT graph.tex
+INPUT graph.tex
 INPUT media/simpleGraph2Bus.eps
 INPUT media/simpleGraph2Bus.eps
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
@@ -301,6 +301,9 @@ INPUT batterySoc.tex
 INPUT batterySoc.tex
 INPUT rateSchedule.tex
 INPUT rateSchedule.tex
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT fleetOperations.tex
 INPUT fleetOperations.tex
 INPUT objective.tex

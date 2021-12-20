@@ -1,0 +1,69 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: busCharge.aux
+The style file: biblatex.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: busCharge-blx.bib
+Database file #2: busCharge.bib
+Warning--I'm ignoring boonraksa_impact_2019's extra "annotation" field
+--line 297 of file busCharge.bib
+Warning--I'm ignoring stahleder_impact_2019's extra "annotation" field
+--line 395 of file busCharge.bib
+Biblatex version: 3.8
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 21 entries,
+            6268 wiz_defined-function locations,
+            1416 strings with 44142 characters,
+and the built_in function-call counts, 232364 in all, are:
+= -- 11601
+> -- 17894
+< -- 1472
++ -- 18123
+- -- 14771
+* -- 13133
+:= -- 31289
+add.period$ -- 0
+call.type$ -- 21
+change.case$ -- 452
+chr.to.int$ -- 1206
+cite$ -- 40
+duplicate$ -- 20542
+empty$ -- 15867
+format.name$ -- 1686
+if$ -- 35089
+int.to.chr$ -- 0
+int.to.str$ -- 68
+missing$ -- 0
+newline$ -- 1312
+num.names$ -- 1144
+pop$ -- 6999
+preamble$ -- 1
+purify$ -- 617
+quote$ -- 0
+skip$ -- 5166
+stack$ -- 0
+substring$ -- 21873
+swap$ -- 5936
+text.length$ -- 1108
+text.prefix$ -- 20
+top$ -- 1
+type$ -- 702
+warning$ -- 0
+while$ -- 2939
+width$ -- 0
+write$ -- 1292
+(There were 2 warnings)
