@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2020.11.2)  20 DEC 2021 19:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2020.11.2)  21 DEC 2021 15:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1032,12 +1032,12 @@ Package biblatex Info: Reference section=0 on input line 25.
 Package biblatex Info: Reference segment=0 on input line 25.
  (./abstract.tex)
 (./introduction.tex) (./literatureReview.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 11.
+LaTeX Font Info:    Try loading font information for U+msa on input line 8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 11.
+LaTeX Font Info:    Try loading font information for U+msb on input line 8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1053,10 +1053,14 @@ Overfull \hbox (0.95093pt too wide) in paragraph at lines 54--55
  []
 
 [2]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \hbox (9.97588pt too wide) detected at line 181
 []
  []
 
+[3]
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
@@ -1065,7 +1069,7 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
-) (./batterySoc.tex [3] [4]
+) (./batterySoc.tex [4]
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
@@ -1096,10 +1100,10 @@ Package logreq Info: Writing requests to 'busCharge.run.xml'.
 Here is how much of TeX's memory you used:
  23276 strings out of 492983
  469935 string characters out of 6134922
- 871393 words of memory out of 5000000
+ 898138 words of memory out of 5000000
  26448 multiletter control sequences out of 15000+600000
  27369 words of font info for 64 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  55i,16n,67p,981b,1261s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on busCharge.dvi (7 pages, 264624 bytes).
+Output written on busCharge.dvi (7 pages, 266156 bytes).

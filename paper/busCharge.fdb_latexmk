@@ -1,18 +1,18 @@
 # Fdb version 3
-["bibtex busCharge"] 1640054597 "busCharge.aux" "busCharge.bbl" "busCharge" 1640055252
+["bibtex busCharge"] 1640126418 "busCharge.aux" "busCharge.bbl" "busCharge" 1640126447
   "/usr/share/texlive/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1510525977 63137 1eef042be76fa9262fed2413ad573404 ""
-  "busCharge-blx.bib" 1640055250 306 8aaf130409042efa77015fcb01433692 ""
-  "busCharge.aux" 1640055251 9069 b096f1061b15f6ca754e4b927f1f9edc ""
+  "busCharge-blx.bib" 1640126446 306 8aaf130409042efa77015fcb01433692 ""
+  "busCharge.aux" 1640126446 9069 098e3a48c83e7b762d9eb0c671c0ce08 ""
   "busCharge.bcf" 0 -1 0 ""
   "busCharge.bib" 1637345474 69218 357ab36215669ae6a8adfc9e5fc23c10 ""
   (generated)
   "busCharge.blg"
   "busCharge.bbl"
-["dvips"] 1640055251 "busCharge.dvi" "busCharge.ps" "busCharge" 1640055252
-  "busCharge.dvi" 1640055251 264624 95bd850d70ec494fb43b4100f8f198c4 "latex"
+["dvips"] 1640126446 "busCharge.dvi" "busCharge.ps" "busCharge" 1640126447
+  "busCharge.dvi" 1640126446 266156 8cbf26010da094871a4619b0858a8d2d "latex"
   (generated)
   "busCharge.ps"
-["latex"] 1640055250 "busCharge.tex" "busCharge.dvi" "busCharge" 1640055252
+["latex"] 1640126445 "busCharge.tex" "busCharge.dvi" "busCharge" 1640126447
   "/etc/texmf/web2c/texmf.cnf" 1604366159 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1480098689 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -164,15 +164,15 @@
   "/var/lib/texmf/web2c/pdftex/latex.fmt" 1604366583 4131421 a28df4db28a17ebbf7371717af689cdf ""
   "abstract.tex" 1636850844 116 c9bc1890e44dbad2a9c50b3b6ec32a17 ""
   "batterySoc.tex" 1639621773 22775 96a1dfef097c1a4a483f5027d64f58e3 ""
-  "busCharge.aux" 1640055251 9069 b096f1061b15f6ca754e4b927f1f9edc ""
-  "busCharge.bbl" 1640054597 63896 5a262de3810ac0ba72a9197104610c41 "bibtex busCharge"
-  "busCharge.run.xml" 1640055251 2566 40e3d7003c9a017fe564fba53697a621 ""
+  "busCharge.aux" 1640126446 9069 098e3a48c83e7b762d9eb0c671c0ce08 ""
+  "busCharge.bbl" 1640126418 63896 5a262de3810ac0ba72a9197104610c41 "bibtex busCharge"
+  "busCharge.run.xml" 1640126446 2566 40e3d7003c9a017fe564fba53697a621 ""
   "busCharge.tex" 1638998436 1329 6d0209b7b671ca4d8e8b59325847a722 ""
   "fleetOperations.tex" 1638211906 537 3ad8f5533c59de4fc6fcabf5050ffcf5 ""
   "futureWork.tex" 1638120733 22 523095345327d3220d3fd69efa82aace ""
   "graph.tex" 1639764327 25764 361efc9e71cb5529b6eeaee2325ce3cb ""
   "gurobi.tex" 1638120695 26 75b49e867d549ca0c058aa765bcd38ec ""
-  "introduction.tex" 1640055249 2836 e2f24a27e43a55bfc9fdd556c0166720 ""
+  "introduction.tex" 1640126444 4004 37947b8e039e6340adc0b985ec398fec ""
   "literatureReview.tex" 1638117030 4020 1caf9b81ba8854caffd99cf5bb7df130 ""
   "media/simpleGraph2Bus.eps" 1638230833 15587 cc6e5d9b1aca704112986aa7a33f42ca ""
   "objective.tex" 1638120661 29 1c082ee8717e13697fb51c566cb2146a ""
@@ -184,7 +184,7 @@
   "busCharge.log"
   "busCharge-blx.bib"
   "busCharge.aux"
-["ps2pdf"] 1640055251 "busCharge.ps" "busCharge.pdf" "busCharge" 1640055252
-  "busCharge.ps" 1640055251 520715 5df9d6867f4ff66297d3750b1ec4db1e "dvips"
+["ps2pdf"] 1640126447 "busCharge.ps" "busCharge.pdf" "busCharge" 1640126447
+  "busCharge.ps" 1640126447 523078 d9e293705c137e0014ffc37518d16f91 "dvips"
   (generated)
   "busCharge.pdf"
