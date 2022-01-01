@@ -343,7 +343,7 @@ This expression can be used to constrain the net-flow of each node.  $f$ must eq
 \end{align}
 
 \par Flow can also be used to ensure that buses connect to only one charger at a time. Let a charge session, or \textit{group}, be the set of all charge nodes between routes as shown in figure \ref{fig:groups}. The \textit{group flow} is the number of chargers that enter a group and is computed by adding the weights for all incoming edges (see figure \ref{fig:groupedEdges}). 
-\par Let $B$ be a nGroup $\times$ nEdge matrix where the $ij^{\text{th}}$ entry is $1$ if the $j^{\text{th}}$ edge enters the $i^{\text{th}}$ group and $0$ otherwise. For example, the $B$ matrix corresponding to figure \ref{fig:groupEdges} contains $1$ in the $7^{\text{th}}$ and $10^{\text{th}}$ columns for Group 1, and $12^{\text{th}}$ and $15^{\text{th}}$ columns for group 2 as given in equation \ref{eqn:groupB}.
+\par Let $B$ be a nGroup $\times$ nEdge matrix where the $ij^{\text{th}}$ entry is $1$ if the $j^{\text{th}}$ edge enters the $i^{\text{th}}$ group and $0$ otherwise. For example, the $B$ matrix corresponding to figure \ref{fig:groupEdges} contains $1$ in the $7^{\text{th}}$ and $10^{\text{th}}$ columns for Group 1, and the $12^{\text{th}}$ and $15^{\text{th}}$ columns for group 2 as given in equation \ref{eqn:groupB}.
 \begin{align}\label{eqn:groupB}
 	B = \begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
 	                   0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0\end{bmatrix}
@@ -363,8 +363,6 @@ This expression can be used to constrain the net-flow of each node.  $f$ must eq
 		\node[circle, fill=yellow!20, line width=0.5pt, draw=black, minimum size=0.1in](nine) at (2,2){};
 		\node[circle, fill=yellow!20, line width=0.5pt, draw=black, minimum size=0.1in](ten) at (4,2){}; 
 		\node[circle, fill=yellow!20, line width=0.5pt, draw=black, minimum size=0.1in](eleven) at (5,2){}; 
-		\node[ellipse, line width=0.5pt, draw=red, minimum height=0.4in, minimum width=1in, label=Group 1](group1) at (1.5,2){};
-		\node[ellipse, line width=0.5pt, draw=red, minimum height=0.4in, minimum width=1in, label=Group 2](group2) at (4.5,2){};
 		\draw [->, line width=0.5pt] (one.east) -- (two.west);
 		\draw [->, line width=0.5pt] (two.east) -- (three.west);
 		\draw [->, line width=0.5pt] (three.east) -- (four.west);
@@ -381,6 +379,8 @@ This expression can be used to constrain the net-flow of each node.  $f$ must eq
 		\draw [->, line width=0.5pt] (eleven.south east) -- (seven.north west);
 		\draw [->, line width=0.5pt] (eight.east) -- (nine.west);
 		\draw [->, line width=0.5pt] (ten.east) -- (eleven.west); 
+		\node[ellipse, fill opacity=0.2, draw opacity=0.5, line width=0.5pt, draw=orange!40,fill=orange!40, minimum height=0.4in, minimum width=1in, label=Group 1](group1) at (1.5,2){};
+		\node[ellipse, fill opacity=0.2, draw opacity=0.5, line width=0.5pt, draw=purple!40,fill=purple!40,  minimum height=0.4in, minimum width=1in, label=Group 2](group2) at (4.5,2){};
 	\end{tikzpicture}
 	\caption{Example of groups in a network flow graph}
 	\label{fig:groups}
@@ -429,8 +429,6 @@ But the group flow is required to be one at most.  This is expressed by the ineq
 \begin{align}\label{eqn:cGroupFlow}
 	Bx \le \begin{bmatrix} 1\\ 1 \\\vdots \\ 1\end{bmatrix},
 \end{align}
-where $x$ is a matrix giving the number of chargers traversing an edge, and $B$ describes all mount edges (see figure \ref{fig:edgeTypes}) corresponding to the same group. In $B$, the i,jth value is one if the jth edge mounts to the ith group.  For example, the graph given in figure \ref{fig:groupEdges} would have the following group constraints:
-
 
 \begin{figure}
 \centering
@@ -468,6 +466,7 @@ where $x$ is a matrix giving the number of chargers traversing an edge, and $B$ 
 	\caption{Connect edge example for groups}
 	\label{fig:groupEdges} 
 \end{figure} 
+
 \section{Multi-Graph Additions}
 An additional contribution this work offers is the expansion to night vs day charging. During the night, there is one charger for each bus; each with a single charge rate.  During this time, buses are also available to charge at any time.  These differences in operations introduce changes to the original graph formation and warrent a separate graph.  
 \par Night graphs consider a situation where both the number of buses reflecte the number of chargers and buses are readily available.  Note how there are several source and sink nodes in figure \ref{fig:nightVsDayGraph}.  When a bus deploys for the day, the available number of charges changes and are reflected in the underlying source and sink constraints.
