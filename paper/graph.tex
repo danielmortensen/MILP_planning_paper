@@ -1,15 +1,15 @@
 \section{Graph Based Problem Formulation}
 A solution to the bus charge problem must reveal \textit{what} to charge and \textit{when} to charge it. This implies a two dimensional solution where each axis describes \textit{what} and \textit{when} to charge respectively. The first dimension contains one charge state for each bus and an additional `no-charge' state. The time axis is continuous by nature and is represented discretly by the time indices $t_0,t_1,\hdots,t_n$ 
 \par The intersection of each charge state and time index is represented by a node (see figure \ref{fig:graphGridStructure}) where the the $ij^{\text{th}}$ node represents the $i^{\text{th}}$ charge state at the $j^{\text{th}}$ time index. For example, $\text{node}_{1,1}$ of figure \ref{fig:graphGridStructure} represents a state where a charger charges Bus 2 at time index $t_0$. 
-\par Note that a complete grid, implies that each charger can charge any bus at any time.  When buses leave the station for routes however, they become unavailable. To reflect the various absenses caused by running routes, charge nodes corresponding to route times must be removed (see figure \ref{fig:busAvailEncode}). 
+\par A complete grid, however, implies that each charger can charge any bus at any time.  When buses leave the station for routes, they become unavailable and thus, cannot always charge. To reflect the various absenses caused by running routes, charge nodes corresponding to route times must be removed (see figure \ref{fig:busAvailEncode}). 
 
 \begin{figure*}
 	\subfloat[Graph showing buses and timesteps \label{fig:graphGridStructure}]{
 		\centering
 		\begin{tikzpicture}
-			\node[rectangle, fill=gray!10, minimum width=3in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 2}](bus2Box) at (3,1){};
-			\node[rectangle, fill=gray!10, minimum width=3in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 1}](bus1Box) at (3,0){};
-			\node[rectangle, fill=gray!10, minimum width=3in, minimum height=.3in,label=left:\scalebox{0.8}{No Charge}](bus1Box) at (3,-1){};
+			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 2}](bus2Box) at (3,1){};
+			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 1}](bus1Box) at (3,0){};
+			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{No Charge}](bus1Box) at (3,-1){};
 
 			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.1in](one) at (0,0){};
 			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.1in](two) at (1,0){}; 
@@ -47,9 +47,9 @@ A solution to the bus charge problem must reveal \textit{what} to charge and \te
 	\subfloat[two-bus scenario from figure \ref{fig:graphGridStructure} where each bus is absent at $t_0$, $t_3$, and $t_6$ \label{fig:busAvailEncode}]{
 		\centering
 		\begin{tikzpicture} 
-			\node[rectangle, fill=gray!10, minimum width=3in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 2}](bus2Box) at (3,1){};
-			\node[rectangle, fill=gray!10, minimum width=3in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 1}](bus1Box) at (3,0){};
-			\node[rectangle, fill=gray!10, minimum width=3in, minimum height=.3in,label=left:\scalebox{0.8}{No Charge}](bus1Box) at (3,-1){};
+			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 2}](bus2Box) at (3,1){};
+			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 1}](bus1Box) at (3,0){};
+			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{No Charge}](bus1Box) at (3,-1){};
 
 			\node[circle, draw, dashed, line width=0.5pt, draw=black, minimum size=0.1in](one) at (0,0){};
 			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.1in](two) at (1,0){}; 
@@ -85,6 +85,7 @@ A solution to the bus charge problem must reveal \textit{what} to charge and \te
 		\end{tikzpicture}
 	}
 		\caption{Bus availability represented in a graph}
+		\label{fig:busAvailComparison}
 \end{figure*}
 
 \par Additionally, charge nodes are only valid for small periods of time. As time progresses, chargers must transition from state to state. These state transitions are represented by forming a weighted connection, or edge between two nodes (see figure \ref{fig:edgeNodeRel}). Each edge leaves a previous state and enters a target state. The use of each edge is determined by its weight, which gives the number of chargers using the transition.  Therefore edges by themselves represent \textit{potential} transitions (see figure \ref{fig:completeGraph}), and are made `active' by assigning a non-zero weight.  
@@ -102,9 +103,9 @@ A solution to the bus charge problem must reveal \textit{what} to charge and \te
 \begin{figure}
 	\centering
 	\begin{tikzpicture} 
-		\node[rectangle, fill=gray!10, minimum width=3in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 2}](bus2Box) at (3,1){};
-		\node[rectangle, fill=gray!10, minimum width=3in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 1}](bus1Box) at (3,0){};
-		\node[rectangle, fill=gray!10, minimum width=3in, minimum height=.3in,label=left:\scalebox{0.8}{No Charge}](bus1Box) at (3,-1){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 2}](bus2Box) at (3,1){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 1}](bus1Box) at (3,0){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{No Charge}](bus1Box) at (3,-1){};
 
 		\node[circle, draw, dashed, line width=0.5pt, draw=black, minimum size=0.1in](one) at (0,0){};
 		\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.1in](two) at (1,0){}; 
@@ -178,7 +179,7 @@ A solution to the bus charge problem must reveal \textit{what} to charge and \te
 	\caption{Complete Problem formulation}
 	\label{fig:completeGraph}
 \end{figure}
-\par Edges can also be thought of as decisions because they determine the next state for each charger. In the bus charge problem, there are four types of decisions: Connect, Charge, No-Charge, and Disconnect. Connect edges are formed when an edge transitions from a no-charge state to a charge state, charge edges are given by connections from one charge state to another, No-Charge transitions occur between no-charge nodes, and disconnect edges transition from charge to no-charge states (see figure \ref{fig:edgeTypes}).
+\par Edges can also be thought of as decisions because they determine the next state for each charger. In the bus charge problem, there are four types of decisions: Connect, Charge, No-Charge, and Disconnect. Connect edges are formed when an edge transitions from a no-charge to a charge state, charge edges are given by connections from one charge state to another, No-Charge transitions occur between no-charge nodes, and disconnect edges transition from charge to no-charge states (see figure \ref{fig:edgeTypes}).
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
@@ -210,9 +211,9 @@ A solution to the bus charge problem must reveal \textit{what} to charge and \te
 \begin{figure}
 	\centering
 	\begin{tikzpicture} 
-		\node[rectangle, fill=gray!10, minimum width=3in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 2}](bus2Box) at (3,1){};
-		\node[rectangle, fill=gray!10, minimum width=3in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 1}](bus1Box) at (3,0){};
-		\node[rectangle, fill=gray!10, minimum width=3in, minimum height=.3in,label=left:\scalebox{0.8}{No Charge}](bus1Box) at (3,-1){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 2}](bus2Box) at (3,1){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 1}](bus1Box) at (3,0){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{No Charge}](bus1Box) at (3,-1){};
 
 		\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.1in](two) at (1,0){}; 
 		\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.1in](three) at (2,0){};
@@ -283,7 +284,7 @@ A solution to the bus charge problem must reveal \textit{what} to charge and \te
 
 
 \par To find the optimal set of weights, the graph must first be encoded in an incidence matrix. An incidence matrix organizes relationships between nodes and edges by describing which edges depart from and connect to which nodes. An incidence matrix $A$ is an nNode $\times$ nEdge matrix where nNode is the number of nodes, and nEdge is the number of edges. 
-\par The columns of $A$ describe connections for each edge and the rows give connections for each node. Incoming connections are represented with $1$, outgoing connections with $-1$, and no connection with $0$. For example, the graph in figure \ref{fig:genericGraph} can be represented as:
+\par The columns of $A$ describe connections for each edge and the rows give connections for each node. Incoming connections are represented with $1$, outgoing connections with $-1$, and no connection with $0$. For example, the graph in figure \ref{fig:genericGraph} is represented as:
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
@@ -310,7 +311,8 @@ A solution to the bus charge problem must reveal \textit{what} to charge and \te
 \end{align}
 \par  An incidence matrix can be used to find the number of chargers entering and leaving each state. None of the states (charging/non-charging) can create or destroy chargers and so the number of incoming must always equal the number of outgoing chargers. The only exception occurs at \textit{source} and \textit{sink} nodes.
 \par A source node represents the beginning state of all chargers.  Because a source state is the first, there are no incoming edges and hence, the net difference between incoming and outgoing chargers, or \textit{the net-flow}, will be minus the number of chargers. 
-\par Sink nodes represent the final state, where all chargers enter and finish (see figure \ref{fig:sourceSink}). Because sinks have no outgoing edges, they maintain a positive net-flow equal to the number of chargers. Let $x$ be a vector representing the edge weights, $A$ be an adjacency matrix, and $f$ be a vector where $f_i$ gives the net-flow for the $i^{\text{th}}$ node. The net-flow for each node can be expressed as 
+\par Sink nodes represent the final state, where all chargers enter and finish (see figure \ref{fig:sourceSink}). Because sinks have no outgoing edges, they maintain a positive net-flow equal to the number of chargers. 
+\par Let $x$ be a vector representing the edge weights, $A$ be an adjacency matrix, and $c_f$ be a vector where $c_{f_i}$ gives the net-flow for the $i^{\text{th}}$ node. The net-flow for each node can be expressed as 
 
 \begin{figure}
 	\centering
@@ -335,14 +337,14 @@ A solution to the bus charge problem must reveal \textit{what} to charge and \te
 \end{figure} 
 
 \begin{align}
-	Ax = f
+	Ax = c_f
 \end{align}
-This expression can be used to constrain the net-flow of each node.  $f$ must equal zero for all non-source and non-sink elements and source/sink nodes must have net-flows equal to $-\text{nChargers}$ and nChargers respectively (see equation \ref{eqn:cFlow}).
+This expression can be used to constrain the net-flow of each node.  $c_f$ must equal zero for all non-source and non-sink elements and source/sink nodes must have net-flows equal to $-\text{nChargers}$ and nChargers respectively (see equation \ref{eqn:cFlow}).
 \begin{align}\label{eqn:cFlow}
 	Ax = \begin{bmatrix} 0 \\ \vdots \\ -\text{nCharger} \\ \vdots \\ 0 \\ \text{nCharger} \\ \vdots \\ 0\end{bmatrix}
 \end{align}
 
-\par Flow can also be used to ensure that buses connect to only one charger at a time. Let a charge session, or \textit{group}, be the set of all charge nodes between routes as shown in figure \ref{fig:groups}. The \textit{group flow} is the number of chargers that enter a group and is computed by adding the weights for all incoming edges (see figure \ref{fig:groupedEdges}). 
+\par Flow can also be used to ensure that buses connect to only one charger at a time. Let a charge session, or \textit{group}, be the set of all charge nodes between routes as shown in figure \ref{fig:groups}. The \textit{group flow} is the number of chargers that enter a group and is represented as the sum of all incoming edge weights (see figure \ref{fig:groupedEdges}). 
 \par Let $B$ be a nGroup $\times$ nEdge matrix where the $ij^{\text{th}}$ entry is $1$ if the $j^{\text{th}}$ edge enters the $i^{\text{th}}$ group and $0$ otherwise. For example, the $B$ matrix corresponding to figure \ref{fig:groupEdges} contains $1$ in the $7^{\text{th}}$ and $10^{\text{th}}$ columns for Group 1, and the $12^{\text{th}}$ and $15^{\text{th}}$ columns for group 2 as given in equation \ref{eqn:groupB}.
 \begin{align}\label{eqn:groupB}
 	B = \begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
@@ -421,9 +423,9 @@ This expression can be used to constrain the net-flow of each node.  $f$ must eq
 	\caption{Incoming Group Edges}
 	\label{fig:groupedEdges} 
 \end{figure} 
-The group flow is then computed as 
+Let $x$ be the edge weights as before and $c_g$ be an nGroup $\times$ 1 vector where the $i^{\text{th}}$ element gives the group flow for group $i$. The group flow is then computed as 
 \begin{align}
-	Bx = \text{Group Flow}.
+	Bx = c_g
 \end{align}
 But the group flow is required to be one at most.  This is expressed by the inequality given in equation \ref{eqn:cGroupFlow}.
 \begin{align}\label{eqn:cGroupFlow}
@@ -466,129 +468,3 @@ But the group flow is required to be one at most.  This is expressed by the ineq
 	\caption{Connect edge example for groups}
 	\label{fig:groupEdges} 
 \end{figure} 
-
-\section{Multi-Graph Additions}
-An additional contribution this work offers is the expansion to night vs day charging. During the night, there is one charger for each bus; each with a single charge rate.  During this time, buses are also available to charge at any time.  These differences in operations introduce changes to the original graph formation and warrent a separate graph.  
-\par Night graphs consider a situation where both the number of buses reflecte the number of chargers and buses are readily available.  Note how there are several source and sink nodes in figure \ref{fig:nightVsDayGraph}.  When a bus deploys for the day, the available number of charges changes and are reflected in the underlying source and sink constraints.
-\begin{figure*}
-	\centering
-	\begin{tikzpicture} 
-		% morning graph
-		\node[rectangle, fill=gray!7, minimum width=1.5in, minimum height=1.75in, label=above:Morning Graph](mBox) at (-2.5,1.65){};
-		\node[circle, fill=green!20, line width=0.5pt, draw=black!40, minimum size=0.1in](mOne) at (-4,0){};
-		\node[circle, fill=blue!20, line width=0.5pt, draw=black!40, minimum size=0.1in](mTwo) at (-3,0){}; 
-		\node[circle, fill=blue!20, line width=0.5pt, draw=black!40, minimum size=0.1in](mThree) at (-2,0){};
-		\node[circle, fill=red!20, line width=0.5pt, draw=black!40, minimum size=0.1in](mFour) at (-1,0){};
-
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](mFive) at (-3,2){};
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](mSix) at (-2,2){};
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](mSeven) at (-3,3){};
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](mEight) at (-2,3){};
-
-		\draw[->, line width=0.5pt, color=black!40] (mOne.east) -- (mTwo.west){};
-		\draw[->, line width=0.5pt, color=black!40] (mTwo.east) -- (mThree.west){};
-		\draw[->, line width=0.5pt, color=black!40] (mThree.east) -- (mFour.west){};
-
-		\draw[->, line width=0.5pt, color=black!40] (mOne.north east) -- (mFive.south west){};
-		\draw[->, line width=0.5pt, color=black!40] (mTwo.north east) -- (mSix.south west){};
-		\draw[->, line width=0.5pt, color=black!40] (mOne.north east) -- (mSeven.south west){};
-                \draw[->, line width=0.5pt, color=black!40] (mTwo.north east) -- (mEight.south west){};
-
-                \draw[->, line width=0.5pt, color=black!40] (mFive.south east) -- (mThree.north west){}; 
-                \draw[->, line width=0.5pt, color=black!40] (mSix.south east) -- (mFour.north west){};
-                \draw[->, line width=0.5pt, color=black!40] (mSeven.south east) -- (mThree.north west){};
-		\draw[->, line width=0.5pt, color=black!40] (mEight.south east) -- (mFour.north west){};
-
-                \draw[->, line width=0.5pt, color=black!40] (mFive.east) -- (mSix.west){};
-                \draw[->, line width=0.5pt, color=black!40] (mSeven.east) -- (mEight.west){};
-
-		% night graph
-		\node[rectangle, fill=gray!7, minimum width=1.5in, minimum height=1.75in, label=above:Night Graph](nBox) at (8.5,1.65){};
-		\node[circle, fill=green!20, line width=0.5pt, draw=black!40, minimum size=0.1in](nOne) at (7,0){};
-		\node[circle, fill=blue!20, line width=0.5pt, draw=black!40, minimum size=0.1in](nTwo) at (8,0){}; 
-		\node[circle, fill=blue!20, line width=0.5pt, draw=black!40, minimum size=0.1in](nThree) at (9,0){};
-		\node[circle, fill=red!20, line width=0.5pt, draw=black!40, minimum size=0.1in](nFour) at (10,0){};
-
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](nFive) at (8,2){};
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](nSix) at (9,2){};
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](nSeven) at (8,3){};
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](nEight) at (9,3){};
-
-		\draw[->, line width=0.5pt, color=black!40] (nOne.east) -- (nTwo.west){};
-		\draw[->, line width=0.5pt, color=black!40] (nTwo.east) -- (nThree.west){};
-		\draw[->, line width=0.5pt, color=black!40] (nThree.east) -- (nFour.west){};
-
-		\draw[->, line width=0.5pt, color=black!40] (nOne.north east) -- (nFive.south west){};
-		\draw[->, line width=0.5pt, color=black!40] (nTwo.north east) -- (nSix.south west){};
-		\draw[->, line width=0.5pt, color=black!40] (nOne.north east) -- (nSeven.south west){};
-                \draw[->, line width=0.5pt, color=black!40] (nTwo.north east) -- (nEight.south west){};
-
-                \draw[->, line width=0.5pt, color=black!40] (nFive.south east) -- (nThree.north west){}; 
-                \draw[->, line width=0.5pt, color=black!40] (nSix.south east) -- (nFour.north west){};
-		\draw[->, line width=0.5pt, color=black!40] (nSeven.south east) -- (nThree.north west){};
-		\draw[->, line width=0.5pt, color=black!40] (nEight.south east) -- (nFour.north west){};
-
-		\draw[->, line width=0.5pt, color=black!40] (nFive.east) -- (nSix.west){};
-                \draw[->, line width=0.5pt, color=black!40] (nSeven.east) -- (nEight.west){};
-
-
-		% day graph	
-		\node[rectangle, fill=gray!7, minimum width=2.7in, minimum height=1.75in, label=above:Day Graph](dBox) at (3,1.65){}; 
-		\node[circle, fill=green!20, line width=0.5pt, draw=black!40, minimum size=0.1in](one) at (0,0){};
-		\node[circle, fill=blue!20, line width=0.5pt, draw=black!40, minimum size=0.1in](two) at (1,0){}; 
-		\node[circle, fill=blue!20, line width=0.5pt, draw=black!40, minimum size=0.1in](three) at (2,0){};
-		\node[circle, fill=blue!20, line width=0.5pt, draw=black!40, minimum size=0.1in](four) at (3,0){};
-		\node[circle, fill=blue!20, line width=0.5pt, draw=black!40, minimum size=0.1in](five) at (4,0){};
-		\node[circle, fill=blue!20, line width=0.5pt, draw=black!40, minimum size=0.1in](six) at (5,0){};
-		\node[circle, fill=red!20, line width=0.5pt, draw=black!40, minimum size=0.1in](seven) at (6,0){};
-		
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](eight) at (1,2){};
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](nine) at (2,2){};
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](ten) at (4,2){};
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](eleven) at (5,2){};
-
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](twelve) at (1,3){};
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](thirteen) at (2,3){};
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](fourteen) at (4,3){};
-		\node[circle, fill=yellow!20, line width=0.5pt, draw=black!40, minimum size=0.1in, inner sep=1pt](fifteen) at (5,3){};
-
-		\draw [->, line width=0.5pt, color=black!40] (one.east) -- (two.west);
-		\draw [->, line width=0.5pt, color=black!40] (two.east) -- (three.west);
-		\draw [->, line width=0.5pt, color=black!40] (three.east) -- (four.west);
-		\draw [->, line width=0.5pt, color=black!40] (four.east) -- (five.west);
-		\draw [->, line width=0.5pt, color=black!40] (five.east) -- (six.west);
-		\draw [->, line width=0.5pt, color=black!40] (six.east) -- (seven.west);
-
-		\draw [->, line width=0.5pt, color=black!40] (one.north east) -- (eight.south west);
-		\draw [->, line width=0.5pt, color=black!40] (two.north east) -- (nine.south west);
-		\draw [->, line width=0.5pt, color=black!40] (four.north east) -- (ten.south west);
-		\draw [->, line width=0.5pt, color=black!40] (five.north east) -- (eleven.south west);
-		\draw [->, line width=0.5pt, color=black!40] (eight.south east) -- (three.north west);
-		\draw [->, line width=0.5pt, color=black!40] (nine.south east) -- (four.north west);
-		\draw [->, line width=0.5pt, color=black!40] (ten.south east) -- (six.north west);
-		\draw [->, line width=0.5pt, color=black!40] (eleven.south east) -- (seven.north west);
-		\draw [->, line width=0.5pt, color=black!40] (eight.east) -- (nine.west);
-		\draw [->, line width=0.5pt, color=black!40] (ten.east) -- (eleven.west); 
-
-		\draw [->, line width=0.5pt, color=black!40] (one.north east) -- (twelve.south west);
-		\draw [->, line width=0.5pt, color=black!40] (two.north east) -- (thirteen.south west);
-		\draw [->, line width=0.5pt, color=black!40] (four.north east) -- (fourteen.south west);
-		\draw [->, line width=0.5pt, color=black!40] (five.north east) -- (fifteen.south west);
-		\draw [->, line width=0.5pt, color=black!40] (twelve.south east) -- (three.north west);
-		\draw [->, line width=0.5pt, color=black!40] (thirteen.south east) -- (four.north west);
-		\draw [->, line width=0.5pt, color=black!40] (fourteen.south east) -- (six.north west);
-		\draw [->, line width=0.5pt, color=black!40] (fifteen.south east) -- (seven.north west);
-		\draw [->, line width=0.5pt, color=black!40] (twelve.east) -- (thirteen.west);
-		\draw [->, line width=0.5pt, color=black!40] (fourteen.east) -- (fifteen.west); 
-
-
-		\draw [dotted, color=black,-,line width=1pt] (mSix.north east) edge[->,bend left=20pt]node[above=-2.5pt]{\scalebox{0.7}{Bus 1 SOC}}(eight.north west); 
-		\draw [dotted, color=black,-,line width=1pt] (mEight.north east) edge[->,bend left=20pt]node[above=-2.5pt]{\scalebox{0.7}{Bus 2 SOC}}(twelve.north west);
-
-		\draw [dotted, color=black,-,line width=1pt] (eleven.north east) edge[->,bend left=20pt]node[above=-2.5pt]{\scalebox{0.7}{Bus 1 SOC}}(nFive.north west); 
-		\draw [dotted, color=black,-,line width=1pt] (fifteen.north east) edge[->,bend left=20pt]node[above=-2.5pt]{\scalebox{0.7}{Bus 2 SOC}}(nSeven.north west);
-	\end{tikzpicture}
-	\caption{Night vs Day Graphs}
-	\label{fig:nightVsDayGraph}
-\end{figure*}
-\par Changes in the first graph are reflected in the second through use of state of charge variables.

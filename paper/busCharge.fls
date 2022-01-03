@@ -213,6 +213,12 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/preprint/balance.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/preprint/balance.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
@@ -337,6 +343,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT batterySoc.tex
 INPUT batterySoc.tex
+INPUT multiGraph.tex
+INPUT multiGraph.tex
 INPUT rateSchedule.tex
 INPUT rateSchedule.tex
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
