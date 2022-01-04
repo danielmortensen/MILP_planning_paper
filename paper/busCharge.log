@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.11.2)  2 JAN 2022 20:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.11.2)  3 JAN 2022 20:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1144,21 +1144,18 @@ Overfull \hbox (9.97588pt too wide) detected at line 352
 Underfull \vbox (badness 1270) has occurred while \output is active []
 
 )
-(./batterySoc.tex
-Overfull \hbox (6.45447pt too wide) in paragraph at lines 75--76
+(./batterySoc.tex (./media/socDiagram.tex
+Overfull \hbox (6.45447pt too wide) in paragraph at lines 62--63
  [][] 
  []
 
-[4]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5]
+) (./media/graphDelta.tex
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
-)
-(./multiGraph.tex
+) (./media/dSocDiagram.tex [4])
+(./media/multirateChargeEdges.tex) [5]) (./multiGraph.tex
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
@@ -1182,19 +1179,20 @@ Underfull \hbox (badness 1412) in paragraph at lines 45--45
 \OT1/ptm/m/n/10 Trans-porta-tion Elec-tri-fi-ca-tion Con-fer-ence and Expo
  []
 
-[7]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
- [8] (./busCharge.aux)
+[7] [8
+
+] (./busCharge.aux)
 Package logreq Info: Writing requests to 'busCharge.run.xml'.
 \openout1 = `busCharge.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24440 strings out of 492982
- 489773 string characters out of 6134896
- 861004 words of memory out of 5000000
- 27569 multiletter control sequences out of 15000+600000
+ 24454 strings out of 492982
+ 490040 string characters out of 6134896
+ 864833 words of memory out of 5000000
+ 27570 multiletter control sequences out of 15000+600000
  40276 words of font info for 85 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  55i,20n,67p,981b,1263s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1211,7 +1209,7 @@ msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 ive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmri8a.pfb>
-Output written on busCharge.pdf (8 pages, 183156 bytes).
+Output written on busCharge.pdf (8 pages, 182218 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream

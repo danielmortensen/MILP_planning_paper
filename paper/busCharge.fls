@@ -343,6 +343,14 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT batterySoc.tex
 INPUT batterySoc.tex
+INPUT media/socDiagram.tex
+INPUT media/socDiagram.tex
+INPUT media/graphDelta.tex
+INPUT media/graphDelta.tex
+INPUT media/dSocDiagram.tex
+INPUT media/dSocDiagram.tex
+INPUT media/multirateChargeEdges.tex
+INPUT media/multirateChargeEdges.tex
 INPUT multiGraph.tex
 INPUT multiGraph.tex
 INPUT rateSchedule.tex
