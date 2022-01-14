@@ -43,4 +43,50 @@ problem formulation (to be included in the introduction):
 6. move the list of contributions to the end of the literature review section
 
 
->
+TUESDAY NOTES:
+1. Get to the chase in fewer words in the first of the introduction.  We want to talk about environment.
+3. the power companies design their rate schedules to recover these costs and include... talk about rate schedule and THEN its elements. Include citation for rate schedule 
+4. perhaps introduce that they consume power in limited time period which stresses the grid.
+5. ...plan when buses will charge, and how much power will be drawn...
+9. need to work the first sentance to get to the point more quickly
+
+three ideas in the introduction:
+1. transit authorities
+    i. stations
+    ii. depots
+    iii. chargers
+    iv. routes
+    v. schedules
+    vi. operators
+    vii. passengers/commuters
+    viii. cost for power
+2. BEB
+    i. batteries
+    ii. maintenance
+    iii. emissions
+    iv. leverage renewables 
+3. power providers
+    i. rate schedule
+    ii. infrastructure and defered upgrades -- needs more emphasis
+
+"public transit is being pushed to increase environmental friendliness and they have to reduce cost and maintain quality of service for commuters."
+cost:  --need to minimize
+environment: use electric buses
+quality of service: must meet routes -- constraints for optimization
+
+perhaps add another paragraph that introduces concepts to be used in the rest of the paper (i.e. graphs).
+
+an additional section that talks about our contributions 
+
+give a brief overview of what we are going to talk about at the beginning of the bus graph section. (flows nicely now, is this still necessary?)
+
+introduction:
+1: we want to use BEBs because they are nice to the environment and offer fewer maintnance costs.
+2: BEBs provide additional challenges: not overtaxing the grid, charging within time constraints.
+3: Rapid power draw, wear on infrastructure, power company expenses and billing rates
+4: charge within time constraints: give operations overview and what these constraints entail
+5: Planning a charge schedule must account for external and beb power draw, and time constraints.  This is the `bus charge problem'
+6: This paper offers a solution to the bus charge problem.  This solution formulates the bus charge problem as a set of directed graphs and uses edge weights to represent when buses will be charged. Contributions include day/night charging, external loads, multi-rate charging, and minimizing over fiscal rate schedule.
+
+graph section:
+

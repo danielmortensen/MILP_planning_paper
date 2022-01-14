@@ -43,16 +43,16 @@ The results from equation \ref{eqn:g}, however, only hold when a charger is conn
 	& \begin{dcases} 
 		\begin{array}{l}
 		g_{i,k,l} = d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM
-		\end{array} & x_{i,k} = 1\\
+		\end{array} & x_{i,k,l} = 1\\
 		\begin{array}{l}
 		g_{i,k,l} = 0
-		\end{array} & x_{i,k} = 0\\
+		\end{array} & x_{i,k,l} = 0\\
 	\end{dcases} \\ 
 	\Rightarrow & 
 	\begin{dcases} 
 		\begin{array}{l}
-		g_{i,k,l} \le d_{i,k,l}(\bar{a}_l - 1) - \bar{b}_lM\\
-		g_{i,k,l} \ge d_{i,k,l}(\bar{a}_l - 1) - \bar{b}_lM\\
+		g_{i,k,l} \le d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM\\
+		g_{i,k,l} \ge d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM\\
 		\end{array}
 		& x_{i,k,l} = 1 \\
 		\begin{array}{l}
@@ -94,7 +94,7 @@ The results of equation \ref{eqn:bigM2} obtain a switching effect.  When $x_{i,k
 		\color{red}{g_{i,k,l}} & \color{red}{\ge 0}.  
 	\end{aligned}
 \end{equation}
-The \textcolor{blue}{top two} imply equality for $g_{i,k,l}$ = $(\bar{a}_l - 1)d_{i,k} - \bar{b_l}M$.  The \textcolor{red}{bottom two} imply that $g_{i,k,l}$ is greater then zero, and less then the battery capacity.  These constraints are also true, but have no effect on $g_{i,k,l}$. When $x_{i,k,l} = 0$, equation \ref{eqn:bigM2} becomes
+The \textcolor{blue}{active constraints} imply equality for $g_{i,k,l}$ = $(\bar{a}_l - 1)d_{i,k} - \bar{b_l}M$.  The \textcolor{red}{inactive constraints} imply that $g_{i,k,l}$ is greater then zero, and less then the battery capacity.  These constraints are also true, but have no effect on $g_{i,k,l}$. When $x_{i,k,l} = 0$, equation \ref{eqn:bigM2} becomes
 \begin{equation}
 	\begin{aligned}
 		\color{red}{g_{i,k,l}}  &\color{red}{\le d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM - M} \\
@@ -103,7 +103,7 @@ The \textcolor{blue}{top two} imply equality for $g_{i,k,l}$ = $(\bar{a}_l - 1)d
 		\color{blue}{g_{i,k,l}} &\color{blue}{\ge 0}.  
 	\end{aligned}
 \end{equation}
-Where the \textcolor{red}{top two} constraints become inactive and the \textcolor{blue}{bottom two} imply equality for $g_{i,k,l} = 0$.
+Where the \textcolor{red}{inactive constraints} indicate that $g_{i,k,l}$ is less then some positive value, and greater than a negative value. These constarints have no effect as the \textcolor{blue}{active constraints} imply equality for $g_{i,k,l} = 0$.
 
 \par Equation \ref{eqn:bigM2} can be expressed in linear form as 
 \begin{equation}\label{eqn:chargeConstraints}
