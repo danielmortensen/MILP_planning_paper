@@ -1,15 +1,14 @@
 \section{Graph Based Problem Formulation}
-A solution to the bus charge problem must reveal \textit{what} to charge and \textit{when} to charge it. These two questions suggest a two dimensional solution where the first dimension describes \textit{when} and the second answers \textit{what}. The first dimension represents time as a set of discrete indices $t_0, t_1, \hdots, t_n$. The second dimension describes what each charger is doing at any one time. Because chargers can either charge a bus or not charge, the second dimension  contains one charge state for each bus and an additional `no-charge' state. 
-\par The intersection of the $i^{\text{th}}$ charge state and $j^{\text{th}}$ time index is represented by a node denoted $n_{i,j}$ (see figure \ref{fig:graphGridStructure}). For example, $n_{1,1}$ of figure \ref{fig:graphGridStructure} represents a state where a charger charges Bus 1 at time index $t_1$. 
-\par A complete grid, however, implies that each charger can charge any bus at any time.  A bus's schedule is divided into `route', and `station' times. A route time corresponds to time periods where a bus leaves the station and provides transit services. During these route times, buses are unable to charge and cannot inhabit a charge state. Therefore, all nodes corresponding to route times must be removed (see figure \ref{fig:busAvailEncode}). 
+A solution to the bus charge problem must reveal both \textit{when} and \textit{to which} bus a charger should connect. This suggests an approach with two dimensions, the first characterizing time and the second encoding charger connections as charge-states. This 2-D representation is encoded as a grid where time is given discretely in a left to right fashion and charge-states extend vertically as seen in figure \ref{fig:graphGridStructure}. In an effort to accurately represent charger use, the available charge-states include `connected' states for each bus and a `disconnected' state for idle periods. The intersection of charge-states and time indices is represented by a node, denoted $n_{i,j}$ which represents charge-state $i$ at time $t_j$ (see figure \ref{fig:graphGridStructure}).  
+\par A complete grid, however, implies that chargers can always connect to all buses.  This is not always the case as a bus's schedule is divided into `on-route' and `in-station' segments. While on-route, buses depart to provide transit services and are unable to charge. To reflect this constraint, nodes are also used to denote availability and are removed when a bus is on-route (see figure \ref{fig:busAvailEncode}). 
 
 \begin{figure*}
 	\subfloat[Graph showing buses and timesteps \label{fig:graphGridStructure}]{
 		\centering
 		\begin{tikzpicture}
-			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 2}](bus2Box) at (3,1){};
-			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 1}](bus1Box) at (3,0){};
-			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{No Charge}](bus1Box) at (3,-1){};
+			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 2}](bus2Box) at (3,1){};
+			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 1}](bus1Box) at (3,0){};
+			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Disconnected}](bus1Box) at (3,-1){};
 
 			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](one) at (0,0){\scalebox{0.5}{$n_{1,0}$}};
 			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](two) at (1,0){\scalebox{0.5}{$n_{1,1}$}}; 
@@ -47,9 +46,9 @@ A solution to the bus charge problem must reveal \textit{what} to charge and \te
 	\subfloat[two-bus scenario from figure \ref{fig:graphGridStructure} where each bus is absent at $t_0$, $t_3$, and $t_6$ \label{fig:busAvailEncode}]{
 		\centering
 		\begin{tikzpicture} 
-			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 2}](bus2Box) at (3,1){};
-			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 1}](bus1Box) at (3,0){};
-			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{No Charge}](bus1Box) at (3,-1){};
+			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 2}](bus2Box) at (3,1){};
+			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 1}](bus1Box) at (3,0){};
+			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Disconnected}](bus1Box) at (3,-1){};
 
 			\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](one)   at (0,0){};
 			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](two)   at (1,0){\scalebox{0.5}{$n_{1,1}$}}; 
@@ -88,7 +87,7 @@ A solution to the bus charge problem must reveal \textit{what} to charge and \te
 		\label{fig:busAvailComparison}
 \end{figure*}
 
-\par Transitions from one node to the next are called edges (see figure \ref{fig:edgeNodeRel}) and represent options to either connect, charge, not charge, or disconnect. The type of option depends on which nodes the edge enters and exits. For example, an edge which exits and enters no-charge nodes represents a period of time where the charger begins in a disconnected state, and is not connected thereafter. Hence, the decision was not to charge. When an edge both enters and exits charge nodes, it would, in a similar manner, indicate a to-charge decision. Hence both no-charge to no-charge and charge-to-charge transitions represent \textit{horizontal} shifts in the graph which do not change the effective state of the charger. Conversely, transitions from no-charge to charge, or charge to no-charge nodes respectively represent connect and disconnect decisions which effectively change the charger state (see figure \ref{fig:edgeTypes}). Hence, the bus charge problem can be described in terms of nodes and edges where nodes represent in-station time periods and edges give all possible charge options as shown in figure \ref{fig:completeGraph}.
+\par Transitions from one node to the next are called edges (see figure \ref{fig:edgeNodeRel}) and represent decisions to either connect, charge, not charge, or disconnect. The decision an edge represents is determined by the nodes to either side. An edge which exits and enters no-charge nodes represents a period where chargers are disconnected, resulting in a no-charge decision. Similarly, edges which both enter and exit charge nodes indicate a to-charge decision. Both to-charge and no-charge decisions transitions represent \textit{horizontal} shifts in the graph and do not change the effective state of the charger. Conversely, transitions between no-charge and to-charge nodes represent effective state changes. A no-charge to charge connection is disconnected at $t_j$ and connected at $t_{j+1}$, indicating a decision to connect. The same logic applies for a disconnection where an edge begins connected and ends disconnected (see figure \ref{fig:edgeTypes}). Hence, the bus charge problem can be described in terms of nodes and edges where nodes represent in-station time periods and edges give all possible charge options as shown in figure \ref{fig:completeGraph}.
 \par \textit{Making} decisions is encoded in the weight of each edge.  The value of each weight is used to represent the number of chargers in the transition. For example, if two chargers were left unused from $t_n$ to $t_{n+1}$, the corresponding edge would span two no-charge nodes, and have a weight value of two.
 
 \begin{figure}
@@ -105,9 +104,9 @@ A solution to the bus charge problem must reveal \textit{what} to charge and \te
 \begin{figure}
 	\centering
 	\begin{tikzpicture} 
-		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 2}](bus2Box) at (3,1){};
-		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 1}](bus1Box) at (3,0){};
-		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{No Charge}](bus1Box) at (3,-1){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 2}](bus2Box) at (3,1){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 1}](bus1Box) at (3,0){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Disconnected}](bus1Box) at (3,-1){};
 
 		\node[circle, draw, dashed, line width=0.5pt, draw=black, minimum size=0.1in](one) at (0,0){};
 		\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.1in](two) at (1,0){}; 

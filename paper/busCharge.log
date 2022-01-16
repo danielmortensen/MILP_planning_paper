@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.11.2)  13 JAN 2022 17:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.11.2)  15 JAN 2022 17:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1101,11 +1101,11 @@ Package biblatex Info: ... file 'busCharge.bbl' found.
 Package biblatex Info: Reference section=0 on input line 23.
 Package biblatex Info: Reference segment=0 on input line 23.
  (./abstract.tex) (./introduction.tex) (./literatureReview.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 10.
+LaTeX Font Info:    Try loading font information for U+msa on input line 13.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 10.
+LaTeX Font Info:    Try loading font information for U+msb on input line 13.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1113,26 +1113,26 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]) (./graph.tex
-Overfull \hbox (6.86047pt too wide) in paragraph at lines 46--87
+Overfull \hbox (33.82013pt too wide) in paragraph at lines 45--86
 [][][] 
  []
 
 
-Overfull \hbox (2.43011pt too wide) in paragraph at lines 180--181
+Overfull \hbox (15.90994pt too wide) in paragraph at lines 179--180
  [][] 
  []
 
 
-Overfull \hbox (2.31035pt too wide) in paragraph at lines 200--200
+Overfull \hbox (2.31035pt too wide) in paragraph at lines 199--199
  [][][][]\OT1/ptm/m/n/10 Disconnect 
  []
 
-
-Overfull \hbox (11.28278pt too wide) in paragraph at lines 280--281
+[2]
+Overfull \hbox (11.28278pt too wide) in paragraph at lines 279--280
  [][] 
  []
 
-[2] [3]) (./batterySoc.tex (./media/socDiagram.tex
+[3]) (./batterySoc.tex (./media/socDiagram.tex
 Overfull \hbox (6.45447pt too wide) in paragraph at lines 62--63
  [][] 
  []
@@ -1143,7 +1143,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 ) (./media/dSocDiagram.tex) [4]
-(./media/multirateChargeEdges.tex)) (./multiGraph.tex [5]
+(./media/multirateChargeEdges.tex)) (./multiGraph.tex
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
@@ -1153,9 +1153,9 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 ) (./rateSchedule.tex
+[5]
 LaTeX Font Info:    Try loading font information for TS1+ptm on input line 3.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ))
 (./fleetOperations.tex) (./objective.tex) (./gurobi.tex) (./results.tex)
@@ -1179,11 +1179,11 @@ Package logreq Info: Writing requests to 'busCharge.run.xml'.
 Here is how much of TeX's memory you used:
  24454 strings out of 492982
  490040 string characters out of 6134896
- 869545 words of memory out of 5000000
+ 837982 words of memory out of 5000000
  27570 multiletter control sequences out of 15000+600000
  40276 words of font info for 85 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 55i,20n,67p,1207b,1282s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,20n,67p,1233b,1263s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1197,7 +1197,7 @@ msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 ive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmri8a.pfb>
-Output written on busCharge.pdf (8 pages, 184463 bytes).
+Output written on busCharge.pdf (8 pages, 185277 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
