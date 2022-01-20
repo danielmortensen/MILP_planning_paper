@@ -1,94 +1,94 @@
 \section{Graph Based Problem Formulation}
-A solution to the bus charge problem must reveal both \textit{when} and \textit{to which} bus a charger should connect. This suggests an approach with two dimensions, the first characterizing time and the second encoding charger connections as charge-states. This 2-D representation is encoded as a grid where time is given discretely in a left to right fashion and charge-states extend vertically as seen in figure \ref{fig:graphGridStructure}. In an effort to accurately represent charger use, the available charge-states include `connected' states for each bus and a `disconnected' state for idle periods. The intersection of charge-states and time indices is represented by a node, denoted $n_{i,j}$ which represents charge-state $i$ at time $t_j$ (see figure \ref{fig:graphGridStructure}).  
-\par A complete grid, however, implies that chargers can always connect to all buses.  This is not always the case as a bus's schedule is divided into `on-route' and `in-station' segments. While on-route, buses depart to provide transit services and are unable to charge. To reflect this constraint, nodes are also used to denote availability and are removed when a bus is on-route (see figure \ref{fig:busAvailEncode}). 
+A solution to the bus charge problem must reveal both \textit{when} and \textit{to which} bus a charger should connect suggesting a model with two dimensions. The first dimension characterizes time and is given discretely in a left to right fashion. The second dimension encodes the charger state and extends vertically as seen in figure \ref{fig:graphGridStructure}.  The charger may occupy one of several states.  It may be connected to one of the $N$ buses, or it may be unconnected, giving a total of $N + 1$ charge states. The 2-D representation is encoded as a grid where the intersection of charge states and time indices is represented by a node, denoted $n_{i,j}$ which represents the $i^{\text{th}}$ charge state at the $j^{\text{th}}$ time index (see figure \ref{fig:graphGridStructure}).  
+\par A complete grid, however, implies that buses are always available to charge.  This is not always the case as buses cannot charge when providing transit services. To reflect this constraint, the presence of nodes is used to denote a bus's availability for charging and nodes are removed during times where a bus provides transit services (see figure \ref{fig:busAvailComparison}). 
+\begin{figure}
+\centering
+\begin{tikzpicture}
+	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 2}](bus2Box) at (3,1){};
+	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 1}](bus1Box) at (3,0){};
+	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Disconnected}](bus1Box) at (3,-1){};
 
-\begin{figure*}
-	\subfloat[Graph showing buses and timesteps \label{fig:graphGridStructure}]{
-		\centering
-		\begin{tikzpicture}
-			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 2}](bus2Box) at (3,1){};
-			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 1}](bus1Box) at (3,0){};
-			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Disconnected}](bus1Box) at (3,-1){};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](one) at (0,0){\scalebox{0.5}{$n_{1,0}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](two) at (1,0){\scalebox{0.5}{$n_{1,1}$}}; 
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](three) at (2,0){\scalebox{0.5}{$n_{1,2}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](four) at (3,0){\scalebox{0.5}{$n_{1,3}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](five) at (4,0){\scalebox{0.5}{$n_{1,4}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](six) at (5,0){\scalebox{0.5}{$n_{1,5}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](seven) at (6,0){\scalebox{0.5}{$n_{1,6}$}};
 
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](one) at (0,0){\scalebox{0.5}{$n_{1,0}$}};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](two) at (1,0){\scalebox{0.5}{$n_{1,1}$}}; 
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](three) at (2,0){\scalebox{0.5}{$n_{1,2}$}};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](four) at (3,0){\scalebox{0.5}{$n_{1,3}$}};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](five) at (4,0){\scalebox{0.5}{$n_{1,4}$}};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](six) at (5,0){\scalebox{0.5}{$n_{1,5}$}};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](seven) at (6,0){\scalebox{0.5}{$n_{1,6}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eight) at (0,1){\scalebox{0.5}{$n_{2,0}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](nine) at (1,1){\scalebox{0.5}{$n_{2,1}$}}; 
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](ten) at (2,1){\scalebox{0.5}{$n_{2,2}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eleven) at (3,1){\scalebox{0.5}{$n_{2,3}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](twelve) at (4,1){\scalebox{0.5}{$n_{2,4}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](thirteen) at (5,1){\scalebox{0.5}{$n_{2,5}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](fourteen) at (6,1){\scalebox{0.5}{$n_{2,6}$}};
 
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eight) at (0,1){\scalebox{0.5}{$n_{2,0}$}};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](nine) at (1,1){\scalebox{0.5}{$n_{2,1}$}}; 
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](ten) at (2,1){\scalebox{0.5}{$n_{2,2}$}};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eleven) at (3,1){\scalebox{0.5}{$n_{2,3}$}};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](twelve) at (4,1){\scalebox{0.5}{$n_{2,4}$}};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](thirteen) at (5,1){\scalebox{0.5}{$n_{2,5}$}};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](fourteen) at (6,1){\scalebox{0.5}{$n_{2,6}$}};
+	\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eight) at (0,-1){\scalebox{0.5}{$n_{0,0}$}};
+	\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](nine) at (1,-1){\scalebox{0.5}{$n_{0,1}$}}; 
+	\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](ten) at (2,-1){\scalebox{0.5}{$n_{0,2}$}};
+	\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eleven) at (3,-1){\scalebox{0.5}{$n_{0,3}$}};
+	\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](twelve) at (4,-1){\scalebox{0.5}{$n_{0,4}$}};
+	\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](thirteen) at (5,-1){\scalebox{0.5}{$n_{0,5}$}};
+	\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](fourteen) at (6,-1){\scalebox{0.5}{$n_{0,6}$}};
 
-			\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eight) at (0,-1){\scalebox{0.5}{$n_{0,0}$}};
-			\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](nine) at (1,-1){\scalebox{0.5}{$n_{0,1}$}}; 
-			\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](ten) at (2,-1){\scalebox{0.5}{$n_{0,2}$}};
-			\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eleven) at (3,-1){\scalebox{0.5}{$n_{0,3}$}};
-			\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](twelve) at (4,-1){\scalebox{0.5}{$n_{0,4}$}};
-			\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](thirteen) at (5,-1){\scalebox{0.5}{$n_{0,5}$}};
-			\node[circle, fill=blue!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](fourteen) at (6,-1){\scalebox{0.5}{$n_{0,6}$}};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_0$](time0Box) at (0,0){};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_1$](time1Box) at (1,0){};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_2$](time2Box) at (2,0){};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_3$](time3Box) at (3,0){};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_4$](time4Box) at (4,0){};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_5$](time5Box) at (5,0){};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_6$](time6Box) at (6,0){}; 
+\end{tikzpicture}
+	\caption{Graph showing buses and timesteps}
+	\label{fig:graphGridStructure} 
+\end{figure}
+\begin{figure}
+\centering
+\begin{tikzpicture} 
+	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 2}](bus2Box) at (3,1){};
+	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 1}](bus1Box) at (3,0){};
+	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Disconnected}](bus1Box) at (3,-1){};
 
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_0$](time0Box) at (0,0){};
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_1$](time1Box) at (1,0){};
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_2$](time2Box) at (2,0){};
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_3$](time3Box) at (3,0){};
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_4$](time4Box) at (4,0){};
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_5$](time5Box) at (5,0){};
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_6$](time6Box) at (6,0){}; 
-		\end{tikzpicture}
-	}
-	\subfloat[two-bus scenario from figure \ref{fig:graphGridStructure} where each bus is absent at $t_0$, $t_3$, and $t_6$ \label{fig:busAvailEncode}]{
-		\centering
-		\begin{tikzpicture} 
-			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 2}](bus2Box) at (3,1){};
-			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 1}](bus1Box) at (3,0){};
-			\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Disconnected}](bus1Box) at (3,-1){};
+	\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](one)   at (0,0){};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](two)   at (1,0){\scalebox{0.5}{$n_{1,1}$}}; 
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](three) at (2,0){\scalebox{0.5}{$n_{1,2}$}};
+	\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](four)  at (3,0){};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](five)  at (4,0){\scalebox{0.5}{$n_{1,3}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](six)   at (5,0){\scalebox{0.5}{$n_{1,4}$}};
+	\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](seven) at (6,0){};
 
-			\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](one)   at (0,0){};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](two)   at (1,0){\scalebox{0.5}{$n_{1,1}$}}; 
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](three) at (2,0){\scalebox{0.5}{$n_{1,2}$}};
-			\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](four)  at (3,0){};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](five)  at (4,0){\scalebox{0.5}{$n_{1,3}$}};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](six)   at (5,0){\scalebox{0.5}{$n_{1,4}$}};
-			\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](seven) at (6,0){};
+	\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eight)    at (0,1){};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](nine)     at (1,1){\scalebox{0.5}{$n_{2,1}$}}; 
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](ten)      at (2,1){\scalebox{0.5}{$n_{2,2}$}};
+	\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eleven)   at (3,1){};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](twelve)   at (4,1){\scalebox{0.5}{$n_{2,4}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](thirteen) at (5,1){\scalebox{0.5}{$n_{2,5}$}};
+	\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](fourteen) at (6,1){};
 
-			\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eight)    at (0,1){};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](nine)     at (1,1){\scalebox{0.5}{$n_{2,1}$}}; 
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](ten)      at (2,1){\scalebox{0.5}{$n_{2,2}$}};
-			\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eleven)   at (3,1){};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](twelve)   at (4,1){\scalebox{0.5}{$n_{2,4}$}};
-			\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](thirteen) at (5,1){\scalebox{0.5}{$n_{2,5}$}};
-			\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](fourteen) at (6,1){};
+	\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eight)    at (0,-1){\scalebox{0.5}{$n_{0,0}$}};
+	\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](nine)     at (1,-1){\scalebox{0.5}{$n_{0,1}$}}; 
+	\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](ten)      at (2,-1){\scalebox{0.5}{$n_{0,2}$}};
+	\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eleven)   at (3,-1){\scalebox{0.5}{$n_{0,3}$}};
+	\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](twelve)   at (4,-1){\scalebox{0.5}{$n_{0,4}$}};
+	\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](thirteen) at (5,-1){\scalebox{0.5}{$n_{0,5}$}};
+	\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](fourteen) at (6,-1){\scalebox{0.5}{$n_{0,6}$}};
 
-			\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eight)    at (0,-1){\scalebox{0.5}{$n_{0,0}$}};
-			\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](nine)     at (1,-1){\scalebox{0.5}{$n_{0,1}$}}; 
-			\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](ten)      at (2,-1){\scalebox{0.5}{$n_{0,2}$}};
-			\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eleven)   at (3,-1){\scalebox{0.5}{$n_{0,3}$}};
-			\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](twelve)   at (4,-1){\scalebox{0.5}{$n_{0,4}$}};
-			\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](thirteen) at (5,-1){\scalebox{0.5}{$n_{0,5}$}};
-			\node[circle, fill=blue!40,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](fourteen) at (6,-1){\scalebox{0.5}{$n_{0,6}$}};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_0$](time0Box) at (0,0){};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_1$](time1Box) at (1,0){};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_2$](time2Box) at (2,0){};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_3$](time3Box) at (3,0){};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_4$](time4Box) at (4,0){};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_5$](time5Box) at (5,0){};
+	\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_6$](time6Box) at (6,0){}; 
+\end{tikzpicture}
+	\caption{Bus availability represented in a graph}
+	\label{fig:busAvailComparison}
+\end{figure}
 
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_0$](time0Box) at (0,0){};
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_1$](time1Box) at (1,0){};
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_2$](time2Box) at (2,0){};
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_3$](time3Box) at (3,0){};
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_4$](time4Box) at (4,0){};
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_5$](time5Box) at (5,0){};
-			\node[rectangle, draw, minimum width=0.3in, minimum height=1.2in,label=below:$t_6$](time6Box) at (6,0){}; 
-		\end{tikzpicture}
-	}
-		\caption{Bus availability represented in a graph}
-		\label{fig:busAvailComparison}
-\end{figure*}
-
-\par Transitions from one node to the next are called edges (see figure \ref{fig:edgeNodeRel}) and represent decisions to either connect, charge, not charge, or disconnect. The decision an edge represents is determined by the nodes to either side. An edge which exits and enters no-charge nodes represents a period where chargers are disconnected, resulting in a no-charge decision. Similarly, edges which both enter and exit charge nodes indicate a to-charge decision. Both to-charge and no-charge decisions transitions represent \textit{horizontal} shifts in the graph and do not change the effective state of the charger. Conversely, transitions between no-charge and to-charge nodes represent effective state changes. A no-charge to charge connection is disconnected at $t_j$ and connected at $t_{j+1}$, indicating a decision to connect. The same logic applies for a disconnection where an edge begins connected and ends disconnected (see figure \ref{fig:edgeTypes}). Hence, the bus charge problem can be described in terms of nodes and edges where nodes represent in-station time periods and edges give all possible charge options as shown in figure \ref{fig:completeGraph}.
-\par \textit{Making} decisions is encoded in the weight of each edge.  The value of each weight is used to represent the number of chargers in the transition. For example, if two chargers were left unused from $t_n$ to $t_{n+1}$, the corresponding edge would span two no-charge nodes, and have a weight value of two.
+\par Transitions from one node to the next are called edges (see figure \ref{fig:edgeNodeRel}) and represent decisions to either connect, charge, not charge, or disconnect. The decision an edge represents is determined by the nodes on either end. For example, the edge from $n_{0,0}$ to $n_{0,1}$ in figure \ref{fig:edgeTypes} represents a period where chargers are idle, resulting in a no-charge decision. This occures because both $n_{0,0}$ and $n_{0,1}$ represent a disconnected charge state. Similarly, the edge between $n_{1,1}$ and $n_{1,2}$ indicates a to-charge decision as both $n_{1,1}$ and $n_{1,2}$ represent states where a bus is connected. Both to-charge and no-charge decisions are represented by \textit{horizontal} transitions in the graph and do not change the effective charger state. 
+\par Conversely, diagonal transitions represent effective state changes where a charger either connects to or disconnects from a bus. One such example from figure \ref{fig:edgeTypes} includes the edge from $n_{0,0}$ to $n_{1,1}$. This edge represents an interval where a charger is disconnected at $t_j$ and connected at $t_{j+1}$, implying a `to-connect' decision. The same logic applies in reverse for the edge between $n_{1,2}$ and $n_{0,3}$. Hence, the bus charge problem can be described in terms of nodes and edges where nodes represent connectable time instances and edges encode \textit{potential} decisions. Figure \ref{fig:completeGraph} shows how the decision space of the two-bus scenario given in figure \ref{fig:busAvailComparison} might be encoded. 
+\par Schedule selection is then represented by selecting edges to determine a path through the graph. Edge selection is indicated by the edge weight where the weight value represents the number of chargers in the transition. Therefore, a zero-valued weight represents an unused, or inactive, edge, and an $n$-valued weight represents an `active' edge used by $n$ chargers. 
 
 \begin{figure}
 	\centering
@@ -104,9 +104,12 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 \begin{figure}
 	\centering
 	\begin{tikzpicture} 
-		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 2}](bus2Box) at (3,1){};
-		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 1}](bus1Box) at (3,0){};
-		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Disconnected}](bus1Box) at (3,-1){};
+%		\node[rectangle, fill=gray!10, minimum width=1in,   minimum height=.3in](bus2BoxLeft) at (-1,1){};
+%		\node[rectangle, fill=gray!10, minimum width=1in,   minimum height=.3in](bus2BoxLeft) at (-1,0){};
+%		\node[rectangle, fill=gray!10, minimum width=1in,   minimum height=.3in](bus2BoxLeft) at (-1,-1){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.6}{Connected: Bus 2}](bus2Box) at (3,1){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.6}{Connected: Bus 1}](bus1Box) at (3,0){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.6}{Disconnected}](bus1Box) at (3,-1){};
 
 		\node[circle, draw, dashed, line width=0.5pt, draw=black, minimum size=0.1in](one) at (0,0){};
 		\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.1in](two) at (1,0){}; 
@@ -177,18 +180,18 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 		\draw[->, line width=0.5pt] (twelve.east) -- (thirteen.west);
 
 	\end{tikzpicture}
-	\caption{Complete Problem formulation}
+	\caption{Graph-based model of the complete decision-space}
 	\label{fig:completeGraph}
 \end{figure}
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
-		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.4in, inner sep=0in](one) at (0,0){\scalebox{0.7}{\begin{tabular}{c}No\\ Charge \end{tabular}}};
-		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.4in, inner sep=0in](two) at (2.3,0){\scalebox{0.7}{\begin{tabular}{c}No\\ Charge \end{tabular}}};
-		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.4in, inner sep=0in](three) at (4.6,0){\scalebox{0.7}{\begin{tabular}{c}No\\ Charge \end{tabular}}};
-		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.4in, inner sep=0in](four) at (6.9,0){\scalebox{0.7}{\begin{tabular}{c}No\\ Charge \end{tabular}}};
-		\node[circle, fill=yellow!20,line width=0.5pt, draw=black, text width=0.4in, inner sep=0in](five) at (2.3,3){\scalebox{0.7}{\begin{tabular}{c} Charge \end{tabular}}};
-		\node[circle, fill=yellow!20,line width=0.5pt, draw=black, text width=0.4in, inner sep=0in](six) at (4.6,3){\scalebox{0.7}{\begin{tabular}{c}Charge \end{tabular}}};
+		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=1pt,   align=center](one)   at (0,0)  {$n_{0,0}$};
+		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=1pt,   align=center](two)   at (2.3,0){$n_{0,1}$};
+		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=1pt,   align=center](three) at (4.6,0){$n_{0,2}$};
+		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=1pt,   align=center](four)  at (6.9,0){$n_{0,3}$};
+		\node[circle, fill=yellow!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=0in, align=center](five)  at (2.3,3){$n_{1,1}$};
+		\node[circle, fill=yellow!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=0in, align=center](six)   at (4.6,3){$n_{1,2}$};
 		\node(placeholder1) at (1.15,-0.75){};
 		\node(placeholder2) at (5.75,-0.75){};
 		\draw [->, line width=1pt] (one.north east) -- node[sloped, anchor=center, above, text width=2.5cm, midway, align=center]{Connect Edge}(five.south west);
@@ -206,7 +209,7 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 \end{figure}
 
 
-\par Consider a two-charger scenario where buses follow the schedule given in figure \ref{fig:completeGraph}. A solution where Bus 1 charges from $t_1$ to $t_2$ and Bus 2 charges from $t_4$ to $t_5$ would be expressed by assigning non-zero weights to the appropriate connect, charge, and disconnect edges as shown in figure \ref{fig:graphWithSolution}.  Thus, solving the bus charge problem becomes a matter of finding the optimal set of edge weights.
+\par Consider a two-charger scenario where buses using the graph in figure \ref{fig:completeGraph}. A solution where one charger connects to Bus 1 from $t_1$ to $t_2$ and Bus 2 from $t_4$ to $t_5$ would be expressed by assigning non-zero weights to the appropriate connect, charge, and disconnect edges.  The second charger remains idle as illustrated by the active edges along the bottom row of charger states (see figure \ref{fig:graphWithSolution}).  Thus, solving the bus charge problem becomes a matter of finding the optimal set of edge weights.
 
 \begin{figure}
 	\centering
@@ -282,9 +285,12 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 \end{figure}
 
 
-
-\par To find the optimal set of weights, the graph must first be encoded in an incidence matrix. An incidence matrix organizes relationships between nodes and edges by describing which edges depart from and connect to which nodes. An incidence matrix $A$ is an nNode $\times$ nEdge matrix where nNode is the number of nodes, and nEdge is the number of edges. 
-\par The columns of $A$ describe connections for each edge and the rows give connections for each node. Incoming connections are represented with $1$, outgoing connections with $-1$, and no connection with $0$. For example, the graph in figure \ref{fig:genericGraph} is represented as:
+\par The bus charge problem aims to minimize the fiscal expense from charging while meeting the operational constraints of a transit system. The graph encodes a subset of these constraints and can be expressed in linear form such that 
+\begin{align}
+	Ax=c_f	
+\end{align}
+where $A$ is an incidence matrix, $x$ is an nNode $\times 1$ vector containing edge weights, and $c_f$ is a set of \textit{flow constraints}. 
+\par  An incidence matrix organizes relationships between nodes and edges by describing which edges depart from and connect to which nodes. An incidence matrix $A$ is an nNode $\times$ nEdge matrix where nNode is the number of nodes, and nEdge is the number of edges. Incoming connections are represented by $A_{i,j} = 1$, where $i$ is the node index, and $j$ corresponds to the edge. Similarly, outgoing connections are given with $A_{i,j} = -1$, and no connection with $A_{i,j} = 0$. For example, the graph in figure \ref{fig:genericGraph} is represented as:
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
@@ -309,11 +315,10 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 		0 & 1 & 1 & 0 & 1 \\
 	\end{bmatrix}
 \end{align}
-\par  An incidence matrix can be used to find the number of chargers entering and leaving each state. None of the states (charging/non-charging) can create or destroy chargers and so the number of incoming must always equal the number of outgoing chargers. The only exception occurs at \textit{source} and \textit{sink} nodes.
-\par A source node represents the beginning state of all chargers.  Because a source state is the first, there are no incoming edges and hence, the net difference between incoming and outgoing chargers, or \textit{the net-flow}, will be minus the number of chargers. 
-\par Sink nodes represent the final state, where all chargers enter and finish (see figure \ref{fig:sourceSink}). Because sinks have no outgoing edges, they maintain a positive net-flow equal to the number of chargers. 
-\par Let $x$ be a vector representing the edge weights, $A$ be an adjacency matrix, and $c_f$ be a vector where $c_{f_i}$ gives the net-flow for the $i^{\text{th}}$ node. The net-flow for each node can be expressed as 
-
+\par  An incidence matrix can be used to find the number of chargers entering and leaving each state. Because the number of chargers must be conserved, the number of incoming and outgoing chargers must be equivalent. This is expressed in linear form as $a_i^{T}x = 0$, where $a_i$ is the $i^{\text{th}}$ row of $A$. The only exception occurs at \textit{source} and \textit{sink} nodes.
+\par A source node represents the beginning state for all chargers.  Because edge originate here, there are no incoming edges and, the net difference between the representative incoming and outgoing chargers, or \textit{the net-flow}, will be minus the number of chargers. This is described in linear form as $a_i^Tx = -\text{nCharger}$.
+\par Sink nodes represent the final state, where all edges terminate (see figure \ref{fig:sourceSink}). Because sinks have no outgoing edges, they maintain a positive net-flow equal to the number of chargersand are expressed as $a_i^T = \text{nCharger}$. 
+\par Therefore, the \textit{flow constraints} represented by $c_f$ are equal to zero at all times except when representing the flow for source and sink nodes as seen in equation \ref{eqn:cFlow}.  
 \begin{figure}
 	\centering
 \begin{tikzpicture}
@@ -335,11 +340,6 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 	\caption{Network flow illustrating sources and sinks}
 	\label{fig:sourceSink} 
 \end{figure} 
-
-\begin{align}
-	Ax = c_f
-\end{align}
-This expression can be used to constrain the net-flow of each node.  $c_f$ must equal zero for all non-source and non-sink elements and source/sink nodes must have net-flows equal to $-\text{nChargers}$ and nChargers respectively (see equation \ref{eqn:cFlow}).
 \begin{align}\label{eqn:cFlow}
 	Ax = \begin{bmatrix} 0 \\ \vdots \\ -\text{nCharger} \\ \vdots \\ 0 \\ \text{nCharger} \\ \vdots \\ 0\end{bmatrix}
 \end{align}
