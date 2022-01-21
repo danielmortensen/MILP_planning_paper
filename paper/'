@@ -88,8 +88,8 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 
 \par Transitions from one node to the next are called edges (see figure \ref{fig:edgeNodeRel}) and represent decisions to either connect, charge, not charge, or disconnect. The decision an edge represents is determined by the nodes on either end. For example, the edge from $n_{0,0}$ to $n_{0,1}$ in figure \ref{fig:edgeTypes} represents a period where chargers are idle, resulting in a no-charge decision. This occures because both $n_{0,0}$ and $n_{0,1}$ represent a disconnected charge state. Similarly, the edge between $n_{1,1}$ and $n_{1,2}$ indicates a to-charge decision as both $n_{1,1}$ and $n_{1,2}$ represent states where a charger is connected. Both to-charge and no-charge decisions are represented by \textit{horizontal} transitions in the graph and do not change the effective charger state. 
 \par Conversely, diagonal transitions represent effective state changes where a charger either connects to or disconnects from a bus. One such example from figure \ref{fig:edgeTypes} includes the edge from $n_{0,0}$ to $n_{1,1}$. This edge represents an interval where a charger is disconnected at $t_0$ and connected at $t_1$, implying a `to-connect' decision. The same logic applies in reverse for the edge between $n_{1,2}$ and $n_{0,3}$. Hence, the bus charge problem can be described in terms of nodes and edges where nodes represent connectable time instances and edges encode \textit{potential} decisions. Figure \ref{fig:completeGraph} shows the graph that represents the decision space of the scenario given in figure \ref{fig:busAvailComparison}. 
-\par Schedule selection is represented by selecting edges to determine a path through the graph. Edge selection is indicated by a binary edge weight. A zero-valued weight indicates an unused, edge whereas a unit-valued weight represents an edge occupied by a charger.
-\par Mutliple chargers can be expressed in terms of multiple corresponding graphs. However, this would significantly increase the number of edges and nodes.  Multiple graphs can be expressed in a joint form by superimposing each binary graph for form a composite representation.  The edge weight values connecting to bus nodes remain binary as only one charger can connect at a time. Edges representing unconnected chargers however become an integer with a maximum value equal to the number of chargers.
+\par Schedule selection is then represented by selecting edges to determine a path through the graph. Edge selection is indicated by the edge weight where the weight value represents the number of chargers in the transition. Therefore, a zero-valued weight represents an unused, or inactive, edge, and an $n$-valued weight represents an `active' edge used by $n$ chargers. 
+
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
@@ -144,40 +144,40 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 		\node[rectangle, minimum width=0.3in, minimum height=1.2in,label=below:$t_6$](time6Box) at (6,0){}; 
 		
 		% draw rest edges
-		\draw[->, line width=0.5pt] (bOne) -- (bTwo);
-		\draw[->, line width=0.5pt] (bTwo) -- (bThree);
-		\draw[->, line width=0.5pt] (bThree) -- (bFour);
-		\draw[->, line width=0.5pt] (bFour) -- (bFive);
-		\draw[->, line width=0.5pt] (bFive) -- (bSix);
-		\draw[->, line width=0.5pt] (bSix) -- (bSeven);
+		\draw[->, line width=0.5pt] (bOne.east) -- (bTwo.west);
+		\draw[->, line width=0.5pt] (bTwo.east) -- (bThree.west);
+		\draw[->, line width=0.5pt] (bThree.east) -- (bFour.west);
+		\draw[->, line width=0.5pt] (bFour.east) -- (bFive.west);
+		\draw[->, line width=0.5pt] (bFive.east) -- (bSix.west);
+		\draw[->, line width=0.5pt] (bSix.east) -- (bSeven.west);
 		
 		% draw connect edges
-		\draw[->, line width=0.5pt] (bOne) -- (two); 
-		\draw[->, line width=0.5pt] (bTwo) -- (three);
-		\draw[->, line width=0.5pt] (bFour) -- (five);
-		\draw[->, line width=0.5pt] (bFive) -- (six);
+		\draw[->, line width=0.5pt] (bOne.north east) -- (two.south west); 
+		\draw[->, line width=0.5pt] (bTwo.north east) -- (three.south west);
+		\draw[->, line width=0.5pt] (bFour.north east) -- (five.south west);
+		\draw[->, line width=0.5pt] (bFive.north east) -- (six.south west);
 
-		\draw[->, line width=0.5pt] (bOne) -- (nine);
-		\draw[->, line width=0.5pt] (bTwo) -- (ten);
-		\draw[->, line width=0.5pt] (bFour) -- (twelve);
-		\draw[->, line width=0.5pt] (bFive) -- (thirteen);
+		\draw[->, line width=0.5pt] (bOne.north east) -- (nine.south west);
+		\draw[->, line width=0.5pt] (bTwo.north east) -- (ten.south west);
+		\draw[->, line width=0.5pt] (bFour.north east) -- (twelve.south west);
+		\draw[->, line width=0.5pt] (bFive.north east) -- (thirteen.south west);
 
 		% draw disconnect edges
-		\draw[->, line width=0.5pt] (two) -- (bThree); 
-		\draw[->, line width=0.5pt] (three) -- (bFour);
-		\draw[->, line width=0.5pt] (five) -- (bSix);
-		\draw[->, line width=0.5pt] (six) -- (bSeven);
+		\draw[->, line width=0.5pt] (two.south east) -- (bThree.north west); 
+		\draw[->, line width=0.5pt] (three.south east) -- (bFour.north west);
+		\draw[->, line width=0.5pt] (five.south east) -- (bSix.north west);
+		\draw[->, line width=0.5pt] (six.south east) -- (bSeven.north west);
 
-		\draw[->, line width=0.5pt] (nine) -- (bThree);
-		\draw[->, line width=0.5pt] (ten) -- (bFour);
-		\draw[->, line width=0.5pt] (twelve) -- (bSix);
-		\draw[->, line width=0.5pt] (thirteen) -- (bSeven);
+		\draw[->, line width=0.5pt] (nine.south east) -- (bThree.north west);
+		\draw[->, line width=0.5pt] (ten.south east) -- (bFour.north west);
+		\draw[->, line width=0.5pt] (twelve.south east) -- (bSix.north west);
+		\draw[->, line width=0.5pt] (thirteen.south east) -- (bSeven.north west);
 
 		% draw charge edges
-		\draw[->, line width=0.5pt] (two) -- (three);
-		\draw[->, line width=0.5pt] (five) -- (six);
-		\draw[->, line width=0.5pt] (nine) -- (ten);
-		\draw[->, line width=0.5pt] (twelve) -- (thirteen);
+		\draw[->, line width=0.5pt] (two.east) -- (three.west);
+		\draw[->, line width=0.5pt] (five.east) -- (six.west);
+		\draw[->, line width=0.5pt] (nine.east) -- (ten.west);
+		\draw[->, line width=0.5pt] (twelve.east) -- (thirteen.west);
 
 	\end{tikzpicture}
 	\caption{Graph-based model of the complete decision-space}
@@ -194,14 +194,14 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 		\node[circle, fill=yellow!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=0in, align=center](six)   at (4.6,3){$n_{1,2}$};
 		\node(placeholder1) at (1.15,-0.75){};
 		\node(placeholder2) at (5.75,-0.75){};
-		\draw [->, line width=1pt] (one) -- node[sloped, anchor=center, above, text width=2.5cm, midway, align=center]{Connect Edge}(five);
-		\draw [->, line width=1pt] (one) -- (two);
-		\draw [->, line width=1pt] (five) -- node[sloped, anchor=center, above, text width=1.5cm, midway, align=center]{Charge Edge}(six);
-		\draw [->, line width=1pt] (five) -- (three);
-		\draw [->, line width=1pt] (two) -- (six);
-		\draw [->, line width=1pt] (six) -- node[sloped, anchor=center, above, text width=1.5cm, midway, align=center]{Disconnect Edge}(four);
-		\draw [->, line width=1pt] (two) -- (three);
-		\draw [->, line width=1pt] (three) -- (four); 
+		\draw [->, line width=1pt] (one.north east) -- node[sloped, anchor=center, above, text width=2.5cm, midway, align=center]{Connect Edge}(five.south west);
+		\draw [->, line width=1pt] (one.east) -- (two.west);
+		\draw [->, line width=1pt] (five.east) -- node[sloped, anchor=center, above, text width=1.5cm, midway, align=center]{Charge Edge}(six.west);
+		\draw [->, line width=1pt] (five.south east) -- (three.north west);
+		\draw [->, line width=1pt] (two.north east) -- (six.south west);
+		\draw [->, line width=1pt] (six.south east) -- node[sloped, anchor=center, above, text width=1.5cm, midway, align=center]{Disconnect Edge}(four.north west);
+		\draw [->, line width=1pt] (two.east) -- (three.west);
+		\draw [->, line width=1pt] (three.east) -- (four.west); 
 		\draw [<->, line width=1pt] (placeholder1) -- node[below, text width=2cm, midway, align=center]{No-Charge Edges}(placeholder2);
 	\end{tikzpicture}
 	\caption{Connect, Disconnect, and Charge Edges}
@@ -209,7 +209,7 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 \end{figure}
 
 
-\par Consider a two-charger scenario using the graph in figure \ref{fig:completeGraph}. A solution where one charger is connected to Bus 1 from $t_1$ to $t_2$ and to Bus 2 from $t_4$ to $t_5$ would be expressed by assigning unit weights to the appropriate connect, charge, and disconnect edges.  The second charger remains idle as illustrated by the active edges along the bottom row of charger states (see figure \ref{fig:graphWithSolution}).  Thus, solving the bus charge problem becomes a matter of finding the optimal set of edge weights.
+\par Consider a two-charger scenario where buses using the graph in figure \ref{fig:completeGraph}. A solution where one charger connects to Bus 1 from $t_1$ to $t_2$ and Bus 2 from $t_4$ to $t_5$ would be expressed by assigning non-zero weights to the appropriate connect, charge, and disconnect edges.  The second charger remains idle as illustrated by the active edges along the bottom row of charger states (see figure \ref{fig:graphWithSolution}).  Thus, solving the bus charge problem becomes a matter of finding the optimal set of edge weights.
 
 \begin{figure}
 	\centering
@@ -245,52 +245,52 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 		\node[rectangle, minimum width=0.3in, minimum height=1.2in,label=below:$t_6$](time6Box) at (6,0){}; 
 		
 		% draw rest edges
-		\draw[->, line width=0.5pt] (bOne) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bTwo);
-		\draw[->, line width=0.5pt] (bTwo) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bThree);
-		\draw[->, line width=0.5pt] (bThree) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bFour);
-		\draw[->, line width=0.5pt] (bFour) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bFive);
-		\draw[->, line width=0.5pt] (bFive) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bSix);
-		\draw[->, line width=0.5pt] (bSix) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bSeven);
+		\draw[->, line width=0.5pt] (bOne.east) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bTwo.west);
+		\draw[->, line width=0.5pt] (bTwo.east) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bThree.west);
+		\draw[->, line width=0.5pt] (bThree.east) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bFour.west);
+		\draw[->, line width=0.5pt] (bFour.east) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bFive.west);
+		\draw[->, line width=0.5pt] (bFive.east) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bSix.west);
+		\draw[->, line width=0.5pt] (bSix.east) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bSeven.west);
 		
 		% draw connect edges
-		\draw[->, line width=0.5pt] (bOne) -- node [sloped, text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(two); 
-		\draw[->, dotted, color=black!30, line width=0.5pt] (bTwo) -- (three);
-		\draw[->, dotted, color=black!30, line width=0.5pt] (bFour) -- (five);
-		\draw[->, dotted, color=black!30, line width=0.5pt] (bFive) -- (six);
+		\draw[->, line width=0.5pt] (bOne.north east) -- node [sloped, text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(two.south west); 
+		\draw[->, dotted, color=black!30, line width=0.5pt] (bTwo.north east) -- (three.south west);
+		\draw[->, dotted, color=black!30, line width=0.5pt] (bFour.north east) -- (five.south west);
+		\draw[->, dotted, color=black!30, line width=0.5pt] (bFive.north east) -- (six.south west);
 
-		\draw[->, dotted, color=black!30, line width=0.5pt] (bOne) -- (nine);
-		\draw[->, dotted, color=black!30, line width=0.5pt] (bTwo) -- (ten);
-		\draw[->, line width=0.5pt] (bFour) -- node [sloped, text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(twelve);
-		\draw[->, dotted, color=black!30, line width=0.5pt] (bFive) -- (thirteen);
+		\draw[->, dotted, color=black!30, line width=0.5pt] (bOne.north east) -- (nine.south west);
+		\draw[->, dotted, color=black!30, line width=0.5pt] (bTwo.north east) -- (ten.south west);
+		\draw[->, line width=0.5pt] (bFour.north east) -- node [sloped, text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(twelve.south west);
+		\draw[->, dotted, color=black!30, line width=0.5pt] (bFive.north east) -- (thirteen.south west);
 
 		% draw disconnect edges
-		\draw[->, dotted, color=black!30, line width=0.5pt] (two) -- (bThree); 
-		\draw[->, line width=0.5pt] (three) -- node [sloped, text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bFour);
-		\draw[->, dotted, color=black!30, line width=0.5pt] (five) -- (bSix);
-		\draw[->, dotted, color=black!30, line width=0.5pt] (six) -- (bSeven);
+		\draw[->, dotted, color=black!30, line width=0.5pt] (two.south east) -- (bThree.north west); 
+		\draw[->, line width=0.5pt] (three.south east) -- node [sloped, text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bFour.north west);
+		\draw[->, dotted, color=black!30, line width=0.5pt] (five.south east) -- (bSix.north west);
+		\draw[->, dotted, color=black!30, line width=0.5pt] (six.south east) -- (bSeven.north west);
 
-		\draw[->, dotted, color=black!30, line width=0.5pt] (nine) -- (bThree);
-		\draw[->, dotted, color=black!30, line width=0.5pt] (ten) -- (bFour);
-		\draw[->, dotted, color=black!30, line width=0.5pt] (twelve) -- (bSix);
-		\draw[->, line width=0.5pt] (thirteen) -- node [sloped, text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bSeven);
+		\draw[->, dotted, color=black!30, line width=0.5pt] (nine.south east) -- (bThree.north west);
+		\draw[->, dotted, color=black!30, line width=0.5pt] (ten.south east) -- (bFour.north west);
+		\draw[->, dotted, color=black!30, line width=0.5pt] (twelve.south east) -- (bSix.north west);
+		\draw[->, line width=0.5pt] (thirteen.south east) -- node [sloped, text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bSeven.north west);
 
 		% draw charge edges
-		\draw[->, line width=0.5pt] (two) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(three);
-		\draw[->, dotted, color=black!30, line width=0.5pt] (five) -- (six);
-		\draw[->, dotted, color=black!30, line width=0.5pt] (nine) -- (ten);
-		\draw[->, line width=0.5pt] (twelve) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(thirteen); 
+		\draw[->, line width=0.5pt] (two.east) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(three.west);
+		\draw[->, dotted, color=black!30, line width=0.5pt] (five.east) -- (six.west);
+		\draw[->, dotted, color=black!30, line width=0.5pt] (nine.east) -- (ten.west);
+		\draw[->, line width=0.5pt] (twelve.east) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(thirteen.west); 
 	\end{tikzpicture}
 	\caption{One solution to a 2-bus 2-charger scenario}
 	\label{fig:graphWithSolution}
 \end{figure}
 
 
-\par The bus charge problem aims to minimize the fiscal expense from charging while meeting the operational constraints of a transit system. The graph encodes a subset of these constraints and can be expressed in linear form 
-\begin{align}\label{eqn:flow}
-	Ax=c_f,	
+\par The bus charge problem aims to minimize the fiscal expense from charging while meeting the operational constraints of a transit system. The graph encodes a subset of these constraints and can be expressed in linear form such that 
+\begin{align}
+	Ax=c_f	
 \end{align}
-where $A$ is the graph incidence matrix, $x$ is an $\text{nEdge} \times 1$ vector of edge weights, and $c_f$ is $\text{nNode} \times 1$ and equals the difference between incoming and outgoing edge weights, or \textit{flow}.
-\par  An incidence matrix organizes relationships between nodes and edges by describing which edges leave and enter which nodes. The matrix $A$ is an nNode $\times$ nEdge matrix and expresses incoming connections between the $i^{\text{th}}$ node and $j^{\text{th}}$ edge as $A_{i,j} = 1$. Similarly, outgoing connections are given with $A_{i,j} = -1$, and no connection with $A_{i,j} = 0$. For example, the graph in figure \ref{fig:genericGraph} is represented as:
+where $A$ is an incidence matrix, $x$ is an nNode $\times 1$ vector containing edge weights, and $c_f$ is a set of \textit{flow constraints}. 
+\par  An incidence matrix organizes relationships between nodes and edges by describing which edges depart from and connect to which nodes. An incidence matrix $A$ is an nNode $\times$ nEdge matrix where nNode is the number of nodes, and nEdge is the number of edges. Incoming connections are represented by $A_{i,j} = 1$, where $i$ is the node index, and $j$ corresponds to the edge. Similarly, outgoing connections are given with $A_{i,j} = -1$, and no connection with $A_{i,j} = 0$. For example, the graph in figure \ref{fig:genericGraph} is represented as:
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
@@ -315,10 +315,10 @@ where $A$ is the graph incidence matrix, $x$ is an $\text{nEdge} \times 1$ vecto
 		0 & 1 & 1 & 0 & 1 \\
 	\end{bmatrix}
 \end{align}
-\par  The difference between the number of chargers entering and leaving, or the \textit{net-flow}, can be expressed in terms of $A$ as seen in equation \ref{eqn:flow}.  Because the number of chargers must be conserved, the number of incoming and outgoing chargers must be equal. This is expressed in linear form as $a_i^{T}x = 0$, where $a_i$ is the $i^{\text{th}}$ row of $A$. The only exceptions occur at \textit{source} and \textit{sink} nodes.
-\par A source node represents the beginning state for all chargers.  Because edges originate here, there are no incoming edges and the net-flow will be minus the number of chargers. This is described in linear form as $a_i^Tx = -\text{nCharger}$.
+\par  An incidence matrix can be used to find the number of chargers entering and leaving each state. Because the number of chargers must be conserved, the number of incoming and outgoing chargers must be equivalent. This is expressed in linear form as $a_i^{T}x = 0$, where $a_i$ is the $i^{\text{th}}$ row of $A$. The only exception occurs at \textit{source} and \textit{sink} nodes.
+\par A source node represents the beginning state for all chargers.  Because edge originate here, there are no incoming edges and, the net difference between the representative incoming and outgoing chargers, or \textit{the net-flow}, will be minus the number of chargers. This is described in linear form as $a_i^Tx = -\text{nCharger}$.
 \par Sink nodes represent the final state, where all edges terminate (see figure \ref{fig:sourceSink}). Because sinks have no outgoing edges, they maintain a positive net-flow equal to the number of chargersand are expressed as $a_i^T = \text{nCharger}$. 
-\par Therefore, the \textit{flow constraints} require that $c_f$ be equal to zero for all non-source and non-sink nodes as seen in equation \ref{eqn:cFlow}.  
+\par Therefore, the \textit{flow constraints} represented by $c_f$ are equal to zero at all times except when representing the flow for source and sink nodes as seen in equation \ref{eqn:cFlow}.  
 \begin{figure}
 	\centering
 \begin{tikzpicture}
@@ -344,9 +344,8 @@ where $A$ is the graph incidence matrix, $x$ is an $\text{nEdge} \times 1$ vecto
 	Ax = \begin{bmatrix} 0 \\ \vdots \\ -\text{nCharger} \\ \vdots \\ 0 \\ \text{nCharger} \\ \vdots \\ 0\end{bmatrix}
 \end{align}
 
-\par Flow can also be used to ensure that chargers connect to a given bus only once during each visit to the station. A single charge period is desired because multiple reconnects, or charger thrashing, is inconvenient for station staff. 
-\par Define a charge group as the set of all nodes for a given bus corresponding to one station visit as shown in figure \ref{fig:groups}. The \textit{group flow} is the number of chargers that enter a group and is represented as the sum of all incoming edge weights (see figure \ref{fig:groupedEdges}). 
-\par Denote the $\text{nGroup} \times \text{nEdge}$ group incidence matrix as $B$, where $B_{i,j}$ is $1$ if the $j^{\text{th}}$ edge enters the $i^{\text{th}}$ group and $0$ otherwise. For example, the group incidence matrix corresponding to the graph in figure \ref{fig:groupEdges} contains $1$ in the $7^{\text{th}}$ and $10^{\text{th}}$ columns for Group 1, and the $12^{\text{th}}$ and $15^{\text{th}}$ columns for group 2 as given in equation \ref{eqn:groupB}.
+\par Flow can also be used to ensure that buses connect to only one charger at a time. Let a charge session, or \textit{group}, be the set of all charge nodes between routes as shown in figure \ref{fig:groups}. The \textit{group flow} is the number of chargers that enter a group and is represented as the sum of all incoming edge weights (see figure \ref{fig:groupedEdges}). 
+\par Let $B$ be a nGroup $\times$ nEdge matrix where $B_{i,j}$ is $1$ if the $j^{\text{th}}$ edge enters the $i^{\text{th}}$ group and $0$ otherwise. For example, the $B$ matrix corresponding to the graph in figure \ref{fig:groupEdges} contains $1$ in the $7^{\text{th}}$ and $10^{\text{th}}$ columns for Group 1, and the $12^{\text{th}}$ and $15^{\text{th}}$ columns for group 2 as given in equation \ref{eqn:groupB}.
 \begin{align}\label{eqn:groupB}
 	B = \begin{bmatrix}0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 1 \; 0 \; 0 \; 1 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0\\
 	                   0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 1 \; 0 \; 0 \; 1 \; 0\end{bmatrix}
@@ -428,7 +427,7 @@ Let $x$ be the edge weights as before and $c_g$ be an nGroup $\times$ 1 vector w
 \begin{align}
 	Bx = c_g
 \end{align}
-But the group flow is required to be one at most to avoid thrashing.  This is expressed by the inequality given in equation \ref{eqn:cGroupFlow}.
+But the group flow is required to be one at most.  This is expressed by the inequality given in equation \ref{eqn:cGroupFlow}.
 \begin{align}\label{eqn:cGroupFlow}
 	Bx \le \begin{bmatrix} 1\\ 1 \\\vdots \\ 1\end{bmatrix},
 \end{align}
@@ -447,8 +446,8 @@ But the group flow is required to be one at most to avoid thrashing.  This is ex
 		\node[circle, fill=yellow!20, line width=0.5pt, draw=black, minimum size=0.1in](nine) at (2,2){};
 		\node[circle, fill=yellow!20, line width=0.5pt, draw=black, minimum size=0.1in](ten) at (4,2){}; 
 		\node[circle, fill=yellow!20, line width=0.5pt, draw=black, minimum size=0.1in](eleven) at (5,2){}; 
-		\node[ellipse, line width=0pt, draw opacity=0.5, fill opacity=0.2, fill=purple!40, draw=purple!40, minimum height=0.4in, minimum width=1in, label=Group 2](group2) at (4.5,2){};
-		\node[ellipse, line width=0pt, draw opacity=0.5, fill opacity=0.2, fill=orange!40, draw=orange!40, minimum height=0.4in, minimum width=1in, label=Group 1](group1) at (1.5,2){};
+		\node[ellipse, line width=0pt, draw=white, minimum height=0.4in, minimum width=1in, label=Group 1](group1) at (1.5,2){};
+		\node[ellipse, line width=0pt, draw=white, minimum height=0.4in, minimum width=1in, label=Group 2](group2) at (4.5,2){};
 		\draw [->, line width=0.5pt,color=black!40] (one.east) -- (two.west);
 		\draw [->, line width=0.5pt,color=black!40] (two.east) -- (three.west);
 		\draw [->, line width=0.5pt,color=black!40] (three.east) -- (four.west);
