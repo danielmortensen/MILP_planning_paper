@@ -1,12 +1,14 @@
 \section{Graph Based Problem Formulation}
-A solution to the bus charge problem must reveal both \textit{when} and \textit{to which} bus a charger should connect suggesting a model with two dimensions. The first dimension characterizes time and is given discretely in a left to right fashion. The second dimension encodes the charger state and extends vertically as seen in figure \ref{fig:graphGridStructure}.  The charger may occupy one of several states.  It may be connected to one of the $N$ buses, or it may be unconnected, giving a total of $N + 1$ charge states. The 2-D representation is encoded as a grid where the intersection of charge states and time indices is represented by a node, denoted $n_{i,j}$ which represents the $i^{\text{th}}$ charge state at the $j^{\text{th}}$ time index (see figure \ref{fig:graphGridStructure}).  
-\par A complete grid, however, implies that buses are always available to charge.  This is not always the case as buses cannot charge when providing transit services. To reflect this constraint, the presence of nodes is used to denote a bus's availability for charging and nodes are removed during times where a bus provides transit services (see figure \ref{fig:busAvailComparison}). 
+This section formulates the charge problem as a graph. The first subsection describes the intuition behind this graph-based approach and the second represents the graph as a series of equality and inequality constraints in a Mixed Integer Linear Program (MILP).  
+\subsection{Graph Formulation}
+A solution to the bus charge problem must reveal both \textit{when} and \textit{to which} bus a charger should connect, suggesting a model with two dimensions. The first dimension characterizes time and is given discretely in a left to right fashion. The second dimension encodes the charger state and extends vertically as shown in figure \ref{fig:graphGridStructure}.  The charger may occupy one of several states.  It may be connected to one of the $N$ buses, or it may be unconnected, giving a total of $N + 1$ charge states. The 2-D representation is encoded as a grid and a node, $n_{i,j}$, can be placed wherever a charge state and time index intersect. These nodes are used to represent a charger in the $i^{\text{th}}$ charge state during the $j^{\text{th}}$ time index (see figure \ref{fig:graphGridStructure}). For example, $n_{1,0}$ from figure \ref{fig:graphGridStructure} represents a state where a charger is connected to Bus 1 at $t_0$. 
+\par However, the presence of nodes at every state-time intersection suggests that buses can always connect.  This does not reflect reality because buses cannot connect when they are away from the station. Nodes are therefore only present in the grid when a corresponding bus can connnect to a charger and are absent when a bus leaves the station. Consider the two bus scenario from figure \ref{fig:graphGridStructure} where buses 1 and 2 provide transit services at $t_0$, $t_3$, and $t_6$. The schedule is encoded by removing $n_{1,0}$, $n_{2,0}$, $n_{1,3}$,  $n_{2,3}$, $n_{1,6}$, and $n_{2,6}$ to reflect the grid shown in figure \ref{fig:busAvailComparison}. 
 \begin{figure}
 \centering
 \begin{tikzpicture}
-	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 2}](bus2Box) at (3,1){};
-	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 1}](bus1Box) at (3,0){};
-	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Disconnected}](bus1Box) at (3,-1){};
+	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Bus: 2}](bus2Box) at (3,1){};
+	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Bus: 1}](bus1Box) at (3,0){};
+	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{None}](bus1Box) at (3,-1){};
 
 	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](one) at (0,0){\scalebox{0.5}{$n_{1,0}$}};
 	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](two) at (1,0){\scalebox{0.5}{$n_{1,1}$}}; 
@@ -46,16 +48,16 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 \begin{figure}
 \centering
 \begin{tikzpicture} 
-	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 2}](bus2Box) at (3,1){};
-	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Connected: Bus 1}](bus1Box) at (3,0){};
-	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Disconnected}](bus1Box) at (3,-1){};
+	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Bus: 2}](bus2Box) at (3,1){};
+	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Bus: 1}](bus1Box) at (3,0){};
+	\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{None}](bus1Box) at (3,-1){};
 
 	\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](one)   at (0,0){};
 	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](two)   at (1,0){\scalebox{0.5}{$n_{1,1}$}}; 
 	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](three) at (2,0){\scalebox{0.5}{$n_{1,2}$}};
 	\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](four)  at (3,0){};
-	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](five)  at (4,0){\scalebox{0.5}{$n_{1,3}$}};
-	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](six)   at (5,0){\scalebox{0.5}{$n_{1,4}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](five)  at (4,0){\scalebox{0.5}{$n_{1,4}$}};
+	\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](six)   at (5,0){\scalebox{0.5}{$n_{1,5}$}};
 	\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](seven) at (6,0){};
 
 	\node[circle, draw, dashed,   line width=0.5pt, draw=black, minimum size=0.15in, inner sep=1pt](eight)    at (0,1){};
@@ -86,10 +88,10 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 	\label{fig:busAvailComparison}
 \end{figure}
 
-\par Transitions from one node to the next are called edges (see figure \ref{fig:edgeNodeRel}) and represent decisions to either connect, charge, not charge, or disconnect. The decision an edge represents is determined by the nodes on either end. For example, the edge from $n_{0,0}$ to $n_{0,1}$ in figure \ref{fig:edgeTypes} represents a period where chargers are idle, resulting in a no-charge decision. This occures because both $n_{0,0}$ and $n_{0,1}$ represent a disconnected charge state. Similarly, the edge between $n_{1,1}$ and $n_{1,2}$ indicates a to-charge decision as both $n_{1,1}$ and $n_{1,2}$ represent states where a charger is connected. Both to-charge and no-charge decisions are represented by \textit{horizontal} transitions in the graph and do not change the effective charger state. 
-\par Conversely, diagonal transitions represent effective state changes where a charger either connects to or disconnects from a bus. One such example from figure \ref{fig:edgeTypes} includes the edge from $n_{0,0}$ to $n_{1,1}$. This edge represents an interval where a charger is disconnected at $t_0$ and connected at $t_1$, implying a `to-connect' decision. The same logic applies in reverse for the edge between $n_{1,2}$ and $n_{0,3}$. Hence, the bus charge problem can be described in terms of nodes and edges where nodes represent connectable time instances and edges encode \textit{potential} decisions. Figure \ref{fig:completeGraph} shows the graph that represents the decision space of the scenario given in figure \ref{fig:busAvailComparison}. 
-\par Schedule selection is represented by selecting edges to determine a path through the graph. Edge selection is indicated by a binary edge weight. A zero-valued weight indicates an unused, edge whereas a unit-valued weight represents an edge occupied by a charger.
-\par Mutliple chargers can be expressed in terms of multiple corresponding graphs. However, this would significantly increase the number of edges and nodes.  Multiple graphs can be expressed in a joint form by superimposing each binary graph for form a composite representation.  The edge weight values connecting to bus nodes remain binary as only one charger can connect at a time. Edges representing unconnected chargers however become an integer with a maximum value equal to the number of chargers.
+\par The state of a charger at any time is represented by occupying a corresponding node. Changes in charger state and time, are therefore reflected by a transition from one node to the next. These transitions are called edges (see figure \ref{fig:edgeNodeRel}) and represent decisions to connect to, charge, not charge, or disconnect from buses. An edge's decision is determined by the nodes on either end. Consider the edge from $n_{0,0}$ to $n_{0,1}$ in figure \ref{fig:edgeTypes}. This edge represents a no-charge decision because the nodes on both ends represent a disconnected charge state. Chargers cannot charge while disconnected, so the edge decision is no-charge.  Similarly, the edge between $n_{1,1}$ and $n_{1,2}$ indicates a to-charge decision as both $n_{1,1}$ and $n_{1,2}$ represent states where a charger is connected. Both to-charge and no-charge decisions are represented by \textit{horizontal} transitions in the graph and only reflect the passing of time as no changes to the physical hardware are made.
+\par Conversely, diagonal transitions imply physical hardware changes because they represent decisions where chargers connect to or disconnect from a bus. One such example from figure \ref{fig:edgeTypes} includes the edge from $n_{0,0}$ to $n_{1,1}$. The state represented by $n_{0,0}$ is disconnected This edge represents an interval where a charger is disconnected at $t_0$ and connected at $t_1$, implying a `to-connect' decision. The same logic applies in reverse for the edge between $n_{1,2}$ and $n_{0,3}$. Hence, the bus charge problem can be described in terms of nodes and edges where nodes represent bus availability and edges encode all possible charge decisions. 
+\par A charge schedule can be thought of as a list of charge decisions that govern charge behavior. Because decisions are represented by edges in the graph, a schedule is also represented by a sequence of connected edges that form a path through the graph. If an edge is selected, or active, it is considered part of the path.  Active and inactive edges are respectively represented edge weights equal to $1$, and $0$.
+\par A graph with binary edge weights can only represent a plan for one charger. This representation can be expanded to represent an arbitrary number of chargers by using integer valued weights, where each weight gives the number of chargers in the transition.
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
@@ -99,17 +101,13 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 	\end{tikzpicture}
 	\caption{Node to Node Connection}
 	\label{fig:edgeNodeRel}
-\end{figure}
-
+\end{figure} 
 \begin{figure}
 	\centering
 	\begin{tikzpicture} 
-%		\node[rectangle, fill=gray!10, minimum width=1in,   minimum height=.3in](bus2BoxLeft) at (-1,1){};
-%		\node[rectangle, fill=gray!10, minimum width=1in,   minimum height=.3in](bus2BoxLeft) at (-1,0){};
-%		\node[rectangle, fill=gray!10, minimum width=1in,   minimum height=.3in](bus2BoxLeft) at (-1,-1){};
-		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.6}{Connected: Bus 2}](bus2Box) at (3,1){};
-		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.6}{Connected: Bus 1}](bus1Box) at (3,0){};
-		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.6}{Disconnected}](bus1Box) at (3,-1){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Bus: 2}](bus2Box) at (3,1){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Bus: 1}](bus1Box) at (3,0){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{None}](bus1Box) at (3,-1){};
 
 		\node[circle, draw, dashed, line width=0.5pt, draw=black, minimum size=0.1in](one) at (0,0){};
 		\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.1in](two) at (1,0){}; 
@@ -206,17 +204,16 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 	\end{tikzpicture}
 	\caption{Connect, Disconnect, and Charge Edges}
 	\label{fig:edgeTypes}
-\end{figure}
-
-
-\par Consider a two-charger scenario using the graph in figure \ref{fig:completeGraph}. A solution where one charger is connected to Bus 1 from $t_1$ to $t_2$ and to Bus 2 from $t_4$ to $t_5$ would be expressed by assigning unit weights to the appropriate connect, charge, and disconnect edges.  The second charger remains idle as illustrated by the active edges along the bottom row of charger states (see figure \ref{fig:graphWithSolution}).  Thus, solving the bus charge problem becomes a matter of finding the optimal set of edge weights.
+\end{figure} 
+\par Consider a three-charger scenario using the graph in figure \ref{fig:completeGraph}. A solution where one charger is connected to Bus 1 from $t_1$ to $t_2$ and to Bus 2 from $t_4$ to $t_5$ would be expressed by assigning unit weights to the appropriate connect, charge, and disconnect edges.  The second charger remains idle as illustrated by the active edges along the bottom row of charger states (see figure \ref{fig:graphWithSolution}).  
+\par In summary, the graph encodes bus availability with nodes, decisions with edges, and schedules with edge weights. Solving the bus charge problem becomes a matter of finding the optimal set of edge weights, where optimal is used to denote the most cost effective charge plan.
 
 \begin{figure}
 	\centering
 	\begin{tikzpicture} 
-		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 2}](bus2Box) at (3,1){};
-		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Charge Bus 1}](bus1Box) at (3,0){};
-		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{No Charge}](bus1Box) at (3,-1){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Bus: 2}](bus2Box) at (3,1){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Bus: 1}](bus1Box) at (3,0){};
+		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{None}](bus1Box) at (3,-1){};
 
 		\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.1in](two) at (1,0){}; 
 		\node[circle, fill=yellow!40, line width=0.5pt, draw=black, minimum size=0.1in](three) at (2,0){};
@@ -245,12 +242,12 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 		\node[rectangle, minimum width=0.3in, minimum height=1.2in,label=below:$t_6$](time6Box) at (6,0){}; 
 		
 		% draw rest edges
-		\draw[->, line width=0.5pt] (bOne) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bTwo);
-		\draw[->, line width=0.5pt] (bTwo) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bThree);
-		\draw[->, line width=0.5pt] (bThree) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bFour);
-		\draw[->, line width=0.5pt] (bFour) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bFive);
-		\draw[->, line width=0.5pt] (bFive) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bSix);
-		\draw[->, line width=0.5pt] (bSix) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(bSeven);
+		\draw[->, line width=0.5pt] (bOne) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{2}}(bTwo);
+		\draw[->, line width=0.5pt] (bTwo) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{2}}(bThree);
+		\draw[->, line width=0.5pt] (bThree) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{2}}(bFour);
+		\draw[->, line width=0.5pt] (bFour) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{2}}(bFive);
+		\draw[->, line width=0.5pt] (bFive) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{2}}(bSix);
+		\draw[->, line width=0.5pt] (bSix) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{2}}(bSeven);
 		
 		% draw connect edges
 		\draw[->, line width=0.5pt] (bOne) -- node [sloped, text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(two); 
@@ -280,16 +277,17 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 		\draw[->, dotted, color=black!30, line width=0.5pt] (nine) -- (ten);
 		\draw[->, line width=0.5pt] (twelve) -- node [text width=2.5cm, midway, above=-2.1pt, align=center]{\scalebox{0.5}{1}}(thirteen); 
 	\end{tikzpicture}
-	\caption{One solution to a 2-bus 2-charger scenario}
+	\caption{One solution to a 2-bus 3-charger scenario}
 	\label{fig:graphWithSolution}
 \end{figure}
 
-
-\par The bus charge problem aims to minimize the fiscal expense from charging while meeting the operational constraints of a transit system. The graph encodes a subset of these constraints and can be expressed in linear form 
+\subsection{MILP Constraints}
+\par Finding the optimal charge schedule can be expressed as an optimization problem, where the graph is encoded through equality/inequality constraints for a Mixed Integer Linear Program. This subsection formulates two sets of constraints.  The first encodes the graph, enforces conservation of chargers, and defines the number of chargers through a set of net-flow constraints. The second prevents the charger from reconnecting shortly after disconnecting, and allows only a single charger to connect at a time by enforcing group-flow constraints.
+\subsubsection{Net-Flow Constraints}
 \begin{align}\label{eqn:flow}
 	Ax=c_f,	
 \end{align}
-where $A$ is the graph incidence matrix, $x$ is an $\text{nEdge} \times 1$ vector of edge weights, and $c_f$ is $\text{nNode} \times 1$ and equals the difference between incoming and outgoing edge weights, or \textit{flow}.
+where $A$ is the graph incidence matrix, $x$ is an $\text{nEdge} \times 1$ vector of edge weights, and $c_f$ is $\text{nNode} \times 1$ and equals the difference between incoming and outgoing edge weights, or \textit{net-flow}.
 \par  An incidence matrix organizes relationships between nodes and edges by describing which edges leave and enter which nodes. The matrix $A$ is an nNode $\times$ nEdge matrix and expresses incoming connections between the $i^{\text{th}}$ node and $j^{\text{th}}$ edge as $A_{i,j} = 1$. Similarly, outgoing connections are given with $A_{i,j} = -1$, and no connection with $A_{i,j} = 0$. For example, the graph in figure \ref{fig:genericGraph} is represented as:
 \begin{figure}
 	\centering
@@ -317,7 +315,7 @@ where $A$ is the graph incidence matrix, $x$ is an $\text{nEdge} \times 1$ vecto
 \end{align}
 \par  The difference between the number of chargers entering and leaving, or the \textit{net-flow}, can be expressed in terms of $A$ as seen in equation \ref{eqn:flow}.  Because the number of chargers must be conserved, the number of incoming and outgoing chargers must be equal. This is expressed in linear form as $a_i^{T}x = 0$, where $a_i$ is the $i^{\text{th}}$ row of $A$. The only exceptions occur at \textit{source} and \textit{sink} nodes.
 \par A source node represents the beginning state for all chargers.  Because edges originate here, there are no incoming edges and the net-flow will be minus the number of chargers. This is described in linear form as $a_i^Tx = -\text{nCharger}$.
-\par Sink nodes represent the final state, where all edges terminate (see figure \ref{fig:sourceSink}). Because sinks have no outgoing edges, they maintain a positive net-flow equal to the number of chargersand are expressed as $a_i^T = \text{nCharger}$. 
+\par Sink nodes represent the final state, where all edges terminate (see figure \ref{fig:sourceSink}). Because sinks have no outgoing edges, they maintain a positive net-flow equal to the number of chargers and is expressed as $a_i^T = \text{nCharger}$. 
 \par Therefore, the \textit{flow constraints} require that $c_f$ be equal to zero for all non-source and non-sink nodes as seen in equation \ref{eqn:cFlow}.  
 \begin{figure}
 	\centering
@@ -343,8 +341,8 @@ where $A$ is the graph incidence matrix, $x$ is an $\text{nEdge} \times 1$ vecto
 \begin{align}\label{eqn:cFlow}
 	Ax = \begin{bmatrix} 0 \\ \vdots \\ -\text{nCharger} \\ \vdots \\ 0 \\ \text{nCharger} \\ \vdots \\ 0\end{bmatrix}
 \end{align}
-
-\par Flow can also be used to ensure that chargers connect to a given bus only once during each visit to the station. A single charge period is desired because multiple reconnects, or charger thrashing, is inconvenient for station staff. 
+\subsubsection{Group-flow Constraints}
+\par Another flow type, known as group flow, can be used to regulate the number of chargers entering a set of nodes. This is desired for two reasons:  It avoids multiple reconnects during a charge period, and limits the number of connecting chargers to one. 
 \par Define a charge group as the set of all nodes for a given bus corresponding to one station visit as shown in figure \ref{fig:groups}. The \textit{group flow} is the number of chargers that enter a group and is represented as the sum of all incoming edge weights (see figure \ref{fig:groupedEdges}). 
 \par Denote the $\text{nGroup} \times \text{nEdge}$ group incidence matrix as $B$, where $B_{i,j}$ is $1$ if the $j^{\text{th}}$ edge enters the $i^{\text{th}}$ group and $0$ otherwise. For example, the group incidence matrix corresponding to the graph in figure \ref{fig:groupEdges} contains $1$ in the $7^{\text{th}}$ and $10^{\text{th}}$ columns for Group 1, and the $12^{\text{th}}$ and $15^{\text{th}}$ columns for group 2 as given in equation \ref{eqn:groupB}.
 \begin{align}\label{eqn:groupB}
@@ -430,9 +428,9 @@ Let $x$ be the edge weights as before and $c_g$ be an nGroup $\times$ 1 vector w
 \end{align}
 But the group flow is required to be one at most to avoid thrashing.  This is expressed by the inequality given in equation \ref{eqn:cGroupFlow}.
 \begin{align}\label{eqn:cGroupFlow}
-	Bx \le \begin{bmatrix} 1\\ 1 \\\vdots \\ 1\end{bmatrix},
+	Bx \le \begin{bmatrix} 1\\ 1 \\\vdots \\ 1\end{bmatrix}.
 \end{align}
-
+\subsection{Section Summary} In summary, the bus charge problem can be formulated as a graph with nodes and edges, where charge plans are encoded as a path. The charge problem aims to find a feasible path which minimizes the cost of power. Feasibility is defined through a set of net-flow and group-flow constraints. Net-flow constraints are encoded through an adjacency matrix and enforce both the conservation and total number of chargers. The group-flow constraints prevent charge thrashing and regulate the number of simultaneous charger-to-bus connections. 
 \begin{figure}
 \centering
 	\begin{tikzpicture}

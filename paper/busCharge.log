@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.11.2)  20 JAN 2022 18:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.11.2)  10 FEB 2022 12:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1101,63 +1101,33 @@ Package biblatex Info: ... file 'busCharge.bbl' found.
 Package biblatex Info: Reference section=0 on input line 23.
 Package biblatex Info: Reference segment=0 on input line 23.
  (./abstract.tex) (./introduction.tex) (./literatureReview.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 13.
+LaTeX Font Info:    Try loading font information for U+msa on input line 10.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 13.
+LaTeX Font Info:    Try loading font information for U+msb on input line 10.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]) (./graph.tex
-Overfull \hbox (15.90994pt too wide) in paragraph at lines 42--43
- [][] 
- []
-
-
-Overfull \hbox (15.90994pt too wide) in paragraph at lines 84--85
- [][] 
- []
-
-
-Overfull \hbox (1.28827pt too wide) in paragraph at lines 182--183
- [][] 
- []
-
-
-Overfull \hbox (2.31035pt too wide) in paragraph at lines 202--202
+]) (./graph.tex [2]
+Overfull \hbox (2.31035pt too wide) in paragraph at lines 200--200
  [][][][]\OT1/ptm/m/n/10 Disconnect 
  []
 
+[3]
+Underfull \vbox (badness 1694) has occurred while \output is active []
 
-Overfull \hbox (11.28278pt too wide) in paragraph at lines 282--283
- [][] 
- []
-
-
-Underfull \vbox (badness 1472) has occurred while \output is active []
-
- [2]
-[3]) (./batterySoc.tex
-
-LaTeX Warning: Reference `fig:busAvailEncode' on page 4 undefined on input line
- 3.
-
-(./media/socDiagram.tex
-Overfull \hbox (6.45447pt too wide) in paragraph at lines 62--63
- [][] 
- []
-
-) (./media/graphDelta.tex
+ [4])
+(./batterySoc.tex (./media/graphDelta.tex
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 ) (./media/dSocDiagram.tex)
-(./media/multirateChargeEdges.tex) [4]) (./multiGraph.tex
+(./media/multirateChargeEdges.tex) [5]) (./multiGraph.tex
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
@@ -1166,40 +1136,68 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
- [5])
-(./rateSchedule.tex
+) (./rateSchedule.tex
 LaTeX Font Info:    Try loading font information for TS1+ptm on input line 3.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)) (./fleetOperations.tex) (./objective.tex) (./gurobi.tex) (./results.tex)
-(./futureWork.tex) [6]
+))
+(./fleetOperations.tex [6]) (./objective.tex) (./gurobi.tex) (./results.tex)
+(./futureWork.tex)
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¡ in font ptmr7t!
-
+ [7]
 Underfull \hbox (badness 1412) in paragraph at lines 45--45
 \OT1/ptm/m/n/10 Trans-porta-tion Elec-tri-fi-ca-tion Con-fer-ence and Expo
  []
 
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
-[7] [8
+
+Package biblatex Warning: No driver for entry type 'legislation'.
+(biblatex)                Using fallback driver on input line 44.
+
+
+Underfull \hbox (badness 2680) in paragraph at lines 45--45
+[]\OT1/ptm/m/it/10 Rocky Moun-tain Power Elec-tric Ser-vice Sched-ule
+ []
+
+
+Underfull \hbox (badness 4846) in paragraph at lines 45--45
+\OT1/ptm/m/it/10 No. 8 State of Utah\OT1/ptm/m/n/10 . \OT1/ptm/m/sc/10 url\OT1/
+ptm/m/n/10 : $https : / / www .
+ []
+
+
+Underfull \hbox (badness 2781) in paragraph at lines 45--45
+\OT1/ptm/m/n/10 rockymountainpower . net / content / dam / pcorp /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+\OT1/ptm/m/n/10 utah / rates / 008[]Large[]General[]Service[]1[]000[]
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 45--45
+\OT1/ptm/m/n/10 kW[]and[]Over[]Distribution[]Voltage . pdf$ (vis-ited on
+ []
+
+[8] [9
 
 ] (./busCharge.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package logreq Info: Writing requests to 'busCharge.run.xml'.
 \openout1 = `busCharge.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24434 strings out of 492982
- 489781 string characters out of 6134896
- 860727 words of memory out of 5000000
- 27556 multiletter control sequences out of 15000+600000
- 38283 words of font info for 74 fonts, out of 8000000 for 9000
+ 24433 strings out of 492982
+ 489819 string characters out of 6134896
+ 819007 words of memory out of 5000000
+ 27559 multiletter control sequences out of 15000+600000
+ 37176 words of font info for 73 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 55i,20n,67p,981b,1263s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,20n,67p,1078b,1263s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1210,10 +1208,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on busCharge.pdf (8 pages, 166943 bytes).
+Output written on busCharge.pdf (9 pages, 169354 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 78 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

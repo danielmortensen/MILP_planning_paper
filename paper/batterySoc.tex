@@ -1,71 +1,49 @@
 \section{Battery State of Charge}
-Battery state of charge (SOC) also plays a large role in the bus charge problem. As a bus traverses a route, energy is discharged from the battery. If the battery state of charge drops to zero, the bus will power down and become unresponsive. It is therefore important to track battery charge levels when scheduling charge times.
-\par Furthermore, as no charge actions are available while on route, SOC values are only tracked when in the charge station. Because these in-station time periods are also represented by the charge nodes from figure \ref{fig:busAvailEncode}, the two are in one-one correspondence. Consequently, every charge node$_{i,k}$ can be associated with an SOC value, denoted $d_{i,k}$ as shown in figure \ref{fig:socDiagram}.  
-\input{media/socDiagram.tex}
-\par Charge level progression between $d_{i,k}$ and $d_{i,k+1}$ is influenced by two factors: discharging on route, and charging. The route discharge, denoted $\delta$, represents the energy drawn from the battery in kWh.  When a bus returns from a route, the change in SOC is computed as 
+Battery state of charge (SOC) plays a role in the bus charge problem. Battery charge levels decrease as a bus traverses a route. Solutions to the bus charge problem account for routes and require that SOC values remain above a minimum threshold. 
+\par A SOC thresholding constraint requires that battery charge levels be estimated. The $k^{\text{th}}$ SOC for bus $i$ is denoted $d_{i,k}$, where $k$ is the \textit{node index}. Node indices are time agnostic such that $d_{i,k+1}$ represents the SOC bus node following $k_{i,k}$ as seen in figure \ref{fig:dSocDiagram}. 
+\par Because no charging is performed while on route, $d_{i,k}$ will be lowest as buses enter the charge station. Let $d_{i,k+1}$ be the charge level for bus $i$ as it enters the charge station, and $\delta_i$ represent the power discharged while on-route. The entrance SOC can be expressed as 
 \begin{align}
-	d_{i,k+1} = d_{i,k} - \delta_i
+	d_{i,k+1} = d_{i,k} - \delta_i,
 \end{align}
-where $\delta_i$ is the discharge for Bus $i$'s route as seen in figure \ref{fig:graphDelta}.  
-\input{media/graphDelta.tex}
-\par When a charger connects to a bus, the increase or \textit{gain} in $d_{i,k}$ is denoted $g_{i,k}$, where $i$ and $k$ represent the respective bus and outgoing node indices. Figure \ref{fig:dSocDiagram} gives an example where $g_{1,1}$ and $g_{1,3}$ correspond to Bus 1's gain from $t_0$ to $t_1$ and $t_4$ to $t_5$.  
+where $d_{i,k}$ is the previous departure SOC for bus $i$. Consider the example in figure \ref{fig:graphDelta}, where buses $1$ and $2$ leave the station at $t_2$ and enter at $t_4$. The corresponding change in SOC is given as $d_{1,2} = d_{1,1} - \delta_1$ and $d_{2,2} = d_{2,1} - \delta_2$ for buses $1$ and $2$ respectively.
+\input{media/graphDelta}
+\par Time periods between entrance and exit nodes represent time spent in the charge station and have the potential to charge the battery. An edge over which charging occures is refered to as $x_{i,k}$, where $k$ gives the index of the edge's outgoing node, and $i$ refers to the bus.  When a charger occupies $x_{i,k}$, the resulting increase, or \textit{gain}, in battery charge is denoted $g_{i,k}$, where $i$ and $k$ mirror the edge indices (see figure \ref{fig:dSocDiagram}). 
+\par The value for $g_{i,k}$ is computed using a single charge rate. Additional flexibility can be encoded be connecting bus nodes with multiple edges, denoted $x_{i,k,l}$. Each edge has a distinct charge rate and gain denoted $g_{i,k,l}$ and together, the set of edges allows for multi-rate charging (see figure \ref{fig:multirateChargeEdges}). Having multiple charge rates gives the option for fast charging when necessary, and slow charging when possible to preserve battery health and decrease the electrical load \cite{houbbadi_optimal_2019}.
 \input{media/dSocDiagram.tex}
-Using a single charge rate however has drawbacks. If the rate is high, buses will charge quickly but the load on the grid will increase.  Decreased charge rates will stress the grid less but increase charge time. To address both situations, a method with additional flexibility must be used where both high and low charge rates are available. 
-\par Let $g_{i,k,l}$ be the gain, where $i$ and $k$ represent the bus and outgoing node indicies as before and $l$ represents the charge rate index. Each charge rate index corresponds to an edge in the graph. Figure \ref{fig:multirateChargeEdges} gives an example where there are three rate options. Each rate corresponds to an edge between two charge nodes and together, all three edges provide multiple options for charging.
 \input{media/multirateChargeEdges.tex}
-These gains are used to compute succeeding charge levels as 
-\begin{align}\label{eqn:gainTotal}
-	d_{i,k+1} = d_{i,k} +\sum_{l} g_{i,k,l},
-\end{align} 
-but because of group and flow constraints, only one charge rate can be active at a time. Therefore, $d_{i,k}$ can be expressed as 
-\begin{align}\label{eqn:gainInitial}
-	d_{i,k+1} = d_{i,k} + g_{i,k,l},
-\end{align}
-where the $l^{\text{th}}$ charge edge is active. 
-\par $g_{i,k,l}$ is computed using the Constant Current Constant Voltage (CCCV) model as derived in \cite{whitaker_network_2021} which gives:
+\par The rate is selected by setting $x_{i,k,l} = 1$. All gains associated with unselected rates are equal to zero. Gains that correspond to selected rates are computed using the Constant Current Constant Voltage (CCCV) model as derived in \cite{whitaker_network_2021} which gives:
 \begin{align}\label{eqn:CCCV}
-	d_{i,k+1} = \bar{a}_ld_{i,k} - \bar{b}_lM 
+	d_{i,k+1} = \bar{a}_ld_{i,k} - \bar{b}_lM, 
 \end{align}
-Where $\bar{a}_l$ $\sim(0,1]$, depends on the charge rate and is experimentally determined, $M$ is the battery charge capacity in kWh, and $\bar{b}_l = \bar{a}_l - 1$.
-Equations \ref{eqn:gainInitial} and \ref{eqn:CCCV} are used to show that
+where $\bar{a}_l$ $\sim(0,1]$, depends on the charge rate and is experimentally determined, $M$ is the battery charge capacity in kWh, and $\bar{b}_l = \bar{a}_l - 1$.
+Equation \ref{eqn:CCCV} is used to show that
 \begin{equation}\label{eqn:g}
 \begin{aligned}
-	& d_{i,k+1} = \bar{a}_ld_{i,k} - \bar{b}_lM \\ 
-	\Rightarrow & d_{i,k+1} - d_{i,k} = \bar{a}_ld_{i,k} - \bar{b}_lM - d_{i,k}\\
-	\Rightarrow & g_{i,k,l}  = \bar{a}_ld_{i,k} - \bar{b}_lM - d_{i,k}\\
-	\Rightarrow & g_{i,k,l}  = (\bar{a}_l - 1)d_{i,k} - \bar{b_l}M\\
+	d_{i,k+1} &= \bar{a}_ld_{i,k} - \bar{b}_lM \\ 
+	d_{i,k+1} - d_{i,k} &= \bar{a}_ld_{i,k} - \bar{b}_lM - d_{i,k},\\
+\end{aligned}
+\end{equation}
+but the gain is equal to the difference in $d_{i,k+1}$ and $d_{i,k}$ such that $g_{i,k,l} = d_{i,k+1} - d_{i,k}$.  So
+\begin{equation}\label{eqn:CCCVFinal}
+\begin{aligned}
+	g_{i,k,l}  &= \bar{a}_ld_{i,k} - \bar{b}_lM - d_{i,k}\\
+	g_{i,k,l}  &= (\bar{a}_l - 1)d_{i,k} - \bar{b_l}M.\\
 \end{aligned}
 \end{equation}
 
-The results from equation \ref{eqn:g}, however, only hold when a charger is connected to a bus, which is represented by a weight of $1$ for the edge corresponding to $g_{i,k,l}$. When the weight equals $0$, $g_{i,k,l}$ must also equal zero. These two situations can be described using a switching constraint known as the \textit{big M} technique. This technique is used to describe $g_{i,k,l}$ with equation \ref{eqn:g} when the transition weight is $1$ and $g_{i,k,l} = 0$ when $0$.
-\begin{equation}\label{eqn:bigMIneq}
+Therefore, 
+\begin{equation}\label{eqn:initialGConstr}
+	\begin{aligned}
+		\begin{dcases}
+			g_{i,k,l} = d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM & x_{i,k,l} = 1\\
+			g_{i,k,l} = 0 & x_{i,k,l} = 0
+		\end{dcases}.
+	\end{aligned}
+\end{equation}
+The conditions given in equation \ref{eqn:initialGConstr} can be rewritten as 
+\begin{equation}\label{eqn:bigM2}
 \begin{aligned}
 	& \begin{dcases} 
-		\begin{array}{l}
-		g_{i,k,l} = d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM
-		\end{array} & x_{i,k,l} = 1\\
-		\begin{array}{l}
-		g_{i,k,l} = 0
-		\end{array} & x_{i,k,l} = 0\\
-	\end{dcases} \\ 
-	\Rightarrow & 
-	\begin{dcases} 
-		\begin{array}{l}
-		g_{i,k,l} \le d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM\\
-		g_{i,k,l} \ge d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM\\
-		\end{array}
-		& x_{i,k,l} = 1 \\
-		\begin{array}{l}
-		g_{i,k,l} \le 0 \\
-		g_{i,k,l} \ge 0 \\
-		\end{array} & x_{i,k,l} = 0\\
-    	\end{dcases} 
-\end{aligned}
-\end{equation}
-where $x_{i,k,l}$ is the edge weight corresponding to $g_{i,k,l}$.  The piecewise function in equation \ref{eqn:bigMIneq} can be rewritten as 
-\begin{equation}\label{eqn:bigM2}
- \begin{aligned} 
-	 &\begin{dcases} 
 		\begin{array}{l}
 		g_{i,k,l} \le d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM\\
 		g_{i,k,l} \ge d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM\\
@@ -75,37 +53,45 @@ where $x_{i,k,l}$ is the edge weight corresponding to $g_{i,k,l}$.  The piecewis
 		g_{i,k,l} \le 0 \\
 		g_{i,k,l} \ge 0 \\
 		\end{array} & x_{i,k,l} = 0\\ 
-	\end{dcases} \\
-	\Rightarrow & 
-	 \begin{array}{l}
+	\end{dcases} \\ 
+	\Rightarrow &  
+	\begin{array}{l} 
 		 g_{i,k,l} \le d_{i,k}(\bar{a}_l - 1) - \bar{b}M - M(1 - x_{i,k,l})\\
 		 g_{i,k,l} \ge d_{i,k}(\bar{a}_l - 1) - \bar{b}M\\
 		 g_{i,k,l} \le 0 + Mx_{i,k,l} \\
-		 g_{i,k,l} \ge 0 \\
-	 \end{array}
+		 g_{i,k,l} \ge 0, \\
+	\end{array}\\ 
 \end{aligned}
 \end{equation}
-The results of equation \ref{eqn:bigM2} obtain a switching effect.  When $x_{i,k,l} = 1$, equation \ref{eqn:bigM2} becomes 
+where $M$ is the battery capacity. The results of equation \ref{eqn:bigM2} obtain a switching effect.  When $x_{i,k,l} = 1$, equation \ref{eqn:bigM2} becomes 
 \begin{equation}
 	\begin{aligned}
-		\color{blue}{g_{i,k,l}}  &\color{blue}{\le d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM} \\
-		\color{blue}{g_{i,k,l}}  &\color{blue}{\ge d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM} \\
-		\color{red}{g_{i,k,l}} & \color{red}{\le M} \\
-		\color{red}{g_{i,k,l}} & \color{red}{\ge 0}.  
+		& \begin{rcases}
+			g_{i,k,l} \le d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM & \\
+			g_{i,k,l} \ge d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM & \\
+		\end{rcases} \text{Active}\\ 
+		& \begin{drcases}
+			g_{i,k,l} \le M & \\
+			g_{i,k,l} \ge 0 & \\ 
+		\end{drcases} \text{Inactive} \\
 	\end{aligned}
 \end{equation}
-The \textcolor{blue}{active constraints} imply equality for $g_{i,k,l}$ = $(\bar{a}_l - 1)d_{i,k} - \bar{b_l}M$.  The \textcolor{red}{inactive constraints} imply that $g_{i,k,l}$ is greater then zero, and less then the battery capacity.  These constraints are also true, but have no effect on $g_{i,k,l}$. When $x_{i,k,l} = 0$, equation \ref{eqn:bigM2} becomes
+The active constraints imply equality for $g_{i,k,l}$ = $(\bar{a}_l - 1)d_{i,k} - \bar{b_l}M$.  The inactive constraints imply that $g_{i,k,l}$ is greater then zero and less then the battery capacity, which are trivially satisfied. When $x_{i,k,l} = 0$, equation \ref{eqn:bigM2} becomes
 \begin{equation}
 	\begin{aligned}
-		\color{red}{g_{i,k,l}}  &\color{red}{\le d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM - M} \\
-		\color{red}{g_{i,k,l}}  &\color{red}{\ge d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM} \\
-		\color{blue}{g_{i,k,l}} &\color{blue}{\le 0} \\
-		\color{blue}{g_{i,k,l}} &\color{blue}{\ge 0}.  
+		& \begin{rcases}
+			g_{i,k,l} \le d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM - M &\\
+			g_{i,k,l} \ge d_{i,k}(\bar{a}_l - 1) - \bar{b}_lM &\\
+		\end{rcases} \text{Inactive} \\
+		& \begin{rcases}
+			g_{i,k,l}\le 0 & \\
+			g_{i,k,l}\ge 0 & \\ 
+		\end{rcases}\text{Active}\\
 	\end{aligned}
 \end{equation}
-Where the \textcolor{red}{inactive constraints} indicate that $g_{i,k,l}$ is less then some positive value, and greater than a negative value. These constarints have no effect as the \textcolor{blue}{active constraints} imply equality for $g_{i,k,l} = 0$.
+Where the inactive constraints are again trivially satisfied, and the active imply equality for $g_{i,k,l} = 0$.
 
-\par Equation \ref{eqn:bigM2} can be expressed in linear form as 
+\par Equation \ref{eqn:bigM2} can be expressed in standard form as 
 \begin{equation}\label{eqn:chargeConstraints}
 	\begin{aligned} 
 		-g_{i,k,l} + d_{i,k}(\bar{a}_l - 1) + x_{i,k,l} &\le M(\bar{b_l} + 1) \\
@@ -114,3 +100,12 @@ Where the \textcolor{red}{inactive constraints} indicate that $g_{i,k,l}$ is les
 		-g_{i,k,l} &\le 0.  
 	\end{aligned}
 \end{equation} 
+Because the rate is not known ahead of time, and only one non-zero $g$ value is present, $d_{i,k}$ can be expressed as 
+\begin{equation}\label{eqn:totalG}
+	d_{i,k + 1} = d_{i,k} + \sum_l g_{i,k,l} 
+\end{equation}
+In summary, the minimum SOC for all feasible charge plans must exceed a given threshold.  SOC values are computed while the bus is in the charge station.  SOC values are updated when a bus enters by subtracting the discharged energy from the previous SOC estimate. SOC values are updated for in-station periods by adding the charge gains as given in equation \ref{eqn:totalG}.  Gains are computed using a switching constraint which sets them to zero when not charging, otherwise they follow the CCCV model as derived in equation \ref{eqn:CCCVFinal}. Initial SOC values are handled with an equality constraint
+\begin{equation}\label{eqn:initialSOC}
+	d_{i,0} = \text{initialValue}.
+\end{equation}
+

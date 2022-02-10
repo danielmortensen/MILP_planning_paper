@@ -245,9 +245,6 @@
     \verb 019 - Impact of Electric Bus Charging on the Power Distr.pdf:applicat
     \verb ion/pdf
     \endverb
-    \field{annotation}{%
-    cited in introduction%
-    }
     \field{month}{03}
     \field{year}{2019}
     \field{urlday}{13}
@@ -396,14 +393,6 @@
     \verb f Static and Dynamic Charging Infras.pdf:application/pdf
     \endverb
     \field{journaltitle}{Energies}
-    \field{annotation}{%
-    This article describes a method for optimizing bus charging with respect to
-  1. minimum power infrastructure 2. meeting logistical constraints   It does
-  not take into account costs for power consumption/demand.   It does however
-  take into account night (depot) vs day (overhead) charging, although their
-  overhead chargers work while the bus is mobile. where ours assume it is
-  parked for the moment.%
-    }
     \field{day}{13}
     \field{month}{06}
     \field{year}{2021}
@@ -477,9 +466,6 @@
     \verb e.pdf:/home/daniel/Zotero/storage/W6ZAFUIQ/Deb et al. - 2017 - Impact
     \verb  of electric vehicle charging stations on re.pdf:application/pdf
     \endverb
-    \field{annotation}{%
-    cited in introduction%
-    }
     \field{month}{12}
     \field{year}{2017}
     \field{urlday}{16}
@@ -759,14 +745,6 @@
     \verb 9 - Optimal Charging Strategy to Minimize Electricity .pdf:applicatio
     \verb n/pdf
     \endverb
-    \field{annotation}{%
-    This paper includes methods for minimizing cost for overnight charging and
-  minimizing battery harm. Using Linear Programming.   It does not include
-  minimization for cost associated with demand charge in conjunction with
-  external loads or on vs off peak hours (although it may not be important as
-  they are concerned only for charging at night.)   does not include night vs
-  day charging does not include variable charge rates.  %
-    }
     \field{month}{10}
     \field{year}{2019}
     \field{urlday}{13}
@@ -1179,9 +1157,6 @@
     \verb 0 - A Comparative study on Electric Vehicle and Intern.pdf:applicatio
     \verb n/pdf
     \endverb
-    \field{annotation}{%
-    cited in introduction%
-    }
     \field{month}{09}
     \field{year}{2020}
     \field{urlday}{13}
@@ -1262,6 +1237,22 @@
     \field{urlday}{13}
     \field{urlmonth}{11}
     \field{urlyear}{2021}
+  \endentry
+
+  \entry{noauthor_rocky_nodate}{legislation}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Rocky Mountain Power Electric Service Schedule No. 8 State of
+  Utah}
+    \verb{url}
+    \verb https://www.rockymountainpower.net/content/dam/pcorp/documents/en/roc
+    \verb kymountainpower/rates-regulation/utah/rates/008_Large_General_Service
+    \verb _1_000_kW_and_Over_Distribution_Voltage.pdf
+    \endverb
+    \field{urlday}{03}
+    \field{urlmonth}{02}
+    \field{urlyear}{2022}
   \endentry
 
   \entry{stahleder_impact_2019}{inproceedings}{}
@@ -1345,9 +1336,6 @@
     \verb 019 - Impact Assessment of High Power Electric Bus Charg.pdf:applicat
     \verb ion/pdf
     \endverb
-    \field{annotation}{%
-    cited in introduction%
-    }
     \field{month}{10}
     \field{year}{2019}
     \field{urlday}{16}
@@ -1653,15 +1641,6 @@
     \verb in.pdf:/home/daniel/Zotero/storage/9GF99GBX/Zhou et al. - 2018 - Opti
     \verb mization Method of Fast Charging Buses Chargin.pdf:application/pdf
     \endverb
-    \field{annotation}{%
-    Gives a framework for optimizing bus charging without exceeding the limits
-  of the grid.  It also minimizes consumption cost given a rate schedule.
-  estimates conditions for the future while optimizing according to historical
-  data and the current state.   does not: 1. Minimize demand charge 2. assume
-  set schedules rather reacts to buses in a stochastic manner.  This works
-  well for it's intended use case, but a global optimal will offer better
-  performance overall.%
-    }
     \field{month}{10}
     \field{year}{2018}
     \field{urlday}{13}
