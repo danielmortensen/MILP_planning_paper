@@ -283,7 +283,7 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 
 \subsection{MILP Constraints}
 \par Finding the optimal charge schedule can be expressed as an optimization problem, where the graph is encoded through equality/inequality constraints for a Mixed Integer Linear Program. This subsection formulates two sets of constraints.  The first encodes the graph, enforces conservation of chargers, and defines the number of chargers through a set of net-flow constraints. The second prevents the charger from reconnecting shortly after disconnecting, and allows only a single charger to connect at a time by enforcing group-flow constraints.
-\subsubsection{Net-Flow Constraints}
+\subsubsection{\label{sec:net-flow} Net-Flow Constraints}
 \begin{align}\label{eqn:flow}
 	Ax=c_f,	
 \end{align}

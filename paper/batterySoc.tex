@@ -1,6 +1,6 @@
 \section{Battery State of Charge}
 Battery state of charge (SOC) plays a role in the bus charge problem. Battery charge levels decrease as a bus traverses a route. Solutions to the bus charge problem account for routes and require that SOC values remain above a minimum threshold. 
-\par A SOC thresholding constraint requires that battery charge levels be estimated. The $k^{\text{th}}$ SOC for bus $i$ is denoted $d_{i,k}$, where $k$ is the \textit{node index}. Node indices are time agnostic such that $d_{i,k+1}$ represents the SOC bus node following $k_{i,k}$ as seen in figure \ref{fig:dSocDiagram}. 
+\par A SOC thresholding constraint requires that battery charge levels be estimated. The $k^{\text{th}}$ SOC for bus $i$ is denoted $d_{i,k}$, where $k$ is the \textit{node index}. Node indices are time agnostic such that $d_{i,k+1}$ represents the SOC bus node following $d_{i,k}$ as seen in figure \ref{fig:dSocDiagram}. 
 \par Because no charging is performed while on route, $d_{i,k}$ will be lowest as buses enter the charge station. Let $d_{i,k+1}$ be the charge level for bus $i$ as it enters the charge station, and $\delta_i$ represent the power discharged while on-route. The entrance SOC can be expressed as 
 \begin{align}
 	d_{i,k+1} = d_{i,k} - \delta_i,
