@@ -2,11 +2,24 @@
 Battery state of charge (SOC) plays a role in the bus charge problem. Battery charge levels decrease as a bus traverses a route. Solutions to the bus charge problem account for routes and require that SOC values remain above a minimum threshold. 
 \par A SOC thresholding constraint requires that battery charge levels be estimated. The $k^{\text{th}}$ SOC for bus $i$ is denoted $d_{i,k}$, where $k$ is the \textit{node index}. Node indices are time agnostic such that $d_{i,k+1}$ represents the SOC bus node following $d_{i,k}$ as seen in figure \ref{fig:dSocDiagram}. 
 \par Because no charging is performed while on route, $d_{i,k}$ will be lowest as buses enter the charge station. Let $d_{i,k+1}$ be the charge level for bus $i$ as it enters the charge station, and $\delta_i$ represent the power discharged while on-route. The entrance SOC can be expressed as 
-\begin{align}
+\begin{align}\label{eqn:dDelta}
 	d_{i,k+1} = d_{i,k} - \delta_i,
 \end{align}
 where $d_{i,k}$ is the previous departure SOC for bus $i$. Consider the example in figure \ref{fig:graphDelta}, where buses $1$ and $2$ leave the station at $t_2$ and enter at $t_4$. The corresponding change in SOC is given as $d_{1,2} = d_{1,1} - \delta_1$ and $d_{2,2} = d_{2,1} - \delta_2$ for buses $1$ and $2$ respectively.
 \input{media/graphDelta}
+The constraints from equation \ref{eqn:dDelta} can be expressed in linear standard form as 
+\begin{equation}\label{eqn:delta2}
+	\begin{bmatrix}
+		-1_{d_{i,k}} & 1_{d_{i,k+1}}
+	\end{bmatrix}
+	\begin{bmatrix}
+		d_{i,k} \\ d_{i,k+1}
+	\end{bmatrix} = \delta_i.
+\end{equation}
+Equation \ref{eqn:delta2} can be expressed in terms of $\mathbf{y}$ with appropriate zero padding and expanded to account for the decrease in SOC for all buses outside the station. The expanded constraint is given as 
+\begin{equation}\label{eqn:deltaFinal}
+	D_\delta\mathbf{y} = \mathbf{d}_\delta.
+\end{equation}
 \par Time periods between entrance and exit nodes represent time spent in the charge station and have the potential to charge the battery. An edge over which charging occures is refered to as $x_{i,k}$, where $k$ gives the index of the edge's outgoing node, and $i$ refers to the bus.  When a charger occupies $x_{i,k}$, the resulting increase, or \textit{gain}, in battery charge is denoted $g_{i,k}$, where $i$ and $k$ mirror the edge indices (see figure \ref{fig:dSocDiagram}). 
 \par The value for $g_{i,k}$ is computed using a single charge rate. Additional flexibility can be encoded be connecting bus nodes with multiple edges, denoted $x_{i,k,l}$. Each edge has a distinct charge rate and gain denoted $g_{i,k,l}$ and together, the set of edges allows for multi-rate charging (see figure \ref{fig:multirateChargeEdges}). Having multiple charge rates gives the option for fast charging when necessary, and slow charging when possible to preserve battery health and decrease the electrical load \cite{houbbadi_optimal_2019}.
 \input{media/dSocDiagram.tex}
@@ -96,16 +109,106 @@ Where the inactive constraints are again trivially satisfied, and the active imp
 	\begin{aligned} 
 		-g_{i,k,l} + d_{i,k}(\bar{a}_l - 1) + x_{i,k,l} &\le M(\bar{b_l} + 1) \\
 		 g_{i,k,l} - d_{i,k}(\bar{a}_l - 1)  &\le  - \bar{b_l}M \\
-		 g_{i,k,l} - Mx_{i,k} &\le 0 \\
-		-g_{i,k,l} &\le 0.  
+		 g_{i,k,l} - Mx_{i,k,l} &\le 0 \\
+		-g_{i,k,l} &\le 0  
 	\end{aligned}
 \end{equation} 
-Because the rate is not known ahead of time, and only one non-zero $g$ value is present, $d_{i,k}$ can be expressed as 
+and in matrix form as
+\begin{equation}\label{eqn:socMat}
+	\begin{bmatrix}
+		-1 & \bar{a}_l - 1 & 1 \\
+		1 & 1 - \bar{a}_1 & 0\\
+		1 & 0 & -M \\
+		-1 & 0 & 0
+	\end{bmatrix}
+	\begin{bmatrix}
+		g_{i,k,l} \\
+		d_{i,k}\\
+		x_{i,k,l}
+	\end{bmatrix}
+	\le 
+	\begin{bmatrix}
+		M(\bar{b}_l + 1 \\
+		-\bar{b}_lM\\
+		0\\
+		0
+	\end{bmatrix}.
+\end{equation}
+Equation \ref{eqn:socMat} can be expanded to include constraints for all $g_{i,k,l}$.  Becuase each value for $g_{i,k,l}$, $d_{i,k}$, and $x_{i,k,l}$ is an element of $\mathbf{y}$, the constraints from equation \ref{eqn:socMat} can be written as 
+\begin{equation}\label{eqn:dSocMat}
+	G\mathbf{y} \le \mathbf{b}_g.
+\end{equation}
+The value of $d_{i,k}$ can be expressed as 
 \begin{equation}\label{eqn:totalG}
 	d_{i,k + 1} = d_{i,k} + \sum_l g_{i,k,l} 
 \end{equation}
-In summary, the minimum SOC for all feasible charge plans must exceed a given threshold.  SOC values are computed while the bus is in the charge station.  SOC values are updated when a bus enters by subtracting the discharged energy from the previous SOC estimate. SOC values are updated for in-station periods by adding the charge gains as given in equation \ref{eqn:totalG}.  Gains are computed using a switching constraint which sets them to zero when not charging, otherwise they follow the CCCV model as derived in equation \ref{eqn:CCCVFinal}. Initial SOC values are handled with an equality constraint
-\begin{equation}\label{eqn:initialSOC}
-	d_{i,0} = \text{initialValue}.
+or 
+\begin{equation}
+	d_{i,k + 1} - d_{i,k} - \sum_l g_{i,k,l} = 0
 \end{equation}
-
+because a non-zero element of $g_{i,k,l}$ is only present for one corresponding $l$. This relationship is described in terms of an equality constraints such that
+\begin{equation}\label{eqn:dMatPrel}
+	\begin{bmatrix}
+		1 & -1 & \hdots & -1
+	\end{bmatrix}
+	\begin{bmatrix}
+		d_{i,k+1} \\ d_{i,k} \\ g_{i,k,1} \\ \hdots \\ g_{i,k,l}
+	\end{bmatrix} = 0.
+\end{equation}
+Equation \ref{eqn:dMatPrel} can be appropriatly zero padded  such that 
+\begin{equation}
+	\begin{bmatrix}
+		1_{d_{i,k+1}} & -1_{d_{i,k}} & \hdots & -1_{g_{i,k,l}}
+	\end{bmatrix}
+	\mathbf{y} = 0.  
+\end{equation}
+and expanded to define the values for all $d_{i,k} \ni k > 0$ as
+\begin{equation}
+	D_d\mathbf{y} = \mathbf{0}.
+\end{equation}
+The values for $d_{i,0}$ are defined with initial SOC conditions with additional equality constraints, denoted $\mathbf{d}_0$ such that
+\begin{equation}
+	\begin{bmatrix}
+		1_{d_{1,0}}& 0 & 0 & \hdots & 0 \\
+		0 & \hdots & 1_{d_{2,0}} & 0 & 0 \\
+		\vdots  &        &    \vdots   &   & \vdots  \\
+		0 & 0      & 0           & \hdots & 1_{d_{i,0}}
+	\end{bmatrix}
+	\mathbf{y} = \mathbf{d}_0,
+\end{equation}
+or 
+\begin{equation}\label{eqn:dInitialFinal}
+	D_0\mathbf{y} = \mathbf{d}_0.
+\end{equation}
+\par Once all values for $d_{i,k}$ are computed, they must be constrainted to remain above a threshold $\tau$. The SOC thresholing constraint can be expessed as an inequality constraint such that
+\begin{equation}\label{eqn:tau}
+	\begin{aligned}
+		& d_{i,k} \ge \tau \\
+		\Rightarrow & -d_{i,k} \le -\tau \\
+		\Rightarrow & \begin{bmatrix}0 & \hdots & -1_{d_{i,k}}& \hdots & 0 \end{bmatrix}\mathbf{y} \le -\tau
+	\end{aligned}
+\end{equation}
+Equation \ref{eqn:tau} can be expanded to a matrix $D_\tau$, where each each $d_{i,k}$ contains a corresponding constraint row such that
+\begin{equation}\label{eqn:tauFinal}
+	\begin{aligned}
+		D_\tau\mathbf{y} & \le \begin{bmatrix}-\tau \\ \vdots \\ -\tau \end{bmatrix} \\
+		       & \le \mathbf{d}_\tau
+	\end{aligned}
+\end{equation}
+\par In summary, the minimum SOC for all feasible charge plans must exceed a given threshold.  SOC values are computed while the bus is in the charge station.  SOC values are updated when a bus enters by subtracting the discharged energy from the previous SOC estimate. SOC values are updated for in-station periods by adding the charge gains as given in equation \ref{eqn:totalG}.  Gains are computed using a switching constraint which sets them to zero when not charging, otherwise they follow the CCCV model as derived in equation \ref{eqn:CCCVFinal}. Initial SOC values are handled with the equality constraint given in equation \ref{eqn:dInitialFinal} and the SOC is constrained to remain above the threshold $\tau$ in equation \ref{eqn:tauFinal}. All constraints for $d$ can be concatenated such that 
+\begin{equation}
+	\begin{bmatrix}
+	D_0 \\
+	D_\delta \\
+	D_d
+	\end{bmatrix} \mathbf{y} = 
+	\begin{bmatrix}
+		\mathbf{d}_0 \\
+		\mathbf{d}_\delta \\
+		\mathbf{0}
+		\end{bmatrix}, \quad \begin{bmatrix} D_g \\ D_\tau \end{bmatrix}\mathbf{y} \le \begin{bmatrix} \mathbf{d}_g \\ \mathbf{d}_\tau \end{bmatrix}
+\end{equation}
+and expressed as 
+\begin{equation}
+	D_{\text{eq}}\mathbf{y} = \mathbf{d}_{\text{eq}}, \quad D_{\text{ineq}} \mathbf{y} \le \mathbf{d}_{\text{ineq}}
+\end{equation}
