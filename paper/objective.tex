@@ -1,1 +1,64 @@
 \section{Objective Function}
+The objective function in this work models the rate schedule used in \cite{noauthor_rocky_nodate}, where the result is modeled as the monthly charge a transit authority might receive from the power provider. The objective function includes charges for energy, power, and facility use and implements both on and off-peak rates.
+\subsection{Energy}
+\par Energy charges are given per Kilowatt-hour of energy consumed and include power from external loads and bus chargers. Let $\mathbf{p}$ be the average external power used at each timestep, where $\mathbf{p}_i$ is the average power draw between $t_j$ and $t_{j + 1}$. The energy consumed by external loads from $t_j$ to $t_{j+1}$ is computed as 
+\begin{equation}
+	e_{l_j} = \mathbf{p}_i \times \Delta_t,
+\end{equation}
+where $\Delta_t$ is the change in time from $t_j$ to $t_{j+1}$ in hours. The energy consumed by bus chargers for the same interval is computed as  
+\begin{equation}
+	e_{b_j} = \sum_{k\in t}g_{i,k,l},	
+\end{equation}
+which sums all changes in bus SOC between $t_j$ and $t_{j+1}$.
+The total energy is computed as 
+\begin{equation}\label{eqn:energy1}
+	e_j = e_{l_j} + e_{b_j}
+\end{equation}
+The equation for \ref{eqn:energy1} can be written in standard form as 
+\begin{equation}\label{eqn:energy2}
+	\begin{aligned}
+		e_j -\sum_{k\in t}g_{i,k,l} &= p_i \times \Delta_t \\
+		\begin{bmatrix} 1_{e_j} & -1_{g_1} & \hdots -1_{g_n} \end{bmatrix} \begin{bmatrix}e_j \\ g_1 \\ \vdots \\ g_n \end{bmatrix} &= p_i \times \Delta_t
+	\end{aligned}
+\end{equation}
+Equation \ref{eqn:energy2} can be modified to reflect the energy consumed in an arbitrary time period, $T$, by including the corresponding values for $g$ and $p$ as
+\begin{equation}\label{eqn:energy3}
+	\begin{aligned}
+	e_T -\sum_{k\in T}g_{i,k,l} &= \left ( \sum_{i\in T}p_i \right ) \times \Delta_t \\
+	\begin{bmatrix} 1_{e_j} & -1_{g_1} & \hdots -1_{g_n} \end{bmatrix} \begin{bmatrix}e_j \\ g_1 \\ \vdots \\ g_n \end{bmatrix} &= p_T \times \Delta_t.
+	\end{aligned}
+\end{equation}
+For multiple time periods, the constraint can be expanded in matrix form, where row $i$ corresponds to the periods of time in $T_i$. Furthermore, by including $e_j$ in the solution vector $\mathbf{y}$ and zero-padding appropriately, the expanded form of equation \ref{eqn:energy3} can be written as  
+\begin{equation}
+	E\mathbf{y} = \mathbf{e}_p,
+\end{equation}
+where row $i$ in $E$ reflects equation \ref{eqn:energy3} for the time intervals in $T_i$, and $\mathbf{e}_{p_i}$ contains the energy from external loads during $T_i$.
+The day is divided into on and off-peak times.  on-peak times reflect periods where high power use is common.
+\subsection{Power}
+Power charges are computed for the maximum average power draw, where the average is computed over a 15 minute sliding window. The average power can be computed as the energy in the window divided by the window length in hours. In this case, a 15 minute window equates to a quarter hour. Let $\bar{p}_j$ be the average power from $j - 15$ to $j$. Equation \ref{eqn:energy3} can be adapted to compute the average power as
+\begin{equation}\label{eqn:power1} 
+	\begin{aligned}
+		\bar{p}_j - \left ( \sum_{k\in T_j}g_{i,k,l} \right )/4 &= \left ( \sum_{i\in T_j}p_i \right ) \times \frac{\Delta_t}{4} \\
+		\begin{bmatrix} 1_{\bar{p}_j} & -\frac{1_{g_1}}{4} & \hdots -\frac{1_{g_n}}{4} \end{bmatrix} \begin{bmatrix}e_j \\ g_1 \\ \vdots \\ g_n \end{bmatrix} &= \frac{p_T \times \Delta_t}{4}.
+	\end{aligned}
+\end{equation}
+Equation \ref{eqn:power1} can further be expanded and zero padded to compute the average power at each time, $t_i$ by applying equation \ref{eqn:power1} to the corresponding window as
+\begin{equation}\label{eqn:power2}
+	P\mathbf{y} = \mathbf{p}.	
+\end{equation}
+The maximum average power, denoted $\bar{p}_{\text{max}}$, is greater than or equal to each average power computed in equation \ref{eqn:power2}.  This yields an additional set of inequality constraints 
+\begin{equation}
+	\begin{aligned}
+		 \begin{bmatrix} 
+		-1_{\hat{p}} & 1_{p_0} & 0             & \hdots & 0 \\ 
+	        -1_{\hat{p}} & 0       & 1_{\bar{p}_1} & \hdots & 0\\
+		-1_{\hat{p}} & 0       & 0 & \hdots    & 1_{\bar{p}_j} \\
+		 \end{bmatrix} &\le \mathbf{0} \\ 
+		 P_{\text{max}} &\le \mathbf{0}.
+	\end{aligned}
+\end{equation}
+Because the max average power is minimizied in the objective function, the value for $\hat{p}_{\text{max}}$ will be forced down to the value of the greatest average power computed in equation \ref{eqn:power2}, and accurately reflect the maximum average power.
+\subsection{On/Off Peak Rates}
+
+\subsection{Objective Function}
+

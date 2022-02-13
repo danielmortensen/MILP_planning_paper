@@ -14,7 +14,7 @@ where $D_\text{multi-graph}$ is an $\text{nBus} \times \text{nVar}$ matrix such 
 \begin{align}
 	D_\text{multi-graph}\mathbf{y} = \mathbf{d}_{\text{graph 1}} - \mathbf{d}_{\text{graph 2}}.
 \end{align}
-Because all SOC values $d$ are contained in $\mathbf{y}$, this amounts to placing $1$ and $-1$ at the corresponding indices.
+Because all SOC values $d$ are contained in $\mathbf{y}$, forming the matrix $D$ amounts to placing $1$ and $-1$ at the indices corresponding to $d_{\text{graph 1}}$ and $d_{\text{graph 2}}$ respectively and zero otherwise. 
 \begin{figure*}
 	\centering
 	\begin{tikzpicture} 
