@@ -24,8 +24,8 @@ The equation for \ref{eqn:energy1} can be written in standard form as
 Equation \ref{eqn:energy2} can be modified to reflect the energy consumed in an arbitrary time period, $T$, by including the corresponding values for $g$ and $p$ as
 \begin{equation}\label{eqn:energy3}
 	\begin{aligned}
-	e_T -\sum_{k\in T}g_{i,k,l} &= \left ( \sum_{i\in T}p_i \right ) \times \Delta_t \\
-	\begin{bmatrix} 1_{e_j} & -1_{g_1} & \hdots -1_{g_n} \end{bmatrix} \begin{bmatrix}e_j \\ g_1 \\ \vdots \\ g_n \end{bmatrix} &= p_T \times \Delta_t.
+	e_j -\sum_{k\in T}g_{i,k,l} &= \left ( \sum_{i\in T}p_i \right ) \times \Delta_t \\
+		\begin{bmatrix} 1_{e_j} & -1_{g_1} & \hdots -1_{g_n} \end{bmatrix} \begin{bmatrix}e_j \\ g_1 \\ \vdots \\ g_n \end{bmatrix} &= e_{p_j}.
 	\end{aligned}
 \end{equation}
 For multiple time periods, the constraint can be expanded in matrix form, where row $i$ corresponds to the periods of time in $T_i$. Furthermore, by including $e_j$ in the solution vector $\mathbf{y}$ and zero-padding appropriately, the expanded form of equation \ref{eqn:energy3} can be written as  
@@ -46,19 +46,101 @@ Equation \ref{eqn:power1} can further be expanded and zero padded to compute the
 \begin{equation}\label{eqn:power2}
 	P\mathbf{y} = \mathbf{p}.	
 \end{equation}
-The maximum average power, denoted $\bar{p}_{\text{max}}$, is greater than or equal to each average power computed in equation \ref{eqn:power2}.  This yields an additional set of inequality constraints 
-\begin{equation}
+The maximum average power, denoted $\hat{p}$, is greater than or equal to each average power computed in equation \ref{eqn:power2}.  This yields an additional set of inequality constraints 
+\begin{equation}\label{eqn:cPower1}
 	\begin{aligned}
 		 \begin{bmatrix} 
-		-1_{\hat{p}} & 1_{p_0} & 0             & \hdots & 0 \\ 
-	        -1_{\hat{p}} & 0       & 1_{\bar{p}_1} & \hdots & 0\\
-		-1_{\hat{p}} & 0       & 0 & \hdots    & 1_{\bar{p}_j} \\
-		 \end{bmatrix} &\le \mathbf{0} \\ 
-		 P_{\text{max}} &\le \mathbf{0}.
+			-1_{\hat{p}} & 1_{\bar{p}_0} & 0             & \hdots & 0 \\ 
+	        	-1_{\hat{p}} & 0       & 1_{\bar{p}_1} & \hdots & 0\\
+			-1_{\hat{p}} & 0       & 0 & \hdots    & 1_{\bar{p}_j} \\
+		 \end{bmatrix}\mathbf{y} &\le \mathbf{0} \\ 
+		 P_{\text{max}}\mathbf{y} &\le \mathbf{0}.
 	\end{aligned}
 \end{equation}
 Because the max average power is minimizied in the objective function, the value for $\hat{p}_{\text{max}}$ will be forced down to the value of the greatest average power computed in equation \ref{eqn:power2}, and accurately reflect the maximum average power.
 \subsection{On/Off Peak Rates}
+Power providers also divide each day into on and off-peak periods during which different rates are applied for both energy and power charges. Let $H$ and $L$ be the respective sets of all time indices in on and off peak periods. The cost of energy during on-peak hours can be expressed as 
+\begin{equation}\label{eqn:cEnergy1}
+	\begin{aligned}
+		c_{\text{energy}_H} &= \left ( \sum_{j\in H} e_j \right ) r_{e_\text{on}} \\
+		&= \begin{bmatrix}r_{e_1} & 0 & \hdots & 0 & r_{e_4} & \hdots & 0 \end{bmatrix}\mathbf{y} \\
+		&= \mathbf{r}_{e_\text{on}}^T\mathbf{y},
+	\end{aligned}
+\end{equation}
+where $\mathbf{r}_{e_\text{on}}$ contains the value of $r_{e_\text{on}}$ at the index corresponding to $e_j$ in $\mathbf{y} \ \forall j \in H$. A similar formulation can be used to describe the cost of energy consumed during off-peak hours.  
+\par An on-peak rate also applies to charges for power. Equation \ref{eqn:cPower1} can be adapted to only include rows that correspond to average power values during on-peak hours such that
+\begin{equation}\label{eqn:cPOnPeak} 
+	\begin{aligned}
+		 \begin{bmatrix} 
+			 -1_{\hat{p}_\text{on}} & 1_{\bar{p}_0} & 0             & \hdots & 0 \\ 
+			 -1_{\hat{p}_\text{on}} & 0       & 1_{\bar{p}_1} & \hdots & 0\\
+			 -1_{\hat{p}_\text{on}} & 0       & 0 & \hdots    & 1_{\bar{p}_j} \\
+		 \end{bmatrix}\mathbf{y} &\le \mathbf{0} \\ 
+		 P_{\text{on}}\mathbf{y} &\le \mathbf{0}.  
+	\end{aligned}
+\end{equation}
+Similarly, the off-peak max average power can be computed as  
+\begin{equation}\label{eqn:cPOffPeak}
+	\begin{aligned}
+		 \begin{bmatrix} 
+			 -1_{\hat{p}_\text{off}} & 1_{\bar{p}_0} & 0             & \hdots & 0 \\ 
+			 -1_{\hat{p}_\text{off}} & 0       & 1_{\bar{p}_1} & \hdots & 0\\
+			 -1_{\hat{p}_\text{off}} & 0       & 0 & \hdots    & 1_{\bar{p}_j} \\
+		 \end{bmatrix}\mathbf{y} &\le \mathbf{0} \\ 
+		 P_{\text{off}}\mathbf{y} &\le \mathbf{0},  
+	\end{aligned}
+\end{equation}
+where each row corresponds to $\bar{p}_j \ \forall j \in L$.
+\par Many power providers also include a facilities charge.  The facilities charge is billed for each Kw of the maximum average power in \textit{both} on and off-peak intervals. The total max average power is calculated using equation \ref{eqn:cPower1}.
+\par The total power charge can be computed as the sum of the on-peak, off-peak, and facilities charges as 
+\begin{equation}
+	\begin{aligned}
+		c_\text{power} &= \begin{bmatrix}r_{\hat{p}_{\text{on}}} & \hdots & 0 & r_{\hat{p}_{\text{off}}} & \hdots & r_{\hat{p}_{\text{facilities}}} \end{bmatrix}\mathbf{y} \\
+			&= \mathbf{r}_{\hat{p}}^T\mathbf{y}
+	\end{aligned}
+\end{equation}
 
 \subsection{Objective Function}
+The objective function combines the cost of energy and power, where the on-peak and off-peak energy is combined as 
+\begin{equation}\label{eqn:cEnergy2}
+	\begin{aligned}
+		c_{\text{energy}} &= \mathbf{r}_{e_\text{on}}^T\mathbf{y} + \mathbf{r}_{e_\text{off}}^T\mathbf{y} \\
+		&=\left ( \mathbf{r}_{e_\text{on}} + \mathbf{r}_{e_\text{off}} \right )^T \mathbf{y} \\
+		&= \mathbf{r}_e^T\mathbf{y}.
+	\end{aligned}
+\end{equation}
+The combined expression is given as 
+\begin{equation}\label{eqn:objective}
+	\begin{aligned}
+		c_{\text{total}} &= c_{\text{power}} + c_{\text{energy}} \\ 
+				 &= \mathbf{r}_e^T\mathbf{y} + \mathbf{r}_{\hat{p}}^T\mathbf{y} \\
+				 &= \left ( \mathbf{r}_e + \mathbf{r}_{\hat{p}} \right )^T\mathbf{y} \\
+				 &= \mathbf{r}^T\mathbf{y}.
+	\end{aligned}
+\end{equation}
+\par Equation \ref{eqn:objective} is used as the objective function in a mixed integer linear program of the form
+\begin{equation}
+	\begin{aligned}
+		& \underset{\mathbf{y}}{\scalebox{1}{\text{min}}} \ \mathbf{r}^T\mathbf{y} \\
+		\text{subject to}& \ \ \ \  C_{\text{eq}}\mathbf{y} = \mathbf{c}_{\text{eq}}, \ C_{\text{ineq}}\mathbf{y} \le \mathbf{c}_{\text{ineq}},
+	\end{aligned}
+\end{equation}
+Where $C_{\text{eq}}, \mathbf{c}_{\text{eq}}, C_{\text{ineq}}, and \mathbf{c}_{text{ineq}}$ are formed by stacking the equality and inequality constraints from equations \ref{eqn:flow}, \ref{eqn:cGroupFlow}, \ref{eqn:cSocFinal}, \ref{eqn:power2}, \ref{eqn:cPower1}, \ref{eqn:cPOnPeak}, and \ref{eqn:cPOffPeak}.
+\begin{equation}
+	\begin{aligned}
+		& \underset{\mathbf{y}}{\scalebox{1}{\text{min}}} \ \mathbf{r}^T\mathbf{y} \\
+		\text{subject to}& \ \ \ \  \begin{bmatrix}
+			\begin{bmatrix}A & 0 \end{bmatrix} \\
+				D_{\text{eq}} \\
+				P
+				\end{bmatrix} \mathbf{y} = \begin{bmatrix}c_f \\ \mathbf{d}_{\text{eq}}\\\mathbf{p} \end{bmatrix}, \ \begin{bmatrix}
+		\begin{bmatrix} B & 0 \end{bmatrix} \\
+			D_{\text{ineq}} \\ 
+			P_{\text{max}} \\
+			P_{\text{on}} \\
+			P_{\text{off}}
+			\end{bmatrix}\mathbf{y} \le \begin{bmatrix}\mathbf{1} \\ \mathbf{d}_{\text{ineq}} \\ \mathbf{0} \\ \mathbf{0} \\ \mathbf{0} \end{bmatrix},
+	\end{aligned}
+\end{equation}
+
 

@@ -423,7 +423,7 @@ where $A$ is the graph incidence matrix, $x$ is an $\text{nEdge} \times 1$ vecto
 	\label{fig:groupedEdges} 
 \end{figure} 
 Let $x$ be the edge weights as before and $c_g$ be an nGroup $\times$ 1 vector where the $i^{\text{th}}$ element gives the group flow for group $i$. The group flow is then computed as 
-\begin{align}
+\begin{align}\label{eqn:cGroupFlow}
 	Bx = c_g
 \end{align}
 But the group flow is required to be one at most to avoid thrashing.  This is expressed by the inequality given in equation \ref{eqn:cGroupFlow}.
