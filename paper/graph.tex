@@ -281,13 +281,34 @@ A solution to the bus charge problem must reveal both \textit{when} and \textit{
 	\label{fig:graphWithSolution}
 \end{figure}
 
-\subsection{MILP Constraints}
-\par Finding the optimal charge schedule can be expressed as an optimization problem, where the graph is encoded through equality/inequality constraints for a Mixed Integer Linear Program. This subsection formulates two sets of constraints.  The first encodes the graph, enforces conservation of chargers, and defines the number of chargers through a set of net-flow constraints. The second prevents the charger from reconnecting shortly after disconnecting, and allows only a single charger to connect at a time by enforcing group-flow constraints.
+\subsection{Graph Constraints}
+\par Finding the optimal charge schedule can be expressed as an optimization problem, where the graph is encoded through equality/inequality constraints for a Mixed Integer Linear Program of the form 
+\begin{equation}
+	\begin{aligned}
+		& \underset{\mathbf{y}}{\text{min}}\ \mathbf{r}^T\mathbf{y} \ \text{subject to} \\
+		& F\mathbf{y} = \mathbf{f}, \ Q\mathbf{y} \le \mathbf{q}
+	\end{aligned},
+\end{equation}
+where the equality and inequality constraints are encoded in $F$, $\mathbf{f}$, $Q$ and $\mathbf{q}$. The variable $\mathbf{y}$ is a vector containing the elements of the solution and is of the form 
+\begin{equation}\label{eqn:y}
+	\mathbf{y} = \begin{bmatrix}
+		\mathbf{x} \\
+		\mathbf{d} \\
+		\mathbf{g} \\
+		\mathbf{e} \\
+		\mathbf{p} \\
+		\hat{p} \\
+		\hat{p}_\text{off-peak} \\
+		\hat{p}_\text{on-peak} 
+	\end{bmatrix},
+\end{equation}
+where each element of $\mathbf{y}$ is defined later in this paper.
+\par  This subsection formulates two sets of constraints.  The first encodes the graph, enforces conservation of chargers, and defines the number of chargers through a set of net-flow constraints. The second prevents the charger from reconnecting shortly after disconnecting, and allows only a single charger to connect at a time by enforcing group-flow constraints.
 \subsubsection{\label{sec:net-flow} Net-Flow Constraints}
 \begin{align}\label{eqn:flow}
-	Ax=c_f,	
+	A\mathbf{x}=\mathbf{c}_f,	
 \end{align}
-where $A$ is the graph incidence matrix, $x$ is an $\text{nEdge} \times 1$ vector of edge weights, and $c_f$ is $\text{nNode} \times 1$ and equals the difference between incoming and outgoing edge weights, or \textit{net-flow}.
+where $A$ is the graph incidence matrix, $\mathbf{x}$ is the $\text{nEdge} \times 1$ vector of edge weights and corresponds to $\mathbf{x}$ in equation \ref{eqn:y}, and $\mathbf{c}_f$ is $\text{nNode} \times 1$ and equals the difference between incoming and outgoing edge weights, or \textit{net-flow}.
 \par  An incidence matrix organizes relationships between nodes and edges by describing which edges leave and enter which nodes. The matrix $A$ is an nNode $\times$ nEdge matrix and expresses incoming connections between the $i^{\text{th}}$ node and $j^{\text{th}}$ edge as $A_{i,j} = 1$. Similarly, outgoing connections are given with $A_{i,j} = -1$, and no connection with $A_{i,j} = 0$. For example, the graph in figure \ref{fig:genericGraph} is represented as:
 \begin{figure}
 	\centering
@@ -339,8 +360,15 @@ where $A$ is the graph incidence matrix, $x$ is an $\text{nEdge} \times 1$ vecto
 	\label{fig:sourceSink} 
 \end{figure} 
 \begin{align}\label{eqn:cFlow}
-	Ax = \begin{bmatrix} 0 \\ \vdots \\ -\text{nCharger} \\ \vdots \\ 0 \\ \text{nCharger} \\ \vdots \\ 0\end{bmatrix}
+	Ax = \begin{bmatrix} 0 \\ \vdots \\ -\text{nCharger} \\ \vdots \\ 0 \\ \text{nCharger} \\ \vdots \\ 0\end{bmatrix}.
 \end{align}
+Equation \ref{eqn:cFlow} can be formulated in terms of $\mathbf{y}$ by appropriatly zero-padding $A$ such that
+\begin{equation}\label{eqn:cFlow2}
+	\begin{aligned}
+		c_f &= \begin{bmatrix}A & 0 \end{bmatrix}\mathbf{y}\\
+		    &= \tilde{A} \mathbf{y} 
+	\end{aligned}
+\end{equation}
 \subsubsection{Group-flow Constraints}
 \par Another flow type, known as group flow, can be used to regulate the number of chargers entering a set of nodes. This is desired for two reasons:  It avoids multiple reconnects during a charge period, and limits the number of connecting chargers to one. 
 \par Define a charge group as the set of all nodes for a given bus corresponding to one station visit as shown in figure \ref{fig:groups}. The \textit{group flow} is the number of chargers that enter a group and is represented as the sum of all incoming edge weights (see figure \ref{fig:groupedEdges}). 
@@ -422,14 +450,21 @@ where $A$ is the graph incidence matrix, $x$ is an $\text{nEdge} \times 1$ vecto
 	\caption{Incoming Group Edges}
 	\label{fig:groupedEdges} 
 \end{figure} 
-Let $x$ be the edge weights as before and $c_g$ be an nGroup $\times$ 1 vector where the $i^{\text{th}}$ element gives the group flow for group $i$. The group flow is then computed as 
+Let $\mathbf{x}$ be the edge weights as before and $\mathbf{c}_g$ be an nGroup $\times$ 1 vector where the $i^{\text{th}}$ element gives the group flow for group $i$. The group flow is then computed as 
 \begin{align}\label{eqn:cGroupFlow}
-	Bx = c_g
+	B\mathbf{x} = \mathbf{c}_g
 \end{align}
 But the group flow is required to be one at most to avoid thrashing.  This is expressed by the inequality given in equation \ref{eqn:cGroupFlow}.
 \begin{align}\label{eqn:cGroupFlow}
 	Bx \le \begin{bmatrix} 1\\ 1 \\\vdots \\ 1\end{bmatrix}.
 \end{align}
+Similarly to equation \ref{eqn:cFlow2}, equation \ref{eqn:cGroupFlow} can also be expressed in terms of $\mathbf{y}$ with appropriate zero padding as
+\begin{equation}\label{eqn:cGroupFlow2}
+	\begin{aligned}
+		\begin{bmatrix} B & 0\end{bmatrix} \mathbf{y} &= \mathbf{1} \\
+		\tilde{B}\mathbf{y} &= \mathbf{1}.
+	\end{aligned}
+\end{equation}
 \subsection{Section Summary} In summary, the bus charge problem can be formulated as a graph with nodes and edges, where charge plans are encoded as a path. The charge problem aims to find a feasible path which minimizes the cost of power. Feasibility is defined through a set of net-flow and group-flow constraints. Net-flow constraints are encoded through an adjacency matrix and enforce both the conservation and total number of chargers. The group-flow constraints prevent charge thrashing and regulate the number of simultaneous charger-to-bus connections. 
 \begin{figure}
 \centering

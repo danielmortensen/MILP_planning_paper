@@ -1,7 +1,7 @@
 \section{Battery State of Charge}
 Battery state of charge (SOC) plays a role in the bus charge problem. Battery charge levels decrease as a bus traverses a route. Solutions to the bus charge problem account for routes and require that SOC values remain above a minimum threshold. 
-\par A SOC thresholding constraint requires that battery charge levels be estimated. The $k^{\text{th}}$ SOC for bus $i$ is denoted $d_{i,k}$, where $k$ is the \textit{node index}. Node indices are time agnostic such that $d_{i,k+1}$ represents the SOC bus node following $d_{i,k}$ as seen in figure \ref{fig:dSocDiagram}. 
-\par Because no charging is performed while on route, $d_{i,k}$ will be lowest as buses enter the charge station. Let $d_{i,k+1}$ be the charge level for bus $i$ as it enters the charge station, and $\delta_i$ represent the power discharged while on-route. The entrance SOC can be expressed as 
+\par A SOC thresholding constraint requires that battery charge levels be modeled. The $k^{\text{th}}$ SOC for bus $i$ is denoted $d_{i,k}$, where $k$ is the \textit{node index}. Node indices are time agnostic such that $d_{i,k+1}$ represents the SOC bus node following $d_{i,k}$ as seen in figure \ref{fig:dSocDiagram}. The set of all $d_{i,k}$ can be organized as the vector $\mathbf{d}$ from equation \ref{eqn:y}.
+\par Because no charging is performed while on route, $d_{i,k}$ will be lowest when buses enter the charge station. Let $d_{i,k+1}$ be the charge level for bus $i$ as it enters the charge station, and $\delta_i$ represent the power discharged while on-route. The entrance SOC can be expressed as 
 \begin{align}\label{eqn:dDelta}
 	d_{i,k+1} = d_{i,k} - \delta_i,
 \end{align}
@@ -10,7 +10,7 @@ where $d_{i,k}$ is the previous departure SOC for bus $i$. Consider the example 
 The constraints from equation \ref{eqn:dDelta} can be expressed in linear standard form as 
 \begin{equation}\label{eqn:delta2}
 	\begin{bmatrix}
-		-1_{d_{i,k}} & 1_{d_{i,k+1}}
+		-1 & 1
 	\end{bmatrix}
 	\begin{bmatrix}
 		d_{i,k} \\ d_{i,k+1}
@@ -18,10 +18,14 @@ The constraints from equation \ref{eqn:dDelta} can be expressed in linear standa
 \end{equation}
 Equation \ref{eqn:delta2} can be expressed in terms of $\mathbf{y}$ with appropriate zero padding and expanded to account for the decrease in SOC for all buses outside the station. The expanded constraint is given as 
 \begin{equation}\label{eqn:deltaFinal}
-	D_\delta\mathbf{y} = \mathbf{d}_\delta.
+	\begin{aligned}
+		\begin{bmatrix}0 & \hdots & -1_{d_{i,k}} & 0 & \hdots & 1_{d_{i,k+1}} \end{bmatrix} \mathbf{y} &= \mathbf{d}_\delta \\
+			D_\delta\mathbf{y} &= \mathbf{d}_\delta,
+	\end{aligned}
 \end{equation}
+where $-1_{d_{i,k}}$ and $1_{d_{i,k+1}}$ represent $-1$ and $1$ in locations corresponding to $d_{i,k}$ and $d_{i,k+1}$ respectively. Similar notation will be used throughout this paper as a means to imply a corresponding index for other variables.
 \par Time periods between entrance and exit nodes represent time spent in the charge station and have the potential to charge the battery. An edge over which charging occures is refered to as $x_{i,k}$, where $k$ gives the index of the edge's outgoing node, and $i$ refers to the bus.  When a charger occupies $x_{i,k}$, the resulting increase, or \textit{gain}, in battery charge is denoted $g_{i,k}$, where $i$ and $k$ mirror the edge indices (see figure \ref{fig:dSocDiagram}). 
-\par The value for $g_{i,k}$ is computed using a single charge rate. Additional flexibility can be encoded be connecting bus nodes with multiple edges, denoted $x_{i,k,l}$. Each edge has a distinct charge rate and gain denoted $g_{i,k,l}$ and together, the set of edges allows for multi-rate charging (see figure \ref{fig:multirateChargeEdges}). Having multiple charge rates gives the option for fast charging when necessary, and slow charging when possible to preserve battery health and decrease the electrical load \cite{houbbadi_optimal_2019}.
+\par The value for $g_{i,k}$ is computed using a single charge rate. Multiple charge rates can be encoded be connecting bus nodes with multiple edges, denoted $x_{i,k,l}$, where each edge has a distinct charge rate and gain denoted $g_{i,k,l}$ (see figure \ref{fig:multirateChargeEdges}). Having multiple charge rates gives the option for fast charging when necessary, and slow charging when possible to preserve battery health and decrease the electrical load \cite{houbbadi_optimal_2019}.
 \input{media/dSocDiagram.tex}
 \input{media/multirateChargeEdges.tex}
 \par The rate is selected by setting $x_{i,k,l} = 1$. All gains associated with unselected rates are equal to zero. Gains that correspond to selected rates are computed using the Constant Current Constant Voltage (CCCV) model as derived in \cite{whitaker_network_2021} which gives:
@@ -210,5 +214,5 @@ Equation \ref{eqn:tau} can be expanded to a matrix $D_\tau$, where each each $d_
 \end{equation}
 and expressed as 
 	\begin{equation}\label{eqn:cSocFinal}
-	D_{\text{eq}}\mathbf{y} = \mathbf{d}_{\text{eq}}, \quad D_{\text{ineq}} \mathbf{y} \le \mathbf{d}_{\text{ineq}}
+	D_{\text{eq}}\mathbf{y} = \mathbf{d}_{\text{eq}}, \quad D_{\text{ineq}} \mathbf{y} \le \mathbf{d}_{\text{ineq}}.
 \end{equation}

@@ -328,13 +328,13 @@ INPUT graph.tex
 INPUT graph.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT batterySoc.tex
-INPUT batterySoc.tex
-INPUT media/graphDelta.tex
-INPUT media/graphDelta.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
+INPUT batterySoc.tex
+INPUT batterySoc.tex
+INPUT media/graphDelta.tex
+INPUT media/graphDelta.tex
 INPUT media/dSocDiagram.tex
 INPUT media/dSocDiagram.tex
 INPUT media/multirateChargeEdges.tex
