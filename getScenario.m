@@ -18,9 +18,7 @@ addParameter(P, 'socLowerBound',50);
 addParameter(P, 'dischargeRoute','byDistance');
 addParameter(P, 'startBusSocAt',80);
 addParameter(P, 'provideZeroChargeOption',false);
-addParameter(P, 'disoptimality',0);
 parse(P,varargin{:});
-Scene.disoptimality = P.Results.disoptimality;
 Scene.dTime = P.Results.dTime; %in minutes
 Scene.chargeAtNight = P.Results.chargeAtNight;
 Scene.maxBatteryCharge = P.Results.maxBatteryCharge; %measured in kWh

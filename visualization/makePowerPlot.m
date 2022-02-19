@@ -1,13 +1,11 @@
 function makePowerPlot(G, result, id)
 % get average power for buses
 busPowerSelect = toSparse(G.Constraint.demand.A, G.param.nSolution);
-busPowerSelect = busPowerSelect(1:G.param.nTime,:);
-busPowerSelect(:,G.param.yFacilitiesIdx) = 0;
-busPowerSelect(:,G.param.yOnPeakDemandIdx) = 0;
+busPowerSelect(:,end - 1:end) = 0;
 meanBusPower = busPowerSelect*result;
 
 % get average power for uncontrolled loads
-loadPower = -G.Constraint.demand.b(1:G.param.nTime);
+loadPower = -G.Constraint.demand.b;
 
 % plot values
 figure; hold on; 

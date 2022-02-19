@@ -7,10 +7,7 @@ if scenario.chargeAtNight
 end
 G = computeConstraint(G, Const);
 [model, param] = getGurobiModel(G);
-if contains(G.param.base.minimization,'Max')
-    model.obj = -model.obj;
-end
 param.dualreductions = 0;
-param.TimeLimit = inf;
+...param.TimeLimit = 10;
 result = gurobi(model,param);
 end

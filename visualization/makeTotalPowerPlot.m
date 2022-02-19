@@ -2,22 +2,17 @@ function makeTotalPowerPlot(G, result, id)
 
 % compute values for facilities charge over time
 busFacilitiesSelect = toSparse(G.Constraint.demand.A, G.param.nSolution);
-busFacilitiesSelect(:,G.param.yFacilitiesIdx) = 0;
-busFacilitiesSelect(:,G.param.yOnPeakDemandIdx) = 0;
-busFacilitiesSelect = busFacilitiesSelect(1:G.param.nTime,:);
-bFacilities = G.Constraint.demand.b(1:G.param.nTime);
-demandFacilities = -busFacilitiesSelect*result - bFacilities;
-maxFacilities = result(G.param.yFacilitiesIdx);
+busFacilitiesSelect(:,end - 1) = 0;
+demandFacilities = -busFacilitiesSelect*result - G.Constraint.demand.b;
+maxFacilities = result(end - 1);
 
 % compute values for on-peak demand charge over time
 busDemandSelect = toSparse(G.Constraint.demandOnPeak.A, G.param.nSolution);
-busDemandSelect(:,G.param.yOnPeakDemandIdx) = 0;
-busDemandSelect = busDemandSelect(1:sum(G.param.isOnPeak),:);
-demandB = G.Constraint.demandOnPeak.b(1:sum(G.param.isOnPeak));
+busDemandSelect(:,end) = 0;
 demandOnPeak = zeros([G.param.nTime,1]);
 isOnPeak = logical(G.param.isOnPeak);
-demandOnPeak(isOnPeak) = -busDemandSelect*result - demandB;
-maxOnPeak = result(G.param.yOnPeakDemandIdx);
+demandOnPeak(isOnPeak) = -busDemandSelect*result - G.Constraint.demandOnPeak.b;
+maxOnPeak = result(end);
 
 % plot values
 figure; hold on; 

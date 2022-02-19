@@ -5,9 +5,7 @@
 % - daytime charging only
 % - no charge necessary
 function [G, Const, solution] = getScenario1()
-addpath('../utility');
-addpath('../graph');
-addpath('../optimization');
+addpath('../');
 Scen = getScenario('startBusSocAt',80, 'nNightChargeRate',1, 'nDayChargeRate',1);
 initialSoc = 80;
 Const = getConstant(Scen);

@@ -14,7 +14,7 @@ Constant.charge.nDayRate = Scenario.nDayChargeRate;
 Constant.charge.nNightRate = Scenario.nNightChargeRate;
 Constant.charge.R_DAY = Scenario.dayChargeRates;
 Constant.charge.R_NIGHT = Scenario.nightChargeRates;
-Constant.disoptimality = Scenario.disoptimality;
+
 
 Constant.node.idx.Y = 1;
 Constant.node.idx.X = 2;

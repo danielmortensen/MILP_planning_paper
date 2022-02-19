@@ -15,8 +15,7 @@ costExtern = (energyOnPeak*onPeakEnergyCost + ...
 
 % compute energy consumed by buses
 energyBus = G.Constraint.objective;
-energyBus(G.param.yFacilitiesIdx) = 0;
-energyBus(G.param.yOnPeakDemandIdx) = 0;
+energyBus(end - 1:end) = 0;
 costBus = energyBus'*result;
 
 % compute price for total energy used
@@ -24,11 +23,11 @@ costEnergyTotal = costExtern + costBus;
 energyLabel = "Energy Cost: " + formatValueInDollars(costEnergyTotal);
 
 % compute peak demand cost
-demandPeak = G.Constraint.objective(G.param.yOnPeakDemandIdx)*result(G.param.yOnPeakDemandIdx);
+demandPeak = G.Constraint.objective(end)*result(end);
 demandLabel = "Peak Demand Cost: " + formatValueInDollars(demandPeak);
 
 % compute facilities cost
-demandFacilities = G.Constraint.objective(G.param.yFacilitiesIdx)*result(G.param.yFacilitiesIdx);
+demandFacilities = G.Constraint.objective(end - 1)*result(end - 1);
 facilitiesLabel = "Total Demand (Facilities) Charge: " + formatValueInDollars(demandFacilities);
 
 % plot results

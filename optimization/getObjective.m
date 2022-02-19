@@ -1,20 +1,37 @@
-function obj = getObjective(Graph, Const, objectiveType)
-if nargin == 2
-    objectiveType = Graph.param.base.minimization;
-end
+function obj = getObjective(Graph, Const)
+objectiveType = Graph.param.base.minimization;
+obj = zeros([Graph.param.nSolution,1]);                                %#ok
 if strcmp(objectiveType, 'flatConsumption')
     obj = zeros([Graph.param.nSolution,1]);
     obj = addFlatConsumption(obj,Graph, Const);
     obj = addDismountPenaltyToObjective(obj,Graph,Const);
+elseif strcmp(objectiveType, 'baseline')
+    B = toSparse(Graph.Constraint.group.A, Graph.param.nSolution);
+    obj = ones([1, size(B,1)])*B;
 elseif contains(objectiveType, 'Schedule8')
    obj = zeros([Graph.param.nSolution,1]);
-   obj(Graph.param.yOnPeakDemandIdx) = 15.73; % rocky mountain power charge rate for on peak per kw
-   obj(Graph.param.yFacilitiesIdx) = 4.81; % rocky mountain facilities charge per kw
+   obj(end) = 15.73; % rocky mountain power charge rate for on peak per kw
+   obj(end - 1) = 4.81; % rocky mountain facilities charge per kw
    obj = addWeightedConsumption(obj, Graph, Const);
-   obj = addDismountPenaltyToObjective(obj,Graph,Const);
-elseif contains(objectiveType, 'disoptimal')
-    obj = zeros([Graph.param.nSolution,1]);
-    obj(Graph.param.yWorstCaseIdx) = 1;
+%    for iTime = 1:nTime - 1
+%        eSelectionIdx = Graph.edges(:,Const.edge.idx.TIME) == iTime;
+%        eSelection = Graph.edges(eSelectionIdx,:);
+%        eSelectionIdx = ~isnan(eSelection(:,Const.edge.idx.YDSOC));
+%        eSelection = eSelection(eSelectionIdx,:);
+%        dSocIdx = eSelection(:,Const.edge.idx.YDSOC);
+%        if Graph.param.isOnPeak(iTime + 1)
+%            obj(dSocIdx) = 0.058282;
+%        else 
+%            obj(dSocIdx) = 0.029624;
+%        end       
+%    end  
+   
+% small penalty to avoid spurious mount/dismounts
+obj = addDismountPenaltyToObjective(obj,Graph,Const);
+% mountIdx = Graph.edges(:,Const.edge.idx.TYPE) == Const.edge.type.DISMOUNT;
+% yMountIdx = Graph.edges(mountIdx,Const.edge.idx.YEDGE);
+% obj(yMountIdx) = 0.1;
+
 else
     error('invalid minimization objective');
 end
