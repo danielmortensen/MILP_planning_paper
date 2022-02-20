@@ -54,17 +54,20 @@ for iTime = 1:nTime - 1
 end
 end
 function obj = addWeightedConsumption(obj, Graph, Const)
-nTime = Graph.param.nTime;
-for iTime = 1:nTime - 1
-    eSelectionIdx = Graph.edges(:,Const.edge.idx.TIME) == iTime;
-    eSelection = Graph.edges(eSelectionIdx,:);
-    eSelectionIdx = ~isnan(eSelection(:,Const.edge.idx.YDSOC));
-    eSelection = eSelection(eSelectionIdx,:);
-    dSocIdx = eSelection(:,Const.edge.idx.YDSOC);
-    if Graph.param.isOnPeak(iTime + 1)
-        obj(dSocIdx) = 0.058282;
-    else
-        obj(dSocIdx) = 0.029624;
-    end
-end
+[dIdx, dIdxOnPeak] = getDSocIdx(Graph, Const);
+obj(dIdx) = 0.029624;
+obj(dIdxOnPeak) = 0.058282;
+% nTime = Graph.param.nTime;
+% for iTime = 1:nTime - 1
+%     eSelectionIdx = Graph.edges(:,Const.edge.idx.TIME) == iTime;
+%     eSelection = Graph.edges(eSelectionIdx,:);
+%     eSelectionIdx = ~isnan(eSelection(:,Const.edge.idx.YDSOC));
+%     eSelection = eSelection(eSelectionIdx,:);
+%     dSocIdx = eSelection(:,Const.edge.idx.YDSOC);
+%     if Graph.param.isOnPeak(iTime + 1)
+%         obj(dSocIdx) = 0.058282;
+%     else
+%         obj(dSocIdx) = 0.029624;
+%     end
+% end
 end

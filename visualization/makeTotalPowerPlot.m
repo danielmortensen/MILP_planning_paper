@@ -3,7 +3,7 @@ function makeTotalPowerPlot(G, result, id)
 % compute values for facilities charge over time
 busFacilitiesSelect = toSparse(G.Constraint.demand.A, G.param.nSolution);
 busFacilitiesSelect(:,end - 1) = 0;
-demandFacilities = -busFacilitiesSelect*result - G.Constraint.demand.b;
+demandFacilities = busFacilitiesSelect*result - G.Constraint.demand.b;
 maxFacilities = result(end - 1);
 
 % compute values for on-peak demand charge over time

@@ -3,12 +3,13 @@ addpath('graph/');
 addpath('utility/');
 addpath('optimization/');
 addpath('visualization/');
-addpath('/opt/gurobi912/linux64/matlab/');
+%addpath('/opt/gurobi912/linux64/matlab/');
 close all;
-fData = '/home/daniel/solveSchedule/data/';
+...fData = '/home/daniel/solveSchedule/data/';
+fData = '\\wsl.localhost\Ubuntu\home\dmortensen\MILP_planning_paper\data';
 doAllTest = true;
-nBus = 5;
-nCharger = 5;
+nBus = 35;
+nCharger = 6;
 
 if doAllTest
 %% Define Scenarios
@@ -30,10 +31,10 @@ scenario4 = getScenario('fExternalLoad','originalTpss1Day.csv',...
     'nOverheadCharger',nCharger, 'fData',fData);
 
 %% Run Scenarios
-result1 = runSimulation(scenario1, '5_Bus_5_ChargeRate_5_Overhead_MinSchedule8');
-result2 = runSimulation(scenario2, '5_Bus_5_ChargeRate_5_Overhead_Baseline');
-result3 = runSimulation(scenario3, '5_Bus_1_ChargeRate_5_Overhead_MinSchedule8');
-result4 = runSimulation(scenario4, '5_Bus_1_ChargeRate_5_Overhead_Baseline');
+result1 = runSimulation(scenario1, '35_Bus_5_ChargeRate_6_Overhead_MinSchedule8');
+result2 = runSimulation(scenario2, '5_Bus_5_ChargeRate_1_Overhead_Baseline');
+result3 = runSimulation(scenario3, '35_Bus_1_ChargeRate_6_Overhead_MinSchedule8');
+result4 = runSimulation(scenario4, '5_Bus_1_ChargeRate_1_Overhead_Baseline');
 else
     scenario1 = getScenario('fExternalLoad','originalTpss1Day.csv',...
     'nBus',5, 'nOverheadCharger',6, 'nDayChargeRate',1,'fData',fData);
@@ -42,35 +43,7 @@ end
 
 
 
-function [result, Const, G] = runSimulation(scenario, simId)
-[result, Const, G] = solveScenario(scenario);
-if strcmp(scenario.minObjective,'baseline')
-    [result.x, G] = convertToSchedule8(result.x, G, Const);
-end
-save(simId + ".mat",'G','result','Const');
-makePieChart(G, result.x, simId);
-makeSocChart(G, result.x, Const, false, simId);
-makeGraphPlot(G, result.x, Const, simId);
-makeTotalPowerPlot(G, result.x, simId);
-makePowerPlot(G, result.x, simId);
-makeTotalEnergyPlot(G, result.x, Const, simId);
-end
 
-function [result, G] = convertToSchedule8(result, G, Const)
-facilitiesA = toSparse(G.Constraint.demand.A,G.param.nSolution);
-facilitiesA(:,end-1:end) = 0;
-facilities = max(facilitiesA*result - G.Constraint.demand.b);
-
-onPeakA = toSparse(G.Constraint.demandOnPeak.A,G.param.nSolution);
-onPeakA(:,end-1:end) = 0;
-onPeak = max(onPeakA*result - G.Constraint.demandOnPeak.b);
-
-result(end - 1) = facilities;
-result(end) = onPeak;
-
-G.param.base.minimization = 'MinSchedule8';
-G.Constraint.objective = getObjective(G,Const);
-end
 
 
 
