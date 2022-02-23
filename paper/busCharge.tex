@@ -6,6 +6,10 @@
 \usetikzlibrary{positioning}
 \usetikzlibrary{math}
 \usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.7}
+\usepgfplotslibrary{dateplot}
 \setcounter{MaxMatrixCols}{20}
 \usepackage{subfig}
 \usepackage{stfloats}
@@ -19,6 +23,13 @@
 \usepackage{balance}
 \usepackage[backend=bibtex, style=numeric]{biblatex}
 \bibliography{busCharge}
+
+% import custom function definitions
+\usepackage{ifthen}
+\input{func_def/pgf_setup.tex}
+\input{func_def/comparisonBarChartDef.tex} 
+\input{func_def/comparisonTimeSeriesDef.tex}
+
 %\bibliographystyle{ieeetr}
 \begin{document}
 \title{Comprehensive Cost Minimization for Bus Charging}

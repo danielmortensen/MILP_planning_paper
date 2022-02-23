@@ -8,22 +8,22 @@ close all;
 ...fData = '/home/daniel/solveSchedule/data/';
 fData = '\\wsl.localhost\Ubuntu\home\dmortensen\MILP_planning_paper\data';
 doAllTest = true;
-nBus = 35;
+nBus = 5;
 nCharger = 6;
 
 if doAllTest
 %% Define Scenarios
-% 36 bus, 5 charge rate, 6 overhead charger MinSchedule8
-scenario1 = getScenario('fExternalLoad','originalTpss1Day.csv',...
-    'nBus',nBus, 'nOverheadCharger',nCharger, 'fData',fData);
+% 5 bus, 1 charge rate, 2 overhead charger MinSchedule8
+scenario1 = getSceneditario('fExternalLoad','originalTpss1Day.csv',...
+    'nBus',5,'nDayChargeRate',5,'nOverheadCharger',5, 'fData',fData);
 
-% 36 bus 5 charge rate, 6 overhead charger baseline
+% 5 bus 1 charge rate, 3 overhead charger baseline
 scenario2 = getScenario('fExternalLoad','originalTpss1Day.csv',...
-    'minObjective','baseline','nBus',nBus, 'nOverheadCharger',nCharger, 'fData',fData);
+    'nBus',10,'nDayChargeRate',1,'nOverheadCharger',1, 'fData',fData);
 
-% 36 bus, 1 charge rate, 6 overhead charger MinSchedule8
+% 5 bus, 1 charge rate, 4 overhead charger MinSchedule8
 scenario3 = getScenario('fExternalLoad','originalTpss1Day.csv',...
-    'nBus',nBus,'nDayChargeRate',1,'nOverheadCharger',nCharger, 'fData',fData);
+    'nBus',11,'nDayChargeRate',1,'nOverheadCharger',1, 'fData',fData);
 
 % 36 bus 1 charge rate, 6 overhead charger baseline
 scenario4 = getScenario('fExternalLoad','originalTpss1Day.csv',...
@@ -31,9 +31,9 @@ scenario4 = getScenario('fExternalLoad','originalTpss1Day.csv',...
     'nOverheadCharger',nCharger, 'fData',fData);
 
 %% Run Scenarios
-result1 = runSimulation(scenario1, '35_Bus_5_ChargeRate_6_Overhead_MinSchedule8');
-result2 = runSimulation(scenario2, '5_Bus_5_ChargeRate_1_Overhead_Baseline');
-result3 = runSimulation(scenario3, '35_Bus_1_ChargeRate_6_Overhead_MinSchedule8');
+result1 = runSimulation(scenario1, '9_Bus_1_ChargeRate_1_Overhead_MinSchedule8');
+result2 = runSimulation(scenario2, '10_Bus_1_ChargeRate_1_Overhead_MinSchedule8');
+result3 = runSimulation(scenario3, '11_Bus_1_ChargeRate_1_Overhead_MinSchedule8');
 result4 = runSimulation(scenario4, '5_Bus_1_ChargeRate_1_Overhead_Baseline');
 else
     scenario1 = getScenario('fExternalLoad','originalTpss1Day.csv',...

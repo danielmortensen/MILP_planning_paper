@@ -1,4 +1,4 @@
-function makePowerPlot(G, result, id)
+function makePowerPlot(G, result, id, latexFilePath)
 % get average power for buses
 busPowerSelect = toSparse(G.Constraint.demand.A, G.param.nSolution);
 busPowerSelect(:,end - 1:end) = 0;
@@ -30,4 +30,11 @@ if nargin == 3
 end
 title(titleStr);
 xlabel('time'); ylabel('Average kW');
+if nargin == 4
+    datetime.setDefaultFormats('default','yyyy-MM-dd HH:mm:ss');   
+    time = datetime(0,0,0,0,0,(0:dTime*60:60*60*24 - 1))';
+    data = table(meanBusPower, loadPower, time);
+    writetable(data, latexFilePath,'Delimiter',',');
+end
+
 end
