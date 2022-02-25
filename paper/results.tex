@@ -1,20 +1,19 @@
 \section{Results}
-This section contains analysis and results of the planning framework given previously. It is subdivided into three subsections: Uncontested Results, Contested Results, and Mulit-Rate Comparisons.
+This section contains analysis and results of the planning framework and is subdivided into three subsections: uncontested results, contested results, and multi-rate comparisons.
 \subsection{Uncontested Results}
 This section compares the charge schedule associated with equation \ref{eqn:finalObjective} with a schedule developed by a baseline algorithm.  The baseline adheres to all the constraints given previously, but maximizes the objective 
 \begin{equation}
 	\underset{\mathbf{y}}{\text{max}} \ \mathbf{1}^TB\mathbf{y},
 \end{equation}
 which incentivizes bus charging when possible. An initial cost comparison is given for an uncontested scenario where the number of chargers is equal to the number of buses. The cost breakdown is given in figure \ref{fig:costComparison}.
--show initial comparison between 5 charger 5 bus (both optimized and baseline)
 \begin{figure}
 	\centering
 	\makeComparisonBarChart{media/costComparison5Bus5Chargers.csv}{Cost (Dollars)}{Baseline}{Optimized}
 	\caption{Cost Comparison between optimized and baseline algorithms}
 	\label{fig:costComparison}
 \end{figure}
-\par Note how the energy charge is equivalent, which indicates that similar amounts of energy were consumed in both scenarios. Dispite the similarity in energy consumption, however, he cost of facilities and on-peak power is  significantly larger for the unoptimized schedule. 
-\par Figure \ref{fig:totalPower1} compares the average power use between the optimized and baseline algorithms. There are two primary differences between the two. The first is that the optimized schedule avoids charging during on-peak hours.  The second is that charge sessions are regulated and spread the power draw over larger, intermittent periods of time. Avoiding the on-peak time window and minimizing average instantaneous power draw resulted in the cost disparities shown in figure \ref{fig:costComparison}.
+\par Note how the energy charge is equivalent, which indicates that similar amounts of energy were consumed in both scenarios. Dispite the similarity in energy consumption, however, facilities and on-peak power chargers are significantly larger for the unoptimized schedule. 
+\par Figure \ref{fig:totalPower1} compares the average power use between the optimized and baseline algorithms. There are two primary differences between the two. The first is that the optimized schedule avoids charging during on-peak hours.  The second is how the optimized charge schedule regulates each charge event to spread the power draw over larger, intermittent periods of time. Avoiding the on-peak time window and minimizing average power draw resulted in the cost disparities shown in figure \ref{fig:costComparison}.
 
 \begin{figure*}
 	\centering
@@ -30,20 +29,20 @@ Figure \ref{fig:powerPlot1} separates the power draw into power from external lo
 	\label{fig:powerPlot1}
 \end{figure*}
 
-\subsection{Constested Results}
-An optimized schedule can also be produced in resource contested environments. Contention occures when the number of chargers is scarce in comparison to the number of buses and can require that buses charge in disoptimal circumstances.  For example, if charging resources are saturated during off-peak hours, other buses might be forced to charge during on-peak hours. 
+\subsection{Contested Results}
+An optimized schedule can also be produced in resource contested environments. Contention occures when the number of chargers is scarce in comparison to the number of buses and can require that buses charge in disoptimal circumstances.  For example, if charging resources are saturated during off-peak hours, other buses might be forced to charge in the on-peak window. 
 \par Figure \ref{fig:contention1} shows the monthly cost from a scenario with one charger and multiple buses. Note the minimial cost increase per bus.  Each subsequent bus incurs a minimal additional cost, showing that charge plans also minimize charge in the presence of contention.
 \begin{figure}
 	\begin{tikzpicture}
-		\begin{axis}[SmallPointPlot, xlabel=Number of Buses, ylabel=Total Monthly Cost, ymin=2785.26, xmax=11]
-			\addplot[blue, only marks, mark size=3pt] coordinates {(5,2785.26) (6,2787.69) (7,2789.87) (8,2792.54) (9,2794.43) (10, 2796.99) (11, 2799.36)}; 
-			\addplot[blue] coordinates {(5,2785.26) (6,2787.69) (7,2789.87) (8,2792.54) (9,2794.43) (10, 2796.99) (11, 2799.36)}; 
+		\begin{axis}[SmallPointPlot, xlabel=Number of Buses, ylabel=Total Monthly Cost, ymin=3000, xmax=11]
+			\addplot[blue, only marks, mark size=3pt] coordinates {(5,3034.35) (6,3108.23) (7,3174.54) (8,3255.87) (9,3313.43) (10, 3391.16) (11, 3463.42)}; 
+			\addplot[blue] coordinates {(5,3034.35) (6,3108.23) (7,3174.54) (8,3255.87) (9,3313.43) (10, 3391.16) (11, 3463.42)};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{Results for several single charger scenarios.}
 	\label{fig:contention1}
 \end{figure}
-\par Figure \ref{fig:contention2} demonstrates how cost is minimized in the presence of contention. Figure \ref{fig:contention2} compares loads between a 5 and 11 bus scenario, where only one charger is given and the uncontrolled loads are equivalent. In the 5 bus scenario, loads are distributed amongst off-peak hours, resulting in an optimized cost.  The 11 bus scenario requires significantly more power and is forced to charge during on-peak hours.  Note however that average power use is kept relatively low and never increases the maximum average power for on-peak use. Both scenarios also make ample use of night charging, where the number of chargers is the same as the number of buses.  
+\par Figure \ref{fig:contention2} demonstrates how cost is minimized in the presence of contention. Figure \ref{fig:contention2} compares loads between a 5 and 11 bus scenario, where only one charger is given and the uncontrolled loads are equivalent. In the 5 bus scenario, loads are distributed amongst off-peak hours, resulting in an optimized cost.  The 11 bus scenario requires significantly more power and is forced to charge during on-peak hours.  Note however that average power use is kept relatively low and seldom increases the maximum average power for on-peak use. Both scenarios also make ample use of night charging, where the number of chargers is the same as the number of buses.  
 \begin{figure*}
 	\centering
 	\makeComparisonPower{media/optimized5Bus1ChargerPowerPlot.csv}{media/optimized11Bus1ChargerPowerPlot.csv}{15-Minute AVerage Power (kW)}{5 Bus Scenario}{11 Bus Scenario}
@@ -52,7 +51,7 @@ An optimized schedule can also be produced in resource contested environments. C
 \end{figure*}
 
 \subsection{Multi-Rate Comparison}
-Figure \ref{fig:multiRateCostComparison} shows the comparison between multi and single-rate charging. Both scenarios include 5 buses and 1 charger. As shown in figure \ref{fig:multiRateCostComparison}, the cost difference in marginal at best.  The cost of the multi-rate scenario is \$2,784.36 and the cost of the single-rate scenario is \$2784.83. 
+Figure \ref{fig:multiRateCostComparison} shows the comparison between multi and single-rate charging. Both scenarios include 5 buses and 1 charger. As shown in figure \ref{fig:multiRateCostComparison}, the cost difference is marginal at best.  The cost of the multi-rate scenario is \$3006.94 and the cost of the single-rate scenario is \$3007.77. 
 \begin{figure}
 	\centering
 	\makeComparisonBarChart{media/costComparisonMultiVsSingle.csv}{Cost (Dollars)}{Multi-Rate}{Single-Rate}
@@ -60,7 +59,7 @@ Figure \ref{fig:multiRateCostComparison} shows the comparison between multi and 
 	\label{fig:multiRateCostComparison}
 \end{figure}
 The small cost decrease is also consistent with larger scenarios as shown in figure \ref{fig:costComparisonMultiVsSingleLarge}. 
-\par Upon further observation, maximum charge edges are used more frequently than their low-charge counterparts as shown in figure \ref{fig:chargeRateHistogram}. This would help explain the similarities in cost. If the highest rate is almost always selected, then the resulting plan would resemble a single-rate schedule.  
+\par Upon further observation, maximum charge edges in multi-rate scenarios are used more frequently than their low-charge counterparts as shown in figure \ref{fig:chargeRateHistogram}. This would help explain the similarities in cost. If the highest rate is almost always selected, then the resulting plan would resemble a single-rate schedule.  
 \begin{figure}
 	\makeComparisonBarChart{media/costComparisonMultiVsSingleLarge.csv}{Cost (Dollars)}{Multi-Rate}{Single-Rate}
 	\caption{Cost Comaprison between multi and single rate charging for a 35 bus 6 charger scenario}

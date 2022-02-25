@@ -1,9 +1,9 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: busCharge.aux
 The style file: biblatex.bst
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -16,50 +16,49 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: busCharge-blx.bib
 Database file #2: busCharge.bib
-Biblatex version: 3.13
+Biblatex version: 3.8
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 You've used 22 entries,
-            6365 wiz_defined-function locations,
-            1429 strings with 43163 characters,
-and the built_in function-call counts, 253753 in all, are:
-= -- 13505
-> -- 18179
+            6268 wiz_defined-function locations,
+            1414 strings with 42844 characters,
+and the built_in function-call counts, 235266 in all, are:
+= -- 11658
+> -- 18161
 < -- 1501
-+ -- 18686
-- -- 15015
-* -- 14403
-:= -- 34759
++ -- 18364
+- -- 15009
+* -- 13183
+:= -- 31593
 add.period$ -- 0
 call.type$ -- 22
 change.case$ -- 456
-chr.to.int$ -- 1242
+chr.to.int$ -- 1230
 cite$ -- 42
-duplicate$ -- 22056
-empty$ -- 17587
+duplicate$ -- 20816
+empty$ -- 16153
 format.name$ -- 1686
-if$ -- 39346
+if$ -- 35552
 int.to.chr$ -- 0
 int.to.str$ -- 69
 missing$ -- 0
 newline$ -- 1306
 num.names$ -- 1144
-pop$ -- 7639
+pop$ -- 7342
 preamble$ -- 1
 purify$ -- 620
 quote$ -- 0
-skip$ -- 5435
+skip$ -- 5249
 stack$ -- 0
-substring$ -- 26273
+substring$ -- 21973
 swap$ -- 6002
-text.length$ -- 1137
+text.length$ -- 1131
 text.prefix$ -- 21
 top$ -- 1
 type$ -- 736
 warning$ -- 0
-while$ -- 3599
+while$ -- 2960
 width$ -- 0
 write$ -- 1285

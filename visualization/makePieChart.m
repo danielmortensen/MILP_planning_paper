@@ -16,7 +16,7 @@ costExtern = (energyOnPeak*onPeakEnergyCost + ...
 % compute energy consumed by buses
 energyBus = G.Constraint.objective;
 energyBus(end - 1:end) = 0;
-costBus = energyBus'*result;
+costBus = (energyBus'*result)*daysPerMonth;
 
 % compute price for total energy used
 costEnergyTotal = costExtern + costBus;

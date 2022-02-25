@@ -10,7 +10,7 @@ legend('Worst Case','Optimized Case','Location','northwest');
 ylabel('Kwh'); title('Monthly Breakdown');
 
 if nargin == 3
-    type = ["Energy";"Facilities Power";"On-Peak Power"];
+    type = ["Energy";"On-Peak Power";"Facilities Power"];
     baseline = cost1'; 
     optimized = cost2';    
     data = table(type,baseline, optimized);
@@ -44,7 +44,7 @@ costExtern = (energyOnPeak*onPeakEnergyCost + ...
 % compute energy consumed by buses
 energyBus = G.Constraint.objective;
 energyBus([facilitiesIdx onPeakDemandIdx]) = 0;
-costBus = energyBus'*result;
+costBus = (energyBus'*result)*daysPerMonth;
 
 % compute price for total energy used
 costEnergyTotal = costExtern + costBus;
