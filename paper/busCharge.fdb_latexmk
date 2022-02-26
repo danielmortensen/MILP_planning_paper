@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex busCharge"] 1645725834 "busCharge.aux" "busCharge.bbl" "busCharge" 1645748364
+["bibtex busCharge"] 1645905628 "busCharge.aux" "busCharge.bbl" "busCharge" 1645905633
   "/usr/share/texlive/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1510525977 63137 1eef042be76fa9262fed2413ad573404 ""
-  "busCharge-blx.bib" 1645748360 306 8aaf130409042efa77015fcb01433692 ""
-  "busCharge.aux" 1645748364 15282 86b2164429e33c7b511172b775dcd85c ""
+  "busCharge-blx.bib" 1645905629 306 8aaf130409042efa77015fcb01433692 ""
+  "busCharge.aux" 1645905632 15495 371eefb910b76eb8f4bcffb9b5878fc3 ""
   "busCharge.bcf" 0 -1 0 ""
   "busCharge.bib" 1643910039 67249 96c1ebedc4131249146fe483e507c638 ""
   (generated)
   "busCharge.blg"
   "busCharge.bbl"
-["pdflatex"] 1645748360 "busCharge.tex" "busCharge.pdf" "busCharge" 1645748364
+["pdflatex"] 1645905628 "busCharge.tex" "busCharge.pdf" "busCharge" 1645905633
   "/etc/texmf/web2c/texmf.cnf" 1604366159 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -257,9 +257,9 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1604366584 4131483 f309ec86822e417fc45142b445de86bc ""
   "abstract.tex" 1636850844 116 c9bc1890e44dbad2a9c50b3b6ec32a17 ""
   "batterySoc.tex" 1645110038 11203 d48d0a7af1ed3897dbcbcfb8424d8805 ""
-  "busCharge.aux" 1645748364 15282 86b2164429e33c7b511172b775dcd85c ""
-  "busCharge.bbl" 1645725834 62777 c847bbcdf7415b49e425c8520ba0e834 "bibtex busCharge"
-  "busCharge.run.xml" 1645748364 2566 40e3d7003c9a017fe564fba53697a621 ""
+  "busCharge.aux" 1645905632 15495 371eefb910b76eb8f4bcffb9b5878fc3 ""
+  "busCharge.bbl" 1645905628 62777 c847bbcdf7415b49e425c8520ba0e834 "bibtex busCharge"
+  "busCharge.run.xml" 1645905632 2566 40e3d7003c9a017fe564fba53697a621 ""
   "busCharge.tex" 1645722755 1487 a34437fd23ab20cdd680ebd25a5eab2b ""
   "func_def/comparisonBarChartDef.tex" 1645722755 498 7579350a2e7f255f560d4885556f8188 ""
   "func_def/comparisonTimeSeriesDef.tex" 1645722755 2204 a5ff9a7078fa7d3bc2d5f0f313ef2246 ""
@@ -281,8 +281,8 @@
   "media/optimized5Bus5ChargerPowerPlot.csv" 1645722755 13073 0095bf6ffe46572ee99e9575af0fff6d ""
   "media/optimized5Bus5ChargerTotalPowerPlot.csv" 1645722755 13957 d5186ce8f2f5f8639810774077dceeac ""
   "multiGraph.tex" 1644704846 22158 40969b0b4a44b68451e5d00e37e74aaa ""
-  "objective.tex" 1645722755 10027 7e3f98efc40c0b128761e27a33999d44 ""
-  "results.tex" 1645748359 7107 cc240acf8529c857e67b326cb99e13b3 ""
+  "objective.tex" 1645903036 10027 40c064150bb8174122b5605ad3d156d3 ""
+  "results.tex" 1645905623 8877 59f39e4ca96404c892334e15560a5beb ""
   (generated)
   "busCharge-blx.bib"
   "busCharge.pdf"

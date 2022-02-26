@@ -1,5 +1,29 @@
 \section{Results}
-This section contains analysis and results of the planning framework and is subdivided into three subsections: uncontested results, contested results, and multi-rate comparisons.
+This section contains analysis and results of the planning framework and is subdivided into three subsections: uncontested results, contested results, and multi-rate comparisons.  
+\subsection{Baseline and Setup}
+The several experiments in this section compare the results of the the framework given in equation \ref{eqn:finalObjective} with a baseline. The baseline attempts to model the general behavior of a stereotypical bus driver. From conversations with the Utah Transit Authority (UTA), bus drivers generally enter the station and top off their bus's battery if a charger is available. The baseline reflects the bus driver behavior with an objetive function which maximizes the number of instances where a bus plugs in. The number of plug-in instances can be computed as the sum of group flow values and results in the objetive function
+\begin{equation}
+	\underset{\mathbf{y}}{\text{max}} \ \mathbf{1}^TB\mathbf{y},
+\end{equation}
+\par All other constraints are held equal, resulting in a baseline formulation given as
+\begin{equation}\label{eqn:finalBaselineObjective}
+	\begin{matrix*}[c]
+		\underset{\mathbf{y}}{\scalebox{1}{\text{max}}} \ \mathbf{1}^TB\mathbf{y} \ \text{subject to}\\
+		\begin{bmatrix*}[l]
+				\tilde{A} \\
+				D_{\text{eq}} \\
+				P
+				\end{bmatrix*} \mathbf{y} = \begin{bmatrix*}[l]\mathbf{c}_f \\ \mathbf{d}_{\text{eq}}\\\mathbf{p} \end{bmatrix*}, \ \begin{bmatrix*}[l]
+			\tilde{B} \\
+			D_{\text{ineq}} \\ 
+			P_{\text{max}} \\
+			P_{\text{on}} \\
+			P_{\text{off}}
+			\end{bmatrix*}\mathbf{y} \le \begin{bmatrix*}\mathbf{1} \\ \mathbf{d}_{\text{ineq}} \\ \mathbf{0} \\ \mathbf{0} \\ \mathbf{0} \end{bmatrix*}
+	\end{matrix*}.
+\end{equation}
+	\par Additionally, each experiment is run in five minute increments such that $t_k$ represents a time instance five minutes behind $t_{k+1}$.  START HERE == was working to find how long for a full charge to justify a bar. will fill in bar charts with this value as well.
+
 \subsection{Uncontested Results}
 This section compares the charge schedule associated with equation \ref{eqn:finalObjective} with a schedule developed by a baseline algorithm.  The baseline adheres to all the constraints given previously, but maximizes the objective 
 \begin{equation}
@@ -65,7 +89,7 @@ The small cost decrease is also consistent with larger scenarios as shown in fig
 	\caption{Cost Comaprison between multi and single rate charging for a 35 bus 6 charger scenario}
 	\label{fig:costComparisonMultiVsSingleLarge}
 \end{figure}
-\par Cost is also based on the average instantanous power. Because both single and multi-rate plans charge buses in relatively small time periods the average power use is kept relatively low (see figures \ref{fig:contention2}, and \ref{fig:contention1}). There are also many circumstances when a bus's charge time is limited, resuling in high charge rates.
+\par Cost is also based on the average instantanous power. Because both single and multi-rate plans charge buses in relatively small time periods the average power use is kept relatively low (see figures \ref{fig:contention2}, and \ref{fig:contention1}). There are also many circumstances when a bus's charge time is limited, resulting in high charge rates.
 \begin{figure}
 	\begin{tikzpicture}
 		\begin{axis}[ybar, xmin=0.3, xmax=4.7, font=\footnotesize, xtick={1,2,3,4},xticklabels={$\bar{a} = 0.9851$,$\bar{a} = 0.9418$,$\bar{a} = 0.9003$,$\bar{a} = 0.8607$},
