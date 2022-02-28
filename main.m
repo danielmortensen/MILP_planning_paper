@@ -14,7 +14,7 @@ nCharger = 6;
 if doAllTest
 %% Define Scenarios
 % 5 bus, 1 charge rate, 2 overhead charger MinSchedule8
-scenario1 = getSceneditario('fExternalLoad','originalTpss1Day.csv',...
+scenario1 = getScenario('fExternalLoad','originalTpss1Day.csv',...
     'nBus',5,'nDayChargeRate',5,'nOverheadCharger',5, 'fData',fData);
 
 % 5 bus 1 charge rate, 3 overhead charger baseline

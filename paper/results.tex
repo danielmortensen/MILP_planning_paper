@@ -1,11 +1,11 @@
 \section{Results}
 This section contains analysis and results of the planning framework and is subdivided into three subsections: uncontested results, contested results, and multi-rate comparisons.  
 \subsection{Baseline and Setup}
-The several experiments in this section compare the results of the the framework given in equation \ref{eqn:finalObjective} with a baseline. The baseline attempts to model the general behavior of a stereotypical bus driver. From conversations with the Utah Transit Authority (UTA), bus drivers generally enter the station and top off their bus's battery if a charger is available. The baseline reflects the bus driver behavior with an objetive function which maximizes the number of instances where a bus plugs in. The number of plug-in instances can be computed as the sum of group flow values and results in the objetive function
+The experiments in this section compare the results of the framework given in equation \ref{eqn:finalObjective} with a baseline. The baseline attempts to model the general behavior of a bus driver. From conversations with the Utah Transit Authority (UTA), bus drivers generally enter the station and top off their bus's battery if a charger is available. The baseline reflects the bus driver behavior with an objective function that maximizes the number of instances when a bus plugs in. The number of plug-in instances can be computed as the sum of group flow values and results in the objetive function
 \begin{equation}
 	\underset{\mathbf{y}}{\text{max}} \ \mathbf{1}^TB\mathbf{y},
 \end{equation}
-\par All other constraints are held equal, resulting in a baseline formulation given as
+\par All other constraints are held equal, resulting in the baseline formulation 
 \begin{equation}\label{eqn:finalBaselineObjective}
 	\begin{matrix*}[c]
 		\underset{\mathbf{y}}{\scalebox{1}{\text{max}}} \ \mathbf{1}^TB\mathbf{y} \ \text{subject to}\\
@@ -22,22 +22,28 @@ The several experiments in this section compare the results of the the framework
 			\end{bmatrix*}\mathbf{y} \le \begin{bmatrix*}\mathbf{1} \\ \mathbf{d}_{\text{ineq}} \\ \mathbf{0} \\ \mathbf{0} \\ \mathbf{0} \end{bmatrix*}
 	\end{matrix*}.
 \end{equation}
-	\par Additionally, each experiment is run in five minute increments such that $t_k$ represents a time instance five minutes behind $t_{k+1}$.  START HERE == was working to find how long for a full charge to justify a bar. will fill in bar charts with this value as well.
-
+	\par Additionally, each experiment is run in five minute increments such that the time difference between $t_k$ and $t_{k+1}$ is five minutes.  Four charge rates are used during the following experiments: $\bar{a}_1 = 0.9851$, $\bar{a}_2 = 0.9418$, $\bar{a}_3 = 0.9003$, and $\bar{a}_4 = 0.8607$.  Each value for $\bar{a}$ represents a different charge rate and is referenced by how much time it would take a bus to charge from $0$\% $99$\%. For the rates used in the following set of experiments, a bus would need 25.58 hours to charge from 0\% to 99\% with $\bar{a}_1$, 6.4 hours with $\bar{a}_2$, 3.65 with $\bar{a}_3$, and 2.56 with $\bar{a}_4$. 
+	\par Night charging uses a single charge rate of $\bar{a}_1$ for all experiments. Experiments with single rate day charging use $\bar{a}_4$, and multi-rate experiments incorporate four charge options: $\bar{a}_1$, $\bar{a}_2$, $\bar{a}_3$, and $\bar{a}_4$.
+	\par Uncontrolled loads are modeled with data from the Trax Power Substation (TPSS) at the UTA intermodel hub site in Salt Lake City. It is also assumed that each bus starts and ends each day with an SOC of $80\%$ and has a maximum charge capacity of $100$ kWh.
 \subsection{Uncontested Results}
-This section compares the charge schedule associated with equation \ref{eqn:finalObjective} with a schedule developed by a baseline algorithm.  The baseline adheres to all the constraints given previously, but maximizes the objective 
-\begin{equation}
-	\underset{\mathbf{y}}{\text{max}} \ \mathbf{1}^TB\mathbf{y},
-\end{equation}
-which incentivizes bus charging when possible. An initial cost comparison is given for an uncontested scenario where the number of chargers is equal to the number of buses. The cost breakdown is given in figure \ref{fig:costComparison}.
+	This section explores performance in a scenario where there is one charger per bus during the day, making charge resources \textit{uncontested}. The optimal charge schedule associated with equation \ref{eqn:finalObjective} is compared with the schedule developed by the baseline in equation \ref{eqn:finalBaselineObjective}. The total monthly cost is computed using the rates given in Rocky Mountain Power Schedule 8. The monthly cost is computed as follows:
+	\begin{equation}
+		\begin{aligned}
+			\text{cost} = & \text{ facilitiesPower}\cdot 4.81 + \text{onPeakPower}\cdot 15.73 + \\ 
+			& \text{onPeakEnergy}\cdot 0.058282 + \text{offPeakEnergy}\cdot 0.029624
+		\end{aligned}
+	\end{equation}
+There is also a customer service charge of $71.00$, but because the service charge does not depend on a customer's behavior, it is ignored. Figure \ref{fig:costComparison} provides a cost comparison between the cost of energy, facilities power, and on-peak power in the optimal and baseline schedules.
 \begin{figure}
 	\centering
 	\makeComparisonBarChart{media/costComparison5Bus5Chargers.csv}{Cost (Dollars)}{Baseline}{Optimized}
 	\caption{Cost Comparison between optimized and baseline algorithms}
 	\label{fig:costComparison}
 \end{figure}
-\par Note how the energy charge is equivalent, which indicates that similar amounts of energy were consumed in both scenarios. Dispite the similarity in energy consumption, however, facilities and on-peak power chargers are significantly larger for the unoptimized schedule. 
-\par Figure \ref{fig:totalPower1} compares the average power use between the optimized and baseline algorithms. There are two primary differences between the two. The first is that the optimized schedule avoids charging during on-peak hours.  The second is how the optimized charge schedule regulates each charge event to spread the power draw over larger, intermittent periods of time. Avoiding the on-peak time window and minimizing average power draw resulted in the cost disparities shown in figure \ref{fig:costComparison}.
+\par Note how the energy charge is almost equal, which indicates that similar amounts of energy were consumed in both scenarios. Despite the similarity in energy consumption, however, facilities and on-peak power charges are significantly larger for the baseline schedule. To better understand the cost disparity, we observe the load profiles to identify how the optimized schedule avoids the costs incurred by the baseline.
+	\par Figure \ref{fig:totalPower1} shows the 15 minute average power for both the baseline and optimal schedules. Note how the optimal schedule incurs a lower average power for both on and off peak time intervals. The reduction in average power is what lead to the cost disparity between the on-peak and facilities power charges in figure \ref{fig:costComparison}. 
+	\par The underlying behavior can be observed in figure \ref{fig:powerPlot1}, which separates the loads into their controlled and uncontrolled constituents. Because the uncontrolled loads are shared between both scenarios, figure \ref{fig:powerPlot1} shows the 15 minute average power for uncontrolled, optimal charging, and baseline charging loads. 
+	\par Observe how the optimized schedule avoids charging during on-peak hours and regulates each charge event to spread the power draw over larger periods of time. Furthermore, bus charging is avoided when uncontrolled loads are high, resulting in a reduced 15 minute average power.  A reduced average power in both the on and off peak periods in addition to not charging during on-peak periods are what caused the dramatic cost reduction for the optimized schedule shown in figure \ref{fig:costComparison}.
 
 \begin{figure*}
 	\centering
@@ -45,7 +51,6 @@ which incentivizes bus charging when possible. An initial cost comparison is giv
 	\caption{15-Minute AVerage Power for one day}
 	\label{fig:totalPower1}
 \end{figure*} 
-Figure \ref{fig:powerPlot1} separates the power draw into power from external loads and power used by buses and shows again how bus charging was optimized to avoid on-peak hours and spread power use over time.  
 \begin{figure*}
 	\centering
 	\makeComparisonPower{media/baseline5Bus5ChargerPowerPlot.csv}{media/optimized5Bus5ChargerPowerPlot.csv}{15-Minute AVerage Power (kW)}{Baseline}{Optimized}
@@ -92,12 +97,12 @@ The small cost decrease is also consistent with larger scenarios as shown in fig
 \par Cost is also based on the average instantanous power. Because both single and multi-rate plans charge buses in relatively small time periods the average power use is kept relatively low (see figures \ref{fig:contention2}, and \ref{fig:contention1}). There are also many circumstances when a bus's charge time is limited, resulting in high charge rates.
 \begin{figure}
 	\begin{tikzpicture}
-		\begin{axis}[ybar, xmin=0.3, xmax=4.7, font=\footnotesize, xtick={1,2,3,4},xticklabels={$\bar{a} = 0.9851$,$\bar{a} = 0.9418$,$\bar{a} = 0.9003$,$\bar{a} = 0.8607$},
-			xlabel=Value of $\bar{a}$ for each edge, ylabel=Number of edges occupied, bar width=35pt]
+		\begin{axis}[ybar, xmin=0.3, xmax=4.7, font=\footnotesize, xtick={1,2,3,4},xticklabels={25.58, 6.40, 3.65, 2.56},
+			ylabel=Number of edges occupied, bar width=35pt, xlabel=Time to charge from 0\% to 99\% (Hours)]
 			\addplot coordinates{(1,19) (2,13) (3,25) (4,69)};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Histogram of charge rates}
+	\caption{Histogram of charge rates, where each rate is described by how must time it would take to charge a bus from 0\% to 99\%}
 	\label{fig:chargeRateHistogram}
 \end{figure}
 
