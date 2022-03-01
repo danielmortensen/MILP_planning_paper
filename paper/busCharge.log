@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.19)  28 FEB 2022 08:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.19)  1 MAR 2022 09:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1203,7 +1203,7 @@ Overfull \hbox (2.31035pt too wide) in paragraph at lines 200--200
 PGFPlots: reading {media/costComparison5Bus5Chargers.csv}
 PGFPlots: reading {media/baseline5Bus5ChargerTotalPowerPlot.csv}
 PGFPlots: reading {media/optimized5Bus5ChargerTotalPowerPlot.csv}
-Package pgfplots info on input line 50: dateplot: setting 'date ZERO={0002-11-3
+Package pgfplots info on input line 51: dateplot: setting 'date ZERO={0002-11-3
 0}' for this axis.
 
 NOTE: coordinate (0002-11-30 00:00:00,0) has been dropped because it is unbound
@@ -3506,41 +3506,39 @@ ed (in y). (see also unbounded coords=jump).
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {media/baseline5Bus5ChargerPowerPlot.csv}
 PGFPlots: reading {media/optimized5Bus5ChargerPowerPlot.csv}
-Package pgfplots info on input line 56: dateplot: setting 'date ZERO={0002-11-3
+Package pgfplots info on input line 57: dateplot: setting 'date ZERO={0002-11-3
 0}' for this axis.
-
-Overfull \hbox (2.86055pt too wide) in paragraph at lines 70--71
+[10]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
+4.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Overfull \hbox (2.86055pt too wide) in paragraph at lines 71--72
 [][] 
  []
 
 PGFPlots: reading {media/optimized5Bus1ChargerPowerPlot.csv}
 PGFPlots: reading {media/optimized11Bus1ChargerPowerPlot.csv}
-Package pgfplots info on input line 77: dateplot: setting 'date ZERO={0002-11-3
+Package pgfplots info on input line 78: dateplot: setting 'date ZERO={0002-11-3
 0}' for this axis.
-[10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8
-3.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
 PGFPlots: reading {media/costComparisonMultiVsSingle.csv}
 PGFPlots: reading {media/costComparisonMultiVsSingleLarge.csv}
-) (./futureWork.tex
-[11]) [12]
+
+Underfull \vbox (badness 1789) has occurred while \output is active []
+
+ [11])
+(./futureWork.tex) [12]
 Underfull \hbox (badness 1412) in paragraph at lines 53--53
 \OT1/ptm/m/n/10 Trans-porta-tion Elec-tri-fi-ca-tion Con-fer-ence and Expo
  []
 
-
+[13]
 Underfull \hbox (badness 1552) in paragraph at lines 53--53
 \OT1/ptm/m/it/10 ing Tech-nolo-gies: Wire-less Power Trans-fer (Wow)\OT1/ptm/m/
 n/10 .
  []
 
-[13]
 
 Package biblatex Warning: No driver for entry type 'legislation'.
 (biblatex)                Using fallback driver on input line 52.
@@ -3571,7 +3569,9 @@ Underfull \hbox (badness 1400) in paragraph at lines 53--53
 \OT1/ptm/m/n/10 kW[]and[]Over[]Distribution[]Voltage . pdf$ (vis-ited on
  []
 
-[14] (./busCharge.aux)
+[14] [15
+
+] (./busCharge.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -3580,10 +3580,10 @@ Package logreq Info: Writing requests to 'busCharge.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36462 strings out of 481239
- 888001 string characters out of 5920377
- 1857943 words of memory out of 5000000
- 51098 multiletter control sequences out of 15000+600000
+ 36463 strings out of 481239
+ 888019 string characters out of 5920377
+ 1854690 words of memory out of 5000000
+ 51099 multiletter control sequences out of 15000+600000
  570522 words of font info for 100 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  63i,20n,107p,1078b,2321s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3603,10 +3603,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on busCharge.pdf (14 pages, 320789 bytes).
+Output written on busCharge.pdf (15 pages, 321978 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 125 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
