@@ -313,8 +313,8 @@ Network flow constraints are expressed in matrix-vector form as
 \begin{align}\label{eqn:flow}
 	A\mathbf{x}=\mathbf{c}_f,	
 \end{align}
-where $A$ is the graph incidence matrix, $\mathbf{x}$ is the $\text{nEdge} \times 1$ vector of edge weights and corresponds to $\mathbf{x}$ in equation \ref{eqn:y}, and $\mathbf{c}_f$ is $\text{nNode} \times 1$ and equals the difference between incoming and outgoing edge weights, or \textit{net-flow}.
-\par  An incidence matrix organizes relationships between nodes and edges by describing which edges leave and enter which nodes. The matrix $A$ is an $\text{nNode} \times \text{nEdge}$ matrix and expresses incoming connections between the $i^{\text{th}}$ node and $j^{\text{th}}$ edge by $A_{i,j} = 1$. Similarly, outgoing connections are given by $A_{i,j} = -1$, and no connection with $A_{i,j} = 0$. For example, the graph in figure \ref{fig:genericGraph} is represented as:
+where $A$ is the graph incidence matrix, $\mathbf{x}$ is the $n_E \times 1$ vector of edge weights and corresponds to $\mathbf{x}$ in equation \ref{eqn:y}, and $\mathbf{c}_f$ is $n_N \times 1$ and equals the difference between incoming and outgoing edge weights, or \textit{net-flow}.  The parameter $n_E$ is the number of edges and $n_N$ is the number of nodes.
+\par  An incidence matrix organizes relationships between nodes and edges by describing which edges leave and enter which nodes. The matrix $A$ is an $n_N \times n_E$ matrix and expresses incoming connections between the $i^{\text{th}}$ node and $j^{\text{th}}$ edge by $A_{i,j} = 1$. Similarly, outgoing connections are given by $A_{i,j} = -1$, and no connection with $A_{i,j} = 0$. For example, the graph in figure \ref{fig:genericGraph} is represented as:
 \begin{figure}
 	\centering
 	\begin{tikzpicture}
@@ -340,8 +340,8 @@ where $A$ is the graph incidence matrix, $\mathbf{x}$ is the $\text{nEdge} \time
 	\end{bmatrix}
 \end{align}
 \par  The difference between the number of chargers entering and leaving, or the \textit{net-flow}, can be expressed in terms of $A$ as seen in equation (\ref{eqn:flow}).  Because the number of chargers does not change, the number of chargers entering and leaving a node must be equal. This is expressed in linear form as $a_i^{T}x = 0$, where $a_i$ is the $i^{\text{th}}$ row of $A$. The only exceptions occur at \textit{source} and \textit{sink} nodes.
-\par A source node represents the beginning state for all chargers.  Because edges originate here, there are no incoming edges and the net-flow will be minus the number of chargers. This is described in linear form as $a_i^Tx = -\text{nCharger}$.
-\par Sink nodes represent the final state, where all edges terminate (see figure~\ref{fig:sourceSink}). Because sinks have no outgoing edges, they maintain a positive net-flow equal to the number of chargers and is expressed by $a_i^T = \text{nCharger}$. 
+\par A source node represents the beginning state for all chargers.  Because edges originate here, there are no incoming edges and the net-flow will be minus the number of chargers. This is described in linear form as $a_i^Tx = -n_C$, where $n_C$ is the number of chargers.
+\par Sink nodes represent the final state, where all edges terminate (see figure~\ref{fig:sourceSink}). Because sinks have no outgoing edges, they maintain a positive net-flow equal to the number of chargers and is expressed by $a_i^T = n_C$. 
 \par Therefore, the \textit{flow constraints} require the elements of $\mathbf{c}_f$ be equal to zero for all non-source and non-sink nodes as seen in equation (\ref{eqn:cFlow}).  
 \begin{figure}
 	\centering
@@ -365,7 +365,7 @@ where $A$ is the graph incidence matrix, $\mathbf{x}$ is the $\text{nEdge} \time
 	\label{fig:sourceSink} 
 \end{figure} 
 \begin{align}\label{eqn:cFlow}
-	Ax = \begin{bmatrix} 0 \\ \vdots \\ -\text{nCharger} \\ \vdots \\ 0 \\ \text{nCharger} \\ \vdots \\ 0\end{bmatrix}.
+	Ax = \begin{bmatrix} 0 \\ \vdots \\ -n_C \\ \vdots \\ 0 \\ n_C \\ \vdots \\ 0\end{bmatrix}.
 \end{align}
 Equation \ref{eqn:cFlow} can be formulated in terms of $\mathbf{y}$ by appropriately zero-padding $A$ such that
 \begin{equation}\label{eqn:cFlow2}
@@ -377,7 +377,7 @@ Equation \ref{eqn:cFlow} can be formulated in terms of $\mathbf{y}$ by appropria
 \subsubsection{Group-flow Constraints}
 \par Another flow type, known as group flow, can be used to regulate the number of chargers entering a set of nodes. This is desired for two reasons.  First, it prevents chargers from connecting multiple times during an interval when a bus is available for charging, and it limits the number of chargers connecting to a bus to be one at most.
 \par Define a charge group as the set of all nodes for a given bus corresponding to one station visit as shown in figure~\ref{fig:groups}. The \textit{group flow} is the number of chargers that enter a group and is represented as the sum of all incoming edge weights (see figure \ref{fig:groupedEdges}). 
-\par Denote the $\text{nGroup} \times \text{nEdge}$ group incidence matrix as $B$, where $B_{i,j}$ is $1$ if the $j^{\text{th}}$ edge enters the $i^{\text{th}}$ group and $0$ otherwise. For example, the group incidence matrix corresponding to the graph in figure~\ref{fig:groupEdges} contains $1$ in the $7^{\text{th}}$ and $10^{\text{th}}$ columns for Group 1, and the $12^{\text{th}}$ and $15^{\text{th}}$ columns for group 2 as given in equation \ref{eqn:groupB}.
+\par Denote the $n_G \times n_E$ group incidence matrix as $B$, where $n_G$ is the number of groups and $B_{i,j}$ is $1$ if the $j^{\text{th}}$ edge enters the $i^{\text{th}}$ group and $0$ otherwise. For example, the group incidence matrix corresponding to the graph in figure~\ref{fig:groupEdges} contains $1$ in the $7^{\text{th}}$ and $10^{\text{th}}$ columns for Group 1, and the $12^{\text{th}}$ and $15^{\text{th}}$ columns for group 2 as given in equation \ref{eqn:groupB}.
 \begin{align}\label{eqn:groupB}
 	B = \begin{bmatrix}0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 1 \; 0 \; 0 \; 1 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0\\
 	                   0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 1 \; 0 \; 0 \; 1 \; 0\end{bmatrix}
@@ -455,7 +455,7 @@ Equation \ref{eqn:cFlow} can be formulated in terms of $\mathbf{y}$ by appropria
 	\caption{Incoming group edges.}
 	\label{fig:groupedEdges} 
 \end{figure} 
-Let $\mathbf{x}$ be the edge weights as before and $\mathbf{c}_g$ be an $\text{nGroup} \times 1$ vector where the $i^{\text{th}}$ element gives the group flow for group $i$. The group flow is then computed as 
+Let $\mathbf{x}$ be the edge weights as before and $\mathbf{c}_g$ be an $n_G \times 1$ vector where the $i^{\text{th}}$ element gives the group flow for group $i$. The group flow is then computed as 
 \begin{align}\label{eqn:cGroupFlow}
 	B\mathbf{x} = \mathbf{c}_g
 \end{align}
