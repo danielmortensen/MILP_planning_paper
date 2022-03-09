@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2020)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: busCharge.aux
 The style file: biblatex.bst
@@ -19,47 +19,47 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: busCharge-blx.bib
 Database file #2: busCharge.bib
-Biblatex version: 3.13
+Biblatex version: 3.15
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 You've used 22 entries,
-            6365 wiz_defined-function locations,
-            1429 strings with 43163 characters,
-and the built_in function-call counts, 253753 in all, are:
-= -- 13505
-> -- 18179
-< -- 1501
-+ -- 18686
-- -- 15015
-* -- 14403
-:= -- 34759
+            6393 wiz_defined-function locations,
+            1425 strings with 40457 characters,
+and the built_in function-call counts, 248191 in all, are:
+= -- 13283
+> -- 17620
+< -- 1453
++ -- 18182
+- -- 14523
+* -- 14081
+:= -- 34054
 add.period$ -- 0
 call.type$ -- 22
-change.case$ -- 456
-chr.to.int$ -- 1242
+change.case$ -- 435
+chr.to.int$ -- 1194
 cite$ -- 42
-duplicate$ -- 22056
-empty$ -- 17587
-format.name$ -- 1686
-if$ -- 39346
+duplicate$ -- 21758
+empty$ -- 17246
+format.name$ -- 1684
+if$ -- 38407
 int.to.chr$ -- 0
-int.to.str$ -- 69
+int.to.str$ -- 67
 missing$ -- 0
-newline$ -- 1306
-num.names$ -- 1144
-pop$ -- 7639
+newline$ -- 1257
+num.names$ -- 1119
+pop$ -- 7680
 preamble$ -- 1
-purify$ -- 620
+purify$ -- 599
 quote$ -- 0
-skip$ -- 5435
+skip$ -- 5333
 stack$ -- 0
-substring$ -- 26273
-swap$ -- 6002
-text.length$ -- 1137
+substring$ -- 25679
+swap$ -- 5808
+text.length$ -- 1117
 text.prefix$ -- 21
 top$ -- 1
 type$ -- 736
 warning$ -- 0
-while$ -- 3599
+while$ -- 3553
 width$ -- 0
-write$ -- 1285
+write$ -- 1236

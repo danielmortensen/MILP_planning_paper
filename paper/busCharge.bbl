@@ -22,25 +22,25 @@
       {{hash=BA}{%
          family={Bagherinezhad},
          familyi={B\bibinitperiod},
-         given={Avishan},
+         given={A.},
          giveni={A\bibinitperiod},
       }}%
       {{hash=PAD}{%
          family={Palomino},
          familyi={P\bibinitperiod},
-         given={Alejandro\bibnamedelima D.},
+         given={A.\bibnamedelima D.},
          giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
       }}%
       {{hash=LB}{%
          family={Li},
          familyi={L\bibinitperiod},
-         given={Bosong},
+         given={B.},
          giveni={B\bibinitperiod},
       }}%
       {{hash=PM}{%
          family={Parvania},
          familyi={P\bibinitperiod},
-         given={Masood},
+         given={M.},
          giveni={M\bibinitperiod},
       }}%
     }
@@ -50,53 +50,14 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{B}
     \field{sortinithash}{B}
-    \field{abstract}{%
-    The paradigm shift in adopting electriﬁed public transportation, enabled
-  by long-range battery electric buses ({BEBs}) and associated charging
-  infrastructure, inﬂict operational challenges to both power distribution
-  and transit systems. This article takes an opportunistic look at the paradigm
-  shift and develops a model for optimally scheduling the spatio-temporal
-  charging ﬂexibility of {BEBs} as a source of operational ﬂexibility for
-  power distribution systems. The proposed model co-optimizes the timing and
-  location of {BEBs}’ charging in the transit system with the operation of
-  the power distribution system, while respecting the operational constraints
-  and requirements of both power distribution and public transit systems. In
-  the proposed model, the {BEBs} transit system is mathematically modeled by a
-  graph and the associated {BEB} charging stations are mapped into the power
-  distribution nodes. The {BEBs}’ transit schedule constrains the
-  spatio-temporal charging opportunities to all {BEBs} over the scheduling
-  horizon. The proposed model is implemented on the {IEEE} 33-bus power
-  distribution system coupled with the transit system of Park City, {UT},
-  {USA}, with {BEB} routes. The numerical results showcase the economic and
-  operational beneﬁts of the proposed model for the power distribution system
-  operator and transit system operator.%
-    }
-    \verb{doi}
-    \verb 10.1109/TIA.2020.2979132
-    \endverb
-    \field{issn}{0093-9994, 1939-9367}
     \field{number}{5}
     \field{pages}{5741\bibrangedash 5749}
-    \field{shortjournal}{{IEEE} Trans. on Ind. Applicat.}
     \field{title}{Spatio-Temporal Electric Bus Charging Optimization With
   Transit Network Constraints}
-    \verb{url}
-    \verb https://ieeexplore.ieee.org/document/9028116/
-    \endverb
     \field{volume}{56}
-    \field{langid}{english}
-    \verb{file}
-    \verb Bagherinezhad et al. - 2020 - Spatio-Temporal Electric Bus Charging O
-    \verb ptimization.pdf:/home/daniel/Zotero/storage/85ZTFJ9A/Bagherinezhad et
-    \verb  al. - 2020 - Spatio-Temporal Electric Bus Charging Optimization.pdf:
-    \verb application/pdf
-    \endverb
-    \field{journaltitle}{{IEEE} Transactions on Industry Applications}
+    \field{journaltitle}{{IEEE} Trans. on Ind. Applicat.}
     \field{month}{09}
     \field{year}{2020}
-    \field{urlday}{13}
-    \field{urlmonth}{11}
-    \field{urlyear}{2021}
   \endentry
 
   \entry{balde_electric_2019}{inproceedings}{}
@@ -104,18 +65,15 @@
       {{hash=BBJ}{%
          family={Balde},
          familyi={B\bibinitperiod},
-         given={Bhagyashree\bibnamedelima J},
+         given={B.\bibnamedelima J.},
          giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
       }}%
       {{hash=SA}{%
          family={Sardar},
          familyi={S\bibinitperiod},
-         given={Arghya},
+         given={A.},
          giveni={A\bibinitperiod},
       }}%
-    }
-    \list{publisher}{1}{%
-      {{IEEE}}%
     }
     \strng{namehash}{BBJSA1}
     \strng{fullhash}{BBJSA1}
@@ -123,46 +81,11 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{B}
     \field{sortinithash}{B}
-    \field{abstract}{%
-    In recent years Electric vehicle has emerged as the most promising solution
-  to the concerns over the environment and energy security. However one major
-  constraint for electric vehicles have been on-board energy storage with high
-  speciﬁc energy and quick charging capability so as to provide the vehicle
-  with sufﬁcient range, and convenience to the user. One approach to address
-  this issue is the concept of electric roads, this paper, proposes discussing
-  dynamic wireless charging system and necessary system
-  conﬁguration.Potential impact of the enhanced efﬁciency of the system due
-  to possible technology improvements in future is studied.%
-    }
-    \field{booktitle}{2019 {IEEE} Transportation Electrification Conference
-  ({ITEC}-India)}
-    \verb{doi}
-    \verb 10.1109/ITEC-India48457.2019.ITECINDIA2019-251
-    \endverb
-    \field{eventtitle}{2019 {IEEE} Transportation Electrification Conference
-  ({ITEC}-India)}
-    \field{isbn}{978-1-72813-169-6}
-    \field{pages}{1\bibrangedash 4}
+    \field{booktitle}{2019 {IEEE} Trans. Electrification Conf.}
     \field{title}{Electric Road system With Dynamic Wireless charging of
   Electric buses}
-    \verb{url}
-    \verb https://ieeexplore.ieee.org/document/9080859/
-    \endverb
-    \field{langid}{english}
-    \list{location}{1}{%
-      {Bengaluru, India}%
-    }
-    \verb{file}
-    \verb Balde and Sardar - 2019 - Electric Road system With Dynamic Wireless
-    \verb chargin.pdf:/home/daniel/Zotero/storage/RNZHKJIG/Balde and Sardar - 2
-    \verb 019 - Electric Road system With Dynamic Wireless chargin.pdf:applicat
-    \verb ion/pdf
-    \endverb
     \field{month}{12}
     \field{year}{2019}
-    \field{urlday}{18}
-    \field{urlmonth}{11}
-    \field{urlyear}{2021}
   \endentry
 
   \entry{boonraksa_impact_2019}{inproceedings}{}
