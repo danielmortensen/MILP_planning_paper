@@ -1,8 +1,8 @@
 \section{Multi-Graph Additions}
-An additional contribution this work offers is the expansion to night vs day charging. Day and night operations differ in two aspects: number of chargers, and bus availability. During the day, the buses can charge on chargers in the charge station. The number of chargers in the station are limited, causing contention between buses. At night, each bus docks in a holding stall with one charger per stall, eliminating charger contention. 
+An additional contribution this work offers is the expansion to joint optimization of both night and day charging in a single optimization problem. Day and night operations differ in two aspects: number of chargers and bus availability. During the day, the buses can charge only at the charge station. The number of chargers in the station are limited, causing contention between buses. At night, each bus docks in a holding stall with one charger per stall, eliminating charger contention. Furthermore, nighttime charging is slow compred to daytime charing.  Our model uses different rates for day and night charging.
 \par Bus availability also changes because buses do not leave their stalls at night. This simplifies the charge problem because buses are always available for charging. 
-\par Equation \ref{eqn:cFlow} in section \ref{sec:net-flow} describes the net-flow constraints which constrain the number of chargers in the source and sink nodes. Because the number of chargers are different from night to day, a separate graph is used at each transition as shown in figure \ref{fig:nightVsDayGraph}.
-\par Each graph is connected by equating the appropriate SOC values.  Consider the multi-graph formulation given in figure \ref{fig:nightVsDayConnected}.  The morning graph is related to the day graph because $d_{1,1}$ and $d_{2,1}$ represent the same SOC values as $d_{1,2}$ and $d_{2,2}$ respectively. The same applies for the day and night graph, where $d_{1,5}$ and $d_{2,5}$ represent the SOC values for $d_{1,6}$ and $d_{2,6}$. This equality relationship can be expressed as an equality constraint where
+\par Equation (\ref{eqn:cFlow}) in section \ref{sec:net-flow} describes the net-flow constraints which constrain the number of chargers in the source and sink nodes. Because the number of chargers are different from night to day, a separate graph is used at each transition as shown in figure~\ref{fig:nightVsDayGraph}.
+\par Each graph is connected by equating the appropriate SOC values.  Consider the multi-graph formulation given in figure~\ref{fig:nightVsDayConnected}.  The morning graph is related to the day graph because $d_{1,1}$ and $d_{2,1}$ represent the same SOC values as $d_{1,2}$ and $d_{2,2}$ respectively. The same applies for the day and night graphs, where $d_{1,5}$ and $d_{2,5}$ represent the SOC values for $d_{1,6}$ and $d_{2,6}$. This equality relationship can be expressed as an equality constraint where
 \begin{align}
 	\mathbf{d}_{\text{graph 1}} - \mathbf{d}_{\text{graph 2}} = \mathbf{0}
 \end{align}
@@ -14,7 +14,7 @@ where $D_\text{multi-graph}$ is an $\text{nBus} \times \text{nVar}$ matrix such 
 \begin{align}
 	D_\text{multi-graph}\mathbf{y} = \mathbf{d}_{\text{graph 1}} - \mathbf{d}_{\text{graph 2}}.
 \end{align}
-Because all SOC values $d$ are contained in $\mathbf{y}$, forming the matrix $D$ amounts to placing $1$ and $-1$ at the indices corresponding to $d_{\text{graph 1}}$ and $d_{\text{graph 2}}$ respectively and zero otherwise. 
+Because all SOC values $d$ are contained in $\mathbf{y}$, forming the matrix $D$ amounts to placing $1$ and $-1$ at the indices corresponding to $d_{\text{graph 1}}$ and $d_{\text{graph 2}}$ respectively and zero otherwise.
 \begin{figure*}
 	\centering
 	\begin{tikzpicture} 
@@ -135,7 +135,7 @@ Because all SOC values $d$ are contained in $\mathbf{y}$, forming the matrix $D$
 		\draw [->, line width=0.5pt, color=black!40] (twelve.east) -- (thirteen.west);
 		\draw [->, line width=0.5pt, color=black!40] (fourteen.east) -- (fifteen.west); 
 	\end{tikzpicture}
-	\caption{Night and Day Graphs}
+	\caption{Night and day graphs.}
 	\label{fig:nightVsDayGraph}
 \end{figure*}
 
@@ -267,6 +267,6 @@ Because all SOC values $d$ are contained in $\mathbf{y}$, forming the matrix $D$
 		\draw [dotted, color=black,-,line width=1pt] (eleven.north east) edge[->,bend left=20pt]node[above=-2.5pt]{\scalebox{0.7}{Bus 1 SOC}}(nFive.north west); 
 		\draw [dotted, color=black,-,line width=1pt] (fifteen.north east) edge[->,bend left=20pt]node[above=-2.5pt]{\scalebox{0.7}{Bus 2 SOC}}(nSeven.north west);
 	\end{tikzpicture}
-	\caption{Bus SOC between Night and Day Graphs}
+	\caption{Bus SOC between night and day graphs.}
 	\label{fig:nightVsDayConnected}
 \end{figure*}
