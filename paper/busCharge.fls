@@ -433,15 +433,15 @@ INPUT media/baseline5Bus5ChargerTotalPowerPlot.csv
 INPUT media/optimized5Bus5ChargerTotalPowerPlot.csv
 INPUT media/baseline5Bus5ChargerPowerPlot.csv
 INPUT media/optimized5Bus5ChargerPowerPlot.csv
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT media/optimized5Bus1ChargerPowerPlot.csv
 INPUT media/optimized11Bus1ChargerPowerPlot.csv
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT media/costComparisonMultiVsSingle.csv
 INPUT media/costComparisonMultiVsSingleLarge.csv
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT futureWork.tex
 INPUT futureWork.tex
 INPUT busCharge.aux

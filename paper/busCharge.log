@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.19)  8 MAR 2022 19:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.2.19)  9 MAR 2022 07:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1179,12 +1179,12 @@ Package biblatex Info: ... file 'busCharge.bbl' found.
 Package biblatex Info: Reference section=0 on input line 34.
 Package biblatex Info: Reference segment=0 on input line 34.
  (./abstract.tex) (./introduction.tex) (./literatureReview.tex
-LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -3508,8 +3508,13 @@ PGFPlots: reading {media/baseline5Bus5ChargerPowerPlot.csv}
 PGFPlots: reading {media/optimized5Bus5ChargerPowerPlot.csv}
 Package pgfplots info on input line 57: dateplot: setting 'date ZERO={0002-11-3
 0}' for this axis.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
 4.
+
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
@@ -3517,18 +3522,14 @@ Overfull \hbox (2.86055pt too wide) in paragraph at lines 71--72
 [][] 
  []
 
-[10]
 PGFPlots: reading {media/optimized5Bus1ChargerPowerPlot.csv}
 PGFPlots: reading {media/optimized11Bus1ChargerPowerPlot.csv}
 Package pgfplots info on input line 78: dateplot: setting 'date ZERO={0002-11-3
 0}' for this axis.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+[11]
 PGFPlots: reading {media/costComparisonMultiVsSingle.csv}
 PGFPlots: reading {media/costComparisonMultiVsSingleLarge.csv}
- [11])
-(./futureWork.tex [12])
+) (./futureWork.tex) [12]
 Underfull \hbox (badness 1412) in paragraph at lines 53--53
 \OT1/ptm/m/n/10 Trans-porta-tion Elec-tri-fi-ca-tion Con-fer-ence and Expo
  []
@@ -3582,7 +3583,7 @@ Package logreq Info: Writing requests to 'busCharge.run.xml'.
 Here is how much of TeX's memory you used:
  36464 strings out of 481239
  888030 string characters out of 5920377
- 1855611 words of memory out of 5000000
+ 1845220 words of memory out of 5000000
  51100 multiletter control sequences out of 15000+600000
  570522 words of font info for 100 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
@@ -3603,7 +3604,7 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on busCharge.pdf (15 pages, 322879 bytes).
+Output written on busCharge.pdf (15 pages, 328275 bytes).
 PDF statistics:
  125 PDF objects out of 1000 (max. 8388607)
  90 compressed objects within 1 object stream
