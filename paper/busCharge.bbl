@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.1 $
+% $ biblatex bbl format version 2.9 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -121,8 +121,8 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{B}
     \field{sortinithash}{B}
-    \field{booktitle}{2019 {IEEE} {PES} {GTD} Grand International Conference
-  and Exposition Asia}
+    \field{booktitle}{2019 {IEEE} {PES} {GTD} Grand Internat. Conf. and
+  Exposition Asia}
     \field{title}{Impact of Electric Bus Charging on the Power Distribution
   System a Case Study {IEEE} 33 Bus Test System}
     \field{month}{03}
@@ -168,9 +168,9 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{C}
     \field{sortinithash}{C}
-    \field{shortjournal}{{CSEE} {JPES}}
     \field{title}{A smart charging algorithm-based fast charging station with
   energy storage system-free}
+    \field{journaltitle}{CSEE Journal of Power and Energy Systems}
     \field{year}{2020}
   \endentry
 
@@ -224,8 +224,8 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{D}
     \field{sortinithash}{D}
-    \field{booktitle}{2017 International Conference on Technological
-  Advancements in Power and Energy ( {TAP} Energy)}
+    \field{booktitle}{2017 Internat. Conf. on Tech. Adv. in Power and Energy (
+  {TAP} Energy)}
     \field{title}{Impact of electric vehicle charging stations on reliability
   of distribution network}
     \field{month}{12}
@@ -275,7 +275,7 @@
     \name{author}{2}{}{%
       {{hash=ETN}{%
          family={El-Taweel},
-         familyi={E\bibinithyphendelim T\bibinitperiod},
+         familyi={E\bibinitperiod-T\bibinitperiod},
          given={N.A.},
          giveni={N\bibinitperiod},
       }}%
@@ -369,7 +369,7 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{G}
     \field{sortinithash}{G}
-    \field{booktitle}{2019 {IEEE} Sustainable Power and Energy Conference}
+    \field{booktitle}{2019 {IEEE} Sus. Power and Energy Conf.}
     \field{title}{Charging Load Forecasting of Electric Vehicle Based on Monte
   Carlo and Deep Learning}
     \field{month}{11}
@@ -386,7 +386,7 @@
       }}%
       {{hash=RIE}{%
          family={Redondo-Iglesias},
-         familyi={R\bibinithyphendelim I\bibinitperiod},
+         familyi={R\bibinitperiod-I\bibinitperiod},
          given={E.},
          giveni={E\bibinitperiod},
       }}%
@@ -415,7 +415,7 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{H}
     \field{sortinithash}{H}
-    \field{booktitle}{2019 {IEEE} Vehicle Power and Propulsion Conference}
+    \field{booktitle}{Vehicle Power and Propulsion Conference}
     \field{title}{Optimal Charging Strategy to Minimize Electricity Cost and
   Prolong Battery Life of Electric Bus Fleet}
     \field{month}{10}
@@ -531,8 +531,8 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{J}
     \field{sortinithash}{J}
-    \field{booktitle}{2018 {IEEE} {PELS} Workshop on Emerging Technologies:
-  Wireless Power Transfer (Wow)}
+    \field{booktitle}{{IEEE} {PELS} Workshop on Emerging Tech.: Wireless Power
+  Transfer}
     \field{title}{Automatic Current Control by Self-Inductance Variation for
   Dynamic Wireless {EV} Charging}
     \field{month}{06}
@@ -638,11 +638,6 @@
     \field{sortinithash}{P}
     \field{title}{Rocky Mountain Power Electric Service Schedule No. 8 State of
   Utah}
-    \verb{url}
-    \verb www.rockymountainpower.net/content/dam/pcorp/documents/en/rockymounta
-    \verb inpower/rates-regulation/utah/rates/008_Large_General_Service_1_000_k
-    \verb W_and_Over_Distribution_Voltage.pdf
-    \endverb
     \field{urlday}{03}
     \field{urlmonth}{02}
     \field{urlyear}{2022}
@@ -670,7 +665,7 @@
       }}%
       {{hash=TRA}{%
          family={T-Raissi},
-         familyi={T\bibinithyphendelim R\bibinitperiod},
+         familyi={T\bibinitperiod-R\bibinitperiod},
          given={A.},
          giveni={A\bibinitperiod},
       }}%
@@ -721,52 +716,11 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{W}
     \field{sortinithash}{W}
-    \field{abstract}{%
-    Environmental concerns due to fossil fuel consumption and emissions drive
-  transportation industry to shift towards low-impact and sustainable energy
-  sources. Public transit system, as an integral part of multimodal
-  transportation ecosystem, has been supporting such shift by exploring the
-  adoption of electric vehicles. In recent years, the advancement in Battery
-  Electric Buses ({BEBs}) and their supporting infrastructure technology made
-  them a viable replacement for diesel and Compressed Natural Gas ({CNG})
-  buses. Yet, it remains a challenge on how to optimally deploy the {BEB}
-  system due to its unique spatio-temporal characteristics. To ﬁll this gap,
-  this research introduces a spatio-temporal optimization model to identify the
-  optimal deployment strategies for {BEB} system. The identiﬁed
-  spatio-temporal deployment of {BEB} system can minimize the cost associated
-  with vehicle procurement and charging station allocation, while satisfying
-  transit operation constraints such as maintaining existing bus operation
-  routes and schedules. The proposed method is implemented onto the transit
-  network operated by the Utah Transit Authority ({UTA}) to showcase its
-  eﬀectiveness. As many transit agencies are testing electric buses and
-  considering the integration of electric buses into future ﬂeet, this
-  research will help transit agencies make informed decisions regarding
-  strategic planning and design of {BEB} systems.%
-    }
-    \verb{doi}
-    \verb 10.1016/j.jtrangeo.2018.03.013
-    \endverb
-    \field{issn}{09666923}
-    \field{pages}{160\bibrangedash 168}
     \field{shortjournal}{Journal of Transport Geography}
     \field{title}{Optimizing the spatio-temporal deployment of battery electric
   bus system}
-    \verb{url}
-    \verb https://linkinghub.elsevier.com/retrieve/pii/S0966692317306294
-    \endverb
-    \field{volume}{68}
-    \field{langid}{english}
-    \verb{file}
-    \verb Wei et al. - 2018 - Optimizing the spatio-temporal deployment of batt
-    \verb e.pdf:/home/daniel/Zotero/storage/8JXQIS34/Wei et al. - 2018 - Optimi
-    \verb zing the spatio-temporal deployment of batte.pdf:application/pdf
-    \endverb
-    \field{journaltitle}{Journal of Transport Geography}
     \field{month}{04}
     \field{year}{2018}
-    \field{urlday}{13}
-    \field{urlmonth}{11}
-    \field{urlyear}{2021}
   \endentry
 
   \entry{whitaker_network_2021}{article}{}
@@ -873,8 +827,8 @@
     \field{labeltitlesource}{title}
     \field{sortinit}{Z}
     \field{sortinithash}{Z}
-    \field{booktitle}{2018 2nd {IEEE} Conference on Energy Internet and Energy
-  System Integration ({EI}2)}
+    \field{booktitle}{2nd {IEEE} Conf. on Energy Internet and Energy System
+  Integration ({EI}2)}
     \field{title}{Optimization Method of Fast Charging Buses Charging Strategy
   for Complex Operating Environment}
     \field{month}{10}

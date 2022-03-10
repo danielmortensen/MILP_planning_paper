@@ -1,7 +1,7 @@
 \section{Results}
 This section contains results of the planning framework and is subdivided into three subsections: uncontested results, contested results, and multi-rate comparisons.  
 \subsection{\label{sec:setup} Baseline and Setup}
-The experiments in this section compare the results of the framework given in equation (\ref{eqn:finalObjective}) with a baseline, which models the general behavior of bus drivers at the Utah Transit Authority (UTA) in SLC, Utah. According to UTA, bus drivers usually charge whenever possible.  As they enter the station, the bus drivers look to see if an overhead charger is available. If so, they stop there, plug in, and top off their bus's battery. Our baseline scenario reflects this default bus driver behavior using an objective function that maximizes the number of charging instances, which is computed as the sum of group flow values, resulting in the objective function
+The experiments in this section compare the results of the framework given in equation (\ref{eqn:finalObjective}) with a baseline, which models the general behavior of bus drivers at the Utah Transit Authority (UTA) in SLC, Utah. According to UTA, bus drivers generally charge whenever possible. Our baseline scenario reflects this default bus driver behavior using an objective function that maximizes the number of charging instances, which is computed as the sum of group flow values, resulting in the objective function
 \begin{equation}
 	\underset{\mathbf{y}}{\text{max}} \ \mathbf{1}^TB\mathbf{y},
 \end{equation}

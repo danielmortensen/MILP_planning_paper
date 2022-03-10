@@ -295,15 +295,15 @@ Therefore, let a nodes be present in the grid when the corresponding bus can con
 \end{equation}
 where the equality and inequality constraints are encoded in $F$, $\mathbf{f}$, $Q$ and $\mathbf{q}$. The variable $\mathbf{y}$ is a vector containing the elements of the solution and has the form 
 \begin{equation}\label{eqn:y}
-		\mathbf{y} = \begin{bmatrix}
-		\mathbf{x} \\
-		\mathbf{d} \\
-		\mathbf{g} \\
-		\mathbf{e} \\
-		\mathbf{p} \\
-		\hat{p} \\
-		\hat{p}_\text{off-peak} \\
-		\hat{p}_\text{on-peak} 
+		\mathbf{y}^T = \begin{bmatrix}
+		\mathbf{x}^T  \
+		\mathbf{d}^T  \
+		\mathbf{g}^T  \
+		\mathbf{e}^T  \
+		\mathbf{p}^T  \
+		\hat{p}  \
+		\hat{p}_\text{off-peak}  \
+		\hat{p}_\text{on-peak}  \
 	\end{bmatrix},
 \end{equation}
 where each element of $\mathbf{y}$ is defined later in this paper.
@@ -365,7 +365,7 @@ where $A$ is the graph incidence matrix, $\mathbf{x}$ is the $n_E \times 1$ vect
 	\label{fig:sourceSink} 
 \end{figure} 
 \begin{align}\label{eqn:cFlow}
-	Ax = \begin{bmatrix} 0 \\ \vdots \\ -n_C \\ \vdots \\ 0 \\ n_C \\ \vdots \\ 0\end{bmatrix}.
+	Ax = \begin{bmatrix} 0  \ \hdots \ -n_C \ \hdots \ 0 \ n_C \ \hdots \ 0\end{bmatrix}^T.
 \end{align}
 Equation \ref{eqn:cFlow} can be formulated in terms of $\mathbf{y}$ by appropriately zero-padding $A$ such that
 \begin{equation}\label{eqn:cFlow2}
@@ -461,13 +461,12 @@ Let $\mathbf{x}$ be the edge weights as before and $\mathbf{c}_g$ be an $n_G \ti
 \end{align}
 But the group flow is required to be one at most to avoid connection thrashing.  This is expressed by the inequality given in equation (\ref{eqn:cGroupFlow}).
 \begin{align}\label{eqn:cGroupFlow}
-	Bx \le \begin{bmatrix} 1\\ 1 \\\vdots \\ 1\end{bmatrix}.
+	Bx \le \mathbf{1}.
 \end{align}
 Similarly to (\ref{eqn:cFlow2}), equation (\ref{eqn:cGroupFlow}) can also be expressed in terms of $\mathbf{y}$ with appropriate zero padding as
 \begin{equation}\label{eqn:cGroupFlow2}
 	\begin{aligned}
-		\begin{bmatrix} B & 0\end{bmatrix} \mathbf{y} &= \mathbf{1} \\
-		\tilde{B}\mathbf{y} &= \mathbf{1}.
+		\begin{bmatrix} B & 0\end{bmatrix} \mathbf{y} &= \tilde{B}\mathbf{y} = \mathbf{1} \\
 	\end{aligned}
 \end{equation}
 \subsection{Section Summary} In summary, the bus charge problem can be formulated as a graph with nodes and edges, where charge plans are encoded as a path with unit edge weights. The charge problem aims to find a feasible path which minimizes the cost of power. Feasibility is defined through a set of net-flow and group-flow constraints. Net-flow constraints are encoded through an adjacency matrix and enforce both the conservation and total number of chargers. The group-flow constraints prevent connection thrashing and limit to one the number of simultaneous charger-to-bus connections. 

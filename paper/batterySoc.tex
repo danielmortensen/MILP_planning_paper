@@ -205,12 +205,11 @@ or
 Equation (\ref{eqn:tau}) can be expanded to a matrix $D_\tau$, where each $d_{i,k}$ contains a corresponding constraint row such that
 \begin{equation}\label{eqn:tauFinal}
 	\begin{aligned}
-		D_\tau\mathbf{y} & \le \begin{bmatrix}-\tau \\ \vdots \\ -\tau \end{bmatrix} \\
+		D_\tau\mathbf{y} & \le -\tau\mathbf{1} \\
 		       & \le \mathbf{d}_\tau
 	\end{aligned}
 \end{equation}
-\par In summary, the minimum SOC for all feasible charge plans must
-exceed a given threshold.  SOC values are computed while the bus is in
+\par In summary, the minimum SOC for all feasible charge plans must exceed a given threshold.  SOC values are computed while the bus is in
 the charge station.  SOC values are updated when a bus enters by
 subtracting the discharged energy from the previous SOC estimate. SOC
 values are updated for in-station periods by adding the charge gains
