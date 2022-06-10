@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.9 $
+% $ biblatex bbl format version 3.1 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -275,7 +275,7 @@
     \name{author}{2}{}{%
       {{hash=ETN}{%
          family={El-Taweel},
-         familyi={E\bibinitperiod-T\bibinitperiod},
+         familyi={E\bibinithyphendelim T\bibinitperiod},
          given={N.A.},
          giveni={N\bibinitperiod},
       }}%
@@ -386,7 +386,7 @@
       }}%
       {{hash=RIE}{%
          family={Redondo-Iglesias},
-         familyi={R\bibinitperiod-I\bibinitperiod},
+         familyi={R\bibinithyphendelim I\bibinitperiod},
          given={E.},
          giveni={E\bibinitperiod},
       }}%
@@ -539,6 +539,123 @@
     \field{year}{2018}
   \endentry
 
+  \entry{Leou_optimal_2017}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LRC}{%
+         family={Leou},
+         familyi={L\bibinitperiod},
+         given={Rong-Ceng},
+         giveni={R\bibinithyphendelim C\bibinitperiod},
+      }}%
+      {{hash=HJJ}{%
+         family={Hung},
+         familyi={H\bibinitperiod},
+         given={Jeng-Jiun},
+         giveni={J\bibinithyphendelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LRCHJJ1}
+    \strng{fullhash}{LRCHJJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Optimal Charging Schedule Planning and Economic Analysis for
+  Electric Bus Charging Stations}
+    \field{journaltitle}{Energies}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Mahmoud2016}{article}{}
+    \name{author}{4}{}{%
+      {{hash=MM}{%
+         family={Mahmoud},
+         familyi={M\bibinitperiod},
+         given={Moataz},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GR}{%
+         family={Garnett},
+         familyi={G\bibinitperiod},
+         given={Ryan},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Ferguson},
+         familyi={F\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=KP}{%
+         family={Kanaroglou},
+         familyi={K\bibinitperiod},
+         given={Pavlos},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MM+1}
+    \strng{fullhash}{MMGRFMKP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Electric buses: A review of alternative powertrains}
+    \field{journaltitle}{Renewable and Sustainable Energy Reviews}
+    \field{year}{2016}
+  \endentry
+
+  \entry{Nimalsiri2020}{article}{}
+    \name{author}{6}{}{%
+      {{hash=NNI}{%
+         family={Nimalsiri},
+         familyi={N\bibinitperiod},
+         given={Nanduni\bibnamedelima I.},
+         giveni={N\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+      {{hash=MCP}{%
+         family={Mediwaththe},
+         familyi={M\bibinitperiod},
+         given={Chathurika\bibnamedelima P.},
+         giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=REL}{%
+         family={Ratnam},
+         familyi={R\bibinitperiod},
+         given={Elizabeth\bibnamedelima L.},
+         giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Shaw},
+         familyi={S\bibinitperiod},
+         given={Marnie},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SDB}{%
+         family={Smith},
+         familyi={S\bibinitperiod},
+         given={David\bibnamedelima B.},
+         giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=HSK}{%
+         family={Halgamuge},
+         familyi={H\bibinitperiod},
+         given={Saman\bibnamedelima K.},
+         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NNI+1}
+    \strng{fullhash}{NNIMCPRELSMSDBHSK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{title}{A Survey of Algorithms for Distributed Charging Control of
+  Electric Vehicles in Smart Grid}
+    \field{journaltitle}{IEEE Transactions on Intelligent Transportation
+  Systems}
+    \field{year}{2020}
+  \endentry
+
   \entry{ojer_development_2020}{inproceedings}{}
     \name{author}{5}{}{%
       {{hash=OI}{%
@@ -665,7 +782,7 @@
       }}%
       {{hash=TRA}{%
          family={T-Raissi},
-         familyi={T\bibinitperiod-R\bibinitperiod},
+         familyi={T\bibinithyphendelim R\bibinitperiod},
          given={A.},
          giveni={A\bibinitperiod},
       }}%
@@ -681,6 +798,122 @@
   for demand charge reduction}
     \field{month}{12}
     \field{year}{2016}
+  \endentry
+
+  \entry{Rinalde_Mixed_2020}{article}{}
+    \name{author}{3}{}{%
+      {{hash=RM}{%
+         family={Rinalde},
+         familyi={R\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PAEad}{%
+         family={Picarelli},
+         familyi={P\bibinitperiod},
+         suffix={Erika an\bibnamedelima dD'Ariano},
+         suffixi={E\bibinitperiod\bibinitdelim a\bibinitperiod\bibinitdelim
+  d\bibinitperiod},
+         given={Andrea},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=VF}{%
+         family={Viti},
+         familyi={V\bibinitperiod},
+         given={Francesco},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RMPEadAVF1}
+    \strng{fullhash}{RMPEadAVF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Mixed-fleet single-terminal bus scheduling problem: Modeling,
+  solution scheme and potential applications}
+    \field{journaltitle}{Omega}
+    \field{year}{2020}
+  \endentry
+
+  \entry{Wang2019}{article}{}
+    \name{author}{5}{}{%
+      {{hash=WG}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Guang},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=XX}{%
+         family={Xie},
+         familyi={X\bibinitperiod},
+         given={Xiaoyang},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=ZF}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Fan},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=LY}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Yunhuai},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=ZD}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Desheng},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WG+1}
+    \strng{fullhash}{WGXXZFLYZD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{title}{BCharge: Data-Driven Real-Time Charging Scheduling for
+  Large-Scale Electric Bus Fleets}
+    \field{journaltitle}{Proceedings - Real-Time Systems Symposium}
+    \field{year}{2019}
+  \endentry
+
+  \entry{Wei2018}{article}{}
+    \name{author}{3}{}{%
+      {{hash=WR}{%
+         family={Wei},
+         familyi={W\bibinitperiod},
+         given={Ran},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LX}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Xiaoyue},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=adKFYO}{%
+         prefix={an\bibnamedelima dS.},
+         prefixi={a\bibinitperiod\bibinitdelim d\bibinitperiod},
+         family={Kiavash\bibnamedelima Fayyaz},
+         familyi={K\bibinitperiod\bibinitdelim F\bibinitperiod},
+         given={Yi\bibnamedelima Ou},
+         giveni={Y\bibinitperiod\bibinitdelim O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WRLXKFYOad1}
+    \strng{fullhash}{WRLXKFYOad1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{title}{Optimizing the spatio-temporal deployment of battery electric
+  bus system}
+    \field{journaltitle}{Journal of Transport Geography}
+    \field{year}{2018}
   \endentry
 
   \entry{wei_optimizing_2018}{article}{}
