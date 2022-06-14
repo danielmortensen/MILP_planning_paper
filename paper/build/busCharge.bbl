@@ -17,6 +17,90 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+  \entry{Alwesabi_2021_Novel}{article}{}
+    \name{author}{4}{}{%
+      {{hash=AY}{%
+         family={Alwesabi},
+         familyi={A\bibinitperiod},
+         given={Yaseen},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=LZ}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Zhaocai},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=KS}{%
+         family={Kwon},
+         familyi={K\bibinitperiod},
+         given={Soongeol},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=WY}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Yong},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AY+1}
+    \strng{fullhash}{AYLZKSWY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{A novel integration of scheduling and dynamic wireless
+  charging planning models of battery electric buses}
+    \field{journaltitle}{Energy}
+    \field{year}{2021}
+  \endentry
+
+  \entry{Alwesabi_2022_Robust}{article}{}
+    \name{author}{5}{}{%
+      {{hash=AY}{%
+         family={Alwesabi},
+         familyi={A\bibinitperiod},
+         given={Yaseen},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=AF}{%
+         family={Avishan},
+         familyi={A\bibinitperiod},
+         given={Farzad},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=YI}{%
+         family={Yanikoglu},
+         familyi={Y\bibinitperiod},
+         given={Ihsan},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=LZ}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Zhaocai},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=WY}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Yong},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AY+1}
+    \strng{fullhash}{AYAFYILZWY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Robust strategic planning of dynamic wireless charging
+  infrastructure for electric buses}
+    \field{journaltitle}{Applied Energy}
+    \field{year}{2022}
+  \endentry
+
   \entry{bagherinezhad_spatio-temporal_2020}{article}{}
     \name{author}{4}{}{%
       {{hash=BA}{%
@@ -373,6 +457,39 @@
     \field{title}{Charging Load Forecasting of Electric Vehicle Based on Monte
   Carlo and Deep Learning}
     \field{month}{11}
+    \field{year}{2019}
+  \endentry
+
+  \entry{He_2019_Fast}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HY}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Yi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=SY}{%
+         family={Song},
+         familyi={S\bibinitperiod},
+         given={Yizi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=LZ}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Zhaocai},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HYSYLZ1}
+    \strng{fullhash}{HYSYLZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Fast-charging station deployment for battery electric bus
+  systems considering electricity demand charges}
+    \field{journaltitle}{Sustainable Cities and Society}
     \field{year}{2019}
   \endentry
 
