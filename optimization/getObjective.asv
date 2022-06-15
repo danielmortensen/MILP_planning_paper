@@ -18,6 +18,9 @@ elseif contains(objectiveType, 'Schedule8')
    
 % small penalty to avoid spurious mount/dismounts
 obj = addDismountPenaltyToObjective(obj,Graph,Const);
+% mountIdx = Graph.edges(:,Const.edge.idx.TYPE) == Const.edge.type.DISMOUNT;
+% yMountIdx = Graph.edges(mountIdx,Const.edge.idx.YEDGE);
+% obj(yMountIdx) = 0.1;
 
 else
     error('invalid minimization objective');

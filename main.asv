@@ -6,17 +6,17 @@ addpath('visualization/');
 close all;
 ...fData = '\\wsl.localhost\Ubuntu\home\dmortensen\MILP_planning_paper\data';
 fData = 'data/';
-nBus = 5;
-nCharger = 5;
+nBus = 10;
+nCharger = 2;
 
 % Define Scenarios
 scenario1 = getScenario('fExternalLoad','originalTpss1Day.csv',...
     'nBus',nBus,'nDayChargeRate',1,'nOverheadCharger',nCharger,...
-    'minObjective','weightedConsumption','fData',fData);
+    'minObjective','minSchedule8','fData',fData);
 
 % run Scenarios
 saveFolder = 'resultsComparison';
-saveFile = '5_Bus_5_ChargeRate_1_Overhead_weightedConsumption';
+saveFile = '10_Bus_1_ChargeRate_2_Overhead_MinSchedule8';
 savePath = fullfile(saveFolder, saveFile);
 result1 = runSimulation(scenario1, savePath);
 

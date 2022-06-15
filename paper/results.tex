@@ -1,7 +1,8 @@
 \section{Results}
 This section contains results of the planning framework and is subdivided into three subsections: uncontested results, contested results, and multi-rate comparisons.  
 \subsection{\label{sec:setup} Baseline and Setup}
-The experiments in this section compare the results of the framework given in equation (\ref{eqn:finalObjective}) with a baseline, which models the general behavior of bus drivers at the Utah Transit Authority (UTA) in SLC, Utah. According to UTA, bus drivers generally charge whenever possible. Our baseline scenario reflects this default bus driver behavior using an objective function that maximizes the number of charging instances, which is computed as the sum of group flow values, resulting in the objective function
+The experiments in this section compare the results of the framework given in equation (\ref{eqn:finalObjective}) with a baseline, which models the general behavior of bus drivers at the Utah Transit Authority (UTA) in SLC, Utah and the planning framework given in \cite{He_2022_Battery}. 
+\par According to UTA, bus drivers generally charge whenever possible. Our baseline scenario reflects this default bus driver behavior using an objective function that maximizes the number of charging instances, which is computed as the sum of group flow values, resulting in the objective function
 \begin{equation}
 	\underset{\mathbf{y}}{\text{max}} \ \mathbf{1}^TB\mathbf{y},
 \end{equation}
@@ -37,7 +38,7 @@ This section explores performance in a scenario where there is one charger per b
 \par Because equation (\ref{eqn:RMPSchedule8}) is driven by facilities power, on-peak power, on-peak energy, and off-peak energy, these four criteria are used to evaluate the optimal and baseline charge plans.  Furthermore, because the on and off-peak energy charges contribute little to the cost differences, they have been grouped together for comparison.
 \begin{figure}
 	\centering
-	\makeComparisonBarChart{media/costComparison5Bus5Chargers.csv}{Cost (Dollars)}{Baseline}{Optimized}
+	\makeComparisonBarChartThree{media/costComparison5Bus5Chargers.csv}{Cost (Dollars)}{Baseline}{He et al.}{Optimized}
 	\caption{Cost comparison between optimized and baseline algorithms.}
 	\label{fig:costComparison}
 \end{figure}
@@ -82,20 +83,20 @@ This section observes the performance of the optimal schedule as charge resource
 
 \subsection{Multi-Rate Comparison}
 This subsection compares a multi-rate and single-rate charge schedule. The multi-rate schedule includes $a_1$, $a_2$, $a_3$, and $a_4$ as defined in section \ref{sec:setup}.  The single-rate schedule assumes the static charge rate associated with $a_1$. Two scenarios are considered.  The first compares the cost of mulit and single-rate plans for a 5 bus 1 charger scenario. The second compares performance for a 35 bus, 6 charger scenario. 
-\par The respective costs assocaited with the 5 bus 1 charger scenario are given in Fig.~\ref{fig:multiRateCostComparison} as before.  As shown in Fig.~\ref{fig:multiRateCostComparison}, the cost difference is negligible.  The cost of the multi-rate scenario is \$3006.94 and the cost of the single-rate scenario is \$3007.77 which gives a total savings of \$0.83.
-\begin{figure}
-	\centering
-	\makeComparisonBarChart{media/costComparisonMultiVsSingle.csv}{Cost (Dollars)}{Multi-Rate}{Single-Rate}
-	\caption{Cost comparison between a multi-rate and single-rate charge schedule}
-	\label{fig:multiRateCostComparison}
-\end{figure}
-The 36 bus, 6 charger comparison in Fig.~\ref{fig:costComparisonMultiVsSingleLarge} also yields minimal cost savings. 
+\par The potential savings for using a variable charge rate in a 5 bus, 1 charge r scenario was found to be negligible.  The cost of the multi-rate scenario is \$3006.94 and the cost of the single-rate scenario is \$3007.77 which gives a total savings of \$0.83.
+%\begin{figure}
+%	\centering
+%	\makeComparisonBarChart{media/costComparisonMultiVsSingle.csv}{Cost (Dollars)}{Multi-Rate}{Single-Rate}
+%	\caption{Cost comparison between a multi-rate and single-rate charge schedule}
+%	\label{fig:multiRateCostComparison}
+%\end{figure}
+A 36 bus, 6 charger comparison also yielded minimal cost savings. 
 \par While examining the most commonly used edges, we observe that edges corresponding to a maximum charge rate are used most frequently as shown in Fig.~\ref{fig:chargeRateHistogram} which explains the similarities in cost. If the highest rate is almost always selected, the resulting plan would resemble a single-rate schedule, resulting in a singe-rate cost.  
-\begin{figure}
-	\makeComparisonBarChart{media/costComparisonMultiVsSingleLarge.csv}{Cost (Dollars)}{Multi-Rate}{Single-Rate}
-	\caption{Cost comaprison between multi and single rate charging for a 35 bus 6 charger scenario.}
-	\label{fig:costComparisonMultiVsSingleLarge}
-\end{figure}
+%\begin{figure}
+%	\makeComparisonBarChart{media/costComparisonMultiVsSingleLarge.csv}{Cost (Dollars)}{Multi-Rate}{Single-Rate}
+%	\caption{Cost comaprison between multi and single rate charging for a 35 bus 6 charger scenario.}
+%	\label{fig:costComparisonMultiVsSingleLarge}
+%\end{figure}
 \par Another explaination for the cost similarity is found in how monthly cost is computed. Because the monthly cost is based on the average instantanous power, both high and low charge rates can give the same results over a fixed time period. The charge schedules shown in both single and multi-rate plans charge buses in relatively small time periods. Fast charging over small periods of time is equivalent to slow charging over longer periods. In this way, the average power can be kept low even when using high charge rates (see Fig.s \ref{fig:contention2} and \ref{fig:contention1}). 
 \begin{figure}
 	\begin{tikzpicture}

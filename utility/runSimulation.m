@@ -1,6 +1,6 @@
 function [result, Const, G] = runSimulation(scenario, simId)
 [result, Const, G] = solveScenario(scenario);
-if strcmp(scenario.minObjective,'baseline')
+if ~strcmp(scenario.minObjective,'MinSchedule8')
     [result.x, G] = convertToSchedule8(result.x, G, Const);
 end
 save(simId + ".mat",'G','result','Const');

@@ -460,6 +460,51 @@
     \field{year}{2019}
   \endentry
 
+  \entry{He_2022_Battery}{article}{}
+    \name{author}{5}{}{%
+      {{hash=HJ}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Jia},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=YN}{%
+         family={Yan},
+         familyi={Y\bibinitperiod},
+         given={Na},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=ZJ}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Jian},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=YY}{%
+         family={Yu},
+         familyi={Y\bibinitperiod},
+         given={Yang},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=WT}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Tao},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HJ+1}
+    \strng{fullhash}{HJYNZJYYWT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Battery electric buses charging schedule optimization
+  considering time-of-use electricity price}
+    \field{journaltitle}{Journal of Intelligent and Connected Vehicles}
+    \field{year}{2022}
+  \endentry
+
   \entry{He_2019_Fast}{article}{}
     \name{author}{3}{}{%
       {{hash=HY}{%
@@ -872,9 +917,6 @@
     \field{sortinithash}{P}
     \field{title}{Rocky Mountain Power Electric Service Schedule No. 8 State of
   Utah}
-    \field{urlday}{03}
-    \field{urlmonth}{02}
-    \field{urlyear}{2022}
   \endentry
 
   \entry{qin_numerical_2016}{article}{}

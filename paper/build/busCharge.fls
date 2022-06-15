@@ -440,8 +440,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
 INPUT media/optimized5Bus1ChargerPowerPlot.csv
 INPUT media/optimized11Bus1ChargerPowerPlot.csv
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
-INPUT media/costComparisonMultiVsSingle.csv
-INPUT media/costComparisonMultiVsSingleLarge.csv
 INPUT futureWork.tex
 INPUT futureWork.tex
 INPUT build//busCharge.aux
