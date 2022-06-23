@@ -460,6 +460,26 @@
     \field{year}{2019}
   \endentry
 
+  \entry{gurobi}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=G}{%
+         family={{Gurobi Optimization, LLC}},
+         familyi={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{G1}
+    \strng{fullhash}{G1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{title}{{Gurobi Optimizer Reference Manual}}
+    \verb{url}
+    \verb https://www.gurobi.com
+    \endverb
+    \field{year}{2022}
+  \endentry
+
   \entry{He_2022_Battery}{article}{}
     \name{author}{5}{}{%
       {{hash=HJ}{%
