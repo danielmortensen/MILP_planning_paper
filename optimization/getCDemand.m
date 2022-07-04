@@ -10,7 +10,11 @@ dTime = Graph.param.base.dTime;
 nTime = Graph.param.nTime;
 fLoadProfile = Graph.param.base.fLoadProfile;
 tStart = Graph.param.tStart;
-syncTime = Graph.param.syncTime;
+try
+    syncTime = Graph.param.syncTime;
+catch
+    syncTime = true;
+end
 edges = Graph.edges;
 
 nPrevConstr = nSoc + nEdge + nDSoc;

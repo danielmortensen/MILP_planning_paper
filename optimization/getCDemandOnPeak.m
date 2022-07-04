@@ -10,7 +10,11 @@ dTime = Graph.param.base.dTime;
 nTime = Graph.param.nTime;
 fLoadProfile = Graph.param.base.fLoadProfile;
 tStart = Graph.param.tStart;
-syncTime = Graph.param.syncTime;
+try
+    syncTime = Graph.param.syncTime;
+catch
+    syncTime = true;
+end
 edges = Graph.edges;
 
 nPrevConstr = nSoc + nEdge + nDSoc + 1;
@@ -27,9 +31,10 @@ externalLoad = externalLoad*(dTime/60);
 b = nan([nTime,1]);
 iConstr2 = 1;
 for iTime = 2:nTime
-    if ~Graph.param.isOnPeak(iTime)
+    if ~Graph.param.isOnPeak(iTime - 1)
         continue;
     end
+    
     iStart = iTime - nPerInterval + 1;
     if iStart < 1
         iStart = 1;

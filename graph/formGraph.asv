@@ -39,5 +39,6 @@ Graph.param.lowerBound = [zeros([busInfo.nSoc,1]);...
                           zeros([nEdge,1])];
 Graph.param.isOnPeak = Graph.param.fleetProfile.isOnPeak;
 Graph.param.tStart = Graph.param.fleetProfile.tStart;
-Graph.param.nSolution = Graph.param.nAllSoc + Graph.param.nAllDSoc + nEdge + 2;
+Graph.param.nSolution = sum(nSoc) + sum(nDSoc) + nAllEdge + 2;
+
 end

@@ -16,6 +16,8 @@ catch
     nData = numel(power);
     time = datetime(2022,1,1) + seconds((0:nData - 1)/nData*3600*24);
     timeConv = convertTo(time,'posixtime');
+
+    fprintf('temp\n');
 end
 timeConv = timeConv - timeConv(1);
 otFs = 1/(timestep*60); %convert minutes to seconds
@@ -29,13 +31,10 @@ end
 iEnd = iStart + nTime - 1;
 try
     powerResampled1 = powerResampled(iStart:iEnd);
-    time = timeResampled(iStart:iEnd);
 catch
     powerResampled1 = powerResampled(iStart:iEnd-1);
-    powerResampled1 = [powerResampled1 0];
-    time = timeResampled(iStart:iEnd - 1);
-    dTime = time(end) - time(end-1);
-    time = [time time(end) + dTime];
+    powerResampled1 = [powerResampled 0];
 end
+time = timeResampled(iStart:iEnd);
 loadData = powerResampled1;
 end
