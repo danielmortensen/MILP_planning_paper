@@ -108,6 +108,30 @@ Therefore, let a nodes be present in the grid when the corresponding bus can con
 \end{figure} 
 \begin{figure}
 	\centering
+	\begin{tikzpicture}
+		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=1pt,   align=center](one)   at (0,0)  {$n_{0,0}$};
+		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=1pt,   align=center](two)   at (2.3,0){$n_{0,1}$};
+		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=1pt,   align=center](three) at (4.6,0){$n_{0,2}$};
+		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=1pt,   align=center](four)  at (6.9,0){$n_{0,3}$};
+		\node[circle, fill=yellow!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=0in, align=center](five)  at (2.3,3){$n_{1,1}$};
+		\node[circle, fill=yellow!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=0in, align=center](six)   at (4.6,3){$n_{1,2}$};
+		\node(placeholder1) at (1.15,-0.75){};
+		\node(placeholder2) at (5.75,-0.75){};
+		\draw [->, line width=1pt] (one) -- node[sloped, anchor=center, above, text width=2.5cm, midway, align=center]{Connect Edge}(five);
+		\draw [->, line width=1pt] (one) -- (two);
+		\draw [->, line width=1pt] (five) -- node[sloped, anchor=center, above, text width=1.5cm, midway, align=center]{Charge Edge}(six);
+		\draw [->, line width=1pt] (five) -- (three);
+		\draw [->, line width=1pt] (two) -- (six);
+		\draw [->, line width=1pt] (six) -- node[sloped, anchor=center, above, text width=1.5cm, midway, align=center]{Disconnect Edge}(four);
+		\draw [->, line width=1pt] (two) -- (three);
+		\draw [->, line width=1pt] (three) -- (four); 
+		\draw [<->, line width=1pt] (placeholder1) -- node[below, text width=2cm, midway, align=center]{No-Charge Edges}(placeholder2);
+	\end{tikzpicture}
+	\caption{Illustrates different types of edges: connect, disconnect, and charge edges.}
+	\label{fig:edgeTypes}
+\end{figure} 
+\begin{figure}
+	\centering
 	\begin{tikzpicture} 
 		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Bus: 2}](bus2Box) at (3,1){};
 		\node[rectangle, fill=gray!10, minimum width=2.8in, minimum height=.3in,label=left:\scalebox{0.8}{Bus: 1}](bus1Box) at (3,0){};
@@ -185,30 +209,7 @@ Therefore, let a nodes be present in the grid when the corresponding bus can con
 	\caption{Graph-based model of the complete decision-space.}
 	\label{fig:completeGraph}
 \end{figure}
-\begin{figure}
-	\centering
-	\begin{tikzpicture}
-		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=1pt,   align=center](one)   at (0,0)  {$n_{0,0}$};
-		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=1pt,   align=center](two)   at (2.3,0){$n_{0,1}$};
-		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=1pt,   align=center](three) at (4.6,0){$n_{0,2}$};
-		\node[circle, fill=blue!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=1pt,   align=center](four)  at (6.9,0){$n_{0,3}$};
-		\node[circle, fill=yellow!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=0in, align=center](five)  at (2.3,3){$n_{1,1}$};
-		\node[circle, fill=yellow!20,line width=0.5pt, draw=black, text width=0.5in, inner sep=0in, align=center](six)   at (4.6,3){$n_{1,2}$};
-		\node(placeholder1) at (1.15,-0.75){};
-		\node(placeholder2) at (5.75,-0.75){};
-		\draw [->, line width=1pt] (one) -- node[sloped, anchor=center, above, text width=2.5cm, midway, align=center]{Connect Edge}(five);
-		\draw [->, line width=1pt] (one) -- (two);
-		\draw [->, line width=1pt] (five) -- node[sloped, anchor=center, above, text width=1.5cm, midway, align=center]{Charge Edge}(six);
-		\draw [->, line width=1pt] (five) -- (three);
-		\draw [->, line width=1pt] (two) -- (six);
-		\draw [->, line width=1pt] (six) -- node[sloped, anchor=center, above, text width=1.5cm, midway, align=center]{Disconnect Edge}(four);
-		\draw [->, line width=1pt] (two) -- (three);
-		\draw [->, line width=1pt] (three) -- (four); 
-		\draw [<->, line width=1pt] (placeholder1) -- node[below, text width=2cm, midway, align=center]{No-Charge Edges}(placeholder2);
-	\end{tikzpicture}
-	\caption{Illustrates different types of edges: connect, disconnect, and charge edges.}
-	\label{fig:edgeTypes}
-\end{figure} 
+
 \par Consider a three-charger scenario using the graph in Fig.~\ref{fig:completeGraph}. A solution where one charger is connected to Bus 1 from $t_1$ to $t_2$ and to Bus 2 from $t_4$ to $t_5$ would be expressed by assigning unit weights to the appropriate connect, charge, and disconnect edges.  The second charger remains idle as illustrated by the active edges along the bottom row of charger states (see Fig.~\ref{fig:graphWithSolution}).  
 \par In summary, the graph encodes bus availability with nodes, decisions with edges, and schedules with edge weights. Solving the bus charge problem becomes a matter of finding the optimal set of edge weights, where optimal is meant to denote the most cost effective charge plan.
 
@@ -456,7 +457,7 @@ Equation \ref{eqn:cFlow} can be formulated in terms of $\mathbf{y}$ by appropria
 	\label{fig:groupedEdges} 
 \end{figure} 
 Let $\mathbf{x}$ be the edge weights as before and $\mathbf{c}_g$ be an $n_G \times 1$ vector where the $i^{\text{th}}$ element gives the group flow for group $i$. The group flow is then computed as 
-\begin{align}\label{eqn:cGroupFlow}
+\begin{align}\label{eqn:cGroupFlow1}
 	B\mathbf{x} = \mathbf{c}_g
 \end{align}
 But the group flow is required to be one at most to avoid connection thrashing.  This is expressed by the inequality given in equation (\ref{eqn:cGroupFlow}).
@@ -464,10 +465,14 @@ But the group flow is required to be one at most to avoid connection thrashing. 
 	Bx \le \mathbf{1}.
 \end{align}
 Similarly to (\ref{eqn:cFlow2}), equation (\ref{eqn:cGroupFlow}) can also be expressed in terms of $\mathbf{y}$ with appropriate zero padding as
-\begin{equation}\label{eqn:cGroupFlow2}
+\begin{equation}
 	\begin{aligned}
-		\begin{bmatrix} B & 0\end{bmatrix} \mathbf{y} &= \tilde{B}\mathbf{y} = \mathbf{1} \\
+		\begin{bmatrix} B & 0\end{bmatrix} \mathbf{y} &= \tilde{B}\mathbf{y} \\
 	\end{aligned}
+\end{equation}
+so that
+\begin{equation}\label{eqn:cGroupFlow2}
+	\tilde{B}\mathbf{y} \le \mathbf{1}.
 \end{equation}
 \subsection{Section Summary} In summary, the bus charge problem can be formulated as a graph with nodes and edges, where charge plans are encoded as a path with unit edge weights. The charge problem aims to find a feasible path which minimizes the cost of power. Feasibility is defined through a set of net-flow and group-flow constraints. Net-flow constraints are encoded through an adjacency matrix and enforce both the conservation and total number of chargers. The group-flow constraints prevent connection thrashing and limit to one the number of simultaneous charger-to-bus connections. 
 \begin{figure}

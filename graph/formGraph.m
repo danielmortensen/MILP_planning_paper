@@ -6,6 +6,7 @@ maxSoc = Const.charge.MAX_CHARGE;
 
 % initialize simulation variables
 edges = formEdges(busInfo,type,Const);
+edges(edges(:,Const.edge.idx.YDSOC) == 0,Const.edge.idx.YDSOC) = nan;
 nodes = formNodes(busInfo,type,Const);
 nNode = size(nodes,1);
 nEdge = size(edges,1);

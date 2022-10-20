@@ -6,7 +6,7 @@ addpath('visualization/');
 close all;
 ...fData = '\\wsl.localhost\Ubuntu\home\dmortensen\MILP_planning_paper\data';
 ...fData = 'data/';
-fData = '/home/daniel/PhD/paper2/data_management/data/';
+fData = '/home/daniel/Research/paper2/data_management/data/';
 fExternalLoad = fullfile('processed_tpss','TPSS_Cov15.mat'); ...'originalTpss1Day.csv';
 fRoute = fullfile('processed','routesTable.csv');
 nBus = 5;

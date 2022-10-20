@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: busCharge.aux
 The style file: biblatex.bst
@@ -17,49 +17,50 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated field_info (elt_size=4) to 10040 items from 5000.
 Database file #1: busCharge-blx.bib
 Database file #2: busCharge.bib
-Biblatex version: 3.13
+Biblatex version: 3.17
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 33 entries,
-            6365 wiz_defined-function locations,
-            1350 strings with 15417 characters,
-and the built_in function-call counts, 282630 in all, are:
-= -- 17439
-> -- 13876
-< -- 1296
-+ -- 15868
-- -- 10655
-* -- 17455
-:= -- 37543
+You've used 36 entries,
+            6399 wiz_defined-function locations,
+            1374 strings with 16198 characters,
+and the built_in function-call counts, 387816 in all, are:
+= -- 29657
+> -- 13937
+< -- 1082
++ -- 20763
+- -- 10664
+* -- 23563
+:= -- 52704
 add.period$ -- 0
-call.type$ -- 33
-change.case$ -- 288
+call.type$ -- 36
+change.case$ -- 244
 chr.to.int$ -- 762
-cite$ -- 64
-duplicate$ -- 27827
-empty$ -- 21338
-format.name$ -- 2619
-if$ -- 48642
+cite$ -- 70
+duplicate$ -- 39242
+empty$ -- 29112
+format.name$ -- 2765
+if$ -- 68018
 int.to.chr$ -- 0
-int.to.str$ -- 65
+int.to.str$ -- 71
 missing$ -- 0
-newline$ -- 1210
-num.names$ -- 1315
-pop$ -- 12270
+newline$ -- 1260
+num.names$ -- 1333
+pop$ -- 13943
 preamble$ -- 1
-purify$ -- 544
+purify$ -- 563
 quote$ -- 0
-skip$ -- 6237
+skip$ -- 6380
 stack$ -- 0
-substring$ -- 31516
-swap$ -- 5663
-text.length$ -- 1283
-text.prefix$ -- 32
+substring$ -- 56650
+swap$ -- 5538
+text.length$ -- 1114
+text.prefix$ -- 0
 top$ -- 1
-type$ -- 1110
+type$ -- 1212
 warning$ -- 0
-while$ -- 4500
+while$ -- 5906
 width$ -- 0
-write$ -- 1178
+write$ -- 1225

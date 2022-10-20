@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.1 $
+% $ biblatex bbl format version 3.2 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -16,7 +16,413 @@
   {}
 \endgroup
 
-\datalist[entry]{nty/global//global/global}
+\datalist[entry]{none/global//global/global}
+  \entry{zhou_optimization_2018}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=ZD}{%
+         family={Zhou},
+         familyi={Z\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RZ}{%
+         family={Ren},
+         familyi={R\bibinitperiod},
+         given={Z.},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=SK}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=DH}{%
+         family={Dai},
+         familyi={D\bibinitperiod},
+         given={H.},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZD+1}
+    \strng{fullhash}{ZDRZSKDH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2nd {IEEE} Conf. on Energy Internet and Energy System
+  Integration ({EI}2)}
+    \field{title}{Optimization Method of Fast Charging Buses Charging Strategy
+  for Complex Operating Environment}
+    \field{month}{10}
+    \field{year}{2018}
+  \endentry
+
+  \entry{poornesh_comparative_2020}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=PK}{%
+         family={Poornesh},
+         familyi={P\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=NK}{%
+         family={Nivya},
+         familyi={N\bibinitperiod},
+         given={K.P.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=SK}{%
+         family={Sireesha},
+         familyi={S\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PKNKSK1}
+    \strng{fullhash}{PKNKSK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2020 International Conference on Smart Electronics and
+  Communication}
+    \field{title}{A Comparative study on Electric Vehicle and Internal
+  Combustion Engine Vehicles}
+    \field{month}{09}
+    \field{year}{2020}
+  \endentry
+
+  \entry{Mahmoud2016}{article}{}
+    \name{author}{4}{}{%
+      {{hash=MM}{%
+         family={Mahmoud},
+         familyi={M\bibinitperiod},
+         given={Moataz},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GR}{%
+         family={Garnett},
+         familyi={G\bibinitperiod},
+         given={Ryan},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Ferguson},
+         familyi={F\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=KP}{%
+         family={Kanaroglou},
+         familyi={K\bibinitperiod},
+         given={Pavlos},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MM+1}
+    \strng{fullhash}{MMGRFMKP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Electric buses: A review of alternative powertrains}
+    \field{journaltitle}{Renewable and Sustainable Energy Reviews}
+    \field{year}{2016}
+  \endentry
+
+  \entry{stahleder_impact_2019}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=D}{%
+         family={D.Stahleder},
+         familyi={D\bibinitperiod},
+      }}%
+      {{hash=RD}{%
+         family={Reihs},
+         familyi={R\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Ledinger},
+         familyi={L\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LF}{%
+         family={Lehfuss},
+         familyi={L\bibinitperiod},
+         given={F.},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{D+1}
+    \strng{fullhash}{DRDLSLF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{{IECON} 2019 - 45th Annual Conference of the {IEEE}
+  Industrial Electronics Society}
+    \field{title}{Impact Assessment of High Power Electric Bus Charging on
+  Urban Distribution Grids}
+    \field{month}{10}
+    \field{year}{2019}
+  \endentry
+
+  \entry{deb_impact_2017}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=DS}{%
+         family={Deb},
+         familyi={D\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KK}{%
+         family={Kalita},
+         familyi={K\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=MP}{%
+         family={Mahanta},
+         familyi={M\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DSKKMP1}
+    \strng{fullhash}{DSKKMP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2017 Internat. Conf. on Tech. Adv. in Power and Energy (
+  {TAP} Energy)}
+    \field{title}{Impact of electric vehicle charging stations on reliability
+  of distribution network}
+    \field{month}{12}
+    \field{year}{2017}
+  \endentry
+
+  \entry{boonraksa_impact_2019}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=BT}{%
+         family={Boonraksa},
+         familyi={B\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Paudel},
+         familyi={P\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DP}{%
+         family={Dawan},
+         familyi={D\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=MB}{%
+         family={Marungsri},
+         familyi={M\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BT+1}
+    \strng{fullhash}{BTPADPMB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2019 {IEEE} {PES} {GTD} Grand Internat. Conf. and
+  Exposition Asia}
+    \field{title}{Impact of Electric Bus Charging on the Power Distribution
+  System a Case Study {IEEE} 33 Bus Test System}
+    \field{month}{03}
+    \field{year}{2019}
+  \endentry
+
+  \entry{wei_optimizing_2018}{article}{}
+    \name{author}{4}{}{%
+      {{hash=WR}{%
+         family={Wei},
+         familyi={W\bibinitperiod},
+         given={Ran},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LX}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Xiaoyue},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=OY}{%
+         family={Ou},
+         familyi={O\bibinitperiod},
+         given={Yi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=KFS}{%
+         family={Kiavash\bibnamedelima Fayyaz},
+         familyi={K\bibinitperiod\bibinitdelim F\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WR+1}
+    \strng{fullhash}{WRLXOYKFS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{shortjournal}{Journal of Transport Geography}
+    \field{title}{Optimizing the spatio-temporal deployment of battery electric
+  bus system}
+    \field{month}{04}
+    \field{year}{2018}
+  \endentry
+
+  \entry{xian_zhang_optimal_2016}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=XZ}{%
+         family={Xian},
+         familyi={X\bibinitperiod},
+         given={Z.},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=WG}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{XZWG1}
+    \strng{fullhash}{XZWG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2016 {IEEE} Power and Energy Society General Meeting}
+    \field{title}{Optimal dispatch of electric vehicle batteries between
+  battery swapping stations and charging stations}
+    \field{month}{07}
+    \field{year}{2016}
+  \endentry
+
+  \entry{jain_battery_2020}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=JS}{%
+         family={Jain},
+         familyi={J\bibinitperiod},
+         given={Shubham},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=AZ}{%
+         family={Ahmad},
+         familyi={A\bibinitperiod},
+         given={Zaurez},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=AMS}{%
+         family={Alam},
+         familyi={A\bibinitperiod},
+         given={Mohammad\bibnamedelima Saad},
+         giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=RY}{%
+         family={Rafat},
+         familyi={R\bibinitperiod},
+         given={Yasser},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JS+1}
+    \strng{fullhash}{JSAZAMSRY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2020 5th {IEEE} International Conference on Recent
+  Advances and Innovations in Engineering}
+    \field{title}{Battery Swapping Technology}
+    \field{day}{01}
+    \field{month}{12}
+    \field{year}{2020}
+  \endentry
+
+  \entry{balde_electric_2019}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=BBJ}{%
+         family={Balde},
+         familyi={B\bibinitperiod},
+         given={B.\bibnamedelima J.},
+         giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Sardar},
+         familyi={S\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BBJSA1}
+    \strng{fullhash}{BBJSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2019 {IEEE} Trans. Electrification Conf.}
+    \field{title}{Electric Road system With Dynamic Wireless charging of
+  Electric buses}
+    \field{month}{12}
+    \field{year}{2019}
+  \endentry
+
+  \entry{jeong_automatic_2018}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=JSY}{%
+         family={Jeong},
+         familyi={J\bibinitperiod},
+         given={S.\bibnamedelima Y.},
+         giveni={S\bibinitperiod\bibinitdelim Y\bibinitperiod},
+      }}%
+      {{hash=PJH}{%
+         family={Park},
+         familyi={P\bibinitperiod},
+         given={J.\bibnamedelima H.},
+         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=HGP}{%
+         family={Hong},
+         familyi={H\bibinitperiod},
+         given={G.\bibnamedelima P.},
+         giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=RCT}{%
+         family={Rim},
+         familyi={R\bibinitperiod},
+         given={C.\bibnamedelima T.},
+         giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JSY+1}
+    \strng{fullhash}{JSYPJHHGPRCT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{{IEEE} {PELS} Workshop on Emerging Tech.: Wireless Power
+  Transfer}
+    \field{title}{Automatic Current Control by Self-Inductance Variation for
+  Dynamic Wireless {EV} Charging}
+    \field{month}{06}
+    \field{year}{2018}
+  \endentry
+
+  \entry{csonka_optimization_2021}{article}{}
+    \name{author}{1}{}{%
+      {{hash=CB}{%
+         family={Csonka},
+         familyi={C\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CB1}
+    \strng{fullhash}{CB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Optimization of Static and Dynamic Charging Infrastructure
+  for Electric Buses}
+    \field{journaltitle}{Energies}
+    \field{day}{13}
+    \field{month}{06}
+    \field{year}{2021}
+  \endentry
+
   \entry{Alwesabi_2021_Novel}{article}{}
     \name{author}{4}{}{%
       {{hash=AY}{%
@@ -48,8 +454,6 @@
     \strng{fullhash}{AYLZKSWY1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{A}
-    \field{sortinithash}{A}
     \field{title}{A novel integration of scheduling and dynamic wireless
   charging planning models of battery electric buses}
     \field{journaltitle}{Energy}
@@ -93,124 +497,10 @@
     \strng{fullhash}{AYAFYILZWY1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{A}
-    \field{sortinithash}{A}
     \field{title}{Robust strategic planning of dynamic wireless charging
   infrastructure for electric buses}
     \field{journaltitle}{Applied Energy}
     \field{year}{2022}
-  \endentry
-
-  \entry{bagherinezhad_spatio-temporal_2020}{article}{}
-    \name{author}{4}{}{%
-      {{hash=BA}{%
-         family={Bagherinezhad},
-         familyi={B\bibinitperiod},
-         given={A.},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=PAD}{%
-         family={Palomino},
-         familyi={P\bibinitperiod},
-         given={A.\bibnamedelima D.},
-         giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
-      }}%
-      {{hash=LB}{%
-         family={Li},
-         familyi={L\bibinitperiod},
-         given={B.},
-         giveni={B\bibinitperiod},
-      }}%
-      {{hash=PM}{%
-         family={Parvania},
-         familyi={P\bibinitperiod},
-         given={M.},
-         giveni={M\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{BA+1}
-    \strng{fullhash}{BAPADLBPM1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{B}
-    \field{sortinithash}{B}
-    \field{number}{5}
-    \field{pages}{5741\bibrangedash 5749}
-    \field{title}{Spatio-Temporal Electric Bus Charging Optimization With
-  Transit Network Constraints}
-    \field{volume}{56}
-    \field{journaltitle}{{IEEE} Trans. on Ind. Applicat.}
-    \field{month}{09}
-    \field{year}{2020}
-  \endentry
-
-  \entry{balde_electric_2019}{inproceedings}{}
-    \name{author}{2}{}{%
-      {{hash=BBJ}{%
-         family={Balde},
-         familyi={B\bibinitperiod},
-         given={B.\bibnamedelima J.},
-         giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
-      }}%
-      {{hash=SA}{%
-         family={Sardar},
-         familyi={S\bibinitperiod},
-         given={A.},
-         giveni={A\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{BBJSA1}
-    \strng{fullhash}{BBJSA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{B}
-    \field{sortinithash}{B}
-    \field{booktitle}{2019 {IEEE} Trans. Electrification Conf.}
-    \field{title}{Electric Road system With Dynamic Wireless charging of
-  Electric buses}
-    \field{month}{12}
-    \field{year}{2019}
-  \endentry
-
-  \entry{boonraksa_impact_2019}{inproceedings}{}
-    \name{author}{4}{}{%
-      {{hash=BT}{%
-         family={Boonraksa},
-         familyi={B\bibinitperiod},
-         given={T.},
-         giveni={T\bibinitperiod},
-      }}%
-      {{hash=PA}{%
-         family={Paudel},
-         familyi={P\bibinitperiod},
-         given={A.},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=DP}{%
-         family={Dawan},
-         familyi={D\bibinitperiod},
-         given={P.},
-         giveni={P\bibinitperiod},
-      }}%
-      {{hash=MB}{%
-         family={Marungsri},
-         familyi={M\bibinitperiod},
-         given={B.},
-         giveni={B\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{BT+1}
-    \strng{fullhash}{BTPADPMB1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{B}
-    \field{sortinithash}{B}
-    \field{booktitle}{2019 {IEEE} {PES} {GTD} Grand Internat. Conf. and
-  Exposition Asia}
-    \field{title}{Impact of Electric Bus Charging on the Power Distribution
-  System a Case Study {IEEE} 33 Bus Test System}
-    \field{month}{03}
-    \field{year}{2019}
   \endentry
 
   \entry{cheng_smart_2020}{article}{}
@@ -250,109 +540,144 @@
     \strng{fullhash}{CQCLWRMDQD1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{C}
-    \field{sortinithash}{C}
     \field{title}{A smart charging algorithm-based fast charging station with
   energy storage system-free}
     \field{journaltitle}{CSEE Journal of Power and Energy Systems}
     \field{year}{2020}
   \endentry
 
-  \entry{csonka_optimization_2021}{article}{}
-    \name{author}{1}{}{%
-      {{hash=CB}{%
-         family={Csonka},
-         familyi={C\bibinitperiod},
+  \entry{Wang2019}{article}{}
+    \name{author}{5}{}{%
+      {{hash=WG}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Guang},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=XX}{%
+         family={Xie},
+         familyi={X\bibinitperiod},
+         given={Xiaoyang},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=ZF}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Fan},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=LY}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Yunhuai},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=ZD}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Desheng},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WG+1}
+    \strng{fullhash}{WGXXZFLYZD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{BCharge: Data-Driven Real-Time Charging Scheduling for
+  Large-Scale Electric Bus Fleets}
+    \field{journaltitle}{Proceedings - Real-Time Systems Symposium}
+    \field{year}{2019}
+  \endentry
+
+  \entry{bagherinezhad_spatio-temporal_2020}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BA}{%
+         family={Bagherinezhad},
+         familyi={B\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PAD}{%
+         family={Palomino},
+         familyi={P\bibinitperiod},
+         given={A.\bibnamedelima D.},
+         giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=LB}{%
+         family={Li},
+         familyi={L\bibinitperiod},
          given={B.},
          giveni={B\bibinitperiod},
       }}%
+      {{hash=PM}{%
+         family={Parvania},
+         familyi={P\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
     }
-    \strng{namehash}{CB1}
-    \strng{fullhash}{CB1}
+    \strng{namehash}{BA+1}
+    \strng{fullhash}{BAPADLBPM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{C}
-    \field{sortinithash}{C}
-    \field{title}{Optimization of Static and Dynamic Charging Infrastructure
-  for Electric Buses}
-    \field{journaltitle}{Energies}
-    \field{day}{13}
-    \field{month}{06}
-    \field{year}{2021}
+    \field{number}{5}
+    \field{pages}{5741\bibrangedash 5749}
+    \field{title}{Spatio-Temporal Electric Bus Charging Optimization With
+  Transit Network Constraints}
+    \field{volume}{56}
+    \field{journaltitle}{{IEEE} Trans. on Ind. Applicat.}
+    \field{month}{09}
+    \field{year}{2020}
   \endentry
 
-  \entry{deb_impact_2017}{inproceedings}{}
-    \name{author}{3}{}{%
-      {{hash=DS}{%
-         family={Deb},
-         familyi={D\bibinitperiod},
-         given={S.},
-         giveni={S\bibinitperiod},
+  \entry{Nimalsiri2020}{article}{}
+    \name{author}{6}{}{%
+      {{hash=NNI}{%
+         family={Nimalsiri},
+         familyi={N\bibinitperiod},
+         given={Nanduni\bibnamedelima I.},
+         giveni={N\bibinitperiod\bibinitdelim I\bibinitperiod},
       }}%
-      {{hash=KK}{%
-         family={Kalita},
-         familyi={K\bibinitperiod},
-         given={K.},
-         giveni={K\bibinitperiod},
-      }}%
-      {{hash=MP}{%
-         family={Mahanta},
+      {{hash=MCP}{%
+         family={Mediwaththe},
          familyi={M\bibinitperiod},
-         given={P.},
-         giveni={P\bibinitperiod},
+         given={Chathurika\bibnamedelima P.},
+         giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod},
       }}%
-    }
-    \strng{namehash}{DSKKMP1}
-    \strng{fullhash}{DSKKMP1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{D}
-    \field{sortinithash}{D}
-    \field{booktitle}{2017 Internat. Conf. on Tech. Adv. in Power and Energy (
-  {TAP} Energy)}
-    \field{title}{Impact of electric vehicle charging stations on reliability
-  of distribution network}
-    \field{month}{12}
-    \field{year}{2017}
-  \endentry
-
-  \entry{stahleder_impact_2019}{inproceedings}{}
-    \name{author}{4}{}{%
-      {{hash=D}{%
-         family={D.Stahleder},
-         familyi={D\bibinitperiod},
-      }}%
-      {{hash=RD}{%
-         family={Reihs},
+      {{hash=REL}{%
+         family={Ratnam},
          familyi={R\bibinitperiod},
-         given={D.},
-         giveni={D\bibinitperiod},
+         given={Elizabeth\bibnamedelima L.},
+         giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod},
       }}%
-      {{hash=LS}{%
-         family={Ledinger},
-         familyi={L\bibinitperiod},
-         given={S.},
-         giveni={S\bibinitperiod},
+      {{hash=SM}{%
+         family={Shaw},
+         familyi={S\bibinitperiod},
+         given={Marnie},
+         giveni={M\bibinitperiod},
       }}%
-      {{hash=LF}{%
-         family={Lehfuss},
-         familyi={L\bibinitperiod},
-         given={F.},
-         giveni={F\bibinitperiod},
+      {{hash=SDB}{%
+         family={Smith},
+         familyi={S\bibinitperiod},
+         given={David\bibnamedelima B.},
+         giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=HSK}{%
+         family={Halgamuge},
+         familyi={H\bibinitperiod},
+         given={Saman\bibnamedelima K.},
+         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
       }}%
     }
-    \strng{namehash}{D+1}
-    \strng{fullhash}{DRDLSLF1}
+    \strng{namehash}{NNI+1}
+    \strng{fullhash}{NNIMCPRELSMSDBHSK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{D}
-    \field{sortinithash}{D}
-    \field{booktitle}{{IECON} 2019 - 45th Annual Conference of the {IEEE}
-  Industrial Electronics Society}
-    \field{title}{Impact Assessment of High Power Electric Bus Charging on
-  Urban Distribution Grids}
-    \field{month}{10}
-    \field{year}{2019}
+    \field{title}{A Survey of Algorithms for Distributed Charging Control of
+  Electric Vehicles in Smart Grid}
+    \field{journaltitle}{IEEE Transactions on Intelligent Transportation
+  Systems}
+    \field{year}{2020}
   \endentry
 
   \entry{el-taweel_incorporation_2019}{inproceedings}{}
@@ -374,14 +699,306 @@
     \strng{fullhash}{ETNFE1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{E}
-    \field{sortinithash}{E}
     \field{booktitle}{2019 {IEEE} Transportation Electrification Conference and
   Expo ({ITEC})}
     \field{title}{Incorporation of Battery Electric Buses in the Operation of
   Intercity Bus Services}
     \field{month}{06}
     \field{year}{2019}
+  \endentry
+
+  \entry{Leou_optimal_2017}{article}{}
+    \name{author}{2}{}{%
+      {{hash=LRC}{%
+         family={Leou},
+         familyi={L\bibinitperiod},
+         given={Rong-Ceng},
+         giveni={R\bibinithyphendelim C\bibinitperiod},
+      }}%
+      {{hash=HJJ}{%
+         family={Hung},
+         familyi={H\bibinitperiod},
+         given={Jeng-Jiun},
+         giveni={J\bibinithyphendelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LRCHJJ1}
+    \strng{fullhash}{LRCHJJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Optimal Charging Schedule Planning and Economic Analysis for
+  Electric Bus Charging Stations}
+    \field{journaltitle}{Energies}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Wei2018}{article}{}
+    \name{author}{3}{}{%
+      {{hash=WR}{%
+         family={Wei},
+         familyi={W\bibinitperiod},
+         given={Ran},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LX}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Xiaoyue},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=adKFYO}{%
+         prefix={an\bibnamedelima dS.},
+         prefixi={a\bibinitperiod\bibinitdelim d\bibinitperiod},
+         family={Kiavash\bibnamedelima Fayyaz},
+         familyi={K\bibinitperiod\bibinitdelim F\bibinitperiod},
+         given={Yi\bibnamedelima Ou},
+         giveni={Y\bibinitperiod\bibinitdelim O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WRLXKFYOad1}
+    \strng{fullhash}{WRLXKFYOad1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Optimizing the spatio-temporal deployment of battery electric
+  bus system}
+    \field{journaltitle}{Journal of Transport Geography}
+    \field{year}{2018}
+  \endentry
+
+  \entry{Rinalde_Mixed_2020}{article}{}
+    \name{author}{3}{}{%
+      {{hash=RM}{%
+         family={Rinalde},
+         familyi={R\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PAEad}{%
+         family={Picarelli},
+         familyi={P\bibinitperiod},
+         suffix={Erika an\bibnamedelima dD'Ariano},
+         suffixi={E\bibinitperiod\bibinitdelim a\bibinitperiod\bibinitdelim
+  d\bibinitperiod},
+         given={Andrea},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=VF}{%
+         family={Viti},
+         familyi={V\bibinitperiod},
+         given={Francesco},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RMPEadAVF1}
+    \strng{fullhash}{RMPEadAVF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Mixed-fleet single-terminal bus scheduling problem: Modeling,
+  solution scheme and potential applications}
+    \field{journaltitle}{Omega}
+    \field{year}{2020}
+  \endentry
+
+  \entry{He_2019_Fast}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HY}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Yi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=SY}{%
+         family={Song},
+         familyi={S\bibinitperiod},
+         given={Yizi},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=LZ}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Zhaocai},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HYSYLZ1}
+    \strng{fullhash}{HYSYLZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Fast-charging station deployment for battery electric bus
+  systems considering electricity demand charges}
+    \field{journaltitle}{Sustainable Cities and Society}
+    \field{year}{2019}
+  \endentry
+
+  \entry{Zhou_2020_Collaborative}{article}{}
+    \name{author}{4}{}{%
+      {{hash=ZGJ}{%
+         family={Zhou},
+         familyi={Z\bibinitperiod},
+         given={Guang-Jing},
+         giveni={G\bibinithyphendelim J\bibinitperiod},
+      }}%
+      {{hash=XDF}{%
+         family={Xie},
+         familyi={X\bibinitperiod},
+         given={Dong-Fan},
+         giveni={D\bibinithyphendelim F\bibinitperiod},
+      }}%
+      {{hash=ZXM}{%
+         family={Zhao},
+         familyi={Z\bibinitperiod},
+         given={Xiao-Mei},
+         giveni={X\bibinithyphendelim M\bibinitperiod},
+      }}%
+      {{hash=LC}{%
+         family={Lu},
+         familyi={L\bibinitperiod},
+         given={Chaoru},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZGJ+1}
+    \strng{fullhash}{ZGJXDFZXMLC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Collaborative Optimization of Vehicle and Charging Scheduling
+  for a Bus Fleet Mixed With Electric and Traditional Buses}
+    \field{journaltitle}{IEEE Access}
+    \field{year}{2020}
+  \endentry
+
+  \entry{whitaker_network_2021}{article}{}
+    \name{author}{5}{}{%
+      {{hash=WJ}{%
+         family={Whitaker},
+         familyi={W\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=DG}{%
+         family={Droge},
+         familyi={D\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Hansen},
+         familyi={H\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Mortensen},
+         familyi={M\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Gunther},
+         familyi={G\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WJ+1}
+    \strng{fullhash}{WJDGHMMDGJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{A Network Flow Approach to Battery Electric Bus Scheduling}
+    \field{year}{2021}
+  \endentry
+
+  \entry{He_2022_Battery}{article}{}
+    \name{author}{5}{}{%
+      {{hash=HJ}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Jia},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=YN}{%
+         family={Yan},
+         familyi={Y\bibinitperiod},
+         given={Na},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=ZJ}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Jian},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=YY}{%
+         family={Yu},
+         familyi={Y\bibinitperiod},
+         given={Yang},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=WT}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Tao},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HJ+1}
+    \strng{fullhash}{HJYNZJYYWT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Battery electric buses charging schedule optimization
+  considering time-of-use electricity price}
+    \field{journaltitle}{Journal of Intelligent and Connected Vehicles}
+    \field{year}{2022}
+  \endentry
+
+  \entry{jahic_preemptive_2019}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=JA}{%
+         family={Jahic},
+         familyi={J\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=EM}{%
+         family={Eskander},
+         familyi={E\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Schulz},
+         familyi={S\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JAEMSD1}
+    \strng{fullhash}{JAEMSD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2019 {IEEE} {PES} Innovative Smart Grid Technologies
+  Europe}
+    \field{title}{Preemptive vs. non-preemptive charging schedule for
+  large-scale electric bus depots}
+    \field{month}{09}
+    \field{year}{2019}
+  \endentry
+
+  \entry{noauthor_rocky_nodate}{legislation}{}
+    \name{author}{1}{}{%
+      {{hash=PRM}{%
+         family={Power},
+         familyi={P\bibinitperiod},
+         given={Rocky\bibnamedelima Mountain},
+         giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PRM1}
+    \strng{fullhash}{PRM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Rocky Mountain Power Electric Service Schedule No. 8 State of
+  Utah}
   \endentry
 
   \entry{gao_charging_2019}{inproceedings}{}
@@ -451,8 +1068,6 @@
     \strng{fullhash}{GQLZZTZWWGZTZZWMLSHC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{G}
-    \field{sortinithash}{G}
     \field{booktitle}{2019 {IEEE} Sus. Power and Energy Conf.}
     \field{title}{Charging Load Forecasting of Electric Vehicle Based on Monte
   Carlo and Deep Learning}
@@ -460,382 +1075,42 @@
     \field{year}{2019}
   \endentry
 
-  \entry{gurobi}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=G}{%
-         family={{Gurobi Optimization, LLC}},
-         familyi={G\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{G1}
-    \strng{fullhash}{G1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{G}
-    \field{sortinithash}{G}
-    \field{title}{{Gurobi Optimizer Reference Manual}}
-    \verb{url}
-    \verb https://www.gurobi.com
-    \endverb
-    \field{year}{2022}
-  \endentry
-
-  \entry{He_2022_Battery}{article}{}
-    \name{author}{5}{}{%
-      {{hash=HJ}{%
-         family={He},
-         familyi={H\bibinitperiod},
-         given={Jia},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=YN}{%
-         family={Yan},
-         familyi={Y\bibinitperiod},
-         given={Na},
+  \entry{qin_numerical_2016}{article}{}
+    \name{author}{4}{}{%
+      {{hash=QN}{%
+         family={Qin},
+         familyi={Q\bibinitperiod},
+         given={N.},
          giveni={N\bibinitperiod},
       }}%
-      {{hash=ZJ}{%
-         family={Zhang},
-         familyi={Z\bibinitperiod},
-         given={Jian},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=YY}{%
-         family={Yu},
-         familyi={Y\bibinitperiod},
-         given={Yang},
-         giveni={Y\bibinitperiod},
-      }}%
-      {{hash=WT}{%
-         family={Wang},
-         familyi={W\bibinitperiod},
-         given={Tao},
-         giveni={T\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{HJ+1}
-    \strng{fullhash}{HJYNZJYYWT1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{H}
-    \field{sortinithash}{H}
-    \field{title}{Battery electric buses charging schedule optimization
-  considering time-of-use electricity price}
-    \field{journaltitle}{Journal of Intelligent and Connected Vehicles}
-    \field{year}{2022}
-  \endentry
-
-  \entry{He_2019_Fast}{article}{}
-    \name{author}{3}{}{%
-      {{hash=HY}{%
-         family={He},
-         familyi={H\bibinitperiod},
-         given={Yi},
-         giveni={Y\bibinitperiod},
-      }}%
-      {{hash=SY}{%
-         family={Song},
-         familyi={S\bibinitperiod},
-         given={Yizi},
-         giveni={Y\bibinitperiod},
-      }}%
-      {{hash=LZ}{%
-         family={Liu},
-         familyi={L\bibinitperiod},
-         given={Zhaocai},
-         giveni={Z\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{HYSYLZ1}
-    \strng{fullhash}{HYSYLZ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{H}
-    \field{sortinithash}{H}
-    \field{title}{Fast-charging station deployment for battery electric bus
-  systems considering electricity demand charges}
-    \field{journaltitle}{Sustainable Cities and Society}
-    \field{year}{2019}
-  \endentry
-
-  \entry{houbbadi_optimal_2019}{inproceedings}{}
-    \name{author}{5}{}{%
-      {{hash=HA}{%
-         family={Houbbadi},
-         familyi={H\bibinitperiod},
-         given={A.},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=RIE}{%
-         family={Redondo-Iglesias},
-         familyi={R\bibinithyphendelim I\bibinitperiod},
-         given={E.},
-         giveni={E\bibinitperiod},
-      }}%
-      {{hash=TR}{%
-         family={Trigui},
-         familyi={T\bibinitperiod},
-         given={R.},
-         giveni={R\bibinitperiod},
-      }}%
-      {{hash=PS}{%
-         family={Pelissier},
-         familyi={P\bibinitperiod},
-         given={S.},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=BT}{%
-         family={Bouton},
-         familyi={B\bibinitperiod},
-         given={T.},
-         giveni={T\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{HA+1}
-    \strng{fullhash}{HARIETRPSBT1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{H}
-    \field{sortinithash}{H}
-    \field{booktitle}{Vehicle Power and Propulsion Conference}
-    \field{title}{Optimal Charging Strategy to Minimize Electricity Cost and
-  Prolong Battery Life of Electric Bus Fleet}
-    \field{month}{10}
-    \field{year}{2019}
-  \endentry
-
-  \entry{jahic_preemptive_2019}{inproceedings}{}
-    \name{author}{3}{}{%
-      {{hash=JA}{%
-         family={Jahic},
-         familyi={J\bibinitperiod},
-         given={A.},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=EM}{%
-         family={Eskander},
-         familyi={E\bibinitperiod},
-         given={M.},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=SD}{%
-         family={Schulz},
-         familyi={S\bibinitperiod},
-         given={D.},
-         giveni={D\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{JAEMSD1}
-    \strng{fullhash}{JAEMSD1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{J}
-    \field{sortinithash}{J}
-    \field{booktitle}{2019 {IEEE} {PES} Innovative Smart Grid Technologies
-  Europe}
-    \field{title}{Preemptive vs. non-preemptive charging schedule for
-  large-scale electric bus depots}
-    \field{month}{09}
-    \field{year}{2019}
-  \endentry
-
-  \entry{jain_battery_2020}{inproceedings}{}
-    \name{author}{4}{}{%
-      {{hash=JS}{%
-         family={Jain},
-         familyi={J\bibinitperiod},
-         given={Shubham},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=AZ}{%
-         family={Ahmad},
-         familyi={A\bibinitperiod},
-         given={Zaurez},
-         giveni={Z\bibinitperiod},
-      }}%
-      {{hash=AMS}{%
-         family={Alam},
-         familyi={A\bibinitperiod},
-         given={Mohammad\bibnamedelima Saad},
-         giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
-      }}%
-      {{hash=RY}{%
-         family={Rafat},
-         familyi={R\bibinitperiod},
-         given={Yasser},
-         giveni={Y\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{JS+1}
-    \strng{fullhash}{JSAZAMSRY1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{J}
-    \field{sortinithash}{J}
-    \field{booktitle}{2020 5th {IEEE} International Conference on Recent
-  Advances and Innovations in Engineering}
-    \field{title}{Battery Swapping Technology}
-    \field{day}{01}
-    \field{month}{12}
-    \field{year}{2020}
-  \endentry
-
-  \entry{jeong_automatic_2018}{inproceedings}{}
-    \name{author}{4}{}{%
-      {{hash=JSY}{%
-         family={Jeong},
-         familyi={J\bibinitperiod},
-         given={S.\bibnamedelima Y.},
-         giveni={S\bibinitperiod\bibinitdelim Y\bibinitperiod},
-      }}%
-      {{hash=PJH}{%
-         family={Park},
-         familyi={P\bibinitperiod},
-         given={J.\bibnamedelima H.},
-         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
-      }}%
-      {{hash=HGP}{%
-         family={Hong},
-         familyi={H\bibinitperiod},
-         given={G.\bibnamedelima P.},
-         giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod},
-      }}%
-      {{hash=RCT}{%
-         family={Rim},
-         familyi={R\bibinitperiod},
-         given={C.\bibnamedelima T.},
-         giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{JSY+1}
-    \strng{fullhash}{JSYPJHHGPRCT1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{J}
-    \field{sortinithash}{J}
-    \field{booktitle}{{IEEE} {PELS} Workshop on Emerging Tech.: Wireless Power
-  Transfer}
-    \field{title}{Automatic Current Control by Self-Inductance Variation for
-  Dynamic Wireless {EV} Charging}
-    \field{month}{06}
-    \field{year}{2018}
-  \endentry
-
-  \entry{Leou_optimal_2017}{article}{}
-    \name{author}{2}{}{%
-      {{hash=LRC}{%
-         family={Leou},
-         familyi={L\bibinitperiod},
-         given={Rong-Ceng},
-         giveni={R\bibinithyphendelim C\bibinitperiod},
-      }}%
-      {{hash=HJJ}{%
-         family={Hung},
-         familyi={H\bibinitperiod},
-         given={Jeng-Jiun},
-         giveni={J\bibinithyphendelim J\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{LRCHJJ1}
-    \strng{fullhash}{LRCHJJ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{L}
-    \field{sortinithash}{L}
-    \field{title}{Optimal Charging Schedule Planning and Economic Analysis for
-  Electric Bus Charging Stations}
-    \field{journaltitle}{Energies}
-    \field{year}{2017}
-  \endentry
-
-  \entry{Mahmoud2016}{article}{}
-    \name{author}{4}{}{%
-      {{hash=MM}{%
-         family={Mahmoud},
-         familyi={M\bibinitperiod},
-         given={Moataz},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=GR}{%
-         family={Garnett},
+      {{hash=GA}{%
+         family={Gusrialdi},
          familyi={G\bibinitperiod},
-         given={Ryan},
-         giveni={R\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
       }}%
-      {{hash=FM}{%
-         family={Ferguson},
-         familyi={F\bibinitperiod},
-         given={Mark},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=KP}{%
-         family={Kanaroglou},
-         familyi={K\bibinitperiod},
-         given={Pavlos},
+      {{hash=BP}{%
+         family={Brooker},
+         familyi={B\bibinitperiod},
+         given={P.R.},
          giveni={P\bibinitperiod},
       }}%
+      {{hash=TRA}{%
+         family={T-Raissi},
+         familyi={T\bibinithyphendelim R\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
     }
-    \strng{namehash}{MM+1}
-    \strng{fullhash}{MMGRFMKP1}
+    \strng{namehash}{QN+1}
+    \strng{fullhash}{QNGABPTRA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{M}
-    \field{sortinithash}{M}
-    \field{title}{Electric buses: A review of alternative powertrains}
-    \field{journaltitle}{Renewable and Sustainable Energy Reviews}
+    \field{shortjournal}{Transportation Research Part A: Policy and Practice}
+    \field{title}{Numerical analysis of electric bus fast charging strategies
+  for demand charge reduction}
+    \field{month}{12}
     \field{year}{2016}
-  \endentry
-
-  \entry{Nimalsiri2020}{article}{}
-    \name{author}{6}{}{%
-      {{hash=NNI}{%
-         family={Nimalsiri},
-         familyi={N\bibinitperiod},
-         given={Nanduni\bibnamedelima I.},
-         giveni={N\bibinitperiod\bibinitdelim I\bibinitperiod},
-      }}%
-      {{hash=MCP}{%
-         family={Mediwaththe},
-         familyi={M\bibinitperiod},
-         given={Chathurika\bibnamedelima P.},
-         giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod},
-      }}%
-      {{hash=REL}{%
-         family={Ratnam},
-         familyi={R\bibinitperiod},
-         given={Elizabeth\bibnamedelima L.},
-         giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod},
-      }}%
-      {{hash=SM}{%
-         family={Shaw},
-         familyi={S\bibinitperiod},
-         given={Marnie},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=SDB}{%
-         family={Smith},
-         familyi={S\bibinitperiod},
-         given={David\bibnamedelima B.},
-         giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod},
-      }}%
-      {{hash=HSK}{%
-         family={Halgamuge},
-         familyi={H\bibinitperiod},
-         given={Saman\bibnamedelima K.},
-         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{NNI+1}
-    \strng{fullhash}{NNIMCPRELSMSDBHSK1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{N}
-    \field{sortinithash}{N}
-    \field{title}{A Survey of Algorithms for Distributed Charging Control of
-  Electric Vehicles in Smart Grid}
-    \field{journaltitle}{IEEE Transactions on Intelligent Transportation
-  Systems}
-    \field{year}{2020}
   \endentry
 
   \entry{ojer_development_2020}{inproceedings}{}
@@ -875,8 +1150,6 @@
     \strng{fullhash}{OIBAPJSPUA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{O}
-    \field{sortinithash}{O}
     \field{booktitle}{{IEEE} International Conference on Environment and
   Electrical Engineering}
     \field{title}{Development of energy management strategies for the sizing of
@@ -885,366 +1158,146 @@
     \field{year}{2020}
   \endentry
 
-  \entry{poornesh_comparative_2020}{inproceedings}{}
+  \entry{taweel_2020_Integrated}{article}{}
     \name{author}{3}{}{%
-      {{hash=PK}{%
-         family={Poornesh},
-         familyi={P\bibinitperiod},
-         given={K.},
-         giveni={K\bibinitperiod},
-      }}%
-      {{hash=NK}{%
-         family={Nivya},
-         familyi={N\bibinitperiod},
-         given={K.P.},
-         giveni={K\bibinitperiod},
-      }}%
-      {{hash=SK}{%
-         family={Sireesha},
-         familyi={S\bibinitperiod},
-         given={K.},
-         giveni={K\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{PKNKSK1}
-    \strng{fullhash}{PKNKSK1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{P}
-    \field{sortinithash}{P}
-    \field{booktitle}{2020 International Conference on Smart Electronics and
-  Communication}
-    \field{title}{A Comparative study on Electric Vehicle and Internal
-  Combustion Engine Vehicles}
-    \field{month}{09}
-    \field{year}{2020}
-  \endentry
-
-  \entry{noauthor_rocky_nodate}{legislation}{}
-    \name{author}{1}{}{%
-      {{hash=PRM}{%
-         family={Power},
-         familyi={P\bibinitperiod},
-         given={Rocky\bibnamedelima Mountain},
-         giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{PRM1}
-    \strng{fullhash}{PRM1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{P}
-    \field{sortinithash}{P}
-    \field{title}{Rocky Mountain Power Electric Service Schedule No. 8 State of
-  Utah}
-  \endentry
-
-  \entry{qin_numerical_2016}{article}{}
-    \name{author}{4}{}{%
-      {{hash=QN}{%
-         family={Qin},
-         familyi={Q\bibinitperiod},
-         given={N.},
+      {{hash=ETN}{%
+         family={El-Taweel},
+         familyi={E\bibinithyphendelim T\bibinitperiod},
+         given={Nader},
          giveni={N\bibinitperiod},
       }}%
-      {{hash=GA}{%
-         family={Gusrialdi},
-         familyi={G\bibinitperiod},
-         given={A.},
-         giveni={A\bibinitperiod},
+      {{hash=FH}{%
+         family={Farag},
+         familyi={F\bibinitperiod},
+         given={Hany},
+         giveni={H\bibinitperiod},
       }}%
-      {{hash=BP}{%
-         family={Brooker},
-         familyi={B\bibinitperiod},
-         given={P.R.},
-         giveni={P\bibinitperiod},
-      }}%
-      {{hash=TRA}{%
-         family={T-Raissi},
-         familyi={T\bibinithyphendelim R\bibinitperiod},
-         given={A.},
-         giveni={A\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{QN+1}
-    \strng{fullhash}{QNGABPTRA1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{Q}
-    \field{sortinithash}{Q}
-    \field{shortjournal}{Transportation Research Part A: Policy and Practice}
-    \field{title}{Numerical analysis of electric bus fast charging strategies
-  for demand charge reduction}
-    \field{month}{12}
-    \field{year}{2016}
-  \endentry
-
-  \entry{Rinalde_Mixed_2020}{article}{}
-    \name{author}{3}{}{%
-      {{hash=RM}{%
-         family={Rinalde},
-         familyi={R\bibinitperiod},
-         given={Marco},
+      {{hash=MM}{%
+         family={Moataz},
+         familyi={M\bibinitperiod},
+         given={Mohamed},
          giveni={M\bibinitperiod},
       }}%
-      {{hash=PAEad}{%
-         family={Picarelli},
-         familyi={P\bibinitperiod},
-         suffix={Erika an\bibnamedelima dD'Ariano},
-         suffixi={E\bibinitperiod\bibinitdelim a\bibinitperiod\bibinitdelim
-  d\bibinitperiod},
-         given={Andrea},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=VF}{%
-         family={Viti},
-         familyi={V\bibinitperiod},
-         given={Francesco},
-         giveni={F\bibinitperiod},
-      }}%
     }
-    \strng{namehash}{RMPEadAVF1}
-    \strng{fullhash}{RMPEadAVF1}
+    \strng{namehash}{ETNFHMM1}
+    \strng{fullhash}{ETNFHMM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{R}
-    \field{sortinithash}{R}
-    \field{title}{Mixed-fleet single-terminal bus scheduling problem: Modeling,
-  solution scheme and potential applications}
-    \field{journaltitle}{Omega}
+    \field{title}{Integrated Utility-Transit Model for Optimal Configuration of
+  Battery Electric Bus Systems}
+    \field{journaltitle}{IEEE Systems Journal}
     \field{year}{2020}
   \endentry
 
-  \entry{Wang2019}{article}{}
-    \name{author}{5}{}{%
-      {{hash=WG}{%
-         family={Wang},
-         familyi={W\bibinitperiod},
-         given={Guang},
+  \entry{taweel_2022_Systematic}{article}{}
+    \name{author}{6}{}{%
+      {{hash=ETN}{%
+         family={El-Taweel},
+         familyi={E\bibinithyphendelim T\bibinitperiod},
+         given={Nader},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=FH}{%
+         family={Farag},
+         familyi={F\bibinitperiod},
+         given={Hany},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=BG}{%
+         family={Barai},
+         familyi={B\bibinitperiod},
+         given={Gouri},
          giveni={G\bibinitperiod},
       }}%
-      {{hash=XX}{%
-         family={Xie},
-         familyi={X\bibinitperiod},
-         given={Xiaoyang},
-         giveni={X\bibinitperiod},
-      }}%
-      {{hash=ZF}{%
-         family={Zhang},
+      {{hash=ZH}{%
+         family={Zeineldin},
          familyi={Z\bibinitperiod},
-         given={Fan},
-         giveni={F\bibinitperiod},
+         given={Hatem},
+         giveni={H\bibinitperiod},
       }}%
-      {{hash=LY}{%
-         family={Liu},
-         familyi={L\bibinitperiod},
-         given={Yunhuai},
-         giveni={Y\bibinitperiod},
+      {{hash=ADA}{%
+         family={Al-Durra},
+         familyi={A\bibinithyphendelim D\bibinitperiod},
+         given={Ahmed},
+         giveni={A\bibinitperiod},
       }}%
-      {{hash=ZD}{%
-         family={Zhang},
-         familyi={Z\bibinitperiod},
-         given={Desheng},
-         giveni={D\bibinitperiod},
+      {{hash=ESE}{%
+         family={El-Saadany},
+         familyi={E\bibinithyphendelim S\bibinitperiod},
+         given={Ehab},
+         giveni={E\bibinitperiod},
       }}%
     }
-    \strng{namehash}{WG+1}
-    \strng{fullhash}{WGXXZFLYZD1}
+    \strng{namehash}{ETN+1}
+    \strng{fullhash}{ETNFHBGZHADAESE1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{W}
-    \field{sortinithash}{W}
-    \field{title}{BCharge: Data-Driven Real-Time Charging Scheduling for
-  Large-Scale Electric Bus Fleets}
-    \field{journaltitle}{Proceedings - Real-Time Systems Symposium}
-    \field{year}{2019}
+    \field{title}{A systematic Approach for Design and Analysis of Electrified
+  Public Bus Transit Fleets}
+    \field{journaltitle}{IEEE Systems Journal}
+    \field{year}{2022}
   \endentry
 
-  \entry{Wei2018}{article}{}
-    \name{author}{3}{}{%
-      {{hash=WR}{%
-         family={Wei},
-         familyi={W\bibinitperiod},
-         given={Ran},
+  \entry{houbbadi_optimal_2019}{inproceedings}{}
+    \name{author}{5}{}{%
+      {{hash=HA}{%
+         family={Houbbadi},
+         familyi={H\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RIE}{%
+         family={Redondo-Iglesias},
+         familyi={R\bibinithyphendelim I\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=TR}{%
+         family={Trigui},
+         familyi={T\bibinitperiod},
+         given={R.},
          giveni={R\bibinitperiod},
       }}%
-      {{hash=LX}{%
-         family={Liu},
-         familyi={L\bibinitperiod},
-         given={Xiaoyue},
-         giveni={X\bibinitperiod},
-      }}%
-      {{hash=adKFYO}{%
-         prefix={an\bibnamedelima dS.},
-         prefixi={a\bibinitperiod\bibinitdelim d\bibinitperiod},
-         family={Kiavash\bibnamedelima Fayyaz},
-         familyi={K\bibinitperiod\bibinitdelim F\bibinitperiod},
-         given={Yi\bibnamedelima Ou},
-         giveni={Y\bibinitperiod\bibinitdelim O\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{WRLXKFYOad1}
-    \strng{fullhash}{WRLXKFYOad1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{W}
-    \field{sortinithash}{W}
-    \field{title}{Optimizing the spatio-temporal deployment of battery electric
-  bus system}
-    \field{journaltitle}{Journal of Transport Geography}
-    \field{year}{2018}
-  \endentry
-
-  \entry{wei_optimizing_2018}{article}{}
-    \name{author}{4}{}{%
-      {{hash=WR}{%
-         family={Wei},
-         familyi={W\bibinitperiod},
-         given={Ran},
-         giveni={R\bibinitperiod},
-      }}%
-      {{hash=LX}{%
-         family={Liu},
-         familyi={L\bibinitperiod},
-         given={Xiaoyue},
-         giveni={X\bibinitperiod},
-      }}%
-      {{hash=OY}{%
-         family={Ou},
-         familyi={O\bibinitperiod},
-         given={Yi},
-         giveni={Y\bibinitperiod},
-      }}%
-      {{hash=KFS}{%
-         family={Kiavash\bibnamedelima Fayyaz},
-         familyi={K\bibinitperiod\bibinitdelim F\bibinitperiod},
+      {{hash=PS}{%
+         family={Pelissier},
+         familyi={P\bibinitperiod},
          given={S.},
          giveni={S\bibinitperiod},
       }}%
-    }
-    \strng{namehash}{WR+1}
-    \strng{fullhash}{WRLXOYKFS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{W}
-    \field{sortinithash}{W}
-    \field{shortjournal}{Journal of Transport Geography}
-    \field{title}{Optimizing the spatio-temporal deployment of battery electric
-  bus system}
-    \field{month}{04}
-    \field{year}{2018}
-  \endentry
-
-  \entry{whitaker_network_2021}{article}{}
-    \name{author}{5}{}{%
-      {{hash=WJ}{%
-         family={Whitaker},
-         familyi={W\bibinitperiod},
-         given={J.},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=DG}{%
-         family={Droge},
-         familyi={D\bibinitperiod},
-         given={G.},
-         giveni={G\bibinitperiod},
-      }}%
-      {{hash=HM}{%
-         family={Hansen},
-         familyi={H\bibinitperiod},
-         given={M.},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=MD}{%
-         family={Mortensen},
-         familyi={M\bibinitperiod},
-         given={D.},
-         giveni={D\bibinitperiod},
-      }}%
-      {{hash=GJ}{%
-         family={Gunther},
-         familyi={G\bibinitperiod},
-         given={J.},
-         giveni={J\bibinitperiod},
+      {{hash=BT}{%
+         family={Bouton},
+         familyi={B\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
       }}%
     }
-    \strng{namehash}{WJ+1}
-    \strng{fullhash}{WJDGHMMDGJ1}
+    \strng{namehash}{HA+1}
+    \strng{fullhash}{HARIETRPSBT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{W}
-    \field{sortinithash}{W}
-    \field{title}{A Network Flow Approach to Battery Electric Bus Scheduling}
-    \field{year}{2021}
-  \endentry
-
-  \entry{xian_zhang_optimal_2016}{inproceedings}{}
-    \name{author}{2}{}{%
-      {{hash=XZ}{%
-         family={Xian},
-         familyi={X\bibinitperiod},
-         given={Z.},
-         giveni={Z\bibinitperiod},
-      }}%
-      {{hash=WG}{%
-         family={Wang},
-         familyi={W\bibinitperiod},
-         given={G.},
-         giveni={G\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{XZWG1}
-    \strng{fullhash}{XZWG1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{X}
-    \field{sortinithash}{X}
-    \field{booktitle}{2016 {IEEE} Power and Energy Society General Meeting}
-    \field{title}{Optimal dispatch of electric vehicle batteries between
-  battery swapping stations and charging stations}
-    \field{month}{07}
-    \field{year}{2016}
-  \endentry
-
-  \entry{zhou_optimization_2018}{inproceedings}{}
-    \name{author}{4}{}{%
-      {{hash=ZD}{%
-         family={Zhou},
-         familyi={Z\bibinitperiod},
-         given={D.},
-         giveni={D\bibinitperiod},
-      }}%
-      {{hash=RZ}{%
-         family={Ren},
-         familyi={R\bibinitperiod},
-         given={Z.},
-         giveni={Z\bibinitperiod},
-      }}%
-      {{hash=SK}{%
-         family={Sun},
-         familyi={S\bibinitperiod},
-         given={K.},
-         giveni={K\bibinitperiod},
-      }}%
-      {{hash=DH}{%
-         family={Dai},
-         familyi={D\bibinitperiod},
-         given={H.},
-         giveni={H\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{ZD+1}
-    \strng{fullhash}{ZDRZSKDH1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{Z}
-    \field{sortinithash}{Z}
-    \field{booktitle}{2nd {IEEE} Conf. on Energy Internet and Energy System
-  Integration ({EI}2)}
-    \field{title}{Optimization Method of Fast Charging Buses Charging Strategy
-  for Complex Operating Environment}
+    \field{booktitle}{Vehicle Power and Propulsion Conference}
+    \field{title}{Optimal Charging Strategy to Minimize Electricity Cost and
+  Prolong Battery Life of Electric Bus Fleet}
     \field{month}{10}
-    \field{year}{2018}
+    \field{year}{2019}
+  \endentry
+
+  \entry{gurobi}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=G}{%
+         family={{Gurobi Optimization, LLC}},
+         familyi={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{G1}
+    \strng{fullhash}{G1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Gurobi Optimizer Reference Manual}}
+    \verb{url}
+    \verb https://www.gurobi.com
+    \endverb
+    \field{year}{2022}
   \endentry
 \enddatalist
 \endinput
