@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex build/busCharge"] 1666108079 "build/busCharge.aux" "build/busCharge.bbl" "build/busCharge" 1666108085
+["bibtex build/busCharge"] 1666108079 "build/busCharge.aux" "build/busCharge.bbl" "build/busCharge" 1667935902
   "/usr/share/texlive/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1643926307 65483 fc69f364ef63c07bf68a2ab4b323f197 ""
-  "build/busCharge-blx.bib" 1666108084 341 8377ba26edb150f2a1e564358f089ffd "pdflatex"
-  "build/busCharge.aux" 1666108084 19256 8a86d0baabe88864f17965c69b76932b "pdflatex"
+  "build/busCharge-blx.bib" 1667935901 341 8377ba26edb150f2a1e564358f089ffd "pdflatex"
+  "build/busCharge.aux" 1667935901 19256 8a86d0baabe88864f17965c69b76932b "pdflatex"
   "busCharge.bib" 1665533962 30936 45fff77979db804283cb6cb5a9590b49 ""
   (generated)
   "build/busCharge.bbl"
   "build/busCharge.blg"
-["pdflatex"] 1666108079 "busCharge.tex" "build/busCharge.pdf" "busCharge" 1666108085
+["pdflatex"] 1667935896 "busCharge.tex" "build/busCharge.pdf" "busCharge" 1667935902
   "/etc/texmf/web2c/texmf.cnf" 1661805479 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -256,9 +256,9 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1661805514 2800505 9da7eac9768b247dbd05951b63e8f646 ""
   "abstract.tex" 1655840562 1604 40323d4e11f0a94db6f0802a0a6dbee8 ""
   "batterySoc.tex" 1665869930 11296 e519b1c46b08d082c3b17fcf18999ba6 ""
-  "build/busCharge.aux" 1666108084 19256 8a86d0baabe88864f17965c69b76932b "pdflatex"
+  "build/busCharge.aux" 1667935901 19256 8a86d0baabe88864f17965c69b76932b "pdflatex"
   "build/busCharge.bbl" 1666108079 36398 7e98bc09d0d3b69986b698bc53192784 "bibtex build/busCharge"
-  "build/busCharge.run.xml" 1666108084 2566 aa99648bc418ea89aaf096cea6c47468 "pdflatex"
+  "build/busCharge.run.xml" 1667935901 2566 aa99648bc418ea89aaf096cea6c47468 "pdflatex"
   "busCharge.tex" 1665867127 1504 d11d3680d75a29d6b93ff675e5464bbd ""
   "func_def/comparisonBarChartDef.tex" 1655318156 1142 29e1694d21b73e485a1971d334b26100 ""
   "func_def/comparisonTimeSeriesDef.tex" 1647992702 2204 a5ff9a7078fa7d3bc2d5f0f313ef2246 ""
@@ -279,7 +279,7 @@
   "media/optimized5Bus5ChargerTotalPowerPlot.csv" 1647992702 13957 d5186ce8f2f5f8639810774077dceeac ""
   "multiGraph.tex" 1647992702 22338 18b0a51fbad644da7bb3771a8b2b9d60 ""
   "objective.tex" 1665870301 10076 692d622738d977ca72aa84e98ac7e028 ""
-  "results.tex" 1666108072 12695 cd733af501183a920dff22012bd04175 ""
+  "results.tex" 1667935895 12811 764e880985e16d97ec0c76589c25cf51 ""
   (generated)
   "build/busCharge-blx.bib"
   "build/busCharge.aux"

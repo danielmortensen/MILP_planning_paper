@@ -1,7 +1,7 @@
 \section{Results}
 This section contains results of the planning framework and is subdivided into three subsections: uncontested results, contested results, and multi-rate comparisons.  
 \subsection{\label{sec:setup} Baseline and Setup}
-The experiments in this section compare the results of the framework given in equation (\ref{eqn:finalObjective}) with a baseline that models the general behavior of bus drivers at the Utah Transit Authority (UTA) in SLC, Utah and the planning framework from \cite{He_2022_Battery}. All methods use a MILP to find an optimal solution and are solved up to a 2\% gap using Gurobi \cite{gurobi}.
+The experiments in this section compare the results of the framework given in equation (\ref{eqn:finalObjective}) with a baseline that models the general behavior of bus drivers at the Utah Transit Authority (UTA) in SLC, Utah and the planning framework from \cite{He_2022_Battery}. All methods use a MILP to find an optimal solution and are solved up to a 2\% gap using Gurobi \cite{gurobi}. Model parameters such as $\delta$, arrival, and departure times were computed from historical data provided by UTA.
 \par According to UTA, bus drivers generally charge whenever possible. Our baseline scenario reflects this default bus driver behavior using an objective function that maximizes the number of charging instances, which is computed as the sum of group flow values, resulting in the objective function
 \begin{equation}
 	\underset{\mathbf{y}}{\text{max}} \ \mathbf{1}^TB\mathbf{y},
