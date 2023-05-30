@@ -1,37 +1,9 @@
 \documentclass[lettersize,journal]{IEEEtran}
-\usepackage{amsmath,amsfonts}
-\usepackage{array}
-\usepackage{textcomp}
-\usepackage{tikz}
-\usetikzlibrary{positioning}
-\usetikzlibrary{math}
-\usetikzlibrary{shapes}
-\usepackage{pgfplots}
-\usepackage{pgfplotstable}
-\pgfplotsset{compat=1.7}
-\usepgfplotslibrary{dateplot}
-\setcounter{MaxMatrixCols}{20}
-\usepackage{subfig}
-\usepackage{stfloats}
-\usepackage{url}
-\usepackage{verbatim}
-\usepackage{graphicx}
-\usepackage{mathtools}
-\hyphenation{op-tical net-works semi-conduc-tor IEEE-Xplore}
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-\usepackage{balance}
-\usepackage[backend=bibtex, style=numeric, sorting=none]{biblatex}
+\def\rootdirectory{/home/dmortensen/paper1/MILP_planning_paper/paper}
+\def\builddirectory{/home/dmortensen/paper1/MILP_planning_paper/paper}
+
+\input{preamble} 
 \bibliography{busCharge}
-
-
-% import custom function definitions
-\usepackage{ifthen}
-\input{func_def/pgf_setup.tex}
-\input{func_def/comparisonBarChartDef.tex} 
-\input{func_def/comparisonTimeSeriesDef.tex}
-
-%\bibliographystyle{ieeetr}
 \begin{document}
 \title{Cost Minimization for Charging Electric Bus Fleets}
 \author{Daniel Mortensen, Jacob Gunther, Greg Droge, Justin Whitaker\thanks{}}
