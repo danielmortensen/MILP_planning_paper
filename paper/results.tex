@@ -38,7 +38,7 @@ This section explores performance in a scenario where there is one charger per b
 \par Because equation (\ref{eqn:RMPSchedule8}) is driven by facilities power, on-peak power, on-peak energy, and off-peak energy, these four criteria are used to evaluate the optimal and baseline charge plans.  Furthermore, because the on and off-peak energy charges contribute little to the cost differences, they have been grouped together for comparison.
 \begin{figure}
 	\centering
-	\makeComparisonBarChartThree{\rootdirectoryone/media/costComparison5Bus5Chargers.csv}{Cost (Dollars)}{Baseline}{He et al.}{Optimized}
+	\makeComparisonBarChartThree{media/costComparison5Bus5Chargers.csv}{Cost (Dollars)}{Baseline}{He et al.}{Optimized}
 	\caption{Cost comparison between optimized and baseline algorithms.}
 	\label{fig:costComparison}
 \end{figure}
@@ -50,13 +50,13 @@ This section explores performance in a scenario where there is one charger per b
 
 \begin{figure*}
 	\centering
-	\makeComparisonTotalPower{\rootdirectoryone/media/baseline5Bus5ChargerTotalPowerPlot.csv}{\rootdirectoryone/media/optimized5Bus5ChargerTotalPowerPlot.csv}{15-Minute Average Power (kW)}{Baseline}{Optimized}
+	\makeComparisonTotalPower{media/baseline5Bus5ChargerTotalPowerPlot.csv}{media/optimized5Bus5ChargerTotalPowerPlot.csv}{15-Minute Average Power (kW)}{Baseline}{Optimized}
 	\caption{15-Minute average power for one day.}
 	\label{fig:totalPower1}
 \end{figure*} 
 \begin{figure*}
 	\centering
-	\makeComparisonPower{\rootdirectoryone/media/baseline5Bus5ChargerPowerPlot.csv}{\rootdirectoryone/media/optimized5Bus5ChargerPowerPlot.csv}{15-Minute Average Power (kW)}{Baseline}{Optimized}
+	\makeComparisonPower{media/baseline5Bus5ChargerPowerPlot.csv}{media/optimized5Bus5ChargerPowerPlot.csv}{15-Minute Average Power (kW)}{Baseline}{Optimized}
 	\caption{Comparison between uncontrolled and bus loads.}
 	\label{fig:powerPlot1}
 \end{figure*}
@@ -77,7 +77,7 @@ This section observes the performance of the optimal schedule as charge resource
 \par We desire to know how this is achieved. Fig.~\ref{fig:contention2} shows the 15-minute average power for controlled and uncontrolled loads for a five bus and eleven bus scenario. In the 5 bus scenario, loads are easily distributed amongst off-peak hours, resulting in an optimized cost.  The 11 bus scenario requires significantly more power and is forced to charge during on-peak hours.  Note however that the average power is kept relatively low, and the additional charge sessions never cause the average power to supersede the maximum average power of the uncontrolled loads. Both scenarios also make ample use of night charging, where the number of chargers is the same as the number of buses.  
 \begin{figure*}
 	\centering
-	\makeComparisonPower{\rootdirectoryone/media/optimized5Bus1ChargerPowerPlot.csv}{\rootdirectoryone/media/optimized11Bus1ChargerPowerPlot.csv}{15-Minute AVerage Power (kW)}{5 Bus Scenario}{11 Bus Scenario}
+	\makeComparisonPower{media/optimized5Bus1ChargerPowerPlot.csv}{media/optimized11Bus1ChargerPowerPlot.csv}{15-Minute AVerage Power (kW)}{5 Bus Scenario}{11 Bus Scenario}
 	\caption{Comparison of the loads for a 5 and 11 bus scenario with one overhead charger.}
 	\label{fig:contention2}
 \end{figure*}
