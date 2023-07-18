@@ -1,7 +1,7 @@
 \section{Results}
 This section contains results of the planning framework and is subdivided into three subsections: uncontested results, contested results, and multi-rate comparisons.  
 \subsection{\label{sec:setup} Baseline and Setup}
-The experiments in this section compare the results of the framework given in equation (\ref{eqn:finalObjective}) with a baseline that models the general behavior of bus drivers at the Utah Transit Authority (UTA) in SLC, Utah and the planning framework from \cite{He_2022_Battery}. All methods use a MILP to find an optimal solution and are solved up to a 2\% gap using Gurobi \cite{gurobi}. Model parameters such as $\delta$, arrival, and departure times were computed from historical data provided by UTA.
+The experiments in this section compare the results of the framework given in \eqref{eqn:finalObjective} with a baseline that models the general behavior of bus drivers at the Utah Transit Authority (UTA) in Salt Lake City, Utah and the planning framework from \cite{He_2022_Battery}. All methods use a MILP to find an optimal solution and are solved up to a 2\% gap using Gurobi \cite{gurobi}. Model parameters such as $\delta$, arrival, and departure times were computed from historical data provided by UTA.
 \par According to UTA, bus drivers generally charge whenever possible. Our baseline scenario reflects this default bus driver behavior using an objective function that maximizes the number of charging instances, which is computed as the sum of group flow values, resulting in the objective function
 \begin{equation}
 	\underset{\mathbf{y}}{\text{max}} \ \mathbf{1}^TB\mathbf{y},
@@ -27,7 +27,7 @@ The experiments in this section compare the results of the framework given in eq
 \par Night charging uses a single charge rate of $\bar{a}_1$ for all experiments. Experiments with single rate day charging use $\bar{a}_4$, and multi-rate experiments incorporate four charge options: $\bar{a}_1$, $\bar{a}_2$, $\bar{a}_3$, and $\bar{a}_4$.
 \par Uncontrolled loads are modeled with data from the TRAX Power Substation (TPSS) at the UTA Intermodel Hub site in Salt Lake City. It is also assumed that each bus starts and ends each day with an SOC of $80\%$ and has a maximum charge capacity of $100$ kWh.
 \subsection{Uncontested Results}
-This section explores performance in a scenario where there is one charger per bus during the day, making charge resources \textit{uncontested}. The optimal charge schedule associated with equation \ref{eqn:finalObjective} is compared with the schedule developed by the baseline in equation (\ref{eqn:finalBaselineObjective}). The total monthly cost is computed using the rates given in Rocky Mountain Power Schedule 8 and is computed in equation (\ref{eqn:RMPSchedule8}).
+This section explores performance in a scenario where there is one charger per bus during the day, making charge resources \textit{uncontested}. The optimal charge schedule associated with equation \eqref{eqn:finalObjective} is compared with the schedule developed by the baseline in \eqref{eqn:finalBaselineObjective}. The total monthly cost is computed using the rates given in Rocky Mountain Power Schedule 8 and is computed in equation \eqref{eqn:RMPSchedule8}.
 	\begin{equation}\label{eqn:RMPSchedule8}
 		\begin{aligned}
 			\text{cost} = & \text{ facilitiesPower}\cdot 4.81 + \text{onPeakPower}\cdot 15.73 + \\ 
@@ -35,7 +35,7 @@ This section explores performance in a scenario where there is one charger per b
 		\end{aligned}
 	\end{equation}
 	There is also a customer service charge of $71.00$ in the rate schedule, but because the service charge does not depend on a customer's behavior, it is ignored.
-\par Because equation (\ref{eqn:RMPSchedule8}) is driven by facilities power, on-peak power, on-peak energy, and off-peak energy, these four criteria are used to evaluate the optimal and baseline charge plans.  Furthermore, because the on and off-peak energy charges contribute little to the cost differences, they have been grouped together for comparison.
+\par Because \eqref{eqn:RMPSchedule8} is driven by facilities power, on-peak power, on-peak energy, and off-peak energy, these four criteria are used to evaluate the optimal and baseline charge plans.  Furthermore, because the on and off-peak energy charges contribute little to the cost differences, they have been grouped together for comparison.
 \begin{figure}
 	\centering
 	\makeComparisonBarChartThree{\rootdirectoryone/media/costComparison5Bus5Chargers.csv}{Cost (Dollars)}{Baseline}{He et al.}{Optimized}
@@ -62,9 +62,8 @@ This section explores performance in a scenario where there is one charger per b
 \end{figure*}
 
 \subsection{Contested Results}
-This section observes the performance of the optimal schedule as charge resources become scarce, creating a contested environment. Resource contention is most prevalent when chargers are scarce and pushes buses to charge in non-ideal circumstances.  For example, if charging resources are saturated during off-peak hours, other buses might be forced to charge in the on-peak window. The impact of contention is measured as the change in monthly cost when the number of chargers is held constant and the number of buses increases. 
-\par In this analysis, one charger is used and the number of buses is varied from five to eleven. Fig.~\ref{fig:contention1} shows the monthly cost as a function of the number of buses. Note the minimal cost increase per bus, where each successive bus costs around \$$75.00$, which approaches the cost of energy that is required to provide transit services.  Because the additional cost per bus is roughly the cost of energy, there are no additional facilities and on-peak power charges, showing that optimal charge plans also minimize cost in the presence of contention.
 \begin{figure}
+	\centering
 	\begin{tikzpicture}
 		\begin{axis}[SmallPointPlot, xlabel=Number of Buses, ylabel=Total Monthly Cost, ymin=3000, xmax=11]
 			\addplot[blue, only marks, mark size=3pt] coordinates {(5,3034.35) (6,3108.23) (7,3174.54) (8,3255.87) (9,3313.43) (10, 3391.16) (11, 3463.42)}; 
@@ -73,7 +72,9 @@ This section observes the performance of the optimal schedule as charge resource
 	\end{tikzpicture}
 	\caption{Results for several single charger scenarios.}
 	\label{fig:contention1}
-\end{figure}
+\end{figure} 
+This section observes the performance of the optimal schedule as charge resources become scarce, creating a contested environment. Resource contention is most prevalent when chargers are scarce and pushes buses to charge in non-ideal circumstances.  For example, if charging resources are saturated during off-peak hours, other buses might be forced to charge in the on-peak window. The impact of contention is measured as the change in monthly cost when the number of chargers is held constant and the number of buses increases. 
+\par In this analysis, one charger is used and the number of buses is varied from five to eleven. Fig.~\ref{fig:contention1} shows the monthly cost as a function of the number of buses. Note the minimal cost increase per bus, where each successive bus costs around \$$75.00$, which approaches the cost of energy that is required to provide transit services.  Because the additional cost per bus is roughly the cost of energy, there are no additional facilities and on-peak power charges, showing that optimal charge plans also minimize cost in the presence of contention.  
 \par We desire to know how this is achieved. Fig.~\ref{fig:contention2} shows the 15-minute average power for controlled and uncontrolled loads for a five bus and eleven bus scenario. In the 5 bus scenario, loads are easily distributed amongst off-peak hours, resulting in an optimized cost.  The 11 bus scenario requires significantly more power and is forced to charge during on-peak hours.  Note however that the average power is kept relatively low, and the additional charge sessions never cause the average power to supersede the maximum average power of the uncontrolled loads. Both scenarios also make ample use of night charging, where the number of chargers is the same as the number of buses.  
 \begin{figure*}
 	\centering
@@ -97,7 +98,7 @@ A 36 bus, 6 charger comparison also yielded minimal cost savings.
 %	\caption{Cost comaprison between multi and single rate charging for a 35 bus 6 charger scenario.}
 %	\label{fig:costComparisonMultiVsSingleLarge}
 %\end{figure}
-\par Another explaination for the cost similarity is found in how monthly cost is computed. Because the monthly cost is based on the average instantanous power, both high and low charge rates can give the same results over a fixed time period. The charge schedules shown in both single and multi-rate plans charge buses in relatively small time periods. Fast charging over small periods of time is equivalent to slow charging over longer periods. In this way, the average power can be kept low even when using high charge rates (see Fig.s \ref{fig:contention2} and \ref{fig:contention1}). 
+\par Another explaination for the cost similarity is found in how monthly cost is computed. Because the monthly cost is based on the average instantanous power, both high and low charge rates can give the same results over a fixed time period. The charge schedules shown in both single and multi-rate plans charge buses in relatively small time periods. Fast charging over small periods of time is equivalent to slow charging over longer periods. In this way, the average power can be kept low even when using high charge rates (see Figs. \ref{fig:contention2} and \ref{fig:contention1}). 
 \begin{figure}
 	\begin{tikzpicture}
 		\begin{axis}[ybar, xmin=0.3, xmax=4.7, font=\footnotesize, xtick={1,2,3,4},xticklabels={25.58, 6.40, 3.65, 2.56},

@@ -8,7 +8,7 @@ be modeled. The $k^{\text{th}}$ SOC for bus $i$ is denoted $d_{i,k}$,
 where $k$ is the \textit{node index}. The node indices used here are
 not directly tied to specific time steps.  For example, $d_{i,k+1}$
 represents the bus SOC at the node in the graph following the node
-where $d_{i,k}$ is the SOC as seen in Fig.~\ref{fig:dSocDiagram}. The set of all $d_{i,k}$ can be organized as the vector $\mathbf{d}$ from equation (\ref{eqn:y}).
+where $d_{i,k}$ is the SOC as seen in Fig.~\ref{fig:dSocDiagram}. The set of all $d_{i,k}$ can be organized as the vector $\mathbf{d}$ from \eqref{eqn:y}.
 \input{\rootdirectoryone/media/dSocDiagram.tex}
 \par Because no charging is performed while on route, $d_{i,k}$ will
 assume its lowest value when buses enter the charge station. Let $d_{i,k+1}$ be the charge level for bus $i$ as it enters the charge station, and $\delta_i$ represent the power discharged while on-route. The entrance SOC can be expressed as 
@@ -17,7 +17,7 @@ assume its lowest value when buses enter the charge station. Let $d_{i,k+1}$ be 
 \end{align}
 where $d_{i,k}$ is the previous departure SOC for bus $i$. Consider the example in Fig.~\ref{fig:graphDelta}, where buses $1$ and $2$ leave the station at $t_2$ and enter at $t_4$. The corresponding change in SOC is given as $d_{1,2} = d_{1,1} - \delta_1$ and $d_{2,2} = d_{2,1} - \delta_2$ for buses $1$ and $2$ respectively.
 \input{\rootdirectoryone/media/graphDelta}
-The constraints from equation (\ref{eqn:dDelta}) can be expressed in linear standard form as 
+The constraints from \eqref{eqn:dDelta} can be expressed in linear standard form as 
 \begin{equation}\label{eqn:delta2}
 	\begin{bmatrix}
 		-1 & 1
@@ -66,7 +66,7 @@ Therefore,
 		\end{dcases}.
 	\end{aligned}
 \end{equation}
-The conditions given in equation \ref{eqn:initialGConstr} can be rewritten as 
+The conditions given in \eqref{eqn:initialGConstr} can be rewritten as 
 \begin{equation}\label{eqn:bigM2}
 \begin{aligned}
 	& \begin{dcases} 
@@ -89,7 +89,7 @@ The conditions given in equation \ref{eqn:initialGConstr} can be rewritten as
 	\end{array}\\ 
 \end{aligned}
 \end{equation}
-where $M$ is the battery capacity. The results of equation \ref{eqn:bigM2} obtain a switching effect.  When $x_{i,k,l} = 1$, equation \ref{eqn:bigM2} becomes 
+where $M$ is the battery capacity. The results of \eqref{eqn:bigM2} obtain a switching effect.  When $x_{i,k,l} = 1$, \eqref{eqn:bigM2} becomes 
 \begin{equation}
 	\begin{aligned}
 		& \begin{rcases}
@@ -102,7 +102,7 @@ where $M$ is the battery capacity. The results of equation \ref{eqn:bigM2} obtai
 		\end{drcases} \text{Inactive} \\
 	\end{aligned}
 \end{equation}
-The active constraints imply equality for $g_{i,k,l}$ = $(\bar{a}_l - 1)d_{i,k} - \bar{b_l}M$.  The inactive constraints imply that $g_{i,k,l}$ is greater than zero and less than the battery capacity, which are trivially satisfied. When $x_{i,k,l} = 0$, equation \ref{eqn:bigM2} becomes
+The active constraints imply equality for $g_{i,k,l}$ = $(\bar{a}_l - 1)d_{i,k} - \bar{b_l}M$.  The inactive constraints imply that $g_{i,k,l}$ is greater than zero and less than the battery capacity, which are trivially satisfied. When $x_{i,k,l} = 0$, \eqref{eqn:bigM2} becomes
 \begin{equation}
 	\begin{aligned}
 		& \begin{rcases}
@@ -124,7 +124,7 @@ active constraints imply equality for $g_{i,k,l} = 0$.
 		-g_{i,k,l} + d_{i,k}(\bar{a}_l - 1) + x_{i,k,l} &\le M(\bar{b_l} + 1) \\
 		 g_{i,k,l} - d_{i,k}(\bar{a}_l - 1)  &\le  - \bar{b_l}M \\
 		 g_{i,k,l} - Mx_{i,k,l} &\le 0 \\
-		-g_{i,k,l} &\le 0  
+		-g_{i,k,l} &\le 0,
 	\end{aligned}
 \end{equation} 
 and in matrix form as
@@ -148,7 +148,7 @@ and in matrix form as
 		0
 	\end{bmatrix}.
 \end{equation}
-Equation (\ref{eqn:socMat}) can be expanded to include constraints for all $g_{i,k,l}$.  Because each value for $g_{i,k,l}$, $d_{i,k}$, and $x_{i,k,l}$ is an element of $\mathbf{y}$, the constraints from equation \ref{eqn:socMat} can be written as 
+Equation (\eqref{eqn:socMat}) can be expanded to include constraints for all $g_{i,k,l}$.  Because each value for $g_{i,k,l}$, $d_{i,k}$, and $x_{i,k,l}$ is an element of $\mathbf{y}$, the constraints from \eqref{eqn:socMat} can be written as 
 \begin{equation}\label{eqn:dSocMat}
 	G\mathbf{y} \le \mathbf{b}_g.
 \end{equation}
@@ -158,7 +158,7 @@ The value of $d_{i,k}$ can be expressed as
 \end{equation}
 or 
 \begin{equation}
-	d_{i,k + 1} - d_{i,k} - \sum_l g_{i,k,l} = 0
+	d_{i,k + 1} - d_{i,k} - \sum_l g_{i,k,l} = 0,
 \end{equation}
 because a non-zero element of $g_{i,k,l}$ is only present for one corresponding $l$. This relationship is described in terms of an equality constraint such that
 \begin{equation}\label{eqn:dMatPrel}
@@ -174,7 +174,7 @@ Equation (\ref{eqn:dMatPrel}) can be appropriately zero padded to give
 	\begin{bmatrix}
 		1_{d_{i,k+1}} & -1_{d_{i,k}} & \hdots & -1_{g_{i,k,l}}
 	\end{bmatrix}
-	\mathbf{y} = 0.  
+	\mathbf{y} = 0  
 \end{equation}
 and expanded to define the values for all $d_{i,k} \ni k > 0$ as
 \begin{equation}
@@ -199,27 +199,27 @@ or
 	\begin{aligned}
 		& d_{i,k} \ge \tau \\
 		\Rightarrow & -d_{i,k} \le -\tau \\
-		\Rightarrow & \begin{bmatrix}0 & \hdots & -1_{d_{i,k}}& \hdots & 0 \end{bmatrix}\mathbf{y} \le -\tau
+		\Rightarrow & \begin{bmatrix}0 & \hdots & -1_{d_{i,k}}& \hdots & 0 \end{bmatrix}\mathbf{y} \le -\tau.
 	\end{aligned}
 \end{equation}
-Equation (\ref{eqn:tau}) can be expanded to a matrix $D_\tau$, where each $d_{i,k}$ contains a corresponding constraint row such that
+Equation (\eqref{eqn:tau}) can be expanded to a matrix $D_\tau$, where each $d_{i,k}$ contains a corresponding constraint row such that
 \begin{equation}\label{eqn:tauFinal}
 	\begin{aligned}
 		D_\tau\mathbf{y} & \le -\tau\mathbf{1} \\
-		       & \le \mathbf{d}_\tau
+		       & \le \mathbf{d}_\tau.
 	\end{aligned}
 \end{equation}
 \par In summary, the minimum SOC for all feasible charge plans must exceed a given threshold.  SOC values are computed while the bus is in
 the charge station.  SOC values are updated when a bus enters by
 subtracting the discharged energy from the previous SOC estimate. SOC
 values are updated for in-station periods by adding the charge gains
-as given in equation (\ref{eqn:totalG}).  Gains are computed using a
+as given in \eqref{eqn:totalG}.  Gains are computed using a
 switching constraint which sets them to zero when not charging,
-otherwise they follow the CCCV model as set forth in equation
-(\ref{eqn:CCCVFinal}). Initial SOC values are handled with the equality
-constraint given in equation (\ref{eqn:dInitialFinal}) and the SOC is
-constrained to remain above the threshold $\tau$ in equation
-(\ref{eqn:tauFinal}). All constraints for $d$ can be concatenated such
+otherwise they follow the CCCV model as set forth in 
+\eqref{eqn:CCCVFinal}. Initial SOC values are handled with the equality
+constraint given in \eqref{eqn:dInitialFinal} and the SOC is
+constrained to remain above the threshold $\tau$ in 
+\eqref{eqn:tauFinal}. All constraints for $d$ can be concatenated such
 that
 \begin{equation}
 	\begin{bmatrix}
