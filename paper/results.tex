@@ -62,13 +62,13 @@ Total            & 1100.70  & 335.18    & 26.79    & 10.02     \\
 
 \begin{figure*}
 	\centering
-	\makeComparisonTotalPower{media/baseline5Bus5ChargerTotalPowerPlot.csv}{media/optimized5Bus5ChargerTotalPowerPlot.csv}{15-Minute Average Power (kW)}{Baseline}{Optimized}
+	\makeComparisonTotalPower{\rootdirectoryone/media/baseline5Bus5ChargerTotalPowerPlot.csv}{\rootdirectoryone/media/optimized5Bus5ChargerTotalPowerPlot.csv}{15-Minute Average Power (kW)}{Baseline}{Optimized}
 	\caption{15-Minute average power for one day.}
 	\label{fig:totalPower1}
 \end{figure*} 
 \begin{figure*}
 	\centering
-	\makeComparisonPower{media/baseline5Bus5ChargerPowerPlot.csv}{media/optimized5Bus5ChargerPowerPlot.csv}{15-Minute Average Power (kW)}{Baseline}{Optimized}
+	\makeComparisonPower{\rootdirectoryone/media/baseline5Bus5ChargerPowerPlot.csv}{\rootdirectoryone/media/optimized5Bus5ChargerPowerPlot.csv}{15-Minute Average Power (kW)}{Baseline}{Optimized}
 	\caption{Comparison between uncontrolled and bus loads.}
 	\label{fig:powerPlot1}
 \end{figure*}
@@ -89,7 +89,7 @@ This section observes the performance of the optimal schedule as charge resource
 \par We desire to know how this is achieved. Fig.~\ref{fig:contention2} shows the 15-minute average power for controlled and uncontrolled loads for a five bus and eleven bus scenario. In the 5 bus scenario, loads are easily distributed amongst off-peak hours, resulting in an optimized cost.  The 11 bus scenario requires significantly more power and is forced to charge during on-peak hours.  Note however that the average power is kept relatively low, and the additional charge sessions never cause the average power to supersede the maximum average power of the uncontrolled loads. Both scenarios also make ample use of night charging, where the number of chargers is the same as the number of buses.  
 \begin{figure*}
 	\centering
-	\makeComparisonPower{media/optimized5Bus1ChargerPowerPlot.csv}{media/optimized11Bus1ChargerPowerPlot.csv}{15-Minute AVerage Power (kW)}{5 Bus Scenario}{11 Bus Scenario}
+	\makeComparisonPower{\rootdirectoryone/media/optimized5Bus1ChargerPowerPlot.csv}{\rootdirectoryone/media/optimized11Bus1ChargerPowerPlot.csv}{15-Minute AVerage Power (kW)}{5 Bus Scenario}{11 Bus Scenario}
 	\caption{Comparison of the loads for a 5 and 11 bus scenario with one overhead charger.}
 	\label{fig:contention2}
 \end{figure*}

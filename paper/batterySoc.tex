@@ -7,14 +7,14 @@ where $k$ is the \textit{node index}. The node indices used here are
 not directly tied to specific time steps.  For example, $d_{i,k+1}$
 represents the bus SOC at the node in the graph following the node
 where $d_{i,k}$ is the SOC as seen in Fig.~\ref{fig:dSocDiagram}. The set of all $d_{i,k}$ can be organized as the vector $\mathbf{d}$ from equation (\ref{eqn:y}).
-\input{media/dSocDiagram.tex}
+\input{\rootdirectoryone/media/dSocDiagram.tex}
 \par Because no charging is performed while on route, $d_{i,k}$ will
 assume its lowest value when buses enter the charge station. Let $d_{i,k+1}$ be the charge level for bus $i$ as it enters the charge station, and $\delta_i$ represent the power discharged while on-route. The entrance SOC can be expressed as 
 \begin{align}\label{eqn:dDelta}
 	d_{i,k+1} = d_{i,k} - \delta_i,
 \end{align}
 where $d_{i,k}$ is the previous departure SOC for bus $i$. Consider the example in Fig.~\ref{fig:graphDelta}, where buses $1$ and $2$ leave the station at $t_2$ and enter at $t_4$. The corresponding change in SOC is given as $d_{1,2} = d_{1,1} - \delta_1$ and $d_{2,2} = d_{2,1} - \delta_2$ for buses $1$ and $2$ respectively.
-\input{media/graphDelta}
+\input{\rootdirectoryone/media/graphDelta}
 The constraints from equation (\ref{eqn:dDelta}) can be expressed in linear standard form as 
 \begin{equation}\label{eqn:delta2}
 	\begin{bmatrix}
@@ -34,7 +34,7 @@ Equation (\ref{eqn:delta2}) can be expressed in terms of $\mathbf{y}$ with appro
 where $-1_{d_{i,k}}$ and $1_{d_{i,k+1}}$ represent $-1$ and $1$ in locations corresponding to $d_{i,k}$ and $d_{i,k+1}$ respectively. Similar notation will be used throughout this paper as a means to imply a corresponding index for other variables.
 \par Time periods between entrance and exit nodes represent time spent in the charge station and have the potential to charge the battery. An edge over which charging occurs is referred to as $x_{i,k}$, where $k$ gives the index of the edge's outgoing node, and $i$ refers to the bus.  When a charger occupies $x_{i,k}$, the resulting increase, or \textit{gain}, in battery charge is denoted $g_{i,k}$, where $i$ and $k$ mirror the edge indices (see Fig.~\ref{fig:dSocDiagram}). 
 \par The value for $g_{i,k}$ is computed using a single charge rate. Multiple charge rates can be encoded by connecting bus nodes with multiple edges, denoted $x_{i,k,l}$, where each edge has a distinct charge rate and gain denoted $g_{i,k,l}$ (see Fig.~\ref{fig:multirateChargeEdges}). Having multiple charge rates gives the option for fast charging when necessary, and slow charging when possible to preserve battery health and decrease the electrical load \cite{houbbadi_optimal_2019}.
-\input{media/multirateChargeEdges.tex}
+\input{\rootdirectoryone/media/multirateChargeEdges.tex}
 \par The rate is selected by setting $x_{i,k,l} = 1$. All gains associated with unselected rates are set to zero. Gains that correspond to selected rates are computed using the constant current constant voltage (CCCV) model as derived in \cite{whitaker_network_2021} which gives:
 \begin{align}\label{eqn:CCCV}
 	d_{i,k+1} = \bar{a}_ld_{i,k} - \bar{b}_lM, 

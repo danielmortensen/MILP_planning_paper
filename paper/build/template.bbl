@@ -1,20 +1,20 @@
 \begin{thebibliography}{999}
 
-\bibitem[Zhou et~al.()Zhou, Ren, Sun, and Dai]{zhou_optimization_2018}
+\bibitem[Zhou et~al.(2018)Zhou, Ren, Sun, and Dai]{zhou_optimization_2018}
 Zhou, D.; Ren, Z.; Sun, K.; Dai, H.
 \newblock Optimization Method of Fast Charging Buses Charging Strategy for
   Complex Operating Environment.
 \newblock In Proceedings of the 2nd {IEEE} Conf. on Energy Internet and Energy
-  System Integration ({EI}2).
+  System Integration ({EI}2),  2018.
 \newblock {\url{https://doi.org/10.1109/EI2.2018.8582378}}.
 
-\bibitem[Poornesh et~al.()Poornesh, Nivya, and
+\bibitem[Poornesh et~al.(2020)Poornesh, Nivya, and
   Sireesha]{poornesh_comparative_2020}
 Poornesh, K.; Nivya, K.; Sireesha, K.
 \newblock A Comparative study on Electric Vehicle and Internal Combustion
   Engine Vehicles.
 \newblock In Proceedings of the 2020 International Conference on Smart
-  Electronics and Communication.
+  Electronics and Communication,  2020.
 \newblock {\url{https://doi.org/10.1109/ICOSEC49089.2020.9215386}}.
 
 \bibitem[Mahmoud et~al.(2016)Mahmoud, Garnett, Ferguson, and
@@ -24,30 +24,30 @@ Mahmoud, M.; Garnett, R.; Ferguson, M.; Kanaroglou, P.
 \newblock {\em Renewable and Sustainable Energy Reviews} {\bf 2016}, {\em 62}.
 \newblock {\url{https://doi.org/10.1016/j.rser.2016.05.019}}.
 
-\bibitem[D.Stahleder et~al.()D.Stahleder, Reihs, Ledinger, and
+\bibitem[D.Stahleder et~al.(2019)D.Stahleder, Reihs, Ledinger, and
   Lehfuss]{stahleder_impact_2019}
 D.Stahleder.; Reihs, D.; Ledinger, S.; Lehfuss, F.
 \newblock Impact Assessment of High Power Electric Bus Charging on Urban
   Distribution Grids.
 \newblock In Proceedings of the {IECON} 2019 - 45th Annual Conference of the
-  {IEEE} Industrial Electronics Society.
+  {IEEE} Industrial Electronics Society,  2019.
 \newblock {\url{https://doi.org/10.1109/IECON.2019.8927526}}.
 
-\bibitem[Deb et~al.()Deb, Kalita, and Mahanta]{deb_impact_2017}
+\bibitem[Deb et~al.(2017)Deb, Kalita, and Mahanta]{deb_impact_2017}
 Deb, S.; Kalita, K.; Mahanta, P.
 \newblock Impact of electric vehicle charging stations on reliability of
   distribution network.
 \newblock In Proceedings of the 2017 Internat. Conf. on Tech. Adv. in Power and
-  Energy ( {TAP} Energy).
+  Energy ( {TAP} Energy),  2017.
 \newblock {\url{https://doi.org/10.1109/TAPENERGY.2017.8397272}}.
 
-\bibitem[Boonraksa et~al.()Boonraksa, Paudel, Dawan, and
+\bibitem[Boonraksa et~al.(2019)Boonraksa, Paudel, Dawan, and
   Marungsri]{boonraksa_impact_2019}
 Boonraksa, T.; Paudel, A.; Dawan, P.; Marungsri, B.
 \newblock Impact of Electric Bus Charging on the Power Distribution System a
   Case Study {IEEE} 33 Bus Test System.
 \newblock In Proceedings of the 2019 {IEEE} {PES} {GTD} Grand Internat. Conf.
-  and Exposition Asia.
+  and Exposition Asia,  2019.
 \newblock {\url{https://doi.org/10.1109/GTDAsia.2019.8716023}}.
 
 \bibitem[Zhou et~al.(2020)Zhou, Xie, Zhao, and Lu]{Zhou_2020_Collaborative}
@@ -57,56 +57,59 @@ Zhou, G.J.; Xie, D.F.; Zhao, X.M.; Lu, C.
 \newblock {\em IEEE Access} {\bf 2020}, {\em 8}.
 \newblock {\url{https://doi.org/10.1109/ACCESS.2020.2964391}}.
 
-\bibitem[Qin et~al.()Qin, Gusrialdi, Brooker, and T-Raissi]{qin_numerical_2016}
+\bibitem[Qin et~al.(2016)Qin, Gusrialdi, Brooker, and
+  T-Raissi]{qin_numerical_2016}
 Qin, N.; Gusrialdi, A.; Brooker, P.; T-Raissi, A.
 \newblock Numerical analysis of electric bus fast charging strategies for
   demand charge reduction.
-\newblock {\em 94}.
+\newblock {\em Transportation Research Part A: Policy and Practice} {\bf 2016},
+  {\em 94}.
 \newblock {\url{https://doi.org/10.1016/j.tra.2016.09.014}}.
 
-\bibitem[Wei et~al.()Wei, Liu, Ou, and Kiavash~Fayyaz]{wei_optimizing_2018}
+\bibitem[Wei et~al.(2018)Wei, Liu, Ou, and Kiavash~Fayyaz]{wei_optimizing_2018}
 Wei, R.; Liu, X.; Ou, Y.; Kiavash~Fayyaz, S.
 \newblock Optimizing the spatio-temporal deployment of battery electric bus
   system.
-\newblock {\em 68}.
+\newblock {\em Journal of Transport Geography} {\bf 2018}, {\em 68}.
 \newblock {\url{https://doi.org/10.1016/j.jtrangeo.2018.03.013}}.
 
-\bibitem[Xian and Wang()]{xian_zhang_optimal_2016}
+\bibitem[Xian and Wang(2016)]{xian_zhang_optimal_2016}
 Xian, Z.; Wang, G.
 \newblock Optimal dispatch of electric vehicle batteries between battery
   swapping stations and charging stations.
 \newblock In Proceedings of the 2016 {IEEE} Power and Energy Society General
-  Meeting.
+  Meeting,  2016.
 \newblock {\url{https://doi.org/10.1109/PESGM.2016.7741893}}.
 
-\bibitem[Jain et~al.()Jain, Ahmad, Alam, and Rafat]{jain_battery_2020}
+\bibitem[Jain et~al.(2020)Jain, Ahmad, Alam, and Rafat]{jain_battery_2020}
 Jain, S.; Ahmad, Z.; Alam, M.S.; Rafat, Y.
 \newblock Battery Swapping Technology.
 \newblock In Proceedings of the 2020 5th {IEEE} International Conference on
-  Recent Advances and Innovations in Engineering.
+  Recent Advances and Innovations in Engineering,  2020.
 \newblock {\url{https://doi.org/10.1109/ICRAIE51050.2020.9358366}}.
 
-\bibitem[Balde and Sardar()]{balde_electric_2019}
+\bibitem[Balde and Sardar(2019)]{balde_electric_2019}
 Balde, B.J.; Sardar, A.
 \newblock Electric Road system With Dynamic Wireless charging of Electric
   buses.
-\newblock In Proceedings of the 2019 {IEEE} Trans. Electrification Conf.
+\newblock In Proceedings of the 2019 {IEEE} Trans. Electrification Conf.,
+  2019.
 \newblock
   {\url{https://doi.org/10.1109/ITEC-India48457.2019.ITECINDIA2019-251}}.
 
-\bibitem[Jeong et~al.()Jeong, Park, Hong, and Rim]{jeong_automatic_2018}
+\bibitem[Jeong et~al.(2018)Jeong, Park, Hong, and Rim]{jeong_automatic_2018}
 Jeong, S.Y.; Park, J.H.; Hong, G.P.; Rim, C.T.
 \newblock Automatic Current Control by Self-Inductance Variation for Dynamic
   Wireless {EV} Charging.
 \newblock In Proceedings of the {IEEE} {PELS} Workshop on Emerging Tech.:
-  Wireless Power Transfer.
+  Wireless Power Transfer,  2018.
 \newblock {\url{https://doi.org/10.1109/WoW.2018.8450926}}.
 
-\bibitem[Csonka()]{csonka_optimization_2021}
+\bibitem[Csonka(2021)]{csonka_optimization_2021}
 Csonka, B.
 \newblock Optimization of Static and Dynamic Charging Infrastructure for
   Electric Buses.
-\newblock {\em 14}.
+\newblock {\em Energies} {\bf 2021}, {\em 14}.
 \newblock {\url{https://doi.org/10.3390/en14123516}}.
 
 \bibitem[Alwesabi et~al.(2021)Alwesabi, Liu, Kwon, and
@@ -125,11 +128,11 @@ Alwesabi, Y.; Avishan, F.; Yanikoglu, I.; Liu, Z.; Wang, Y.
 \newblock {\em Applied Energy} {\bf 2022}, {\em 307}.
 \newblock {\url{https://doi.org/10.1016/j.apenergy.2021.118243}}.
 
-\bibitem[Cheng et~al.()Cheng, Chen, Wang, Ma, and Qin]{cheng_smart_2020}
+\bibitem[Cheng et~al.(2020)Cheng, Chen, Wang, Ma, and Qin]{cheng_smart_2020}
 Cheng, Q.; Chen, L.; Wang, R.; Ma, D.; Qin, D.
 \newblock A smart charging algorithm-based fast charging station with energy
   storage system-free.
-\newblock {\em CSEE Journal of Power and Energy Systems}, {\em 7}.
+\newblock {\em CSEE Journal of Power and Energy Systems} {\bf 2020}, {\em 7}.
 \newblock {\url{https://doi.org/10.17775/CSEEJPES.2020.00350}}.
 
 \bibitem[Wang et~al.(2019)Wang, Xie, Zhang, Liu, and Zhang]{Wang2019}
@@ -139,12 +142,13 @@ Wang, G.; Xie, X.; Zhang, F.; Liu, Y.; Zhang, D.
 \newblock {\em Proceedings - Real-Time Systems Symposium} {\bf 2019}.
 \newblock {\url{https://doi.org/10.1109/RTSS.2018.00015}}.
 
-\bibitem[Bagherinezhad et~al.()Bagherinezhad, Palomino, Li, and
+\bibitem[Bagherinezhad et~al.(2020)Bagherinezhad, Palomino, Li, and
   Parvania]{bagherinezhad_spatio-temporal_2020}
 Bagherinezhad, A.; Palomino, A.D.; Li, B.; Parvania, M.
 \newblock Spatio-Temporal Electric Bus Charging Optimization With Transit
   Network Constraints.
-\newblock {\em 56},~5741--5749.
+\newblock {\em IEEE Transactions on Industrial Applications} {\bf 2020}, {\em
+  56},~5741--5749.
 \newblock {\url{https://doi.org/10.1109/TIA.2020.2979132}}.
 
 \bibitem[James et~al.(2015)James, Lin, Albert, and
@@ -181,12 +185,12 @@ Nimalsiri, N.I.; Mediwaththe, C.P.; Ratnam, E.L.; Shaw, M.; Smith, D.B.;
   2020}, {\em 21}.
 \newblock {\url{https://doi.org/10.1109/TITS.2019.2943620}}.
 
-\bibitem[El-Taweel and Farag()]{el-taweel_incorporation_2019}
+\bibitem[El-Taweel and Farag(2019)]{el-taweel_incorporation_2019}
 El-Taweel, N.; Farag, E.
 \newblock Incorporation of Battery Electric Buses in the Operation of Intercity
   Bus Services.
 \newblock In Proceedings of the 2019 {IEEE} Transportation Electrification
-  Conference and Expo ({ITEC}).
+  Conference and Expo ({ITEC}),  2019.
 \newblock {\url{https://doi.org/10.1109/ITEC.2019.8790598}}.
 
 \bibitem[Leou and Hung(2017)]{Leou_optimal_2017}
@@ -217,11 +221,12 @@ He, Y.; Song, Y.; Liu, Z.
 \newblock {\em Sustainable Cities and Society} {\bf 2019}, {\em 48}.
 \newblock {\url{https://doi.org/10.1016/j.scs.2019.101530}}.
 
-\bibitem[Whitaker et~al.()Whitaker, Droge, Hansen, Mortensen, and
+\bibitem[Whitaker et~al.(2023)Whitaker, Droge, Hansen, Mortensen, and
   Gunther]{whitaker_network_2021}
 Whitaker, J.; Droge, G.; Hansen, M.; Mortensen, D.; Gunther, J.
 \newblock A Network Flow Approach to Battery Electric Bus Scheduling.
-\newblock {\em 24}.
+\newblock {\em IEEE Transactions on Intelligent Transportation Systems} {\bf
+  2023}, {\em 24}.
 \newblock {\url{https://doi.org/10.1109/TITS.2023.3276269}}.
 
 \bibitem[He et~al.(2022)He, Yan, Zhang, Yu, and Wang]{He_2022_Battery}
@@ -232,12 +237,12 @@ He, J.; Yan, N.; Zhang, J.; Yu, Y.; Wang, T.
   5}.
 \newblock {\url{https://doi.org/10.1108/JICV-03-2022-0006}}.
 
-\bibitem[Jahic et~al.()Jahic, Eskander, and Schulz]{jahic_preemptive_2019}
+\bibitem[Jahic et~al.(2019)Jahic, Eskander, and Schulz]{jahic_preemptive_2019}
 Jahic, A.; Eskander, M.; Schulz, D.
 \newblock Preemptive vs. non-preemptive charging schedule for large-scale
   electric bus depots.
 \newblock In Proceedings of the 2019 {IEEE} {PES} Innovative Smart Grid
-  Technologies Europe.
+  Technologies Europe,  2019.
 \newblock {\url{https://doi.org/10.1109/ISGTEurope.2019.8905633}}.
 
 \bibitem[Corinaldesi et~al.(2020)Corinaldesi, Lettner, Schwabeneder, Ajanovic,
@@ -248,26 +253,22 @@ Corinaldesi, C.; Lettner, G.; Schwabeneder, D.; Ajanovic, A.; Auer, H.
 \newblock {\em Energies} {\bf 2020}, {\em 13},~5858.
 \newblock {\url{https://doi.org/10.3390/en13225858}}.
 
-\bibitem[Power()]{noauthor_rocky_nodate}
-Power, R.M.
-\newblock Rocky Mountain Power Electric Service Schedule No. 8 State of Utah.
-
-\bibitem[Gao et~al.()Gao, Lin, Zhu, Zhou, Wang, Zhang, Zhang, Waseem, Liu, and
-  Han]{gao_charging_2019}
+\bibitem[Gao et~al.(2019)Gao, Lin, Zhu, Zhou, Wang, Zhang, Zhang, Waseem, Liu,
+  and Han]{gao_charging_2019}
 Gao, Q.; Lin, Z.; Zhu, T.; Zhou, W.; Wang, G.; Zhang, T.; Zhang, Z.; Waseem,
   M.; Liu, S.; Han, C.
 \newblock Charging Load Forecasting of Electric Vehicle Based on Monte Carlo
   and Deep Learning.
-\newblock In Proceedings of the 2019 {IEEE} Sus. Power and Energy Conf.
+\newblock In Proceedings of the 2019 {IEEE} Sus. Power and Energy Conf.,  2019.
 \newblock {\url{https://doi.org/10.1109/iSPEC48194.2019.8975364}}.
 
-\bibitem[Ojer et~al.()Ojer, Berrueta, Pascual, Sanchis, and
+\bibitem[Ojer et~al.(2020)Ojer, Berrueta, Pascual, Sanchis, and
   Ursua]{ojer_development_2020}
 Ojer, I.; Berrueta, A.; Pascual, J.; Sanchis, P.; Ursua, A.
 \newblock Development of energy management strategies for the sizing of a fast
   charging station for electric buses.
 \newblock In Proceedings of the {IEEE} International Conference on Environment
-  and Electrical Engineering.
+  and Electrical Engineering,  2020.
 \newblock {\url{https://doi.org/10.1109/EEEIC/ICPSEurope49358.2020.9160716}}.
 
 \bibitem[El-Taweel et~al.(2020)El-Taweel, Farag, and
@@ -287,12 +288,12 @@ El-Taweel, N.; Farag, H.; Barai, G.; Zeineldin, H.; Al-Durra, A.; El-Saadany,
 \newblock {\em IEEE Systems Journal} {\bf 2022}, {\em 16}.
 \newblock {\url{https://doi.org/10.1109/JSYST.2021.3114271}}.
 
-\bibitem[Houbbadi et~al.()Houbbadi, Redondo-Iglesias, Trigui, Pelissier, and
-  Bouton]{houbbadi_optimal_2019}
+\bibitem[Houbbadi et~al.(2019)Houbbadi, Redondo-Iglesias, Trigui, Pelissier,
+  and Bouton]{houbbadi_optimal_2019}
 Houbbadi, A.; Redondo-Iglesias, E.; Trigui, R.; Pelissier, S.; Bouton, T.
 \newblock Optimal Charging Strategy to Minimize Electricity Cost and Prolong
   Battery Life of Electric Bus Fleet.
-\newblock In Proceedings of the Vehicle Power and Propulsion Conference.
+\newblock In Proceedings of the Vehicle Power and Propulsion Conference,  2019.
 \newblock {\url{https://doi.org/10.1109/VPPC46532.2019.8952493}}.
 
 \bibitem[{Gurobi Optimization, LLC}(2022)]{gurobi}

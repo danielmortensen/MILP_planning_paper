@@ -1,4 +1,4 @@
-\def\rootdirectory{/home/dmortensen/paper1/MILP_planning_paper/paper}
+\def\rootdirectoryone{/home/dmortensen/paper1/MILP_planning_paper/paper}
 \usepackage{amsmath,amsfonts} 
 \usepackage{array}
 \usepackage{textcomp}
@@ -22,8 +22,10 @@
 
 
 % import custom function definitions
-\usepackage{ifthen}
-\input{\rootdirectory/func_def/pgf_setup.tex}
-\input{\rootdirectory/func_def/comparisonBarChartDef.tex} 
-\input{\rootdirectory/func_def/comparisonTimeSeriesDef.tex}
+\usepackage{ifthen}  
+\input{\rootdirectoryone/functions/pgf_setup}
+\input{\rootdirectoryone/functions/makeComparisonBarChart} 
+\input{\rootdirectoryone/functions/makeComparisonBarChartThree}
+\input{\rootdirectoryone/functions/makeComparisonPower}
+\input{\rootdirectoryone/functions/makeComparisonTotalPower}
 

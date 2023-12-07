@@ -4,68 +4,49 @@ The top-level auxiliary file: template.aux
 The style file: Definitions/mdpi.bst
 Database file #1: busCharge.bib
 Warning--I'm ignoring bagherinezhad_spatio-temporal_2020's extra "volume" field
---line 185 of file busCharge.bib
+--line 195 of file busCharge.bib
 Warning--string name "nov" is undefined
---line 532 of file busCharge.bib
-Warning--empty year in zhou_optimization_2018
-Warning--empty year in poornesh_comparative_2020
-Warning--empty year in stahleder_impact_2019
-Warning--empty year in deb_impact_2017
-Warning--empty year in boonraksa_impact_2019
-Warning--empty journal in qin_numerical_2016
-Warning--empty journal in wei_optimizing_2018
-Warning--empty year in xian_zhang_optimal_2016
-Warning--empty year in jain_battery_2020
-Warning--empty year in balde_electric_2019
-Warning--empty year in jeong_automatic_2018
-Warning--empty journal in csonka_optimization_2021
-Warning--empty journal in bagherinezhad_spatio-temporal_2020
-Warning--empty year in el-taweel_incorporation_2019
-Warning--empty journal in whitaker_network_2021
-Warning--empty year in jahic_preemptive_2019
-Warning--empty journal in noauthor_rocky_nodate
-Warning--empty year in gao_charging_2019
-Warning--empty year in ojer_development_2020
-Warning--empty year in houbbadi_optimal_2019
-You've used 39 entries,
+--line 560 of file busCharge.bib
+Warning--I didn't find a database entry for "rocky_mountain_power_rocky_2021"
+You've used 38 entries,
             2885 wiz_defined-function locations,
-            784 strings with 12835 characters,
-and the built_in function-call counts, 14914 in all, are:
+            785 strings with 12858 characters,
+and the built_in function-call counts, 14714 in all, are:
 = -- 1173
-> -- 1108
-< -- 9
-+ -- 483
-- -- 296
-* -- 1216
-:= -- 2363
-add.period$ -- 152
-call.type$ -- 39
-change.case$ -- 39
-chr.to.int$ -- 39
-cite$ -- 59
-duplicate$ -- 714
-empty$ -- 1153
-format.name$ -- 381
-if$ -- 3118
+> -- 1101
+< -- 8
++ -- 479
+- -- 294
+* -- 1208
+:= -- 2344
+add.period$ -- 150
+call.type$ -- 38
+change.case$ -- 38
+chr.to.int$ -- 38
+cite$ -- 38
+duplicate$ -- 704
+empty$ -- 1128
+format.name$ -- 378
+if$ -- 3088
 int.to.chr$ -- 1
-int.to.str$ -- 39
-missing$ -- 38
-newline$ -- 233
-num.names$ -- 117
-pop$ -- 477
+int.to.str$ -- 38
+missing$ -- 37
+newline$ -- 229
+num.names$ -- 114
+pop$ -- 421
 preamble$ -- 0
-purify$ -- 39
+purify$ -- 38
 quote$ -- 0
-skip$ -- 444
+skip$ -- 456
 stack$ -- 0
-substring$ -- 170
-swap$ -- 117
+substring$ -- 168
+swap$ -- 127
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 273
-warning$ -- 20
-while$ -- 84
+type$ -- 266
+warning$ -- 0
+while$ -- 82
 width$ -- 0
-write$ -- 519
-(There were 22 warnings)
+write$ -- 529
+(There were 3 warnings)
