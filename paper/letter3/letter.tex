@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+\newcommand\formatfeedback[2]
+{%
+	\textbf{Suggestion:} \textcolor{red}{#1} 
+	\\[0.1in] \textbf{Response:} \textcolor{blue}{#2}
+}
+\begin{document}
+\noindent Dear Reviewer, \\ \\
+I wanted to express my gratitude for your thoughtful and constructive feedback. I have reviewed your suggestions and formulated the following responses. I wanted to address each of your thoughts and so I have written a point-by-point response to your comments where each suggestion appears in red, and my response is given in blue. 
+\begin{enumerate}
+	\item \formatfeedback{The problem of finding an optimal charge schedule is clearly stated, but the introduction could be enhanced by including a brief overview of why existing solutions are inadequate, thereby justifying the need for this research.}%
+			                 {I think you bring up a good point.  My original thought was to talk about where this work fits after the literature review in Section 2.3, but you also bring up a good point that readers may need to know why this work is important much sooner in the manuscript.  I have added a brief paragraph in the introduction which summarizes the areas where this work will enhance what has already been accomplished in the literature.}
+	\item \formatfeedback{The literature review covers prior work related to the charge problem, focusing on battery charging and cost management. It would be beneficial to expand this section to include a more comprehensive analysis of existing methodss, particularly those that have been successfully implemented iun real-world scenarios. There is room for a more critical analysis of the existing literature, identifying gaps or limitations in current approaches that this research aims to address.}
+		             {Thank you for the references!  I have gone back through the literature and expanded our literature review.  I especially liked the work that focused on multi-agent coordination using a traditional marketing model for decision making and spatial distribution, very cool ;). I have also added comments throughout the literature review to help the reader see where these methods may be extended.}
+	\item \formatfeedback{The paper could be improved by providing more detailed examples or case studies that demonstrate how the Graph-Based Problem Formulation can be applied in practical scenarios.}
+		           {Great point, I have expanded the results section to better explain how the proposed method can be applied at the Utah Transit Authority central station in Salt Lake City.  I have also provided more details that explain the case study we present throughout the results section.}
+	\item \formatfeedback{There should be a clearer connection between SOC considerations and the graph-based model presented earlier. How does the SOC influence the decision-making process in the proposed model?}
+			     {I can do that.  I have expanded my explaination at the beginning of Section 4 to help the reader better understand the role that SOC plays in the optimization framework.  Specifically I have added the following: \\
+{\it Battery state of charge (SOC) plays a central role in the bus charge problem because a charge plan must ensure that all buses are adequately charged throughout the day.  Therefore, the charge decisions must account for buses with lower SOC values and higher discharge rates along their respective routes. This section presents a formulation for tracking the expected SOC for each bus and imposes constraints on the optimization framework so that the SOC for each bus is gaurenteed to exceed a minimum threshold throughout the day. Additionally, this method is run over a 24-hour period and the results are extrapolated to anticipate the cost over a month. Therefore, additional constraints are given so that buses begin and end each day with the same SOC.}}
+	\item \formatfeedback{The  conclusion should succinctly summarize the key findings and their implications. It would be helpful to have more concrete statements about the impact of this research on the field.}
+			     {Sure!  I have revised the results section to better summarize this work's contributions and findings, specifically I have added the following:\\
+{\it In practice, this work demonstrates the feasibility of large-scale BEB conversion with a small number of charging resources. Furthermore, the monthly cost can be made linear with the number of buses so that BEB conversion is scalable even when the number of fast-charging resources is relatively small and the grid is shared with other significant power users. In practice, accomodating other power users allows the transit authority to aggregate their meters which decreases the cost of charging infrastructure for power providers and the monthly cost for transit authorities.}}
+        \item \formatfeedback{The section on future work could be more specific, outlining potential research directions that could buiod on the findings of this paper. for example, exploring how the model could adapt to varying operational conditions or integrating renewable energy sources into the charging strategy.}
+			     {This makes sense, I have added an additional summary at the end of the results section to concisely give areas for expansion: {\it the proposed work could be extended in the following areas: (1) decrease the compute time by computing a ``warm-start'' for the optimizer using a heuristic approach. (2) Encorporate renewable energy into the optimization scheme in the same way the uncontrolled loads were used (3) accounting for variability in the uncontrolled loads by modifying the inputs to reflect worst-case scenarios and (4) include projected costs of battery replacement as a function of high charge rates.}}
+\end{enumerate}
+\end{document}

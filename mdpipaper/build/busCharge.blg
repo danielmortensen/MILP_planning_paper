@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: busCharge.aux
+The style file: Definitions/mdpi.bst
+Database file #1: busCharge.bib
+Warning--entry type for "noauthor_rocky_nodate" isn't style-file defined
+--line 365 of file busCharge.bib
+Warning--empty year in zhou_optimization_2018
+Warning--empty year in poornesh_comparative_2020
+Warning--empty year in stahleder_impact_2019
+Warning--empty year in deb_impact_2017
+Warning--empty year in boonraksa_impact_2019
+Warning--empty journal in wei_optimizing_2018
+Warning--empty year in xian_zhang_optimal_2016
+Warning--empty year in jain_battery_2020
+Warning--empty year in balde_electric_2019
+Warning--empty year in jeong_automatic_2018
+Warning--empty journal in csonka_optimization_2021
+Warning--empty journal in bagherinezhad_spatio-temporal_2020
+Warning--empty year in el-taweel_incorporation_2019
+Warning--empty journal in whitaker_network_2021
+Warning--empty year in jahic_preemptive_2019
+Warning--empty year in gao_charging_2019
+Warning--empty journal in qin_numerical_2016
+Warning--empty year in ojer_development_2020
+Warning--empty year in houbbadi_optimal_2019
+You've used 35 entries,
+            2885 wiz_defined-function locations,
+            711 strings with 10869 characters,
+and the built_in function-call counts, 12490 in all, are:
+= -- 922
+> -- 989
+< -- 7
++ -- 432
+- -- 264
+* -- 948
+:= -- 1985
+add.period$ -- 97
+call.type$ -- 35
+change.case$ -- 35
+chr.to.int$ -- 35
+cite$ -- 53
+duplicate$ -- 618
+empty$ -- 993
+format.name$ -- 339
+if$ -- 2610
+int.to.chr$ -- 1
+int.to.str$ -- 35
+missing$ -- 33
+newline$ -- 168
+num.names$ -- 103
+pop$ -- 509
+preamble$ -- 0
+purify$ -- 35
+quote$ -- 0
+skip$ -- 367
+stack$ -- 0
+substring$ -- 101
+swap$ -- 78
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 242
+warning$ -- 19
+while$ -- 70
+width$ -- 0
+write$ -- 367
+(There were 20 warnings)

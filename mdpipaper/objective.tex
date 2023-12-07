@@ -1,0 +1,154 @@
+\section{Objective Function}
+The objective function in this work models the rate schedule used in \cite{noauthor_rocky_nodate}, where the cost is modeled as the monthly charge a transit authority receives from the power provider. The objective function includes charges for energy, power, and facility use and implements both on and off-peak rates.
+\par The objective function also includes effects and costs of
+uncontrolled loads. Uncontrolled loads might include the effects of
+patrons charging personal electric vehicles, electric trains passing
+through, CNG stations, etc. The loads used in this work were recorded
+at the UTA Intermodal Hub station in Salt Lake City (SLC), Utah as the
+average power sampled at uniform time intervals.
+\subsection{Energy}
+\par Energy cost is assessed per Kilowatt-hour of energy consumed and includes energy consumed by uncontrolled loads and bus chargers. Let $\mathbf{p}$ be the average external power used at each timestep, where $\mathbf{p}_i$ is the average power draw between $t_j$ and $t_{j + 1}$. The energy consumed by external loads from $t_j$ to $t_{j+1}$ is computed as 
+\begin{equation}
+	e^l_j = \mathbf{p}_i \cdot \Delta_t,
+\end{equation}
+where $\Delta_t$ is the change in time from $t_j$ to $t_{j+1}$ in hours. The energy consumed by bus chargers for the same interval is computed as  
+\begin{equation}
+	e^b_j = \sum_{k\in t}g_{i,k,l},	
+\end{equation}
+where $k\in t$ represents all values for $g$ that took place between $t_i$ and $t_{i+1}$ for every bus.
+The total energy is computed as 
+\begin{equation}\label{eqn:energy1}
+	e_j = e^l_j + e^b_j
+\end{equation}
+Equation (\ref{eqn:energy1}) can be written in standard form as 
+\begin{equation}\label{eqn:energy2}
+	\begin{aligned}
+		e_j -\sum_{k\in t}g_{i,k,l} &= p_i \cdot \Delta_t \\
+		\begin{bmatrix} 1_{e_j} & -1_{g_1} & \hdots -1_{g_n} \end{bmatrix} \begin{bmatrix}e_j \\ g_1 \\ \vdots \\ g_n \end{bmatrix} &= p_i \cdot \Delta_t
+	\end{aligned}.
+\end{equation}
+\par Because power providers charge different rates for the total power consumed during the respective on and off-peak hours,  equation (\ref{eqn:energy2}) be modified to reflect the energy consumed in arbitrary time periods.  Let $T$ be a set of $t_j$, or just $j$, which will later be used to denote on and off-peak periods as $T_{\text{on}}$ and $T_{\text{off}}$. Equation \ref{eqn:energy2} can be expanded to compute the total energy consumed in $T$ as
+\begin{equation}\label{eqn:energy3}
+	\begin{aligned}
+	e_T -\sum_{k\in T}g_{j,k,l} &= \left ( \sum_{j\in T}p_j \right ) \cdot \Delta_t \\
+		\begin{bmatrix} 1_{e_T} & -1_{g_1} & \hdots -1_{g_n} \end{bmatrix} \begin{bmatrix}e_T \\ g_1 \\ \vdots \\ g_n \end{bmatrix} &= e^\text{load}_T
+	\end{aligned}
+\end{equation}
+\par For multiple time periods, the constraint can be expanded in matrix form, where row $i$ corresponds to the periods of time in $T_i$. Furthermore, by including the values for each $e_{T_i}$ in $\mathbf{y}$ and zero-padding appropriately, the expanded form of equation (\ref{eqn:energy3}) can be written as  
+\begin{equation}
+	E\mathbf{y} = \mathbf{e}^\text{load},
+\end{equation}
+where row $i$ in $E$ reflects equation (\ref{eqn:energy3}) for the time intervals in $T_i$, and $\mathbf{e}^\text{load}_i$ contains the energy consumed by uncontrolled loads during $T_i$.
+
+\subsection{Power}
+Power costs are computed for the maximum average power draw, where the average is computed over a 15 minute sliding window. The average power can be computed as the energy in the window divided by the window length in hours. In this case, a 15 minute window equates to a quarter hour. Let $\bar{p}_j$ be the average power from $j - 15$ to $j$. Equation (\ref{eqn:energy3}) can be adapted to compute the average power as
+\begin{equation}\label{eqn:power1} 
+	\begin{aligned}
+		\bar{p}_j - \left ( \sum_{k\in T_j}\frac{1}{4}g_{i,k,l} \right ) &= \left ( \sum_{i\in T_j}p_i \right ) \cdot \frac{\Delta_t}{4} \\
+		\begin{bmatrix} 1_{\bar{p}_j} & -\frac{1_{g_1}}{4} & \hdots -\frac{1_{g_n}}{4} \end{bmatrix} \begin{bmatrix}e_j \\ g_1 \\ \vdots \\ g_n \end{bmatrix} &= \frac{p_T \cdot \Delta_t}{4}.
+	\end{aligned}
+\end{equation}
+Equation (\ref{eqn:power1}) can further be expanded and zero padded to compute the average power at each time, $t_j$ by applying equation (\ref{eqn:power1}) to the corresponding window as
+\begin{equation}\label{eqn:power2}
+	P\mathbf{y} = \mathbf{p}.	
+\end{equation}
+The maximum average power, denoted $\hat{p}$, is greater than or equal to each average power computed in equation (\ref{eqn:power2}).  This yields an additional set of inequality constraints 
+\begin{equation}\label{eqn:cPower1}
+	\begin{aligned}
+		 \begin{bmatrix} 
+			-1_{\hat{p}} & 1_{\bar{p}_0} & 0             & \hdots & 0 \\ 
+	        	-1_{\hat{p}} & 0       & 1_{\bar{p}_1} & \hdots & 0\\
+			-1_{\hat{p}} & 0       & 0 & \hdots    & 1_{\bar{p}_j} \\
+		 \end{bmatrix}\mathbf{y} &\le \mathbf{0} \\ 
+		 P_{\text{max}}\mathbf{y} &\le \mathbf{0}.
+	\end{aligned}
+\end{equation}
+Because the max average power is minimized in the objective function, the value for $\hat{p}_{\text{max}}$ will be forced down to the value of the greatest average power computed in equation (\ref{eqn:power2}), and accurately reflect the maximum average power.
+\subsection{On/Off Peak Rates}
+Power providers divide each day into on and off-peak periods during which different rates are applied for both energy and power costs. Let $H$ and $L$ be the respective sets of all time indices in on and off peak periods respectively. The cost of energy during on-peak hours can be expressed as 
+\begin{equation}\label{eqn:cEnergy1}
+	\begin{aligned}
+		c_{\text{energy}_H} &= \left ( \sum_{j\in H} e_j \right ) r_{e_\text{on}} \\
+		&= \begin{bmatrix}r_{e_1} & 0 & \hdots & 0 & r_{e_4} & \hdots & 0 \end{bmatrix}\mathbf{y} \\
+		&= \mathbf{r}_{e_\text{on}}^T\mathbf{y},
+	\end{aligned}
+\end{equation}
+where $\mathbf{r}^\text{on}_{e}$ contains the value of $r^\text{on}_{e}$ at the index corresponding to $e_j$ in $\mathbf{y} \ \forall j \in H$. A similar formulation can be used to describe the cost of energy consumed during off-peak hours.  
+\par An on-peak rate also applies to charges for power. Equation (\ref{eqn:cPower1}) can be adapted to only include rows that correspond to average power values during on-peak hours such that
+\begin{equation}\label{eqn:cPOnPeak} 
+	\begin{aligned}
+		 \begin{bmatrix} 
+			 -1_{\hat{p}_\text{on}} & 1_{\bar{p}_0} & 0             & \hdots & 0 \\ 
+			 -1_{\hat{p}_\text{on}} & 0       & 1_{\bar{p}_1} & \hdots & 0\\
+			 -1_{\hat{p}_\text{on}} & 0       & 0 & \hdots    & 1_{\bar{p}_j} \\
+		 \end{bmatrix}\mathbf{y} &\le \mathbf{0} \\ 
+		 P_{\text{on}}\mathbf{y} &\le \mathbf{0}.  
+	\end{aligned}
+\end{equation}
+Similarly, the off-peak max average power can be computed as
+\begin{equation}\label{eqn:cPOffPeak}
+	\begin{aligned}
+		 \begin{bmatrix} 
+			 -1_{\hat{p}_\text{off}} & 1_{\bar{p}_0} & 0             & \hdots & 0 \\ 
+			 -1_{\hat{p}_\text{off}} & 0       & 1_{\bar{p}_1} & \hdots & 0\\
+			 -1_{\hat{p}_\text{off}} & 0       & 0 & \hdots    & 1_{\bar{p}_j} \\
+		 \end{bmatrix}\mathbf{y} &\le \mathbf{0} \\ 
+		 P_{\text{off}}\mathbf{y} &\le \mathbf{0},  
+	\end{aligned}
+\end{equation}
+where each row corresponds to $\bar{p}_j \ \forall j \in L$.
+\par Many power providers include a facilities charge.  The facilities
+charge is assessed per kW of the maximum average power and ignores on
+and off-peak times. The total max average power is calculated using equation (\ref{eqn:cPower1}).
+\par The total power cost can be computed as the sum of the on-peak, off-peak, and facilities charges as 
+\begin{equation}
+	\begin{aligned}
+		c_\text{power} &= \begin{bmatrix}r_{\hat{p}_{\text{on}}}&0 & \hdots & 0 & r_{\hat{p}_{\text{off}}} & 0& \hdots &0& r_{\hat{p}_{\text{facilities}}} \end{bmatrix}\mathbf{y} \\
+			&= \mathbf{r}_{\hat{p}}^T\mathbf{y}
+	\end{aligned}
+\end{equation}
+
+\subsection{Objective Function}
+The objective function combines the cost of energy and power, where the on-peak and off-peak energy is combined as 
+\begin{equation}\label{eqn:cEnergy2}
+	\begin{aligned}
+		c_{\text{energy}} &= \mathbf{r}_{e_\text{on}}^T\mathbf{y} + \mathbf{r}_{e_\text{off}}^T\mathbf{y} \\
+		&=\left ( \mathbf{r}_{e_\text{on}} + \mathbf{r}_{e_\text{off}} \right )^T \mathbf{y} \\
+		&= \mathbf{r}_e^T\mathbf{y}.
+	\end{aligned}
+\end{equation}
+The combined expression is given as 
+\begin{equation}\label{eqn:objective}
+	\begin{aligned}
+		c_{\text{total}} &= c_{\text{power}} + c_{\text{energy}} \\ 
+				 &= \mathbf{r}_e^T\mathbf{y} + \mathbf{r}_{\hat{p}}^T\mathbf{y} \\
+				 &= \left ( \mathbf{r}_e + \mathbf{r}_{\hat{p}} \right )^T\mathbf{y} \\
+				 &= \mathbf{r}^T\mathbf{y}.
+	\end{aligned}
+\end{equation}
+\par Equation (\ref{eqn:objective}) is used as the objective function in a mixed integer linear program of the form
+\begin{equation}
+	\begin{aligned}
+		& \underset{\mathbf{y}}{\scalebox{1}{\text{min}}} \ \mathbf{r}^T\mathbf{y} \ \text{subject to}\\
+		& C_{\text{eq}}\mathbf{y} = \mathbf{c}_{\text{eq}}, \ C_{\text{ineq}}\mathbf{y} \le \mathbf{c}_{\text{ineq}},
+	\end{aligned}
+\end{equation}
+where $C_{\text{eq}}, \mathbf{c}_{\text{eq}}, C_{\text{ineq}}$, and $\mathbf{c}_{\text{ineq}}$ are formed by stacking the equality and inequality constraints from equations (\ref{eqn:cFlow2}), (\ref{eqn:cGroupFlow2}), (\ref{eqn:cSocFinal}), (\ref{eqn:power2}), (\ref{eqn:cPower1}), (\ref{eqn:cPOnPeak}), and (\ref{eqn:cPOffPeak}),
+\begin{equation}\label{eqn:finalObjective}
+	\begin{matrix*}[c]
+		\underset{\mathbf{y}}{\scalebox{1}{\text{min}}} \ \mathbf{r}^T\mathbf{y} \ \text{subject to}\\
+		\begin{bmatrix*}[l]
+				\tilde{A} \\
+				D_{\text{eq}} \\
+				P
+				\end{bmatrix*} \mathbf{y} = \begin{bmatrix*}[l]\mathbf{c}_f \\ \mathbf{d}_{\text{eq}}\\\mathbf{p} \end{bmatrix*}, \ \begin{bmatrix*}[l]
+			\tilde{B} \\
+			D_{\text{ineq}} \\ 
+			P_{\text{max}} \\
+			P_{\text{on}} \\
+			P_{\text{off}}
+			\end{bmatrix*}\mathbf{y} \le \begin{bmatrix*}\mathbf{1} \\ \mathbf{d}_{\text{ineq}} \\ \mathbf{0} \\ \mathbf{0} \\ \mathbf{0} \end{bmatrix*}
+	\end{matrix*}.
+\end{equation}
+
+

@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+\newcommand\formatfeedback[2]
+{%
+	\textbf{Suggestion:} \textcolor{red}{#1} 
+	\\[0.1in] \textbf{Response:} \textcolor{blue}{#2}
+}
+\begin{document}
+\noindent Dear Reviewer, \\ \\
+I wanted to express my gratitude for your thoughtful and constructive feedback. I have reviewed your suggestions and formulated the following responses. I wanted to address each of your thoughts and so I have written a point-by-point response to your comments where each suggestion appears in red, and my response is given in blue. 
+\begin{enumerate}
+	\item \formatfeedback{This paper only refers to cost savings. Specific savings values and savings percentages should be added and analyzed concretely}%
+			                 {This is a reasonable request.  I have added table to the results section which which shows cost savings as a percentage.}
+	\item \formatfeedback{The definition of variable parameters in the article is not clear enough, and a table of variable parameter definitions is built for a specific explanation. Some statements are mission.}
+		             {Thank you for letting me know!  I have gone through the manuscript and added additional clarification when introducing each variable. For example, when introducing the variable $\mathbf{y}$, I have added 
+{\it \begin{equation*}\mathbf{y} = \begin{bmatrix} \mathbf{x}^T \ \mathbf{d}^T \ \mathbf{g}^T \ \mathbf{e}^T \ \mathbf{p}^T \ \hat{p}_\text{off-peak} \ \hat{p}_\text{on-peak} \end{bmatrix},\end{equation*}  $\mathbf{x}, \mathbf{d}, \mathbf{g}, \mathbf{e}, \mathbf{p}, \hat{p}_{\text{off-peak}}$, and $\hat{p}_{\text{on-peak}}$ represent the edge weights of the graph, the bus state of charge, the changes in state of charge, the energy used, the average power at each time step, the maximum off-peak power, and the maximum on-peak power respectively. Each variable will be defined as unknown elements in a mixed integer linear program and will recieve greater attention throughout this paper.}}
+	\item \formatfeedback{The result display part is not intuitive, so it is suggested to add specific numerical tables for comparative analysis. Otherwise, any rules or mechanisms cannot be found.}%
+		           {This makes sense.  I have added a table alongside the visuals which illustrate the differences numerically.}
+	\item \formatfeedback{There are commas and periods in some formulas, and in others there are not. The punctuation marks in the formulas should be unified.}%
+			     {Thank you for noticing, I have unified the formula punctuation throughout the manuscript}
+	\item \formatfeedback{The legend in Figure 17 is wrong, please check and correct it}
+			     {I have verified the legends in each figure in the results section.}
+        \item \formatfeedback{Figure 22 needs to be centered}
+			     {Fixed}
+	\item \formatfeedback{Line 428 refers to formula 55 without parentheses}{Fixed}
+	\item \formatfeedback{The references of the article are all missing volume periods}{I have added volume periods where they could be found, and added DOI numbers to each reference as well so that each can be properly referenced}
+\end{enumerate}
+\end{document}

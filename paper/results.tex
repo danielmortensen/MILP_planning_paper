@@ -1,4 +1,5 @@
 \section{Results}
+This section discusses the results for applying the proposed method at the Utah Transit Authority station in Salt Lake City, Utah, (UTA). The UTA currently maintains a day-charging station located at a central bus depot which serves as the singular charge point for BEBs and contains a limited number of ``Fast-Chargers''.  At night, each BEB is taken to a stall where the BEB is connected to a ``slow-charger''. We have collected historical data that provides insight into the external loads which are present on the grid during a 24-hour period, and introduced this data as a model for the ``Uncontrolled Loads''. We are particularly interested in observing performance as the number of day-chargers become scarse because their installation requires a significant financial investment. Furthermore, UTA also plans to increase their fleet size and so we also look to see how the monthly cost of energy scales as the fleet size increases. We also compare the proposed method against two other charging paradigms.  The first models how a traditional bus driver might behave in the absence of a centralized coordinator and the second is an optimization solution from the current literature which focuses on minimizing the instantanious load on the grid.
 This section contains results of the planning framework and is subdivided into three subsections: uncontested results, contested results, and multi-rate comparisons.  
 \subsection{\label{sec:setup} Baseline and Setup}
 The experiments in this section compare the results of the framework given in equation (\ref{eqn:finalObjective}) with a baseline that models the general behavior of bus drivers at the Utah Transit Authority (UTA) in SLC, Utah and the planning framework from \cite{He_2022_Battery}. All methods use a MILP to find an optimal solution and are solved up to a 2\% gap using Gurobi \cite{gurobi}. Model parameters such as $\delta$, arrival, and departure times were computed from historical data provided by UTA.
@@ -38,9 +39,20 @@ This section explores performance in a scenario where there is one charger per b
 \par Because equation (\ref{eqn:RMPSchedule8}) is driven by facilities power, on-peak power, on-peak energy, and off-peak energy, these four criteria are used to evaluate the optimal and baseline charge plans.  Furthermore, because the on and off-peak energy charges contribute little to the cost differences, they have been grouped together for comparison.
 \begin{figure}
 	\centering
-	\makeComparisonBarChartThree{media/costComparison5Bus5Chargers.csv}{Cost (Dollars)}{Baseline}{He et al.}{Optimized}
-	\caption{Cost comparison between optimized and baseline algorithms.}
-	\label{fig:costComparison}
+	\begin{tabular}{c}
+	\scalebox{0.7}{\makeComparisonBarChartThree{media/costComparison5Bus5Chargers.csv}{Cost (Dollars)}{Baseline}{He et al.}{Optimized}} \\[0.2in]
+	\begin{tabular}{c | c | c | c | c}
+%	a & a & a & a \\\hline
+                 & \multicolumn{2}{c|}{Price Decrease} & \multicolumn{2}{c}{Percent Decrease}\\\cline{2-5}
+	               & Baseline & He. et al & Baseline & He. et al \\\hline
+Energy           &  113.08  & 47.64     & 8.29     & 3.67      \\
+Facilities Power &  764.95  & 0.00      & 37.07    & 0.00      \\
+On-Peak Power    &  222.67  & 289.54    & 32.63    & 38.48     \\
+Total            & 1100.70  & 335.18    & 26.79    & 10.02     \\ 
+	\end{tabular} 
+	\end{tabular}
+	\caption{Cost comparison between optimized and baseline algorithms}
+	\label{fig:costComparison}  
 \end{figure}
 	\par  Fig.~\ref{fig:costComparison} compares the cost of energy, on-peak power, and facilities power for the baseline, \cite{He_2022_Battery}, and this work's scheduling strategies. Note how the schedule given by Hu et al. is similar in both energy costs and on-peak power charges but is more expensive in the facilities charge. These differences are expected as Hu et al. minimises cost of energy by charging during off-peak periods. Because there is minimal charging during on-peak times, the on-peak power charges reflect the uncontrolled loads and are therefore the same. The differences in facilities is present because He et al. does not include the overall maximum average power in their framework. 
 	\par Additionally, the facilities and on-peak power costs for the baseline schedule are significantly larger than the optimized schedule.  To better understand the cost disparity, we observe the load profiles to identify how the optimized schedule avoids the costs incurred by the baseline.
@@ -99,6 +111,7 @@ A 36 bus, 6 charger comparison also yielded minimal cost savings.
 %\end{figure}
 \par Another explaination for the cost similarity is found in how monthly cost is computed. Because the monthly cost is based on the average instantanous power, both high and low charge rates can give the same results over a fixed time period. The charge schedules shown in both single and multi-rate plans charge buses in relatively small time periods. Fast charging over small periods of time is equivalent to slow charging over longer periods. In this way, the average power can be kept low even when using high charge rates (see Fig.s \ref{fig:contention2} and \ref{fig:contention1}). 
 \begin{figure}
+\centering
 	\begin{tikzpicture}
 		\begin{axis}[ybar, xmin=0.3, xmax=4.7, font=\footnotesize, xtick={1,2,3,4},xticklabels={25.58, 6.40, 3.65, 2.56},
 			ylabel=Number of edges occupied, bar width=35pt, xlabel=Time to charge from 0\% to 99\% (Hours)]

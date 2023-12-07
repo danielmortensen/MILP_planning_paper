@@ -302,12 +302,11 @@ where the equality and inequality constraints are encoded in $F$, $\mathbf{f}$, 
 		\mathbf{g}^T  \
 		\mathbf{e}^T  \
 		\mathbf{p}^T  \
-		\hat{p}  \
 		\hat{p}_\text{off-peak}  \
 		\hat{p}_\text{on-peak}  \
 	\end{bmatrix},
 \end{equation}
-where each element of $\mathbf{y}$ is defined later in this paper.
+where $\mathbf{x}, \mathbf{d}, \mathbf{g}, \mathbf{e}, \mathbf{p}, \hat{p}_{\text{off-peak}}$, and $\hat{p}_{\text{on-peak}}$ represent the edge weights of the graph, the bus state of charge, the changes in state of charge, the energy used, the average power at each time step, the maximum off-peak power, and the maximum on-peak power respectively. Each variable will be defined as unknown elements in a mixed integer linear program and will recieve greater attention throughout this paper. 
 \par  This subsection formulates two sets of constraints.  The first represents the graph structure, enforces conservation of chargers, and defines the number of chargers through a set of net-flow constraints. The second prevents the charger from thrashing between connected/disconnected states and enforces one-bus/one-charger connectivity by enforcing what we call ``group flow'' constraints.
 \subsubsection{\label{sec:net-flow} Net-Flow Constraints}
 Network flow constraints are expressed in matrix-vector form as
@@ -338,7 +337,7 @@ where $A$ is the graph incidence matrix, $\mathbf{x}$ is the $n_E \times 1$ vect
 		1 & -1 & 0 & 0 & 0 \\
 		0 & 0 & 0 & -1 & -1 \\
 		0 & 1 & 1 & 0 & 1 \\
-	\end{bmatrix}
+	\end{bmatrix}.
 \end{align}
 \par  The difference between the number of chargers entering and leaving, or the \textit{net-flow}, can be expressed in terms of $A$ as seen in equation (\ref{eqn:flow}).  Because the number of chargers does not change, the number of chargers entering and leaving a node must be equal. This is expressed in linear form as $a_i^{T}x = 0$, where $a_i$ is the $i^{\text{th}}$ row of $A$. The only exceptions occur at \textit{source} and \textit{sink} nodes.
 \par A source node represents the beginning state for all chargers.  Because edges originate here, there are no incoming edges and the net-flow will be minus the number of chargers. This is described in linear form as $a_i^Tx = -n_C$, where $n_C$ is the number of chargers.
@@ -372,16 +371,16 @@ Equation \ref{eqn:cFlow} can be formulated in terms of $\mathbf{y}$ by appropria
 \begin{equation}\label{eqn:cFlow2}
 	\begin{aligned}
 		c_f &= \begin{bmatrix}A & 0 \end{bmatrix}\mathbf{y}\\
-		    &= \tilde{A} \mathbf{y} 
+		    &= \tilde{A} \mathbf{y}. 
 	\end{aligned}
 \end{equation}
 \subsubsection{Group-flow Constraints}
 \par Another flow type, known as group flow, can be used to regulate the number of chargers entering a set of nodes. This is desired for two reasons.  First, it prevents chargers from connecting multiple times during an interval when a bus is available for charging, and it limits the number of chargers connecting to a bus to be one at most.
 \par Define a charge group as the set of all nodes for a given bus corresponding to one station visit as shown in Fig.~\ref{fig:groups}. The \textit{group flow} is the number of chargers that enter a group and is represented as the sum of all incoming edge weights (see Fig. \ref{fig:groupedEdges}). 
-\par Denote the $n_G \times n_E$ group incidence matrix as $B$, where $n_G$ is the number of groups and $B_{i,j}$ is $1$ if the $j^{\text{th}}$ edge enters the $i^{\text{th}}$ group and $0$ otherwise. For example, the group incidence matrix corresponding to the graph in Fig.~\ref{fig:groupEdges} contains $1$ in the $7^{\text{th}}$ and $10^{\text{th}}$ columns for Group 1, and the $12^{\text{th}}$ and $15^{\text{th}}$ columns for group 2 as given in equation \ref{eqn:groupB}.
+\par Denote the $n_G \times n_E$ group incidence matrix as $B$, where $n_G$ is the number of groups and $B_{i,j}$ is $1$ if the $j^{\text{th}}$ edge enters the $i^{\text{th}}$ group and $0$ otherwise. For example, the group incidence matrix corresponding to the graph in Fig.~\ref{fig:groupEdges} contains $1$ in the $7^{\text{th}}$ and $10^{\text{th}}$ columns for Group 1, and the $12^{\text{th}}$ and $15^{\text{th}}$ columns for group 2 as given in equation \ref{eqn:groupB} so that
 \begin{align}\label{eqn:groupB}
 	B = \begin{bmatrix}0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 1 \; 0 \; 0 \; 1 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0\\
-	                   0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 1 \; 0 \; 0 \; 1 \; 0\end{bmatrix}
+	                   0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 1 \; 0 \; 0 \; 1 \; 0\end{bmatrix}.
 \end{align}
 
 \begin{figure}
@@ -458,7 +457,7 @@ Equation \ref{eqn:cFlow} can be formulated in terms of $\mathbf{y}$ by appropria
 \end{figure} 
 Let $\mathbf{x}$ be the edge weights as before and $\mathbf{c}_g$ be an $n_G \times 1$ vector where the $i^{\text{th}}$ element gives the group flow for group $i$. The group flow is then computed as 
 \begin{align}\label{eqn:cGroupFlow1}
-	B\mathbf{x} = \mathbf{c}_g
+	B\mathbf{x} = \mathbf{c}_g.
 \end{align}
 But the group flow is required to be one at most to avoid connection thrashing.  This is expressed by the inequality given in equation (\ref{eqn:cGroupFlow}).
 \begin{align}\label{eqn:cGroupFlow}
@@ -467,7 +466,7 @@ But the group flow is required to be one at most to avoid connection thrashing. 
 Similarly to (\ref{eqn:cFlow2}), equation (\ref{eqn:cGroupFlow}) can also be expressed in terms of $\mathbf{y}$ with appropriate zero padding as
 \begin{equation}
 	\begin{aligned}
-		\begin{bmatrix} B & 0\end{bmatrix} \mathbf{y} &= \tilde{B}\mathbf{y} \\
+		\begin{bmatrix} B & 0\end{bmatrix} \mathbf{y} &= \tilde{B}\mathbf{y}, \\
 	\end{aligned}
 \end{equation}
 so that

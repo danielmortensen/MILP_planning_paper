@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath}
+\newcommand\formatfeedback[2]
+{%
+	\textbf{Reviewer:} \textcolor{red}{#1} 
+	\\[0.1in] \textbf{Response:} \textcolor{blue}{#2}
+}
+\begin{document}
+\noindent Dear Dr. Bart van Arem, \\ \\
+My Colleages and I are grateful for the opportunity to revise our paper. The reviewers have provided excellent feedback which we have utilized to improve the quality of the manuscript. Our response to each reviewer comment appears below. The reviewer comments are given in the red format and our responses are in blue.
+
+\subsection*{Reviewer 1}
+The comments for reviewer 1 are addressed here:
+\begin{enumerate}
+	\item \formatfeedback{The authors literature survey is very shallow, there are numerous papers published in IEEE journals that present algorithms for optimal charging of electric bus fleets. Authors need to carefully review the these papers and identify specific research gaps}%
+			     {Thank you for the feedback. We went back and carefully reviewed the literature in both IEEE and other journals and found another 11 papers that greatly increased the quality of the literature review.  We feel that the revised manuscript provides much better coverage and points out several research gaps that we address in our paper including: 
+				\begin{enumerate}
+					\item variable charge rates
+					\item effects from uncontrolled (non-bus) loads
+					\item inclusion of both time of day and demand charge expenses in the cost function
+					\item differences between night and day charging for a network flow approach 
+				\end{enumerate} 
+			      which are outlined in Section 2C paragraph 1. We did not see this combination of factors included in prior work and are grateful that the reviewers recommend we deepen our literature search as it has made these research gaps more apparent.}
+	\item \formatfeedback{The review disagree with the authors about the claim of presenting a ``comprehensive'' algorithm. Indeed, there are several factors and constraints that have been considered in previous works and ignored in this work, e.g., detailed routing of the transit networks, bus interlining, power grid network, electric charges and electricity market, recovery time, variable energy consumption of electric buses (weather conditions), etc.}%
+		             {The reviewer brings up a good point. Our intent in using the term ``comprehensive'' was that the cost function as defined by the power provider, Rocky Mountain Power, was comprehensive in the sense that it included all the components of the rate schedule, but as pointed out, the use of ``comprehensive'' could be understood to mean comprehensive in another sense. The wording in several areas of the paper has been updated to avoid exagerated claims and the word ``comprehensive'' has been removed from the title}
+	\item \formatfeedback{Authors need to show/validate the scalability of the proposed algorithm (how it works in large transit networks)}%
+		             {The proposed algorithm does scale with the number of chargers, but suffers when dealing with large numbers of buses (large being about 30). We have added an acknowledgement explaining the complexity growth in the future works section along with possible remedies.}
+	\item \formatfeedback{There is a need to compare the proposed algorithm with at least one of the previously published algorithms to show the effectiveness of this algorithm. Comparison with the baseline is not sufficient.}% 
+			     {We have included a comparison with the algorithm described in He et al.'s ``Battery electric buses charging schedule optimization considering time-of-use electricity price'' as published in the Journal of Intelligent and Connected Vehicles. We selected this publication because it best resembles our methodology in that He's method formulates charge plans using a MILP and minimises a cost function using time of day electricity costs. We have included the results from He's algorithm in our paper for comparison's sake and shown that it is equivalent to the proposed method in energy cost but costs more overall because of other fees that are functions of the peak power usage.} 
+	\item \formatfeedback{Issues related to the convergence and global optimality of the solution need to be discussed}% 
+			     {All the solutions given in the results section are formulated as MILPs and solved up to a 2\% gap.  The gap criteria has been added to the results section for clarity.}
+        \item \formatfeedback{The number of chargers in a bus station must be limited to the number of platforms. For bus stations, there is a dedicated platform that a bus needs to stop at. Hence, careful consideration should be given to the constraints of charging a bus at stations.}%
+			     {We understand this comment to address the limited number of chargers at a station and the possibility for contention between buses for the use of those chargers. The net-flow constraints shown in equation (5) force the number of chargers in use to be less than or equal to the number of chargers in the station, allowing the optimizer to solve issues of contention.}
+	\item \formatfeedback{The idea of charging a bus both in stations and in-depot is not new.  Please review carefully the literature, where journal paper(s) have already proposed mixed charging (daytime at station, midday at depot, and overnight at depot).}%
+			     {It's true that the idea itself is not new, but we have not found algorithms in the literature that specifically incorporate both in-station and in-depot charging jointly as part of a network-flow approach.} 
+	\item \formatfeedback{There are many graphs presented in the paper, authors have to reduce these number of graphs.}% 
+			     {We included a large number of graphics because we felt that the graphics were helpful for readers to fully understand the network flow approach and its constraints. As suggested by the reviewer, we have reduced the number of graphs without loosing clarity.} 
+	\item \formatfeedback{The paper is lengthy and has several editing issues.}% 
+			     {Thank you for the feedback. The paper has gone through several additional rounds of editing, resulting in improvements to the manuscript.  Awkward passages in several places have been reworked to improve clarity and we feel that the manuscript is in a better condition.} 
+\end{enumerate}
+\subsection*{Review 2}
+The comments for reviewer 2 are addressed here:
+\begin{enumerate}
+	\item \formatfeedback{The number of chargers and their locations is decision-variable or predefined?}% 
+			     {In our paper, the number of chargers and their locations are predefined. Our work's purpose is to define a framework that minimises the monthly cost of electricity in an existing infrastructure with a predefined set of collocated chargers.} 
+	\item \formatfeedback{The authors mentioned that “our framework provides a tool that enables prediction of monthly costs for transit authorities and infrastructure demand for power providers”, what model was used for prediction?}% 
+			     {Good question, the objective function from Section VI computes when power will be used for bus charging, adds this to an estimate for non-bus loads and uses the rate schedule from Rocky Mountain Power to estimate the cost. In our work, the ``model'' for non-bus loads is historical data, which better helps transit authorities to better understand their projected montly costs.} 
+	\item \formatfeedback{The authors mentioned that “our work also seeks to understand how variable rate, as compared to single rate charging”, do you have raw data for this, or just an assumption?}% 
+			     {One of our work's objectives is to determine how much benefit a transit authority might gain by switching from a single charge rate to multiple charge rates. The rates we selected for our experiments were based off the specs from the ABB chargers used by the Utah Transit Authority in Salt Lake City. Hence, there was not data involved as the multi-rate discussion centered around a question we wanted to answer throughout the paper.} 
+	\item \formatfeedback{A bus would need 25.58 hours to charge from 0\% to 99\% with a1, how? What type of charger?}% 
+		{The chargers we are using come from ABB and use the Open Charge Point Protocol (OCPP). Because OCPP allows the user to manually set a different charge rate, we are able to arbitrarily set rates at our convenience. Hence, the rates $a_1 \hdots a_n$ reflect a set of arbitrary rates that are predefined by selected by the user and give rate options from which the optimizer can choose. In practice, we selected a range of rates that covered the span of possible charge options presented by the overhead ABB chargers in Salt Lake City, ranging from small rates, to rates that pushed the hardware near capacity.  We referred to the rates in terms of how long it would take to charge a bus because the charge rates are not linear and are describe in terms of the Constant Current Constant Voltage (CCCV) model, which varies the power consumption as a function of state of charge.} 
+	\item \formatfeedback{Are you assuming a predefined battery size or it is a decision variable?}% 
+			     {We intend our framework to be applied to a system with predefined hardware and so the battery size is assumed to be static.} 
+	\item \formatfeedback{Is there real driven data for on-peak/off-peak hours and associated prices, elaborate more?}% 
+			     {This is a good question, the on-peak/off-peak energy prices come from the power provider, Rocky Mountain Power.  We chose Rocky Mountain Power's schedule 8 which is consistent with the way that the transit authority buys power. Hence, there was no need for additional pricing data.} 
+	\item \formatfeedback{Have discussed the case when there are not enough chargers or not enough power?}% 
+		{Certainly, The net-flow constraints shown in equation (5) force the number of chargers in use to be less than or equal to the number of chargers in the station. There are no hard constraints that prevent the user from exceeding a maximum power threshold, however power is penalized in the objective function, making it a point of minimization for the optimizer. If optimized power exceeded a power threshold, this would be equivalent to an infeasible model.} 
+	\item \formatfeedback{There is no clear picture about the charger type used, stationary or wireless, and what are the associated specs?}%
+			     {The only assumptions we made were that the chargers were stationary with variable charge rates, although in practice we have used connected ABB chargers which can deliver up to 400 kW. Because the rates are variable, we made sure that our rates for the results section did not exceed 400 kW.} 
+	\item \formatfeedback{How energy consumption of electric buses was calculated?}%
+			     {We understand the energy consumption to mean the bus discharge $\delta_i$ that was originally introduced in Section IV.  These values were computed from historical data we collected from buses at the Utah Transit Authority in Salt Lake City.} 
+	\item \formatfeedback{What software/solver was used in this study?}%
+			     {Good question, the problem was formatted as a MILP and solved using Gurobi.  We have added the solver type in the results section.} 
+	\item \formatfeedback{Authors should enhance the literature review by citing more relevant articles}%
+			     {Thank you for the feedback. We have expanded the literature review in the paper to include additional works such as ``Fast-charging station deployment for battery-electric bus systems considering electricity demand charges'', ``Robust strategic planning of dynamic wireless charging infrastructure for electric buses'', and ``A novel integration of scheduling and dynamic wireless charging planning models of battery-electric buses'' and feel that the revised manuscript provides better coverage of existing literature.} 
+	\item \formatfeedback{To show the superiority of the proposed model, authors should compare their model/method with the literature.}%
+			     {We have included a comparison with the algorithm described in He et al.'s ``Battery electric buses charging schedule optimization considering time-of-use electricity price'' as published in the Journal of Intelligent and Connected Vehicles. We selected this publication because it best resembles our methodology.  Both techniques formulate charge plans using a MILP, and He et al. minimises a cost function using time of day electricity costs. The results show that the compared algorithm is equivalent in energy cost but costs more overall because of power-related fees.}
+
+\end{enumerate}
+\end{document}

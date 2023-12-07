@@ -1,0 +1,49 @@
+\section{Preliminaries}
+add intro text here
+<no need to discuss same level as greg's paper>
+1. graph
+    a. what does this mean?
+    	i. nodes <what does this mean>
+    	ii. edges <what does this mean>
+    b. associated variables
+    c. accounting for bus schedule
+    d. group constraints
+        a. meaning
+    e. graph encodes connection bus-battery charger connection opportunities
+    f. incidence matrix + linear algebra
+    g. show picture of graph
+2. Battery SOC
+    a. Introduce new variables d_{i,j} g_{i,j}
+    b. charging
+        i. variable rate
+	ii. variable rate adds edges to the graph (contribution)
+	iii. show picture with d_{i,j} illustrated
+    c. discharging
+        i. delta is all that matters
+	ii. comes from sim/real data (contribution)
+3. Rate schedule
+    a. consumption
+    b. power, average power, demand charge (abstract)
+        i. peak vs facilities demand charge
+	ii. constraints for this
+4. Fleet Operations
+    a. Depot for night time charging
+        i. one charger per bus
+	ii. slow chargers
+	iii. single rate charging
+    b. Station for daytime charging
+        i. limited number of chargers
+	ii. fast/variable rate
+    c. multiple graphs
+        i. interconnections through SOC variables
+	ii. show picture for this
+5. Objective Function
+6. Gurobi
+7. Results
+8. Future Work
+
+\input{preliminaries/Graph.tex}
+\input{preliminaries/linearProgram.tex}
+\input{preliminaries/batterySoc.tex}
+\input{preliminaries/rateSchedule.tex}
+\input{preliminaries/fleetOperations.tex}

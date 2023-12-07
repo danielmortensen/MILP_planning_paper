@@ -1,0 +1,83 @@
+\section{Conclusions and Future Work }
+In conclusion, the charge schedules developed in equation (\ref{eqn:finalObjective}) yield significant cost savings over both the baseline and the work by \cite{He_2022_Battery}. These savings come from minimizing the average power consumption, and charging during off-peak hours. Cost savings are maintained in both uncontested and resource constrained scenarios.  There is also little to be gained by offering multiple charge rates because average power can be managed with high charge rates by reducing the charge duration. Furthermore, it was shown that when given the choice, the optimizer primarily selected high charge rates, which reduces the problem complexity to the single-rate formulation.
+\par Although multi-rate charging does not significantly reduce the monthly cost, it could be useful in prolonging battery life. The high power rates observed in this work can reduce the lifespan of the battery whereas lower charge rates can prolong battery life.  Therefore, future work incorporating battery-health will be explored.  We believe that multi-rate charging may offer some flexibility in this scenario.  Future work will extend the discrete charge levels in this work to a continuous rate selection.
+\par Because this work presents only a planning framework for a global solution over large stretches of time, it is computationally infeasible to recompute when unplanned events occur. Future work could move this framework toward real-time deployment using a hierarchal approach to control of charging.  A precomputed global plan supports the real-time planner by providing top-level guidance.  The lower-level real-time planner will adapt to unplanned events by controlling for a return from the current state to the global plan over a finite sliding horizon. 
+\par Finally, the computational complexity of our approach decreases as the number of chargers increase, but suffers when planning for large bus fleets as the number of constraints and solution variables scales linearly with the number of buses as shown in Fig. \ref{fig:scalingAnalysis}. Future improvements might use a solution from a hieristic approach as a ``warm start'' for the optimizer which would reduce the computational complexity of finding a globally optimal solution.
+
+\begin{figure}
+	\begin{tikzpicture}
+		\begin{axis}[SmallPointPlot, xlabel=Number of Buses, legend pos=north west]%, ymin=3000, xmax=11]
+			\addplot[blue] coordinates {(1, 1483)
+									    (2, 2319)
+									    (3, 3155)
+									    (4, 3991)
+									    (5, 4827)  
+									    (6, 5663)  
+									    (7, 6499)  
+									    (8, 7335)  
+									    (9, 8171)  
+									    (10,9007)  
+									    (11,9843)  
+									    (12,10679) 
+									    (13,11515) 
+									    (14,12351) 
+									    (15,13547) 
+									    (16,14383) 
+									    (17,15579) 
+									    (18,16415)  
+									    (19,17611)  
+									    (20,18447) 
+									    (21,19643) 
+									    (22,20479) 
+									    (23,21674) 
+									    (24,22511) 
+									    (25,23707)  
+									    (26,24543)  
+									    (27,25739) 
+									    (28,26575) 
+									    (29,27771) 
+									    (30,28607) 
+									    (31,29803) 
+									    (32,30639)
+									    (33,31835)
+									    (34,32671)};
+ 			 \addplot[red] coordinates {(1, 2333)
+									    (2, 3503)
+									    (3, 4673)
+									    (4, 5843)
+									    (5, 7013)  
+									    (6, 8183)  
+									    (7, 9353)  
+									    (8, 10523)  
+									    (9, 11693)  
+									    (10,12863)  
+									    (11,14033)  
+									    (12,15203) 
+									    (13,16373) 
+									    (14,17543) 
+									    (15,19217) 
+									    (16,20387) 
+									    (17,22061) 
+									    (18,23231)  
+									    (19,24905)  
+									    (20,26075) 
+									    (21,27749) 
+									    (22,28919) 
+									    (23,30593) 
+									    (24,31763) 
+									    (25,33437)  
+									    (26,34607)  
+									    (27,36281) 
+									    (28,37451) 
+									    (29,39125) 
+									    (30,40295) 
+									    (31,41969) 
+									    (32,43139)
+									    (33,44813)
+									    (34,45983)};
+		\legend{Number of Variables, Number of Constraints}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Scalability Analysis.}
+	\label{fig:scalingAnalysis}
+\end{figure}

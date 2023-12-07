@@ -4,7 +4,7 @@ An additional contribution this work offers is the expansion to joint optimizati
 \par Equation (\ref{eqn:cFlow}) in section \ref{sec:net-flow} describes the net-flow constraints which constrain the number of chargers in the source and sink nodes. Because the number of chargers are different from night to day, a separate graph is used at each transition as shown in Fig.~\ref{fig:nightVsDayGraph}.
 \par Each graph is connected by equating the appropriate SOC values.  Consider the multi-graph formulation given in Fig.~\ref{fig:nightVsDayConnected}.  The morning graph is related to the day graph because $d_{1,1}$ and $d_{2,1}$ represent the same SOC values as $d_{1,2}$ and $d_{2,2}$ respectively. The same applies for the day and night graphs, where $d_{1,5}$ and $d_{2,5}$ represent the SOC values for $d_{1,6}$ and $d_{2,6}$. This equality relationship can be expressed as an equality constraint where
 \begin{align}
-	\mathbf{d}_{\text{graph 1}} - \mathbf{d}_{\text{graph 2}} = \mathbf{0}
+	\mathbf{d}_{\text{graph 1}} - \mathbf{d}_{\text{graph 2}} = \mathbf{0},,,,
 \end{align}
 or by 
 \begin{align}\label{eqn:multiGraphConst}

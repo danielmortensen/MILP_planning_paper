@@ -1,0 +1,302 @@
+\begin{thebibliography}{999}
+
+\bibitem[Zhou et~al.()Zhou, Ren, Sun, and Dai]{zhou_optimization_2018}
+Zhou, D.; Ren, Z.; Sun, K.; Dai, H.
+\newblock Optimization Method of Fast Charging Buses Charging Strategy for
+  Complex Operating Environment.
+\newblock In Proceedings of the 2nd {IEEE} Conf. on Energy Internet and Energy
+  System Integration ({EI}2).
+\newblock {\url{https://doi.org/10.1109/EI2.2018.8582378}}.
+
+\bibitem[Poornesh et~al.()Poornesh, Nivya, and
+  Sireesha]{poornesh_comparative_2020}
+Poornesh, K.; Nivya, K.; Sireesha, K.
+\newblock A Comparative study on Electric Vehicle and Internal Combustion
+  Engine Vehicles.
+\newblock In Proceedings of the 2020 International Conference on Smart
+  Electronics and Communication.
+\newblock {\url{https://doi.org/10.1109/ICOSEC49089.2020.9215386}}.
+
+\bibitem[Mahmoud et~al.(2016)Mahmoud, Garnett, Ferguson, and
+  Kanaroglou]{Mahmoud2016}
+Mahmoud, M.; Garnett, R.; Ferguson, M.; Kanaroglou, P.
+\newblock Electric buses: A review of alternative powertrains.
+\newblock {\em Renewable and Sustainable Energy Reviews} {\bf 2016}, {\em 62}.
+\newblock {\url{https://doi.org/10.1016/j.rser.2016.05.019}}.
+
+\bibitem[D.Stahleder et~al.()D.Stahleder, Reihs, Ledinger, and
+  Lehfuss]{stahleder_impact_2019}
+D.Stahleder.; Reihs, D.; Ledinger, S.; Lehfuss, F.
+\newblock Impact Assessment of High Power Electric Bus Charging on Urban
+  Distribution Grids.
+\newblock In Proceedings of the {IECON} 2019 - 45th Annual Conference of the
+  {IEEE} Industrial Electronics Society.
+\newblock {\url{https://doi.org/10.1109/IECON.2019.8927526}}.
+
+\bibitem[Deb et~al.()Deb, Kalita, and Mahanta]{deb_impact_2017}
+Deb, S.; Kalita, K.; Mahanta, P.
+\newblock Impact of electric vehicle charging stations on reliability of
+  distribution network.
+\newblock In Proceedings of the 2017 Internat. Conf. on Tech. Adv. in Power and
+  Energy ( {TAP} Energy).
+\newblock {\url{https://doi.org/10.1109/TAPENERGY.2017.8397272}}.
+
+\bibitem[Boonraksa et~al.()Boonraksa, Paudel, Dawan, and
+  Marungsri]{boonraksa_impact_2019}
+Boonraksa, T.; Paudel, A.; Dawan, P.; Marungsri, B.
+\newblock Impact of Electric Bus Charging on the Power Distribution System a
+  Case Study {IEEE} 33 Bus Test System.
+\newblock In Proceedings of the 2019 {IEEE} {PES} {GTD} Grand Internat. Conf.
+  and Exposition Asia.
+\newblock {\url{https://doi.org/10.1109/GTDAsia.2019.8716023}}.
+
+\bibitem[Zhou et~al.(2020)Zhou, Xie, Zhao, and Lu]{Zhou_2020_Collaborative}
+Zhou, G.J.; Xie, D.F.; Zhao, X.M.; Lu, C.
+\newblock Collaborative Optimization of Vehicle and Charging Scheduling for a
+  Bus Fleet Mixed With Electric and Traditional Buses.
+\newblock {\em IEEE Access} {\bf 2020}, {\em 8}.
+\newblock {\url{https://doi.org/10.1109/ACCESS.2020.2964391}}.
+
+\bibitem[Qin et~al.()Qin, Gusrialdi, Brooker, and T-Raissi]{qin_numerical_2016}
+Qin, N.; Gusrialdi, A.; Brooker, P.; T-Raissi, A.
+\newblock Numerical analysis of electric bus fast charging strategies for
+  demand charge reduction.
+\newblock {\em 94}.
+\newblock {\url{https://doi.org/10.1016/j.tra.2016.09.014}}.
+
+\bibitem[Wei et~al.()Wei, Liu, Ou, and Kiavash~Fayyaz]{wei_optimizing_2018}
+Wei, R.; Liu, X.; Ou, Y.; Kiavash~Fayyaz, S.
+\newblock Optimizing the spatio-temporal deployment of battery electric bus
+  system.
+\newblock {\em 68}.
+\newblock {\url{https://doi.org/10.1016/j.jtrangeo.2018.03.013}}.
+
+\bibitem[Xian and Wang()]{xian_zhang_optimal_2016}
+Xian, Z.; Wang, G.
+\newblock Optimal dispatch of electric vehicle batteries between battery
+  swapping stations and charging stations.
+\newblock In Proceedings of the 2016 {IEEE} Power and Energy Society General
+  Meeting.
+\newblock {\url{https://doi.org/10.1109/PESGM.2016.7741893}}.
+
+\bibitem[Jain et~al.()Jain, Ahmad, Alam, and Rafat]{jain_battery_2020}
+Jain, S.; Ahmad, Z.; Alam, M.S.; Rafat, Y.
+\newblock Battery Swapping Technology.
+\newblock In Proceedings of the 2020 5th {IEEE} International Conference on
+  Recent Advances and Innovations in Engineering.
+\newblock {\url{https://doi.org/10.1109/ICRAIE51050.2020.9358366}}.
+
+\bibitem[Balde and Sardar()]{balde_electric_2019}
+Balde, B.J.; Sardar, A.
+\newblock Electric Road system With Dynamic Wireless charging of Electric
+  buses.
+\newblock In Proceedings of the 2019 {IEEE} Trans. Electrification Conf.
+\newblock
+  {\url{https://doi.org/10.1109/ITEC-India48457.2019.ITECINDIA2019-251}}.
+
+\bibitem[Jeong et~al.()Jeong, Park, Hong, and Rim]{jeong_automatic_2018}
+Jeong, S.Y.; Park, J.H.; Hong, G.P.; Rim, C.T.
+\newblock Automatic Current Control by Self-Inductance Variation for Dynamic
+  Wireless {EV} Charging.
+\newblock In Proceedings of the {IEEE} {PELS} Workshop on Emerging Tech.:
+  Wireless Power Transfer.
+\newblock {\url{https://doi.org/10.1109/WoW.2018.8450926}}.
+
+\bibitem[Csonka()]{csonka_optimization_2021}
+Csonka, B.
+\newblock Optimization of Static and Dynamic Charging Infrastructure for
+  Electric Buses.
+\newblock {\em 14}.
+\newblock {\url{https://doi.org/10.3390/en14123516}}.
+
+\bibitem[Alwesabi et~al.(2021)Alwesabi, Liu, Kwon, and
+  Wang]{Alwesabi_2021_Novel}
+Alwesabi, Y.; Liu, Z.; Kwon, S.; Wang, Y.
+\newblock A novel integration of scheduling and dynamic wireless charging
+  planning models of battery electric buses.
+\newblock {\em Energy} {\bf 2021}, {\em 230}.
+\newblock {\url{https://doi.org/10.1016/j.energy.2021.120806}}.
+
+\bibitem[Alwesabi et~al.(2022)Alwesabi, Avishan, Yanikoglu, Liu, and
+  Wang]{Alwesabi_2022_Robust}
+Alwesabi, Y.; Avishan, F.; Yanikoglu, I.; Liu, Z.; Wang, Y.
+\newblock Robust strategic planning of dynamic wireless charging infrastructure
+  for electric buses.
+\newblock {\em Applied Energy} {\bf 2022}, {\em 307}.
+\newblock {\url{https://doi.org/10.1016/j.apenergy.2021.118243}}.
+
+\bibitem[Cheng et~al.()Cheng, Chen, Wang, Ma, and Qin]{cheng_smart_2020}
+Cheng, Q.; Chen, L.; Wang, R.; Ma, D.; Qin, D.
+\newblock A smart charging algorithm-based fast charging station with energy
+  storage system-free.
+\newblock {\em CSEE Journal of Power and Energy Systems}, {\em 7}.
+\newblock {\url{https://doi.org/10.17775/CSEEJPES.2020.00350}}.
+
+\bibitem[Wang et~al.(2019)Wang, Xie, Zhang, Liu, and Zhang]{Wang2019}
+Wang, G.; Xie, X.; Zhang, F.; Liu, Y.; Zhang, D.
+\newblock BCharge: Data-Driven Real-Time Charging Scheduling for Large-Scale
+  Electric Bus Fleets.
+\newblock {\em Proceedings - Real-Time Systems Symposium} {\bf 2019}.
+\newblock {\url{https://doi.org/10.1109/RTSS.2018.00015}}.
+
+\bibitem[Bagherinezhad et~al.()Bagherinezhad, Palomino, Li, and
+  Parvania]{bagherinezhad_spatio-temporal_2020}
+Bagherinezhad, A.; Palomino, A.D.; Li, B.; Parvania, M.
+\newblock Spatio-Temporal Electric Bus Charging Optimization With Transit
+  Network Constraints.
+\newblock {\em 56},~5741--5749.
+\newblock {\url{https://doi.org/10.1109/TIA.2020.2979132}}.
+
+\bibitem[James et~al.(2015)James, Lin, Albert, and
+  Victor]{james2015coordinated}
+James, J.Y.; Lin, J.; Albert, Y.L.; Victor, O.L.
+\newblock Coordinated Electric Vehicle Charging Control with Aggregator Power
+  Trading and Indirect Load Control.
+\newblock {\em arXiv: 1508.00663 v1 [cs. SYj} {\bf 2015}.
+\newblock {\url{https://doi.org/10.48550}}.
+
+\bibitem[Astero and Choi(2016)]{astero2016efficient}
+Astero, P.; Choi, B.J.
+\newblock Efficient indirect real-time EV charging method based on imperfect
+  competition market.
+\newblock In Proceedings of the 2016 IEEE International Conference on Smart
+  Grid Communications (SmartGridComm),  2016, pp. 453--459.
+\newblock {\url{https://doi.org/10.1109/SmartGridComm.2016.7778803}}.
+
+\bibitem[Hu et~al.(2016)Hu, Si, Lind, and Yu]{hu2016preventing}
+Hu, J.; Si, C.; Lind, M.; Yu, R.
+\newblock Preventing Distribution Grid Congestion by Integrating Indirect
+  Control in a Hierarchical Electric Vehicles’ Management System.
+\newblock {\em IEEE Transactions on Transportation Electrification} {\bf 2016},
+  {\em 2},~290--299.
+\newblock {\url{https://doi.org/10.1109/TTE.2016.2554469}}.
+
+\bibitem[Nimalsiri et~al.(2020)Nimalsiri, Mediwaththe, Ratnam, Shaw, Smith, and
+  Halgamuge]{Nimalsiri2020}
+Nimalsiri, N.I.; Mediwaththe, C.P.; Ratnam, E.L.; Shaw, M.; Smith, D.B.;
+  Halgamuge, S.K.
+\newblock A Survey of Algorithms for Distributed Charging Control of Electric
+  Vehicles in Smart Grid.
+\newblock {\em IEEE Transactions on Intelligent Transportation Systems} {\bf
+  2020}, {\em 21}.
+\newblock {\url{https://doi.org/10.1109/TITS.2019.2943620}}.
+
+\bibitem[El-Taweel and Farag()]{el-taweel_incorporation_2019}
+El-Taweel, N.; Farag, E.
+\newblock Incorporation of Battery Electric Buses in the Operation of Intercity
+  Bus Services.
+\newblock In Proceedings of the 2019 {IEEE} Transportation Electrification
+  Conference and Expo ({ITEC}).
+\newblock {\url{https://doi.org/10.1109/ITEC.2019.8790598}}.
+
+\bibitem[Leou and Hung(2017)]{Leou_optimal_2017}
+Leou, R.C.; Hung, J.J.
+\newblock Optimal Charging Schedule Planning and Economic Analysis for Electric
+  Bus Charging Stations.
+\newblock {\em Energies} {\bf 2017}, {\em 10}.
+\newblock {\url{https://doi.org/10.3390/en10040483}}.
+
+\bibitem[Wei et~al.(2018)Wei, Liu, and an~dS. Kiavash~Fayyaz]{Wei2018}
+Wei, R.; Liu, X.; an~dS. Kiavash~Fayyaz, Y.O.
+\newblock Optimizing the spatio-temporal deployment of battery electric bus
+  system.
+\newblock {\em Journal of Transport Geography} {\bf 2018}, {\em 68}.
+\newblock {\url{https://doi.org/10.1016/j.jtrangeo.2018.03.013}}.
+
+\bibitem[Rinalde et~al.(2020)Rinalde, Picarelli, and Viti]{Rinalde_Mixed_2020}
+Rinalde, M.; Picarelli, Erika an~dD'Ariano, A.; Viti, F.
+\newblock Mixed-fleet single-terminal bus scheduling problem: Modeling,
+  solution scheme and potential applications.
+\newblock {\em Omega} {\bf 2020}, {\em 96}.
+\newblock {\url{https://doi.org/10.1016/j.omega.2019.05.006}}.
+
+\bibitem[He et~al.(2019)He, Song, and Liu]{He_2019_Fast}
+He, Y.; Song, Y.; Liu, Z.
+\newblock Fast-charging station deployment for battery electric bus systems
+  considering electricity demand charges.
+\newblock {\em Sustainable Cities and Society} {\bf 2019}, {\em 48}.
+\newblock {\url{https://doi.org/10.1016/j.scs.2019.101530}}.
+
+\bibitem[Whitaker et~al.()Whitaker, Droge, Hansen, Mortensen, and
+  Gunther]{whitaker_network_2021}
+Whitaker, J.; Droge, G.; Hansen, M.; Mortensen, D.; Gunther, J.
+\newblock A Network Flow Approach to Battery Electric Bus Scheduling.
+\newblock {\em 24}.
+\newblock {\url{https://doi.org/10.1109/TITS.2023.3276269}}.
+
+\bibitem[He et~al.(2022)He, Yan, Zhang, Yu, and Wang]{He_2022_Battery}
+He, J.; Yan, N.; Zhang, J.; Yu, Y.; Wang, T.
+\newblock Battery electric buses charging schedule optimization considering
+  time-of-use electricity price.
+\newblock {\em Journal of Intelligent and Connected Vehicles} {\bf 2022}, {\em
+  5}.
+\newblock {\url{https://doi.org/10.1108/JICV-03-2022-0006}}.
+
+\bibitem[Jahic et~al.()Jahic, Eskander, and Schulz]{jahic_preemptive_2019}
+Jahic, A.; Eskander, M.; Schulz, D.
+\newblock Preemptive vs. non-preemptive charging schedule for large-scale
+  electric bus depots.
+\newblock In Proceedings of the 2019 {IEEE} {PES} Innovative Smart Grid
+  Technologies Europe.
+\newblock {\url{https://doi.org/10.1109/ISGTEurope.2019.8905633}}.
+
+\bibitem[Corinaldesi et~al.(2020)Corinaldesi, Lettner, Schwabeneder, Ajanovic,
+  and Auer]{Corinaldesi_2020}
+Corinaldesi, C.; Lettner, G.; Schwabeneder, D.; Ajanovic, A.; Auer, H.
+\newblock Impact of Different Charging Strategies for Electric Vehicles in an
+  Austrian Office Site.
+\newblock {\em Energies} {\bf 2020}, {\em 13},~5858.
+\newblock {\url{https://doi.org/10.3390/en13225858}}.
+
+\bibitem[Power()]{noauthor_rocky_nodate}
+Power, R.M.
+\newblock Rocky Mountain Power Electric Service Schedule No. 8 State of Utah.
+
+\bibitem[Gao et~al.()Gao, Lin, Zhu, Zhou, Wang, Zhang, Zhang, Waseem, Liu, and
+  Han]{gao_charging_2019}
+Gao, Q.; Lin, Z.; Zhu, T.; Zhou, W.; Wang, G.; Zhang, T.; Zhang, Z.; Waseem,
+  M.; Liu, S.; Han, C.
+\newblock Charging Load Forecasting of Electric Vehicle Based on Monte Carlo
+  and Deep Learning.
+\newblock In Proceedings of the 2019 {IEEE} Sus. Power and Energy Conf.
+\newblock {\url{https://doi.org/10.1109/iSPEC48194.2019.8975364}}.
+
+\bibitem[Ojer et~al.()Ojer, Berrueta, Pascual, Sanchis, and
+  Ursua]{ojer_development_2020}
+Ojer, I.; Berrueta, A.; Pascual, J.; Sanchis, P.; Ursua, A.
+\newblock Development of energy management strategies for the sizing of a fast
+  charging station for electric buses.
+\newblock In Proceedings of the {IEEE} International Conference on Environment
+  and Electrical Engineering.
+\newblock {\url{https://doi.org/10.1109/EEEIC/ICPSEurope49358.2020.9160716}}.
+
+\bibitem[El-Taweel et~al.(2020)El-Taweel, Farag, and
+  Moataz]{taweel_2020_Integrated}
+El-Taweel, N.; Farag, H.; Moataz, M.
+\newblock Integrated Utility-Transit Model for Optimal Configuration of Battery
+  Electric Bus Systems.
+\newblock {\em IEEE Systems Journal} {\bf 2020}, {\em 14}.
+\newblock {\url{https://doi.org/10.1109/JSYST.2019.2926460}}.
+
+\bibitem[El-Taweel et~al.(2022)El-Taweel, Farag, Barai, Zeineldin, Al-Durra,
+  and El-Saadany]{taweel_2022_Systematic}
+El-Taweel, N.; Farag, H.; Barai, G.; Zeineldin, H.; Al-Durra, A.; El-Saadany,
+  E.
+\newblock A systematic Approach for Design and Analysis of Electrified Public
+  Bus Transit Fleets.
+\newblock {\em IEEE Systems Journal} {\bf 2022}, {\em 16}.
+\newblock {\url{https://doi.org/10.1109/JSYST.2021.3114271}}.
+
+\bibitem[Houbbadi et~al.()Houbbadi, Redondo-Iglesias, Trigui, Pelissier, and
+  Bouton]{houbbadi_optimal_2019}
+Houbbadi, A.; Redondo-Iglesias, E.; Trigui, R.; Pelissier, S.; Bouton, T.
+\newblock Optimal Charging Strategy to Minimize Electricity Cost and Prolong
+  Battery Life of Electric Bus Fleet.
+\newblock In Proceedings of the Vehicle Power and Propulsion Conference.
+\newblock {\url{https://doi.org/10.1109/VPPC46532.2019.8952493}}.
+
+\bibitem[{Gurobi Optimization, LLC}(2022)]{gurobi}
+{Gurobi Optimization, LLC}.
+\newblock {Gurobi Optimizer Reference Manual},  2022.
+
+\end{thebibliography}

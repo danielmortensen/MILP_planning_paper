@@ -1,8 +1,6 @@
 \section{Battery State of Charge}
 Battery state of charge (SOC) plays a central role in the bus charge
-problem. Battery charge levels decay as a bus traverses a
-route. Solutions to the bus charge problem must account for bus routes
-and require that SOC values remain above a minimum threshold.
+problem because a charge plan must ensure that all buses are adequately charged throughout the day. Therefore, the charge decisions must account for buses with lower SOC values and higher discharge rates along their respective routes. This section presents a formulation for tracking the expected SOC for each bus and the imposes constraints on the optimization framework so that the SOC for each bus is gaurenteed to exceed a minimum threshold throughout the day.  Additionally, this method is run over a 24-hour period and the results are extrapolated to anticipate the cost over a month. Therefore, additional constraints are given so that buses begin and end each day with the same SOC.  
 \par A SOC thresholding constraint requires that battery charge levels
 be modeled. The $k^{\text{th}}$ SOC for bus $i$ is denoted $d_{i,k}$,
 where $k$ is the \textit{node index}. The node indices used here are
@@ -42,7 +40,7 @@ where $-1_{d_{i,k}}$ and $1_{d_{i,k+1}}$ represent $-1$ and $1$ in locations cor
 	d_{i,k+1} = \bar{a}_ld_{i,k} - \bar{b}_lM, 
 \end{align}
 where $\bar{a}_l$ $\sim(0,1]$, depends on the charge rate and is experimentally determined, $M$ is the battery capacity in kWh, and $\bar{b}_l = \bar{a}_l - 1$.
-Equation (\ref{eqn:CCCV}) is used to show that
+Equation \eqref{eqn:CCCV} is used to show that
 \begin{equation}\label{eqn:g}
 \begin{aligned}
 	d_{i,k+1} &= \bar{a}_ld_{i,k} - \bar{b}_lM \\ 
@@ -89,7 +87,7 @@ The conditions given in equation \ref{eqn:initialGConstr} can be rewritten as
 	\end{array}\\ 
 \end{aligned}
 \end{equation}
-where $M$ is the battery capacity. The results of equation \ref{eqn:bigM2} obtain a switching effect.  When $x_{i,k,l} = 1$, equation \ref{eqn:bigM2} becomes 
+where $M$ is the battery capacity. The results of equation \eqref{eqn:bigM2} obtain a switching effect.  When $x_{i,k,l} = 1$, equation \ref{eqn:bigM2} becomes 
 \begin{equation}
 	\begin{aligned}
 		& \begin{rcases}
@@ -99,7 +97,7 @@ where $M$ is the battery capacity. The results of equation \ref{eqn:bigM2} obtai
 		& \begin{drcases}
 			g_{i,k,l} \le M & \\
 			g_{i,k,l} \ge 0 & \\ 
-		\end{drcases} \text{Inactive} \\
+		\end{drcases} \text{Inactive}.. \\
 	\end{aligned}
 \end{equation}
 The active constraints imply equality for $g_{i,k,l}$ = $(\bar{a}_l - 1)d_{i,k} - \bar{b_l}M$.  The inactive constraints imply that $g_{i,k,l}$ is greater than zero and less than the battery capacity, which are trivially satisfied. When $x_{i,k,l} = 0$, equation \ref{eqn:bigM2} becomes
@@ -112,7 +110,7 @@ The active constraints imply equality for $g_{i,k,l}$ = $(\bar{a}_l - 1)d_{i,k} 
 		& \begin{rcases}
 			g_{i,k,l}\le 0 & \\
 			g_{i,k,l}\ge 0 & \\ 
-		\end{rcases}\text{Active}\\
+		\end{rcases}\text{Active,}\\
 	\end{aligned}
 \end{equation}
 where the inactive constraints are again trivially satisfied, and the
@@ -124,7 +122,7 @@ active constraints imply equality for $g_{i,k,l} = 0$.
 		-g_{i,k,l} + d_{i,k}(\bar{a}_l - 1) + x_{i,k,l} &\le M(\bar{b_l} + 1) \\
 		 g_{i,k,l} - d_{i,k}(\bar{a}_l - 1)  &\le  - \bar{b_l}M \\
 		 g_{i,k,l} - Mx_{i,k,l} &\le 0 \\
-		-g_{i,k,l} &\le 0  
+		-g_{i,k,l} &\le 0,  
 	\end{aligned}
 \end{equation} 
 and in matrix form as
@@ -154,11 +152,11 @@ Equation (\ref{eqn:socMat}) can be expanded to include constraints for all $g_{i
 \end{equation}
 The value of $d_{i,k}$ can be expressed as 
 \begin{equation}\label{eqn:totalG}
-	d_{i,k + 1} = d_{i,k} + \sum_l g_{i,k,l} 
+	d_{i,k + 1} = d_{i,k} + \sum_l g_{i,k,l}, 
 \end{equation}
 or 
 \begin{equation}
-	d_{i,k + 1} - d_{i,k} - \sum_l g_{i,k,l} = 0
+	d_{i,k + 1} - d_{i,k} - \sum_l g_{i,k,l} = 0,
 \end{equation}
 because a non-zero element of $g_{i,k,l}$ is only present for one corresponding $l$. This relationship is described in terms of an equality constraint such that
 \begin{equation}\label{eqn:dMatPrel}
@@ -199,14 +197,14 @@ or
 	\begin{aligned}
 		& d_{i,k} \ge \tau \\
 		\Rightarrow & -d_{i,k} \le -\tau \\
-		\Rightarrow & \begin{bmatrix}0 & \hdots & -1_{d_{i,k}}& \hdots & 0 \end{bmatrix}\mathbf{y} \le -\tau
+		\Rightarrow & \begin{bmatrix}0 & \hdots & -1_{d_{i,k}}& \hdots & 0 \end{bmatrix}\mathbf{y} \le -\tau.
 	\end{aligned}
 \end{equation}
-Equation (\ref{eqn:tau}) can be expanded to a matrix $D_\tau$, where each $d_{i,k}$ contains a corresponding constraint row such that
+Equation \eqref{eqn:tau} can be expanded to a matrix $D_\tau$, where each $d_{i,k}$ contains a corresponding constraint row such that
 \begin{equation}\label{eqn:tauFinal}
 	\begin{aligned}
 		D_\tau\mathbf{y} & \le -\tau\mathbf{1} \\
-		       & \le \mathbf{d}_\tau
+		       & \le \mathbf{d}_\tau.
 	\end{aligned}
 \end{equation}
 \par In summary, the minimum SOC for all feasible charge plans must exceed a given threshold.  SOC values are computed while the bus is in
@@ -231,7 +229,7 @@ that
 		\mathbf{d}_0 \\
 		\mathbf{d}_\delta \\
 		\mathbf{0}
-		\end{bmatrix}, \quad \begin{bmatrix} D_g \\ D_\tau \end{bmatrix}\mathbf{y} \le \begin{bmatrix} \mathbf{d}_g \\ \mathbf{d}_\tau \end{bmatrix}
+		\end{bmatrix}, \quad \begin{bmatrix} D_g \\ D_\tau \end{bmatrix}\mathbf{y} \le \begin{bmatrix} \mathbf{d}_g \\ \mathbf{d}_\tau \end{bmatrix},
 \end{equation}
 and expressed as 
 	\begin{equation}\label{eqn:cSocFinal}
